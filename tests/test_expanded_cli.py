@@ -130,6 +130,8 @@ def test_office_dialogs_require_the_bound_process(monkeypatch):
     def command(*args):
         if args == ("wmctrl", "-lpG"):
             return "0x000001 0 222 0 0 1200 850 demo Writer — LibreOffice\n0x000002 0 222 200 100 700 500 demo Save As\n0x000003 0 999 100 100 700 500 demo Other app"
+        if args[0] == "xwininfo":
+            return "  Absolute upper-left X: 200\n  Absolute upper-left Y: 100\n  Width: 700\n  Height: 500"
         return "2"
 
     monkeypatch.setattr(guest_control, "command", command)
@@ -149,7 +151,7 @@ def test_office_startup_rejects_unknown_window_pid(monkeypatch):
     monkeypatch.setattr(launch, "prepare_office", lambda task: ["libreoffice", "synthetic.odt"])
     monkeypatch.setattr(launch.subprocess, "Popen", lambda *args: SimpleNamespace(pid=222, wait=lambda: None))
     monkeypatch.setattr(launch.subprocess, "check_output", lambda *args, **kwargs: "0x000001 0 0 demo LibreOffice Writer")
-    monkeypatch.setattr(launch.subprocess, "run", lambda *args, **kwargs: SimpleNamespace())
+    monkeypatch.setattr(launch.subprocess, "run", lambda *args, **kwargs: SimpleNamespace(returncode=0, stdout="0x000001 0 0 demo LibreOffice Writer"))
     monkeypatch.setattr(launch.time, "sleep", lambda *args: None)
     monkeypatch.setattr(launch, "Path", lambda *args: SimpleNamespace(write_text=lambda value: None))
     with pytest.raises(RuntimeError):

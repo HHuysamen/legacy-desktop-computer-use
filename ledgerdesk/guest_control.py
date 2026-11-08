@@ -6,6 +6,7 @@ from contextlib import redirect_stdout
 import io
 import json
 import os
+import re
 from pathlib import Path
 import subprocess
 import sys
@@ -50,6 +51,15 @@ def window_bounds() -> tuple[int, int, int, int]:
     if active != int(parts[0], 16):
         raise RuntimeError("LedgerDesk lost focus")
     bounds = tuple(map(int, parts[3:7]))
+    if is_office():
+        # wmctrl can double-count decorations on maximized LibreOffice windows.
+        # Read X11's absolute client geometry, not application content.
+        geometry = command("xwininfo", "-id", parts[0])
+        labels = ("Absolute upper-left X", "Absolute upper-left Y", "Width", "Height")
+        values = [re.search(rf"^\s*{label}:\s*(-?\d+)", geometry, re.MULTILINE) for label in labels]
+        if any(value is None for value in values):
+            raise RuntimeError("Target client geometry is unavailable")
+        bounds = tuple(int(value.group(1)) for value in values)
     x, y, width, height = bounds
     if width <= 0 or height <= 0 or x < 0 or y < 0 or x + width > WIDTH or y + height > HEIGHT:
         raise RuntimeError("LedgerDesk client area is outside the captured display")

@@ -29,7 +29,11 @@ def main():
     ]
     process = subprocess.Popen(command)
     for _ in range(300):
-        rows = subprocess.check_output(["wmctrl", "-lp"], text=True).splitlines()
+        windows = subprocess.run(["wmctrl", "-lp"], capture_output=True, text=True)
+        if windows.returncode:
+            time.sleep(0.1)
+            continue
+        rows = windows.stdout.splitlines()
         title = f"LibreOffice {OFFICE_TASKS[task]['application'].title()}" if office else "LedgerDesk"
         candidates = [r.split(None, 4) for r in rows if title in r]
         if candidates:
