@@ -5,10 +5,12 @@ services:
       context: .
       dockerfile: docker/Dockerfile
     image: ledgerdesk-demo:local
+    environment:
+      LEDGERDESK_TASK: ${LEDGERDESK_TASK:-monthly-revenue}
     read_only: true
     tmpfs:
       - /tmp:rw,noexec,nosuid,size=256m
-      - /home/demo:rw,noexec,nosuid,size=32m,uid=1000,gid=1000
+      - /home/demo:rw,noexec,nosuid,size=96m,uid=1000,gid=1000
     networks: [desktop]
     cap_drop: [ALL]
     security_opt: [no-new-privileges:true]

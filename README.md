@@ -1,6 +1,6 @@
 # LedgerDesk: computer use beyond the browser
 
-A small Python demo of an OpenAI agent operating a fictional native finance application through screenshots, mouse clicks and keyboard input. The agent selects a report, enters its parameters, inspects the result and exports a CSV. A separate verifier checks the exported rows against the seeded records.
+A Python demo of an OpenAI agent operating native desktop applications through screenshots, mouse clicks and keyboard input. It covers reporting, record maintenance and import in a fictional finance app, plus spreadsheet and document tasks in LibreOffice. Separate verifiers check saved outputs and permitted state changes.
 
 LedgerDesk is a real Tkinter desktop window inside an isolated Linux desktop. The browser viewer shows that desktop; it is not the application, and the agent receives no browser DOM or application API.
 
@@ -8,21 +8,30 @@ LedgerDesk is a real Tkinter desktop window inside an isolated Linux desktop. Th
 
 ## Validation status
 
-On 8 November 2026, **all 24 evaluated model runs produced independently verified CSVs**: eight attempts per task. This combines the original nine-run evaluation with 15 further attempts using the same model, fixture and desktop configuration.
+On 8 November 2026, the expanded evaluation completed **100 attempts across ten tasks: 99 passed and one failed**. Each task has ten attempts. This combines the original 24 reporting runs with 76 new runs. All 99 recorded successes passed an independent artifact recheck.
 
-| Task | Verified | Median elapsed | Estimated API cost, all 8 runs |
+| Task | Verified runs | Median time | Average API cost |
 | --- | ---: | ---: | ---: |
-| Monthly revenue | 8/8 | 26.717 s | USD 0.284688 |
-| Overdue invoices | 8/8 | 26.415 s | USD 0.308254 |
-| Reconciliation exceptions | 8/8 | 24.931 s | USD 0.285432 |
+| Monthly revenue | 10 of 10 | 26.7 s | US$0.036 |
+| Overdue invoices | 10 of 10 | 26.7 s | US$0.040 |
+| Reconciliation exceptions | 10 of 10 | 25.3 s | US$0.036 |
+| Invoice lookup | 10 of 10 | 25.3 s | US$0.046 |
+| Customer contact update | 10 of 10 | 28.1 s | US$0.047 |
+| Draft invoice entry | 10 of 10 | 31.8 s | US$0.047 |
+| Receipt recording | 10 of 10 | 29.5 s | US$0.047 |
+| CSV import | 10 of 10 | 26.1 s | US$0.046 |
+| Calc sort and export | 9 of 10 | 57.5 s | US$0.117 |
+| Writer text replacement | 10 of 10 | 35.7 s | US$0.042 |
 
-Across the 24 runs, median elapsed time was **25.740 seconds**, with **7–8 desktop actions** and **6–7 model requests** per run. Their combined standard-rate model API estimate was **USD 0.878374**, averaging **USD 0.036599 per run**. One similar task per workday would therefore be approximately **USD 0.73 for 20 workdays**, excluding desktop hosting. More complex workflows can use more model requests and cost more.
+The first Calc attempt was stopped by a driver boundary check on a native format dropdown. It remains in the denominator. The boundary was corrected before the remaining 63 new attempts; the nine later Calc attempts passed. Source revisions and the change are recorded in the [methodology](docs/evaluation-methodology.md).
 
-**[Read the article on henryhuysamen.com](https://www.henryhuysamen.com/writing/ledgerdesk-computer-use/)** · **[Open the 24-run evaluation](examples/evaluation-24/index.html)** · [Watch the narrated demo](examples/presentation/demo-narrated-v2.mp4) · [Inspect a standalone report](examples/evaluation-24/sample-report.html) · [Read the article](docs/article.md)
+Total estimated model API cost: **USD 5.039898**; mean **USD 0.050399 per attempt**. The 76 new attempts cost USD 4.161524. A 20-workday month at the overall mean projects to about **USD 1.01**, excluding hosting and operating costs. The [cost calculation](examples/evaluation-100/cost-analysis.json) also reports cost per verified success and per task.
 
-All 24 saved CSVs passed a separate recheck. **100 automated tests passed locally**. Configuration: `gpt-6.1-terra`, OpenAI Python SDK 3.31.0, macOS on Apple silicon, and a Linux arm64/X11 guest at 1200×900. See [validation details](docs/validation.md), [machine-readable results](examples/evaluation-24/summary.json), [cost calculations](examples/evaluation-24/cost-analysis.json) and [artifact hashes](examples/evaluation-24/manifest.json).
+**[Read the article](https://www.henryhuysamen.com/writing/ledgerdesk-computer-use/)** · **[Open the 100-run evaluation](examples/evaluation-100/index.html)** · [Research and methodology](docs/evaluation-methodology.md) · [Twenty use-case categories](docs/desktop-use-cases.md) · [Watch the narrated demo](examples/presentation/demo-narrated-v2.mp4)
 
-The [original nine-run package](examples/evaluation/index.html) remains unchanged. A separate successful pilot is retained but excluded from all 24-run statistics and monthly projections. Earlier setup blocks remain separate; costs are not inferred as zero when usage was unavailable.
+The study uses `gpt-6.1-terra`, OpenAI Python SDK 3.31.0, a Linux arm64/X11 guest at 1200×900, the fictional Tkinter app, and unmodified LibreOffice Calc and Writer. Inputs and layouts are fixed, and there is no interactive operator correction during measured runs. This is an iterative system evaluation, not a general reliability benchmark.
+
+The [original nine-run package](examples/evaluation/index.html) and [24-run package](examples/evaluation-24/index.html) remain unchanged. The earlier pilot is excluded from all 100-run statistics. See [validation](docs/validation.md), [independent recheck](examples/evaluation-100/independent-recheck.json) and [artifact hashes](examples/evaluation-100/manifest.json).
 
 ![The native LedgerDesk fixture, before a task starts](examples/ledgerdesk.png)
 
@@ -33,6 +42,13 @@ The [original nine-run package](examples/evaluation/index.html) remains unchange
 | `monthly-revenue` | September 2026 net invoiced revenue by customer, descending, excluding voided invoices. |
 | `overdue-invoices` | Outstanding invoice balances due before the supplied date, including partial payments. |
 | `reconciliation-exceptions` | Transactions whose absolute recorded-versus-expected difference exceeds USD 0.01. |
+| `invoice-lookup` | Exact invoice details, without changing records. |
+| `customer-update` | Only the specified contact fields change. |
+| `invoice-entry` | Create one correct draft invoice; existing records stay unchanged. |
+| `payment-entry` | Record one synthetic receipt and its remaining balance; no transfer. |
+| `csv-import` | Import three drafts while preserving leading-zero references. |
+| `calc-sort-export` | Sort an actual Calc sheet numerically and export all rows as CSV. |
+| `writer-find-replace` | Replace specified text in Writer and save an ODT copy. |
 
 All companies, invoices and transactions are synthetic. The seed contains 6 customers, 25 invoices and 9 reconciliation transactions. See [report semantics](docs/report-semantics.md) for exact definitions and edge cases.
 
@@ -71,6 +87,9 @@ Keep `.env` private. The host runner reads it; the desktop container does not re
 python -m ledgerdesk run --task monthly-revenue
 python -m ledgerdesk run --task overdue-invoices --as-of 2026-10-15
 python -m ledgerdesk run --task reconciliation-exceptions
+python -m ledgerdesk run --task customer-update
+python -m ledgerdesk run --task calc-sort-export --max-requests 30 --max-actions 80 --timeout 420
+python -m ledgerdesk run --task writer-find-replace --max-requests 30 --max-actions 80 --timeout 420
 ```
 
 Each attempt starts a fresh seeded guest. Keep the viewer open to watch; avoid sending your own mouse or keyboard input during the run.
@@ -97,13 +116,15 @@ To recheck an existing run and regenerate its evidence report:
 python -m ledgerdesk verify --run-dir output/runs/<run-id>
 ```
 
-To collect repeated attempts across the three tasks:
+To collect repeated attempts across the three original reporting tasks:
 
 ```bash
 python -m ledgerdesk evaluate --repeats 3 --budget-usd 20
 ```
 
 A run's budget applies to that attempt. The evaluation budget applies to the whole suite, with each attempt limited to the smaller of USD 2 or the estimated remaining suite budget.
+
+The published study is retained in `examples/evaluation-100/`. Local campaign files under `output/` are ignored by Git. The fixed extension script, `scripts/extend_evaluation.py`, expects the original local 24-run campaign and resumes its remaining slots without replacing completed ones. Fresh clones can reproduce individual tasks with the CLI above; preserve those new results as a separate campaign.
 
 A verified successful attempt establishes that the exported CSV was correct for that fixture and configuration. Repeated runs provide a small, visible sample; they do not establish general reliability across applications, operating systems or model versions. Preserve failed attempts when reporting results.
 
@@ -132,7 +153,7 @@ Host: independent CSV verifier ← copied export
 - **Trusted controller:** Starts the guest, captures screenshots, executes allowed inputs, enforces limits and retrieves the exported file. Its fixed infrastructure commands are not model-selected tools.
 - **Verifier:** Independently queries the seeded records and compares CSV columns, row count, values, ordering and uniqueness. It does not call the app's report-generation function. A model's completion message never counts as a pass.
 
-The guest runs as a non-root user, without host bind mounts or API credentials, with a read-only container filesystem and temporary writable data. Its desktop network is configured as internal. Window identity and focus are checked before and after actions; out-of-window coordinates and unsupported actions or key combinations are rejected. These controls bound this demonstration to the included fixture.
+The guest runs as a non-root user, without host bind mounts or API credentials, with a read-only container filesystem and temporary writable data. Its desktop network is configured as internal. Window identity and focus are checked before and after actions; out-of-window coordinates and unsupported actions or key combinations are rejected. These controls bound this demonstration to the included applications. LibreOffice has automation APIs, but none are exposed to the agent.
 
 One host process owns the desktop at a time; competing lifecycle commands fail rather than reset an active run. At startup the controller binds Tk's X11 window to the process it launched, because Tk does not supply that property itself. The agent cannot change that binding.
 

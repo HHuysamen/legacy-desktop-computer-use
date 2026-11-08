@@ -8,7 +8,7 @@ OpenAI's [Computer Use tool](https://developers.openai.com/api/docs/guides/tools
 
 An AI Engineer can build an AI application around this loop. The application supplies the task, starts the desktop session, handles failures and checks the output. No interactive chat session is needed.
 
-Using the demo desktop app, LedgerDesk, I tested this approach on three finance reports. The runner operates the app, collects the exported CSV and checks it against known answers.
+Using the demo desktop app, LedgerDesk, I started with three finance reports. I then added five record-handling workflows and two tasks in LibreOffice Calc and Writer. The expanded test covers ten tasks, each attempted ten times.
 
 [Watch the demo](../examples/presentation/demo-narrated-v2.mp4)
 
@@ -20,11 +20,11 @@ Your program decides when a task starts and what counts as success. The model de
 
 The workflow has six steps:
 
-1. Receive a report request.
+1. Receive a task request.
 2. Start a controlled desktop session.
 3. Send the task and a screenshot to the model.
 4. Execute the permitted actions and repeat the screenshot loop.
-5. When the model reports completion, collect and verify the CSV.
+5. When the model reports completion, collect and verify the output.
 6. Return the verified file, or a failure result with the available evidence.
 
 The loop stops on completion, a limit, a safety check or an error. The legacy application needs no changes: the controller calls the model provider's API, while the app receives ordinary mouse clicks and keystrokes.
@@ -47,7 +47,7 @@ The driver connects the model to the computer. It captures screenshots and imple
 
 Here, [DesktopDriver](https://github.com/HHuysamen/legacy-desktop-computer-use/blob/main/ledgerdesk/desktop_driver.py) sends these operations to the isolated guest, where PyAutoGUI applies them. The model picks coordinates from screenshots. It cannot inspect widgets, run SQL or call a hidden export command.
 
-The driver checks the target window and focus, rejects coordinates outside it, and restricts accepted keys and text. Use a dedicated desktop session and allow only the inputs the workflow needs.
+The driver checks the target application and focus, restricts input to its allowed desktop area, and accepts only the keys and text the workflow needs. Use a dedicated desktop session and allow only the inputs the workflow needs.
 
 ## Call Computer Use from Python
 
@@ -99,9 +99,9 @@ These excerpts are not standalone scripts. The repository contains the full loop
 
 The model saying it is finished does not make the file correct.
 
-A separate verifier compares the exported CSV with results computed independently from the demo data. It checks columns, amounts, row order, missing rows and duplicates. The model cannot call it or see its answers.
+A separate verifier checks the saved work. For reports, it checks the CSV columns, amounts, row order, missing rows and duplicates. For record changes, it also checks that only the requested database values changed. The Office tasks check the saved CSV or document and preserve the original file. The model cannot call the verifier or inspect its expected-state calculations.
 
-Each attempt starts with fresh data and an empty export folder. Old files cannot produce a false pass. Successful attempts keep the CSV; every attempt keeps the evidence available from the run, including a structured `run.json`, an HTML report, screenshots and an action trace.
+Each attempt starts with fresh data and an empty export folder. Old files cannot produce a false pass. Successful attempts keep their output; every attempt keeps the evidence available from the run, including a structured `run.json`, an HTML report, screenshots and an action trace.
 
 Run the complete workflow from the command line:
 
@@ -115,17 +115,26 @@ The command returns zero only after verification passes. Failures return nonzero
 
 ## Cost
 
-I ran each of the three reports eight times with `gpt-6.1-terra`. All **24 exports** passed verification and an independent recheck.
+I ran each of the ten tasks ten times with `gpt-6.1-terra`. **99 of the 100 attempts passed verification**, and all 99 successful outputs passed a separate recheck.
 
-| Report | Verified runs | Average model API cost |
-| --- | ---: | ---: |
-| Monthly revenue | 8 of 8 | US$0.036 |
-| Overdue invoices | 8 of 8 | US$0.039 |
-| Reconciliation exceptions | 8 of 8 | US$0.036 |
+| Task | Verified runs | Median time | Average API cost |
+| --- | ---: | ---: | ---: |
+| Monthly revenue | 10 of 10 | 26.7 s | US$0.036 |
+| Overdue invoices | 10 of 10 | 26.7 s | US$0.040 |
+| Reconciliation exceptions | 10 of 10 | 25.3 s | US$0.036 |
+| Invoice lookup | 10 of 10 | 25.3 s | US$0.046 |
+| Customer contact update | 10 of 10 | 28.1 s | US$0.047 |
+| Draft invoice entry | 10 of 10 | 31.8 s | US$0.047 |
+| Receipt recording | 10 of 10 | 29.5 s | US$0.047 |
+| CSV import | 10 of 10 | 26.1 s | US$0.046 |
+| Calc sort and export | 9 of 10 | 57.5 s | US$0.117 |
+| Writer text replacement | 10 of 10 | 35.7 s | US$0.042 |
 
-The total estimate was **US$0.88**, or about **US$0.037 per run**. At that average, running one similar task each workday would cost roughly **US$0.73 for a 20-workday month**. More complex workflows that need additional screenshots and model requests will cost more.
+The first Calc run stopped because my driver treated the Save As dialog as the complete allowed area. Its format dropdown extends below it. I corrected the boundary check; the next nine Calc attempts passed. That [failed attempt](../examples/evaluation-100/runs/20261108T125117-bdb21f/report.html) stays in the results.
 
-These figures estimate model API usage at [OpenAI's published standard rates](https://developers.openai.com/api/docs/pricing). They exclude desktop hosting and other operating costs; actual billing may differ. The [full 24-run results](../examples/evaluation-24/index.html) and [cost calculation](../examples/evaluation-24/cost-analysis.json) retain the measurements and evidence.
+The total model API estimate was **US$5.04**, or about **US$0.050 per attempt**, including the failure. At that average, one attempt each workday would cost roughly **US$1.01 for a 20-workday month**. A simple reporting task came out closer to US$0.71–0.80 per month; the Calc task about US$2.35. More complex workflows can need more screenshots and requests.
+
+Times include starting the desktop and checking the output. Costs use [OpenAI's published standard rates](https://developers.openai.com/api/docs/pricing), excluding desktop hosting and other operating costs; actual billing may differ. The [full 100-run results](../examples/evaluation-100/index.html), [cost calculation](../examples/evaluation-100/cost-analysis.json) and [research and methodology](evaluation-methodology.md) show the tasks, fixed inputs, driver change and retained evidence.
 
 ## Applying this to your own application
 

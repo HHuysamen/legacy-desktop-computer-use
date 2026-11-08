@@ -1,0 +1,2 @@
+reference,invoice_number,customer,payment,paid_total,balance
+RCPT-1001,INV-260916,Beacon Paperworks,125.25,725.25,274.75

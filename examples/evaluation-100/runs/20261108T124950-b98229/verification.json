@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "errors": [],
+  "row_count": 1,
+  "headers": [
+    "reference",
+    "customer_id",
+    "customer",
+    "invoice_date",
+    "due_date",
+    "amount",
+    "status"
+  ],
+  "rows": [
+    {
+      "reference": "DRAFT-261101",
+      "customer_id": "3",
+      "customer": "Cedar Trail Foods",
+      "invoice_date": "2026-11-01",
+      "due_date": "2026-12-01",
+      "amount": "1250.50",
+      "status": "draft"
+    }
+  ]
+}

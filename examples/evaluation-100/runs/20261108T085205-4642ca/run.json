@@ -1,0 +1,32 @@
+{
+  "id": "20261108T085205-4642ca",
+  "task_id": "reconciliation-exceptions",
+  "instruction": "In LedgerDesk, generate Reconciliation exceptions with a tolerance of 0.01. Include transactions whose absolute difference is strictly greater than the tolerance. Show transaction ID, recorded amount, expected amount and signed difference (recorded minus expected), sorted by transaction ID ascending. Export as CSV.",
+  "started_at": "2026-11-08T08:52:05.109369+00:00",
+  "as_of": "2026-10-15",
+  "model": "gpt-6.1-terra",
+  "status": "passed",
+  "error": null,
+  "action_count": 7,
+  "request_count": 6,
+  "limits": {
+    "actions": 40,
+    "requests": 20,
+    "seconds": 300,
+    "budget_usd": 0.703571
+  },
+  "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+  "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+  "image_id": "726f4bd46ae3df3565cabeb0b65e8e92a3c924300ba3eb927bbb634ae2d17b8b",
+  "usage": {
+    "input_tokens": 34534,
+    "output_tokens": 226,
+    "total_tokens": 34760,
+    "complete": true
+  },
+  "estimated_cost_usd": 0.035664,
+  "model_text": "Generated the Reconciliation exceptions report with a 0.01 tolerance and exported its four rows to `reconciliation-exceptions.csv`.",
+  "recording_available": true,
+  "elapsed_seconds": 24.647,
+  "finished_at": "2026-11-08T08:52:29.736863+00:00"
+}

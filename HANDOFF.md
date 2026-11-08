@@ -3,8 +3,9 @@ status: published
 updated: 2026-11-08
 updated_by: codex
 next_actions:
-  - Monitor search indexing if requested.
-  - Keep future article changes in a draft or reviewed branch before publication.
+  - Verify Google Search Console Search generative AI inclusion/inheritance and indexing when account access is available.
+  - Choose a broader follow-up study with held-out conditions and a second native desktop application.
+  - Keep future published changes on reviewed branches.
 blockers: []
 ---
 # Handoff
@@ -32,11 +33,12 @@ blockers: []
 - No credentials are committed. Desktop containers stopped after evaluation.
 
 ## Open questions
-- None blocking publication. Search-engine indexing is an external follow-up, not verified inclusion.
+- Search Console indexing and the Search generative AI inclusion setting remain unverified; public HTTP tests cannot establish them.
+- Cloudflare permits search/excerpts and blocks training; ai-input is unspecified. Clarify intended grounding policy before changing it.
 
 ## Recent sessions
+- 2026-11-08 (codex): Researched GEO and broader test design; live sitemap has four valid/indexable pages. Seven search/retrieval UA probes received200; training bots received403. Audit at output/geo-audit/access-audit.json; no live changes.
 - 2026-11-08 (codex): Published the approved article, narrated media and full reference archives; updated the public demo repo and transferred writing/publishing lessons to the website repo.
 - 2026-11-08 (codex): Added responsive workflow cards, author/SEO metadata and mobile navigation fix.
 - 2026-11-08 (codex): Extended evaluation to 24/24 verified runs and added monthly cost estimate.
 - 2026-11-08 (codex): Defined Computer Use and added AI Engineer / AI application wording.
-- 2026-11-08 (codex): Shortened article, reduced demo branding and repaired narrated video.

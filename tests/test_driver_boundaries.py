@@ -31,3 +31,14 @@ def test_unsafe_actions_refused(action):
 ])
 def test_task_actions_allowed(action):
     validate_action(action, BOUNDS)
+
+
+def test_office_shortcuts_are_scoped_to_office(monkeypatch):
+    monkeypatch.delenv("LEDGERDESK_TASK", raising=False)
+    with pytest.raises(ValueError):
+        validate_action({"type": "keypress", "keys": ["CTRL", "SHIFT", "S"]}, BOUNDS)
+    monkeypatch.setenv("LEDGERDESK_TASK", "writer-find-replace")
+    validate_action({"type": "keypress", "keys": ["CTRL", "SHIFT", "S"]}, BOUNDS)
+    validate_action({"type": "keypress", "keys": ["CTRL", "H"]}, BOUNDS)
+    with pytest.raises(ValueError):
+        validate_action({"type": "keypress", "keys": ["CTRL", "ESC"]}, BOUNDS)

@@ -1,0 +1,4957 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-08T13:31:26.977461+00:00",
+  "source_evaluation_sha256": "29c713c5cf227106b7da175995bb1a89e168dcd2a2b69d668f0eafe315de064c",
+  "protocol": "expanded-100-v1",
+  "historical_attempts": 24,
+  "new_attempts": 76,
+  "all_recorded_passes_reverified": true,
+  "recorded_pass_mismatches": [],
+  "source_preservation_note": "Office source preservation is checked against the saved input file and the controller's recorded before/after hashes. This is not a new observation of the original live desktop filesystem.",
+  "runs": [
+    {
+      "id": "20261108T084829-36a77a",
+      "task_id": "monthly-revenue",
+      "cohort": "historical_24",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 6,
+        "headers": [
+          "customer",
+          "revenue"
+        ],
+        "rows": [
+          {
+            "customer": "Alder Robotics",
+            "revenue": "2400.00"
+          },
+          {
+            "customer": "Beacon Paperworks",
+            "revenue": "2400.00"
+          },
+          {
+            "customer": "Cedar Trail Foods",
+            "revenue": "2000.00"
+          },
+          {
+            "customer": "Delta Quay Services",
+            "revenue": "1800.00"
+          },
+          {
+            "customer": "Ember Loom Textiles",
+            "revenue": "1500.00"
+          },
+          {
+            "customer": "Fernlight Design",
+            "revenue": "1500.00"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T084858-15367b",
+      "task_id": "overdue-invoices",
+      "cohort": "historical_24",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 7,
+        "headers": [
+          "customer",
+          "invoice_number",
+          "balance",
+          "due_date",
+          "days_overdue"
+        ],
+        "rows": [
+          {
+            "customer": "Delta Quay Services",
+            "invoice_number": "INV-260801",
+            "balance": "500.00",
+            "due_date": "2026-08-31",
+            "days_overdue": "45"
+          },
+          {
+            "customer": "Alder Robotics",
+            "invoice_number": "INV-260831",
+            "balance": "9999.99",
+            "due_date": "2026-09-15",
+            "days_overdue": "30"
+          },
+          {
+            "customer": "Fernlight Design",
+            "invoice_number": "INV-260820",
+            "balance": "150.00",
+            "due_date": "2026-09-19",
+            "days_overdue": "26"
+          },
+          {
+            "customer": "Cedar Trail Foods",
+            "invoice_number": "INV-260903",
+            "balance": "1750.00",
+            "due_date": "2026-09-25",
+            "days_overdue": "20"
+          },
+          {
+            "customer": "Beacon Paperworks",
+            "invoice_number": "INV-260916",
+            "balance": "400.00",
+            "due_date": "2026-10-10",
+            "days_overdue": "5"
+          },
+          {
+            "customer": "Delta Quay Services",
+            "invoice_number": "INV-260918",
+            "balance": "800.00",
+            "due_date": "2026-10-14",
+            "days_overdue": "1"
+          },
+          {
+            "customer": "Alder Robotics",
+            "invoice_number": "INV-261014",
+            "balance": "400.00",
+            "due_date": "2026-10-14",
+            "days_overdue": "1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T084923-399815",
+      "task_id": "reconciliation-exceptions",
+      "cohort": "historical_24",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 4,
+        "headers": [
+          "transaction_id",
+          "recorded_amount",
+          "expected_amount",
+          "difference"
+        ],
+        "rows": [
+          {
+            "transaction_id": "TXN-004",
+            "recorded_amount": "1750.02",
+            "expected_amount": "1750.00",
+            "difference": "0.02"
+          },
+          {
+            "transaction_id": "TXN-005",
+            "recorded_amount": "799.98",
+            "expected_amount": "800.00",
+            "difference": "-0.02"
+          },
+          {
+            "transaction_id": "TXN-006",
+            "recorded_amount": "1255.00",
+            "expected_amount": "1250.00",
+            "difference": "5.00"
+          },
+          {
+            "transaction_id": "TXN-007",
+            "recorded_amount": "690.00",
+            "expected_amount": "700.00",
+            "difference": "-10.00"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T084949-b53163",
+      "task_id": "monthly-revenue",
+      "cohort": "historical_24",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 6,
+        "headers": [
+          "customer",
+          "revenue"
+        ],
+        "rows": [
+          {
+            "customer": "Alder Robotics",
+            "revenue": "2400.00"
+          },
+          {
+            "customer": "Beacon Paperworks",
+            "revenue": "2400.00"
+          },
+          {
+            "customer": "Cedar Trail Foods",
+            "revenue": "2000.00"
+          },
+          {
+            "customer": "Delta Quay Services",
+            "revenue": "1800.00"
+          },
+          {
+            "customer": "Ember Loom Textiles",
+            "revenue": "1500.00"
+          },
+          {
+            "customer": "Fernlight Design",
+            "revenue": "1500.00"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T085016-68d748",
+      "task_id": "overdue-invoices",
+      "cohort": "historical_24",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 7,
+        "headers": [
+          "customer",
+          "invoice_number",
+          "balance",
+          "due_date",
+          "days_overdue"
+        ],
+        "rows": [
+          {
+            "customer": "Delta Quay Services",
+            "invoice_number": "INV-260801",
+            "balance": "500.00",
+            "due_date": "2026-08-31",
+            "days_overdue": "45"
+          },
+          {
+            "customer": "Alder Robotics",
+            "invoice_number": "INV-260831",
+            "balance": "9999.99",
+            "due_date": "2026-09-15",
+            "days_overdue": "30"
+          },
+          {
+            "customer": "Fernlight Design",
+            "invoice_number": "INV-260820",
+            "balance": "150.00",
+            "due_date": "2026-09-19",
+            "days_overdue": "26"
+          },
+          {
+            "customer": "Cedar Trail Foods",
+            "invoice_number": "INV-260903",
+            "balance": "1750.00",
+            "due_date": "2026-09-25",
+            "days_overdue": "20"
+          },
+          {
+            "customer": "Beacon Paperworks",
+            "invoice_number": "INV-260916",
+            "balance": "400.00",
+            "due_date": "2026-10-10",
+            "days_overdue": "5"
+          },
+          {
+            "customer": "Delta Quay Services",
+            "invoice_number": "INV-260918",
+            "balance": "800.00",
+            "due_date": "2026-10-14",
+            "days_overdue": "1"
+          },
+          {
+            "customer": "Alder Robotics",
+            "invoice_number": "INV-261014",
+            "balance": "400.00",
+            "due_date": "2026-10-14",
+            "days_overdue": "1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T085048-1c7409",
+      "task_id": "reconciliation-exceptions",
+      "cohort": "historical_24",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 4,
+        "headers": [
+          "transaction_id",
+          "recorded_amount",
+          "expected_amount",
+          "difference"
+        ],
+        "rows": [
+          {
+            "transaction_id": "TXN-004",
+            "recorded_amount": "1750.02",
+            "expected_amount": "1750.00",
+            "difference": "0.02"
+          },
+          {
+            "transaction_id": "TXN-005",
+            "recorded_amount": "799.98",
+            "expected_amount": "800.00",
+            "difference": "-0.02"
+          },
+          {
+            "transaction_id": "TXN-006",
+            "recorded_amount": "1255.00",
+            "expected_amount": "1250.00",
+            "difference": "5.00"
+          },
+          {
+            "transaction_id": "TXN-007",
+            "recorded_amount": "690.00",
+            "expected_amount": "700.00",
+            "difference": "-10.00"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T085113-321f8e",
+      "task_id": "monthly-revenue",
+      "cohort": "historical_24",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 6,
+        "headers": [
+          "customer",
+          "revenue"
+        ],
+        "rows": [
+          {
+            "customer": "Alder Robotics",
+            "revenue": "2400.00"
+          },
+          {
+            "customer": "Beacon Paperworks",
+            "revenue": "2400.00"
+          },
+          {
+            "customer": "Cedar Trail Foods",
+            "revenue": "2000.00"
+          },
+          {
+            "customer": "Delta Quay Services",
+            "revenue": "1800.00"
+          },
+          {
+            "customer": "Ember Loom Textiles",
+            "revenue": "1500.00"
+          },
+          {
+            "customer": "Fernlight Design",
+            "revenue": "1500.00"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T085139-8ece50",
+      "task_id": "overdue-invoices",
+      "cohort": "historical_24",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 7,
+        "headers": [
+          "customer",
+          "invoice_number",
+          "balance",
+          "due_date",
+          "days_overdue"
+        ],
+        "rows": [
+          {
+            "customer": "Delta Quay Services",
+            "invoice_number": "INV-260801",
+            "balance": "500.00",
+            "due_date": "2026-08-31",
+            "days_overdue": "45"
+          },
+          {
+            "customer": "Alder Robotics",
+            "invoice_number": "INV-260831",
+            "balance": "9999.99",
+            "due_date": "2026-09-15",
+            "days_overdue": "30"
+          },
+          {
+            "customer": "Fernlight Design",
+            "invoice_number": "INV-260820",
+            "balance": "150.00",
+            "due_date": "2026-09-19",
+            "days_overdue": "26"
+          },
+          {
+            "customer": "Cedar Trail Foods",
+            "invoice_number": "INV-260903",
+            "balance": "1750.00",
+            "due_date": "2026-09-25",
+            "days_overdue": "20"
+          },
+          {
+            "customer": "Beacon Paperworks",
+            "invoice_number": "INV-260916",
+            "balance": "400.00",
+            "due_date": "2026-10-10",
+            "days_overdue": "5"
+          },
+          {
+            "customer": "Delta Quay Services",
+            "invoice_number": "INV-260918",
+            "balance": "800.00",
+            "due_date": "2026-10-14",
+            "days_overdue": "1"
+          },
+          {
+            "customer": "Alder Robotics",
+            "invoice_number": "INV-261014",
+            "balance": "400.00",
+            "due_date": "2026-10-14",
+            "days_overdue": "1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T085205-4642ca",
+      "task_id": "reconciliation-exceptions",
+      "cohort": "historical_24",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 4,
+        "headers": [
+          "transaction_id",
+          "recorded_amount",
+          "expected_amount",
+          "difference"
+        ],
+        "rows": [
+          {
+            "transaction_id": "TXN-004",
+            "recorded_amount": "1750.02",
+            "expected_amount": "1750.00",
+            "difference": "0.02"
+          },
+          {
+            "transaction_id": "TXN-005",
+            "recorded_amount": "799.98",
+            "expected_amount": "800.00",
+            "difference": "-0.02"
+          },
+          {
+            "transaction_id": "TXN-006",
+            "recorded_amount": "1255.00",
+            "expected_amount": "1250.00",
+            "difference": "5.00"
+          },
+          {
+            "transaction_id": "TXN-007",
+            "recorded_amount": "690.00",
+            "expected_amount": "700.00",
+            "difference": "-10.00"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T120633-3175e2",
+      "task_id": "monthly-revenue",
+      "cohort": "historical_24",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 6,
+        "headers": [
+          "customer",
+          "revenue"
+        ],
+        "rows": [
+          {
+            "customer": "Alder Robotics",
+            "revenue": "2400.00"
+          },
+          {
+            "customer": "Beacon Paperworks",
+            "revenue": "2400.00"
+          },
+          {
+            "customer": "Cedar Trail Foods",
+            "revenue": "2000.00"
+          },
+          {
+            "customer": "Delta Quay Services",
+            "revenue": "1800.00"
+          },
+          {
+            "customer": "Ember Loom Textiles",
+            "revenue": "1500.00"
+          },
+          {
+            "customer": "Fernlight Design",
+            "revenue": "1500.00"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T120708-320174",
+      "task_id": "overdue-invoices",
+      "cohort": "historical_24",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 7,
+        "headers": [
+          "customer",
+          "invoice_number",
+          "balance",
+          "due_date",
+          "days_overdue"
+        ],
+        "rows": [
+          {
+            "customer": "Delta Quay Services",
+            "invoice_number": "INV-260801",
+            "balance": "500.00",
+            "due_date": "2026-08-31",
+            "days_overdue": "45"
+          },
+          {
+            "customer": "Alder Robotics",
+            "invoice_number": "INV-260831",
+            "balance": "9999.99",
+            "due_date": "2026-09-15",
+            "days_overdue": "30"
+          },
+          {
+            "customer": "Fernlight Design",
+            "invoice_number": "INV-260820",
+            "balance": "150.00",
+            "due_date": "2026-09-19",
+            "days_overdue": "26"
+          },
+          {
+            "customer": "Cedar Trail Foods",
+            "invoice_number": "INV-260903",
+            "balance": "1750.00",
+            "due_date": "2026-09-25",
+            "days_overdue": "20"
+          },
+          {
+            "customer": "Beacon Paperworks",
+            "invoice_number": "INV-260916",
+            "balance": "400.00",
+            "due_date": "2026-10-10",
+            "days_overdue": "5"
+          },
+          {
+            "customer": "Delta Quay Services",
+            "invoice_number": "INV-260918",
+            "balance": "800.00",
+            "due_date": "2026-10-14",
+            "days_overdue": "1"
+          },
+          {
+            "customer": "Alder Robotics",
+            "invoice_number": "INV-261014",
+            "balance": "400.00",
+            "due_date": "2026-10-14",
+            "days_overdue": "1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T120741-271e02",
+      "task_id": "reconciliation-exceptions",
+      "cohort": "historical_24",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 4,
+        "headers": [
+          "transaction_id",
+          "recorded_amount",
+          "expected_amount",
+          "difference"
+        ],
+        "rows": [
+          {
+            "transaction_id": "TXN-004",
+            "recorded_amount": "1750.02",
+            "expected_amount": "1750.00",
+            "difference": "0.02"
+          },
+          {
+            "transaction_id": "TXN-005",
+            "recorded_amount": "799.98",
+            "expected_amount": "800.00",
+            "difference": "-0.02"
+          },
+          {
+            "transaction_id": "TXN-006",
+            "recorded_amount": "1255.00",
+            "expected_amount": "1250.00",
+            "difference": "5.00"
+          },
+          {
+            "transaction_id": "TXN-007",
+            "recorded_amount": "690.00",
+            "expected_amount": "700.00",
+            "difference": "-10.00"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T120804-0ee493",
+      "task_id": "monthly-revenue",
+      "cohort": "historical_24",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 6,
+        "headers": [
+          "customer",
+          "revenue"
+        ],
+        "rows": [
+          {
+            "customer": "Alder Robotics",
+            "revenue": "2400.00"
+          },
+          {
+            "customer": "Beacon Paperworks",
+            "revenue": "2400.00"
+          },
+          {
+            "customer": "Cedar Trail Foods",
+            "revenue": "2000.00"
+          },
+          {
+            "customer": "Delta Quay Services",
+            "revenue": "1800.00"
+          },
+          {
+            "customer": "Ember Loom Textiles",
+            "revenue": "1500.00"
+          },
+          {
+            "customer": "Fernlight Design",
+            "revenue": "1500.00"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T120831-e14dad",
+      "task_id": "overdue-invoices",
+      "cohort": "historical_24",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 7,
+        "headers": [
+          "customer",
+          "invoice_number",
+          "balance",
+          "due_date",
+          "days_overdue"
+        ],
+        "rows": [
+          {
+            "customer": "Delta Quay Services",
+            "invoice_number": "INV-260801",
+            "balance": "500.00",
+            "due_date": "2026-08-31",
+            "days_overdue": "45"
+          },
+          {
+            "customer": "Alder Robotics",
+            "invoice_number": "INV-260831",
+            "balance": "9999.99",
+            "due_date": "2026-09-15",
+            "days_overdue": "30"
+          },
+          {
+            "customer": "Fernlight Design",
+            "invoice_number": "INV-260820",
+            "balance": "150.00",
+            "due_date": "2026-09-19",
+            "days_overdue": "26"
+          },
+          {
+            "customer": "Cedar Trail Foods",
+            "invoice_number": "INV-260903",
+            "balance": "1750.00",
+            "due_date": "2026-09-25",
+            "days_overdue": "20"
+          },
+          {
+            "customer": "Beacon Paperworks",
+            "invoice_number": "INV-260916",
+            "balance": "400.00",
+            "due_date": "2026-10-10",
+            "days_overdue": "5"
+          },
+          {
+            "customer": "Delta Quay Services",
+            "invoice_number": "INV-260918",
+            "balance": "800.00",
+            "due_date": "2026-10-14",
+            "days_overdue": "1"
+          },
+          {
+            "customer": "Alder Robotics",
+            "invoice_number": "INV-261014",
+            "balance": "400.00",
+            "due_date": "2026-10-14",
+            "days_overdue": "1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T120858-daea4b",
+      "task_id": "reconciliation-exceptions",
+      "cohort": "historical_24",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 4,
+        "headers": [
+          "transaction_id",
+          "recorded_amount",
+          "expected_amount",
+          "difference"
+        ],
+        "rows": [
+          {
+            "transaction_id": "TXN-004",
+            "recorded_amount": "1750.02",
+            "expected_amount": "1750.00",
+            "difference": "0.02"
+          },
+          {
+            "transaction_id": "TXN-005",
+            "recorded_amount": "799.98",
+            "expected_amount": "800.00",
+            "difference": "-0.02"
+          },
+          {
+            "transaction_id": "TXN-006",
+            "recorded_amount": "1255.00",
+            "expected_amount": "1250.00",
+            "difference": "5.00"
+          },
+          {
+            "transaction_id": "TXN-007",
+            "recorded_amount": "690.00",
+            "expected_amount": "700.00",
+            "difference": "-10.00"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T120923-3285e4",
+      "task_id": "monthly-revenue",
+      "cohort": "historical_24",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 6,
+        "headers": [
+          "customer",
+          "revenue"
+        ],
+        "rows": [
+          {
+            "customer": "Alder Robotics",
+            "revenue": "2400.00"
+          },
+          {
+            "customer": "Beacon Paperworks",
+            "revenue": "2400.00"
+          },
+          {
+            "customer": "Cedar Trail Foods",
+            "revenue": "2000.00"
+          },
+          {
+            "customer": "Delta Quay Services",
+            "revenue": "1800.00"
+          },
+          {
+            "customer": "Ember Loom Textiles",
+            "revenue": "1500.00"
+          },
+          {
+            "customer": "Fernlight Design",
+            "revenue": "1500.00"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T120949-196bc4",
+      "task_id": "overdue-invoices",
+      "cohort": "historical_24",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 7,
+        "headers": [
+          "customer",
+          "invoice_number",
+          "balance",
+          "due_date",
+          "days_overdue"
+        ],
+        "rows": [
+          {
+            "customer": "Delta Quay Services",
+            "invoice_number": "INV-260801",
+            "balance": "500.00",
+            "due_date": "2026-08-31",
+            "days_overdue": "45"
+          },
+          {
+            "customer": "Alder Robotics",
+            "invoice_number": "INV-260831",
+            "balance": "9999.99",
+            "due_date": "2026-09-15",
+            "days_overdue": "30"
+          },
+          {
+            "customer": "Fernlight Design",
+            "invoice_number": "INV-260820",
+            "balance": "150.00",
+            "due_date": "2026-09-19",
+            "days_overdue": "26"
+          },
+          {
+            "customer": "Cedar Trail Foods",
+            "invoice_number": "INV-260903",
+            "balance": "1750.00",
+            "due_date": "2026-09-25",
+            "days_overdue": "20"
+          },
+          {
+            "customer": "Beacon Paperworks",
+            "invoice_number": "INV-260916",
+            "balance": "400.00",
+            "due_date": "2026-10-10",
+            "days_overdue": "5"
+          },
+          {
+            "customer": "Delta Quay Services",
+            "invoice_number": "INV-260918",
+            "balance": "800.00",
+            "due_date": "2026-10-14",
+            "days_overdue": "1"
+          },
+          {
+            "customer": "Alder Robotics",
+            "invoice_number": "INV-261014",
+            "balance": "400.00",
+            "due_date": "2026-10-14",
+            "days_overdue": "1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T121016-d9bde1",
+      "task_id": "reconciliation-exceptions",
+      "cohort": "historical_24",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 4,
+        "headers": [
+          "transaction_id",
+          "recorded_amount",
+          "expected_amount",
+          "difference"
+        ],
+        "rows": [
+          {
+            "transaction_id": "TXN-004",
+            "recorded_amount": "1750.02",
+            "expected_amount": "1750.00",
+            "difference": "0.02"
+          },
+          {
+            "transaction_id": "TXN-005",
+            "recorded_amount": "799.98",
+            "expected_amount": "800.00",
+            "difference": "-0.02"
+          },
+          {
+            "transaction_id": "TXN-006",
+            "recorded_amount": "1255.00",
+            "expected_amount": "1250.00",
+            "difference": "5.00"
+          },
+          {
+            "transaction_id": "TXN-007",
+            "recorded_amount": "690.00",
+            "expected_amount": "700.00",
+            "difference": "-10.00"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T121039-181355",
+      "task_id": "monthly-revenue",
+      "cohort": "historical_24",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 6,
+        "headers": [
+          "customer",
+          "revenue"
+        ],
+        "rows": [
+          {
+            "customer": "Alder Robotics",
+            "revenue": "2400.00"
+          },
+          {
+            "customer": "Beacon Paperworks",
+            "revenue": "2400.00"
+          },
+          {
+            "customer": "Cedar Trail Foods",
+            "revenue": "2000.00"
+          },
+          {
+            "customer": "Delta Quay Services",
+            "revenue": "1800.00"
+          },
+          {
+            "customer": "Ember Loom Textiles",
+            "revenue": "1500.00"
+          },
+          {
+            "customer": "Fernlight Design",
+            "revenue": "1500.00"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T121058-661c18",
+      "task_id": "overdue-invoices",
+      "cohort": "historical_24",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 7,
+        "headers": [
+          "customer",
+          "invoice_number",
+          "balance",
+          "due_date",
+          "days_overdue"
+        ],
+        "rows": [
+          {
+            "customer": "Delta Quay Services",
+            "invoice_number": "INV-260801",
+            "balance": "500.00",
+            "due_date": "2026-08-31",
+            "days_overdue": "45"
+          },
+          {
+            "customer": "Alder Robotics",
+            "invoice_number": "INV-260831",
+            "balance": "9999.99",
+            "due_date": "2026-09-15",
+            "days_overdue": "30"
+          },
+          {
+            "customer": "Fernlight Design",
+            "invoice_number": "INV-260820",
+            "balance": "150.00",
+            "due_date": "2026-09-19",
+            "days_overdue": "26"
+          },
+          {
+            "customer": "Cedar Trail Foods",
+            "invoice_number": "INV-260903",
+            "balance": "1750.00",
+            "due_date": "2026-09-25",
+            "days_overdue": "20"
+          },
+          {
+            "customer": "Beacon Paperworks",
+            "invoice_number": "INV-260916",
+            "balance": "400.00",
+            "due_date": "2026-10-10",
+            "days_overdue": "5"
+          },
+          {
+            "customer": "Delta Quay Services",
+            "invoice_number": "INV-260918",
+            "balance": "800.00",
+            "due_date": "2026-10-14",
+            "days_overdue": "1"
+          },
+          {
+            "customer": "Alder Robotics",
+            "invoice_number": "INV-261014",
+            "balance": "400.00",
+            "due_date": "2026-10-14",
+            "days_overdue": "1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T121125-47e9df",
+      "task_id": "reconciliation-exceptions",
+      "cohort": "historical_24",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 4,
+        "headers": [
+          "transaction_id",
+          "recorded_amount",
+          "expected_amount",
+          "difference"
+        ],
+        "rows": [
+          {
+            "transaction_id": "TXN-004",
+            "recorded_amount": "1750.02",
+            "expected_amount": "1750.00",
+            "difference": "0.02"
+          },
+          {
+            "transaction_id": "TXN-005",
+            "recorded_amount": "799.98",
+            "expected_amount": "800.00",
+            "difference": "-0.02"
+          },
+          {
+            "transaction_id": "TXN-006",
+            "recorded_amount": "1255.00",
+            "expected_amount": "1250.00",
+            "difference": "5.00"
+          },
+          {
+            "transaction_id": "TXN-007",
+            "recorded_amount": "690.00",
+            "expected_amount": "700.00",
+            "difference": "-10.00"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T121149-dc3196",
+      "task_id": "monthly-revenue",
+      "cohort": "historical_24",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 6,
+        "headers": [
+          "customer",
+          "revenue"
+        ],
+        "rows": [
+          {
+            "customer": "Alder Robotics",
+            "revenue": "2400.00"
+          },
+          {
+            "customer": "Beacon Paperworks",
+            "revenue": "2400.00"
+          },
+          {
+            "customer": "Cedar Trail Foods",
+            "revenue": "2000.00"
+          },
+          {
+            "customer": "Delta Quay Services",
+            "revenue": "1800.00"
+          },
+          {
+            "customer": "Ember Loom Textiles",
+            "revenue": "1500.00"
+          },
+          {
+            "customer": "Fernlight Design",
+            "revenue": "1500.00"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T121214-b00eed",
+      "task_id": "overdue-invoices",
+      "cohort": "historical_24",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 7,
+        "headers": [
+          "customer",
+          "invoice_number",
+          "balance",
+          "due_date",
+          "days_overdue"
+        ],
+        "rows": [
+          {
+            "customer": "Delta Quay Services",
+            "invoice_number": "INV-260801",
+            "balance": "500.00",
+            "due_date": "2026-08-31",
+            "days_overdue": "45"
+          },
+          {
+            "customer": "Alder Robotics",
+            "invoice_number": "INV-260831",
+            "balance": "9999.99",
+            "due_date": "2026-09-15",
+            "days_overdue": "30"
+          },
+          {
+            "customer": "Fernlight Design",
+            "invoice_number": "INV-260820",
+            "balance": "150.00",
+            "due_date": "2026-09-19",
+            "days_overdue": "26"
+          },
+          {
+            "customer": "Cedar Trail Foods",
+            "invoice_number": "INV-260903",
+            "balance": "1750.00",
+            "due_date": "2026-09-25",
+            "days_overdue": "20"
+          },
+          {
+            "customer": "Beacon Paperworks",
+            "invoice_number": "INV-260916",
+            "balance": "400.00",
+            "due_date": "2026-10-10",
+            "days_overdue": "5"
+          },
+          {
+            "customer": "Delta Quay Services",
+            "invoice_number": "INV-260918",
+            "balance": "800.00",
+            "due_date": "2026-10-14",
+            "days_overdue": "1"
+          },
+          {
+            "customer": "Alder Robotics",
+            "invoice_number": "INV-261014",
+            "balance": "400.00",
+            "due_date": "2026-10-14",
+            "days_overdue": "1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T121241-502d0c",
+      "task_id": "reconciliation-exceptions",
+      "cohort": "historical_24",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 4,
+        "headers": [
+          "transaction_id",
+          "recorded_amount",
+          "expected_amount",
+          "difference"
+        ],
+        "rows": [
+          {
+            "transaction_id": "TXN-004",
+            "recorded_amount": "1750.02",
+            "expected_amount": "1750.00",
+            "difference": "0.02"
+          },
+          {
+            "transaction_id": "TXN-005",
+            "recorded_amount": "799.98",
+            "expected_amount": "800.00",
+            "difference": "-0.02"
+          },
+          {
+            "transaction_id": "TXN-006",
+            "recorded_amount": "1255.00",
+            "expected_amount": "1250.00",
+            "difference": "5.00"
+          },
+          {
+            "transaction_id": "TXN-007",
+            "recorded_amount": "690.00",
+            "expected_amount": "700.00",
+            "difference": "-10.00"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T124605-3bf79b",
+      "task_id": "monthly-revenue",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 6,
+        "headers": [
+          "customer",
+          "revenue"
+        ],
+        "rows": [
+          {
+            "customer": "Alder Robotics",
+            "revenue": "2400.00"
+          },
+          {
+            "customer": "Beacon Paperworks",
+            "revenue": "2400.00"
+          },
+          {
+            "customer": "Cedar Trail Foods",
+            "revenue": "2000.00"
+          },
+          {
+            "customer": "Delta Quay Services",
+            "revenue": "1800.00"
+          },
+          {
+            "customer": "Ember Loom Textiles",
+            "revenue": "1500.00"
+          },
+          {
+            "customer": "Fernlight Design",
+            "revenue": "1500.00"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T124635-b4b45a",
+      "task_id": "overdue-invoices",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 7,
+        "headers": [
+          "customer",
+          "invoice_number",
+          "balance",
+          "due_date",
+          "days_overdue"
+        ],
+        "rows": [
+          {
+            "customer": "Delta Quay Services",
+            "invoice_number": "INV-260801",
+            "balance": "500.00",
+            "due_date": "2026-08-31",
+            "days_overdue": "45"
+          },
+          {
+            "customer": "Alder Robotics",
+            "invoice_number": "INV-260831",
+            "balance": "9999.99",
+            "due_date": "2026-09-15",
+            "days_overdue": "30"
+          },
+          {
+            "customer": "Fernlight Design",
+            "invoice_number": "INV-260820",
+            "balance": "150.00",
+            "due_date": "2026-09-19",
+            "days_overdue": "26"
+          },
+          {
+            "customer": "Cedar Trail Foods",
+            "invoice_number": "INV-260903",
+            "balance": "1750.00",
+            "due_date": "2026-09-25",
+            "days_overdue": "20"
+          },
+          {
+            "customer": "Beacon Paperworks",
+            "invoice_number": "INV-260916",
+            "balance": "400.00",
+            "due_date": "2026-10-10",
+            "days_overdue": "5"
+          },
+          {
+            "customer": "Delta Quay Services",
+            "invoice_number": "INV-260918",
+            "balance": "800.00",
+            "due_date": "2026-10-14",
+            "days_overdue": "1"
+          },
+          {
+            "customer": "Alder Robotics",
+            "invoice_number": "INV-261014",
+            "balance": "400.00",
+            "due_date": "2026-10-14",
+            "days_overdue": "1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T124709-678ceb",
+      "task_id": "reconciliation-exceptions",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 4,
+        "headers": [
+          "transaction_id",
+          "recorded_amount",
+          "expected_amount",
+          "difference"
+        ],
+        "rows": [
+          {
+            "transaction_id": "TXN-004",
+            "recorded_amount": "1750.02",
+            "expected_amount": "1750.00",
+            "difference": "0.02"
+          },
+          {
+            "transaction_id": "TXN-005",
+            "recorded_amount": "799.98",
+            "expected_amount": "800.00",
+            "difference": "-0.02"
+          },
+          {
+            "transaction_id": "TXN-006",
+            "recorded_amount": "1255.00",
+            "expected_amount": "1250.00",
+            "difference": "5.00"
+          },
+          {
+            "transaction_id": "TXN-007",
+            "recorded_amount": "690.00",
+            "expected_amount": "700.00",
+            "difference": "-10.00"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T124736-4f9e2a",
+      "task_id": "monthly-revenue",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 6,
+        "headers": [
+          "customer",
+          "revenue"
+        ],
+        "rows": [
+          {
+            "customer": "Alder Robotics",
+            "revenue": "2400.00"
+          },
+          {
+            "customer": "Beacon Paperworks",
+            "revenue": "2400.00"
+          },
+          {
+            "customer": "Cedar Trail Foods",
+            "revenue": "2000.00"
+          },
+          {
+            "customer": "Delta Quay Services",
+            "revenue": "1800.00"
+          },
+          {
+            "customer": "Ember Loom Textiles",
+            "revenue": "1500.00"
+          },
+          {
+            "customer": "Fernlight Design",
+            "revenue": "1500.00"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T124800-467f85",
+      "task_id": "overdue-invoices",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 7,
+        "headers": [
+          "customer",
+          "invoice_number",
+          "balance",
+          "due_date",
+          "days_overdue"
+        ],
+        "rows": [
+          {
+            "customer": "Delta Quay Services",
+            "invoice_number": "INV-260801",
+            "balance": "500.00",
+            "due_date": "2026-08-31",
+            "days_overdue": "45"
+          },
+          {
+            "customer": "Alder Robotics",
+            "invoice_number": "INV-260831",
+            "balance": "9999.99",
+            "due_date": "2026-09-15",
+            "days_overdue": "30"
+          },
+          {
+            "customer": "Fernlight Design",
+            "invoice_number": "INV-260820",
+            "balance": "150.00",
+            "due_date": "2026-09-19",
+            "days_overdue": "26"
+          },
+          {
+            "customer": "Cedar Trail Foods",
+            "invoice_number": "INV-260903",
+            "balance": "1750.00",
+            "due_date": "2026-09-25",
+            "days_overdue": "20"
+          },
+          {
+            "customer": "Beacon Paperworks",
+            "invoice_number": "INV-260916",
+            "balance": "400.00",
+            "due_date": "2026-10-10",
+            "days_overdue": "5"
+          },
+          {
+            "customer": "Delta Quay Services",
+            "invoice_number": "INV-260918",
+            "balance": "800.00",
+            "due_date": "2026-10-14",
+            "days_overdue": "1"
+          },
+          {
+            "customer": "Alder Robotics",
+            "invoice_number": "INV-261014",
+            "balance": "400.00",
+            "due_date": "2026-10-14",
+            "days_overdue": "1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T124832-223206",
+      "task_id": "reconciliation-exceptions",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 4,
+        "headers": [
+          "transaction_id",
+          "recorded_amount",
+          "expected_amount",
+          "difference"
+        ],
+        "rows": [
+          {
+            "transaction_id": "TXN-004",
+            "recorded_amount": "1750.02",
+            "expected_amount": "1750.00",
+            "difference": "0.02"
+          },
+          {
+            "transaction_id": "TXN-005",
+            "recorded_amount": "799.98",
+            "expected_amount": "800.00",
+            "difference": "-0.02"
+          },
+          {
+            "transaction_id": "TXN-006",
+            "recorded_amount": "1255.00",
+            "expected_amount": "1250.00",
+            "difference": "5.00"
+          },
+          {
+            "transaction_id": "TXN-007",
+            "recorded_amount": "690.00",
+            "expected_amount": "700.00",
+            "difference": "-10.00"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T124900-28cde8",
+      "task_id": "invoice-lookup",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "invoice_number",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "paid",
+          "balance",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_number": "INV-260916",
+            "customer": "Beacon Paperworks",
+            "invoice_date": "2026-09-16",
+            "due_date": "2026-10-10",
+            "amount": "1000.00",
+            "paid": "600.00",
+            "balance": "400.00",
+            "status": "issued"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T124924-f10046",
+      "task_id": "customer-update",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "customer_id",
+          "customer",
+          "email",
+          "phone"
+        ],
+        "rows": [
+          {
+            "customer_id": "2",
+            "customer": "Beacon Paperworks",
+            "email": "billing@beacon.example",
+            "phone": "+1-555-0142"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T124950-b98229",
+      "task_id": "invoice-entry",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "reference",
+          "customer_id",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "status"
+        ],
+        "rows": [
+          {
+            "reference": "DRAFT-261101",
+            "customer_id": "3",
+            "customer": "Cedar Trail Foods",
+            "invoice_date": "2026-11-01",
+            "due_date": "2026-12-01",
+            "amount": "1250.50",
+            "status": "draft"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T125019-2f2814",
+      "task_id": "payment-entry",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "reference",
+          "invoice_number",
+          "customer",
+          "payment",
+          "paid_total",
+          "balance"
+        ],
+        "rows": [
+          {
+            "reference": "RCPT-1001",
+            "invoice_number": "INV-260916",
+            "customer": "Beacon Paperworks",
+            "payment": "125.25",
+            "paid_total": "725.25",
+            "balance": "274.75"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T125050-c8a369",
+      "task_id": "csv-import",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 3,
+        "headers": [
+          "reference",
+          "customer_id",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "status"
+        ],
+        "rows": [
+          {
+            "reference": "000101",
+            "customer_id": "1",
+            "customer": "Alder Robotics",
+            "invoice_date": "2026-11-02",
+            "due_date": "2026-12-02",
+            "amount": "210.10",
+            "status": "draft"
+          },
+          {
+            "reference": "000102",
+            "customer_id": "2",
+            "customer": "Beacon Paperworks",
+            "invoice_date": "2026-11-03",
+            "due_date": "2026-12-03",
+            "amount": "325.00",
+            "status": "draft"
+          },
+          {
+            "reference": "000103",
+            "customer_id": "6",
+            "customer": "Fernlight Design",
+            "invoice_date": "2026-11-04",
+            "due_date": "2026-12-04",
+            "amount": "99.95",
+            "status": "draft"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T125117-bdb21f",
+      "task_id": "calc-sort-export",
+      "cohort": "new_76",
+      "recorded_status": "failed",
+      "effective_status": "failed",
+      "recorded_pass_reverified": null,
+      "artifact_verification": {
+        "passed": false,
+        "errors": [
+          "Saved artifact recheck failed: FileNotFoundError: [Errno 2] No such file or directory: '/Users/henryhuysamen/Projects/computer_use_demo/output/runs/20261108T125117-bdb21f/verification.json'"
+        ]
+      }
+    },
+    {
+      "id": "20261108T125218-1d9d9e",
+      "task_id": "writer-find-replace",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "section",
+          "text"
+        ],
+        "rows": [
+          {
+            "section": "1:heading:1",
+            "text": "Supplier handover memo"
+          },
+          {
+            "section": "2:paragraph",
+            "text": "Prepared on 8 November 2026. All figures below are synthetic."
+          },
+          {
+            "section": "3:heading:2",
+            "text": "Supplier overview"
+          },
+          {
+            "section": "4:paragraph",
+            "text": "Northstar Devices is the primary supplier. Northstar Devices owns the quarterly delivery plan."
+          },
+          {
+            "section": "5:paragraph",
+            "text": "Harbour Systems and Harbor System are different suppliers; leave those names unchanged."
+          },
+          {
+            "section": "6:paragraph",
+            "text": "Recorded balance: USD 12,500.50. Review due: 30 November 2026."
+          },
+          {
+            "section": "7:table:1:1",
+            "text": "Supplier"
+          },
+          {
+            "section": "7:table:1:2",
+            "text": "Owner"
+          },
+          {
+            "section": "7:table:1:3",
+            "text": "Action"
+          },
+          {
+            "section": "7:table:2:1",
+            "text": "Northstar Devices"
+          },
+          {
+            "section": "7:table:2:2",
+            "text": "Mina Patel"
+          },
+          {
+            "section": "7:table:2:3",
+            "text": "Confirm 18 components"
+          },
+          {
+            "section": "7:table:3:1",
+            "text": "Northstar Devices"
+          },
+          {
+            "section": "7:table:3:2",
+            "text": "Jonas Lind"
+          },
+          {
+            "section": "7:table:3:3",
+            "text": "Keep existing due date"
+          },
+          {
+            "section": "8:paragraph",
+            "text": "Escalations for Northstar Devices go to Mina Patel. Reference: HS-2026-11."
+          }
+        ],
+        "row_count": 16,
+        "source_preservation_consistent": true,
+        "source_preservation_basis": "Office source preservation is checked against the saved input file and the controller's recorded before/after hashes. This is not a new observation of the original live desktop filesystem."
+      }
+    },
+    {
+      "id": "20261108T125509-681219",
+      "task_id": "invoice-lookup",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "invoice_number",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "paid",
+          "balance",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_number": "INV-260916",
+            "customer": "Beacon Paperworks",
+            "invoice_date": "2026-09-16",
+            "due_date": "2026-10-10",
+            "amount": "1000.00",
+            "paid": "600.00",
+            "balance": "400.00",
+            "status": "issued"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T125535-2f6f4b",
+      "task_id": "customer-update",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "customer_id",
+          "customer",
+          "email",
+          "phone"
+        ],
+        "rows": [
+          {
+            "customer_id": "2",
+            "customer": "Beacon Paperworks",
+            "email": "billing@beacon.example",
+            "phone": "+1-555-0142"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T125604-4a1ac0",
+      "task_id": "invoice-entry",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "reference",
+          "customer_id",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "status"
+        ],
+        "rows": [
+          {
+            "reference": "DRAFT-261101",
+            "customer_id": "3",
+            "customer": "Cedar Trail Foods",
+            "invoice_date": "2026-11-01",
+            "due_date": "2026-12-01",
+            "amount": "1250.50",
+            "status": "draft"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T125635-b84d65",
+      "task_id": "payment-entry",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "reference",
+          "invoice_number",
+          "customer",
+          "payment",
+          "paid_total",
+          "balance"
+        ],
+        "rows": [
+          {
+            "reference": "RCPT-1001",
+            "invoice_number": "INV-260916",
+            "customer": "Beacon Paperworks",
+            "payment": "125.25",
+            "paid_total": "725.25",
+            "balance": "274.75"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T125705-43c143",
+      "task_id": "csv-import",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 3,
+        "headers": [
+          "reference",
+          "customer_id",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "status"
+        ],
+        "rows": [
+          {
+            "reference": "000101",
+            "customer_id": "1",
+            "customer": "Alder Robotics",
+            "invoice_date": "2026-11-02",
+            "due_date": "2026-12-02",
+            "amount": "210.10",
+            "status": "draft"
+          },
+          {
+            "reference": "000102",
+            "customer_id": "2",
+            "customer": "Beacon Paperworks",
+            "invoice_date": "2026-11-03",
+            "due_date": "2026-12-03",
+            "amount": "325.00",
+            "status": "draft"
+          },
+          {
+            "reference": "000103",
+            "customer_id": "6",
+            "customer": "Fernlight Design",
+            "invoice_date": "2026-11-04",
+            "due_date": "2026-12-04",
+            "amount": "99.95",
+            "status": "draft"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T125730-f88aff",
+      "task_id": "calc-sort-export",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "invoice_id",
+          "customer",
+          "outstanding_balance",
+          "due_date",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_id": "INV-003",
+            "customer": "Northstar Manufacturing",
+            "outstanding_balance": "10000.00",
+            "due_date": "2026-10-03",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-001",
+            "customer": "Northstar Manufacturing",
+            "outstanding_balance": "1234.50",
+            "due_date": "2026-10-01",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-005",
+            "customer": "Amber Research",
+            "outstanding_balance": "1234.50",
+            "due_date": "2026-09-29",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-006",
+            "customer": "Cedar Services",
+            "outstanding_balance": "999.99",
+            "due_date": "2026-10-12",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "INV-008",
+            "customer": "Beacon Tools",
+            "outstanding_balance": "100.00",
+            "due_date": "2026-10-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-002",
+            "customer": "Cedar Services",
+            "outstanding_balance": "50.00",
+            "due_date": "2026-10-02",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "INV-007",
+            "customer": "Beacon Tools",
+            "outstanding_balance": "9.50",
+            "due_date": "2026-10-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-004",
+            "customer": "Harbor Supply",
+            "outstanding_balance": "0.00",
+            "due_date": "2026-10-04",
+            "status": "settled"
+          }
+        ],
+        "row_count": 8,
+        "source_preservation_consistent": true,
+        "source_preservation_basis": "Office source preservation is checked against the saved input file and the controller's recorded before/after hashes. This is not a new observation of the original live desktop filesystem."
+      }
+    },
+    {
+      "id": "20261108T125846-d7274c",
+      "task_id": "writer-find-replace",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "section",
+          "text"
+        ],
+        "rows": [
+          {
+            "section": "1:heading:1",
+            "text": "Supplier handover memo"
+          },
+          {
+            "section": "2:paragraph",
+            "text": "Prepared on 8 November 2026. All figures below are synthetic."
+          },
+          {
+            "section": "3:heading:2",
+            "text": "Supplier overview"
+          },
+          {
+            "section": "4:paragraph",
+            "text": "Northstar Devices is the primary supplier. Northstar Devices owns the quarterly delivery plan."
+          },
+          {
+            "section": "5:paragraph",
+            "text": "Harbour Systems and Harbor System are different suppliers; leave those names unchanged."
+          },
+          {
+            "section": "6:paragraph",
+            "text": "Recorded balance: USD 12,500.50. Review due: 30 November 2026."
+          },
+          {
+            "section": "7:table:1:1",
+            "text": "Supplier"
+          },
+          {
+            "section": "7:table:1:2",
+            "text": "Owner"
+          },
+          {
+            "section": "7:table:1:3",
+            "text": "Action"
+          },
+          {
+            "section": "7:table:2:1",
+            "text": "Northstar Devices"
+          },
+          {
+            "section": "7:table:2:2",
+            "text": "Mina Patel"
+          },
+          {
+            "section": "7:table:2:3",
+            "text": "Confirm 18 components"
+          },
+          {
+            "section": "7:table:3:1",
+            "text": "Northstar Devices"
+          },
+          {
+            "section": "7:table:3:2",
+            "text": "Jonas Lind"
+          },
+          {
+            "section": "7:table:3:3",
+            "text": "Keep existing due date"
+          },
+          {
+            "section": "8:paragraph",
+            "text": "Escalations for Northstar Devices go to Mina Patel. Reference: HS-2026-11."
+          }
+        ],
+        "row_count": 16,
+        "source_preservation_consistent": true,
+        "source_preservation_basis": "Office source preservation is checked against the saved input file and the controller's recorded before/after hashes. This is not a new observation of the original live desktop filesystem."
+      }
+    },
+    {
+      "id": "20261108T125913-cff938",
+      "task_id": "invoice-lookup",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "invoice_number",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "paid",
+          "balance",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_number": "INV-260916",
+            "customer": "Beacon Paperworks",
+            "invoice_date": "2026-09-16",
+            "due_date": "2026-10-10",
+            "amount": "1000.00",
+            "paid": "600.00",
+            "balance": "400.00",
+            "status": "issued"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T125938-2db66d",
+      "task_id": "customer-update",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "customer_id",
+          "customer",
+          "email",
+          "phone"
+        ],
+        "rows": [
+          {
+            "customer_id": "2",
+            "customer": "Beacon Paperworks",
+            "email": "billing@beacon.example",
+            "phone": "+1-555-0142"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T130007-9b2359",
+      "task_id": "invoice-entry",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "reference",
+          "customer_id",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "status"
+        ],
+        "rows": [
+          {
+            "reference": "DRAFT-261101",
+            "customer_id": "3",
+            "customer": "Cedar Trail Foods",
+            "invoice_date": "2026-11-01",
+            "due_date": "2026-12-01",
+            "amount": "1250.50",
+            "status": "draft"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T130040-fff2df",
+      "task_id": "payment-entry",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "reference",
+          "invoice_number",
+          "customer",
+          "payment",
+          "paid_total",
+          "balance"
+        ],
+        "rows": [
+          {
+            "reference": "RCPT-1001",
+            "invoice_number": "INV-260916",
+            "customer": "Beacon Paperworks",
+            "payment": "125.25",
+            "paid_total": "725.25",
+            "balance": "274.75"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T130110-38cad6",
+      "task_id": "csv-import",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 3,
+        "headers": [
+          "reference",
+          "customer_id",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "status"
+        ],
+        "rows": [
+          {
+            "reference": "000101",
+            "customer_id": "1",
+            "customer": "Alder Robotics",
+            "invoice_date": "2026-11-02",
+            "due_date": "2026-12-02",
+            "amount": "210.10",
+            "status": "draft"
+          },
+          {
+            "reference": "000102",
+            "customer_id": "2",
+            "customer": "Beacon Paperworks",
+            "invoice_date": "2026-11-03",
+            "due_date": "2026-12-03",
+            "amount": "325.00",
+            "status": "draft"
+          },
+          {
+            "reference": "000103",
+            "customer_id": "6",
+            "customer": "Fernlight Design",
+            "invoice_date": "2026-11-04",
+            "due_date": "2026-12-04",
+            "amount": "99.95",
+            "status": "draft"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T130139-0074eb",
+      "task_id": "calc-sort-export",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "invoice_id",
+          "customer",
+          "outstanding_balance",
+          "due_date",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_id": "INV-003",
+            "customer": "Northstar Manufacturing",
+            "outstanding_balance": "10000.00",
+            "due_date": "2026-10-03",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-001",
+            "customer": "Northstar Manufacturing",
+            "outstanding_balance": "1234.50",
+            "due_date": "2026-10-01",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-005",
+            "customer": "Amber Research",
+            "outstanding_balance": "1234.50",
+            "due_date": "2026-09-29",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-006",
+            "customer": "Cedar Services",
+            "outstanding_balance": "999.99",
+            "due_date": "2026-10-12",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "INV-008",
+            "customer": "Beacon Tools",
+            "outstanding_balance": "100.00",
+            "due_date": "2026-10-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-002",
+            "customer": "Cedar Services",
+            "outstanding_balance": "50.00",
+            "due_date": "2026-10-02",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "INV-007",
+            "customer": "Beacon Tools",
+            "outstanding_balance": "9.50",
+            "due_date": "2026-10-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-004",
+            "customer": "Harbor Supply",
+            "outstanding_balance": "0.00",
+            "due_date": "2026-10-04",
+            "status": "settled"
+          }
+        ],
+        "row_count": 8,
+        "source_preservation_consistent": true,
+        "source_preservation_basis": "Office source preservation is checked against the saved input file and the controller's recorded before/after hashes. This is not a new observation of the original live desktop filesystem."
+      }
+    },
+    {
+      "id": "20261108T130233-46bd98",
+      "task_id": "writer-find-replace",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "section",
+          "text"
+        ],
+        "rows": [
+          {
+            "section": "1:heading:1",
+            "text": "Supplier handover memo"
+          },
+          {
+            "section": "2:paragraph",
+            "text": "Prepared on 8 November 2026. All figures below are synthetic."
+          },
+          {
+            "section": "3:heading:2",
+            "text": "Supplier overview"
+          },
+          {
+            "section": "4:paragraph",
+            "text": "Northstar Devices is the primary supplier. Northstar Devices owns the quarterly delivery plan."
+          },
+          {
+            "section": "5:paragraph",
+            "text": "Harbour Systems and Harbor System are different suppliers; leave those names unchanged."
+          },
+          {
+            "section": "6:paragraph",
+            "text": "Recorded balance: USD 12,500.50. Review due: 30 November 2026."
+          },
+          {
+            "section": "7:table:1:1",
+            "text": "Supplier"
+          },
+          {
+            "section": "7:table:1:2",
+            "text": "Owner"
+          },
+          {
+            "section": "7:table:1:3",
+            "text": "Action"
+          },
+          {
+            "section": "7:table:2:1",
+            "text": "Northstar Devices"
+          },
+          {
+            "section": "7:table:2:2",
+            "text": "Mina Patel"
+          },
+          {
+            "section": "7:table:2:3",
+            "text": "Confirm 18 components"
+          },
+          {
+            "section": "7:table:3:1",
+            "text": "Northstar Devices"
+          },
+          {
+            "section": "7:table:3:2",
+            "text": "Jonas Lind"
+          },
+          {
+            "section": "7:table:3:3",
+            "text": "Keep existing due date"
+          },
+          {
+            "section": "8:paragraph",
+            "text": "Escalations for Northstar Devices go to Mina Patel. Reference: HS-2026-11."
+          }
+        ],
+        "row_count": 16,
+        "source_preservation_consistent": true,
+        "source_preservation_basis": "Office source preservation is checked against the saved input file and the controller's recorded before/after hashes. This is not a new observation of the original live desktop filesystem."
+      }
+    },
+    {
+      "id": "20261108T130301-3efa1c",
+      "task_id": "invoice-lookup",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "invoice_number",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "paid",
+          "balance",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_number": "INV-260916",
+            "customer": "Beacon Paperworks",
+            "invoice_date": "2026-09-16",
+            "due_date": "2026-10-10",
+            "amount": "1000.00",
+            "paid": "600.00",
+            "balance": "400.00",
+            "status": "issued"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T130326-50ab52",
+      "task_id": "customer-update",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "customer_id",
+          "customer",
+          "email",
+          "phone"
+        ],
+        "rows": [
+          {
+            "customer_id": "2",
+            "customer": "Beacon Paperworks",
+            "email": "billing@beacon.example",
+            "phone": "+1-555-0142"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T130353-c2a6e6",
+      "task_id": "invoice-entry",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "reference",
+          "customer_id",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "status"
+        ],
+        "rows": [
+          {
+            "reference": "DRAFT-261101",
+            "customer_id": "3",
+            "customer": "Cedar Trail Foods",
+            "invoice_date": "2026-11-01",
+            "due_date": "2026-12-01",
+            "amount": "1250.50",
+            "status": "draft"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T130425-a27b7e",
+      "task_id": "payment-entry",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "reference",
+          "invoice_number",
+          "customer",
+          "payment",
+          "paid_total",
+          "balance"
+        ],
+        "rows": [
+          {
+            "reference": "RCPT-1001",
+            "invoice_number": "INV-260916",
+            "customer": "Beacon Paperworks",
+            "payment": "125.25",
+            "paid_total": "725.25",
+            "balance": "274.75"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T130450-17086d",
+      "task_id": "csv-import",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 3,
+        "headers": [
+          "reference",
+          "customer_id",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "status"
+        ],
+        "rows": [
+          {
+            "reference": "000101",
+            "customer_id": "1",
+            "customer": "Alder Robotics",
+            "invoice_date": "2026-11-02",
+            "due_date": "2026-12-02",
+            "amount": "210.10",
+            "status": "draft"
+          },
+          {
+            "reference": "000102",
+            "customer_id": "2",
+            "customer": "Beacon Paperworks",
+            "invoice_date": "2026-11-03",
+            "due_date": "2026-12-03",
+            "amount": "325.00",
+            "status": "draft"
+          },
+          {
+            "reference": "000103",
+            "customer_id": "6",
+            "customer": "Fernlight Design",
+            "invoice_date": "2026-11-04",
+            "due_date": "2026-12-04",
+            "amount": "99.95",
+            "status": "draft"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T130517-6ada3a",
+      "task_id": "calc-sort-export",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "invoice_id",
+          "customer",
+          "outstanding_balance",
+          "due_date",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_id": "INV-003",
+            "customer": "Northstar Manufacturing",
+            "outstanding_balance": "10000.00",
+            "due_date": "2026-10-03",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-001",
+            "customer": "Northstar Manufacturing",
+            "outstanding_balance": "1234.50",
+            "due_date": "2026-10-01",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-005",
+            "customer": "Amber Research",
+            "outstanding_balance": "1234.50",
+            "due_date": "2026-09-29",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-006",
+            "customer": "Cedar Services",
+            "outstanding_balance": "999.99",
+            "due_date": "2026-10-12",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "INV-008",
+            "customer": "Beacon Tools",
+            "outstanding_balance": "100.00",
+            "due_date": "2026-10-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-002",
+            "customer": "Cedar Services",
+            "outstanding_balance": "50.00",
+            "due_date": "2026-10-02",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "INV-007",
+            "customer": "Beacon Tools",
+            "outstanding_balance": "9.50",
+            "due_date": "2026-10-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-004",
+            "customer": "Harbor Supply",
+            "outstanding_balance": "0.00",
+            "due_date": "2026-10-04",
+            "status": "settled"
+          }
+        ],
+        "row_count": 8,
+        "source_preservation_consistent": true,
+        "source_preservation_basis": "Office source preservation is checked against the saved input file and the controller's recorded before/after hashes. This is not a new observation of the original live desktop filesystem."
+      }
+    },
+    {
+      "id": "20261108T130609-6309fd",
+      "task_id": "writer-find-replace",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "section",
+          "text"
+        ],
+        "rows": [
+          {
+            "section": "1:heading:1",
+            "text": "Supplier handover memo"
+          },
+          {
+            "section": "2:paragraph",
+            "text": "Prepared on 8 November 2026. All figures below are synthetic."
+          },
+          {
+            "section": "3:heading:2",
+            "text": "Supplier overview"
+          },
+          {
+            "section": "4:paragraph",
+            "text": "Northstar Devices is the primary supplier. Northstar Devices owns the quarterly delivery plan."
+          },
+          {
+            "section": "5:paragraph",
+            "text": "Harbour Systems and Harbor System are different suppliers; leave those names unchanged."
+          },
+          {
+            "section": "6:paragraph",
+            "text": "Recorded balance: USD 12,500.50. Review due: 30 November 2026."
+          },
+          {
+            "section": "7:table:1:1",
+            "text": "Supplier"
+          },
+          {
+            "section": "7:table:1:2",
+            "text": "Owner"
+          },
+          {
+            "section": "7:table:1:3",
+            "text": "Action"
+          },
+          {
+            "section": "7:table:2:1",
+            "text": "Northstar Devices"
+          },
+          {
+            "section": "7:table:2:2",
+            "text": "Mina Patel"
+          },
+          {
+            "section": "7:table:2:3",
+            "text": "Confirm 18 components"
+          },
+          {
+            "section": "7:table:3:1",
+            "text": "Northstar Devices"
+          },
+          {
+            "section": "7:table:3:2",
+            "text": "Jonas Lind"
+          },
+          {
+            "section": "7:table:3:3",
+            "text": "Keep existing due date"
+          },
+          {
+            "section": "8:paragraph",
+            "text": "Escalations for Northstar Devices go to Mina Patel. Reference: HS-2026-11."
+          }
+        ],
+        "row_count": 16,
+        "source_preservation_consistent": true,
+        "source_preservation_basis": "Office source preservation is checked against the saved input file and the controller's recorded before/after hashes. This is not a new observation of the original live desktop filesystem."
+      }
+    },
+    {
+      "id": "20261108T130653-2f9b62",
+      "task_id": "invoice-lookup",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "invoice_number",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "paid",
+          "balance",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_number": "INV-260916",
+            "customer": "Beacon Paperworks",
+            "invoice_date": "2026-09-16",
+            "due_date": "2026-10-10",
+            "amount": "1000.00",
+            "paid": "600.00",
+            "balance": "400.00",
+            "status": "issued"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T130718-4a1037",
+      "task_id": "customer-update",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "customer_id",
+          "customer",
+          "email",
+          "phone"
+        ],
+        "rows": [
+          {
+            "customer_id": "2",
+            "customer": "Beacon Paperworks",
+            "email": "billing@beacon.example",
+            "phone": "+1-555-0142"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T130746-58a866",
+      "task_id": "invoice-entry",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "reference",
+          "customer_id",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "status"
+        ],
+        "rows": [
+          {
+            "reference": "DRAFT-261101",
+            "customer_id": "3",
+            "customer": "Cedar Trail Foods",
+            "invoice_date": "2026-11-01",
+            "due_date": "2026-12-01",
+            "amount": "1250.50",
+            "status": "draft"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T130816-fbe5b9",
+      "task_id": "payment-entry",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "reference",
+          "invoice_number",
+          "customer",
+          "payment",
+          "paid_total",
+          "balance"
+        ],
+        "rows": [
+          {
+            "reference": "RCPT-1001",
+            "invoice_number": "INV-260916",
+            "customer": "Beacon Paperworks",
+            "payment": "125.25",
+            "paid_total": "725.25",
+            "balance": "274.75"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T130846-536359",
+      "task_id": "csv-import",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 3,
+        "headers": [
+          "reference",
+          "customer_id",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "status"
+        ],
+        "rows": [
+          {
+            "reference": "000101",
+            "customer_id": "1",
+            "customer": "Alder Robotics",
+            "invoice_date": "2026-11-02",
+            "due_date": "2026-12-02",
+            "amount": "210.10",
+            "status": "draft"
+          },
+          {
+            "reference": "000102",
+            "customer_id": "2",
+            "customer": "Beacon Paperworks",
+            "invoice_date": "2026-11-03",
+            "due_date": "2026-12-03",
+            "amount": "325.00",
+            "status": "draft"
+          },
+          {
+            "reference": "000103",
+            "customer_id": "6",
+            "customer": "Fernlight Design",
+            "invoice_date": "2026-11-04",
+            "due_date": "2026-12-04",
+            "amount": "99.95",
+            "status": "draft"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T130912-c76f17",
+      "task_id": "calc-sort-export",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "invoice_id",
+          "customer",
+          "outstanding_balance",
+          "due_date",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_id": "INV-003",
+            "customer": "Northstar Manufacturing",
+            "outstanding_balance": "10000.00",
+            "due_date": "2026-10-03",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-001",
+            "customer": "Northstar Manufacturing",
+            "outstanding_balance": "1234.50",
+            "due_date": "2026-10-01",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-005",
+            "customer": "Amber Research",
+            "outstanding_balance": "1234.50",
+            "due_date": "2026-09-29",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-006",
+            "customer": "Cedar Services",
+            "outstanding_balance": "999.99",
+            "due_date": "2026-10-12",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "INV-008",
+            "customer": "Beacon Tools",
+            "outstanding_balance": "100.00",
+            "due_date": "2026-10-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-002",
+            "customer": "Cedar Services",
+            "outstanding_balance": "50.00",
+            "due_date": "2026-10-02",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "INV-007",
+            "customer": "Beacon Tools",
+            "outstanding_balance": "9.50",
+            "due_date": "2026-10-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-004",
+            "customer": "Harbor Supply",
+            "outstanding_balance": "0.00",
+            "due_date": "2026-10-04",
+            "status": "settled"
+          }
+        ],
+        "row_count": 8,
+        "source_preservation_consistent": true,
+        "source_preservation_basis": "Office source preservation is checked against the saved input file and the controller's recorded before/after hashes. This is not a new observation of the original live desktop filesystem."
+      }
+    },
+    {
+      "id": "20261108T131037-eb857f",
+      "task_id": "writer-find-replace",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "section",
+          "text"
+        ],
+        "rows": [
+          {
+            "section": "1:heading:1",
+            "text": "Supplier handover memo"
+          },
+          {
+            "section": "2:paragraph",
+            "text": "Prepared on 8 November 2026. All figures below are synthetic."
+          },
+          {
+            "section": "3:heading:2",
+            "text": "Supplier overview"
+          },
+          {
+            "section": "4:paragraph",
+            "text": "Northstar Devices is the primary supplier. Northstar Devices owns the quarterly delivery plan."
+          },
+          {
+            "section": "5:paragraph",
+            "text": "Harbour Systems and Harbor System are different suppliers; leave those names unchanged."
+          },
+          {
+            "section": "6:paragraph",
+            "text": "Recorded balance: USD 12,500.50. Review due: 30 November 2026."
+          },
+          {
+            "section": "7:table:1:1",
+            "text": "Supplier"
+          },
+          {
+            "section": "7:table:1:2",
+            "text": "Owner"
+          },
+          {
+            "section": "7:table:1:3",
+            "text": "Action"
+          },
+          {
+            "section": "7:table:2:1",
+            "text": "Northstar Devices"
+          },
+          {
+            "section": "7:table:2:2",
+            "text": "Mina Patel"
+          },
+          {
+            "section": "7:table:2:3",
+            "text": "Confirm 18 components"
+          },
+          {
+            "section": "7:table:3:1",
+            "text": "Northstar Devices"
+          },
+          {
+            "section": "7:table:3:2",
+            "text": "Jonas Lind"
+          },
+          {
+            "section": "7:table:3:3",
+            "text": "Keep existing due date"
+          },
+          {
+            "section": "8:paragraph",
+            "text": "Escalations for Northstar Devices go to Mina Patel. Reference: HS-2026-11."
+          }
+        ],
+        "row_count": 16,
+        "source_preservation_consistent": true,
+        "source_preservation_basis": "Office source preservation is checked against the saved input file and the controller's recorded before/after hashes. This is not a new observation of the original live desktop filesystem."
+      }
+    },
+    {
+      "id": "20261108T131113-1e67d3",
+      "task_id": "invoice-lookup",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "invoice_number",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "paid",
+          "balance",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_number": "INV-260916",
+            "customer": "Beacon Paperworks",
+            "invoice_date": "2026-09-16",
+            "due_date": "2026-10-10",
+            "amount": "1000.00",
+            "paid": "600.00",
+            "balance": "400.00",
+            "status": "issued"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T131138-a77c8e",
+      "task_id": "customer-update",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "customer_id",
+          "customer",
+          "email",
+          "phone"
+        ],
+        "rows": [
+          {
+            "customer_id": "2",
+            "customer": "Beacon Paperworks",
+            "email": "billing@beacon.example",
+            "phone": "+1-555-0142"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T131204-cae15a",
+      "task_id": "invoice-entry",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "reference",
+          "customer_id",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "status"
+        ],
+        "rows": [
+          {
+            "reference": "DRAFT-261101",
+            "customer_id": "3",
+            "customer": "Cedar Trail Foods",
+            "invoice_date": "2026-11-01",
+            "due_date": "2026-12-01",
+            "amount": "1250.50",
+            "status": "draft"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T131232-e17be5",
+      "task_id": "payment-entry",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "reference",
+          "invoice_number",
+          "customer",
+          "payment",
+          "paid_total",
+          "balance"
+        ],
+        "rows": [
+          {
+            "reference": "RCPT-1001",
+            "invoice_number": "INV-260916",
+            "customer": "Beacon Paperworks",
+            "payment": "125.25",
+            "paid_total": "725.25",
+            "balance": "274.75"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T131300-cc7e77",
+      "task_id": "csv-import",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 3,
+        "headers": [
+          "reference",
+          "customer_id",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "status"
+        ],
+        "rows": [
+          {
+            "reference": "000101",
+            "customer_id": "1",
+            "customer": "Alder Robotics",
+            "invoice_date": "2026-11-02",
+            "due_date": "2026-12-02",
+            "amount": "210.10",
+            "status": "draft"
+          },
+          {
+            "reference": "000102",
+            "customer_id": "2",
+            "customer": "Beacon Paperworks",
+            "invoice_date": "2026-11-03",
+            "due_date": "2026-12-03",
+            "amount": "325.00",
+            "status": "draft"
+          },
+          {
+            "reference": "000103",
+            "customer_id": "6",
+            "customer": "Fernlight Design",
+            "invoice_date": "2026-11-04",
+            "due_date": "2026-12-04",
+            "amount": "99.95",
+            "status": "draft"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T131327-fbd553",
+      "task_id": "calc-sort-export",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "invoice_id",
+          "customer",
+          "outstanding_balance",
+          "due_date",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_id": "INV-003",
+            "customer": "Northstar Manufacturing",
+            "outstanding_balance": "10000.00",
+            "due_date": "2026-10-03",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-001",
+            "customer": "Northstar Manufacturing",
+            "outstanding_balance": "1234.50",
+            "due_date": "2026-10-01",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-005",
+            "customer": "Amber Research",
+            "outstanding_balance": "1234.50",
+            "due_date": "2026-09-29",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-006",
+            "customer": "Cedar Services",
+            "outstanding_balance": "999.99",
+            "due_date": "2026-10-12",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "INV-008",
+            "customer": "Beacon Tools",
+            "outstanding_balance": "100.00",
+            "due_date": "2026-10-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-002",
+            "customer": "Cedar Services",
+            "outstanding_balance": "50.00",
+            "due_date": "2026-10-02",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "INV-007",
+            "customer": "Beacon Tools",
+            "outstanding_balance": "9.50",
+            "due_date": "2026-10-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-004",
+            "customer": "Harbor Supply",
+            "outstanding_balance": "0.00",
+            "due_date": "2026-10-04",
+            "status": "settled"
+          }
+        ],
+        "row_count": 8,
+        "source_preservation_consistent": true,
+        "source_preservation_basis": "Office source preservation is checked against the saved input file and the controller's recorded before/after hashes. This is not a new observation of the original live desktop filesystem."
+      }
+    },
+    {
+      "id": "20261108T131410-4f1609",
+      "task_id": "writer-find-replace",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "section",
+          "text"
+        ],
+        "rows": [
+          {
+            "section": "1:heading:1",
+            "text": "Supplier handover memo"
+          },
+          {
+            "section": "2:paragraph",
+            "text": "Prepared on 8 November 2026. All figures below are synthetic."
+          },
+          {
+            "section": "3:heading:2",
+            "text": "Supplier overview"
+          },
+          {
+            "section": "4:paragraph",
+            "text": "Northstar Devices is the primary supplier. Northstar Devices owns the quarterly delivery plan."
+          },
+          {
+            "section": "5:paragraph",
+            "text": "Harbour Systems and Harbor System are different suppliers; leave those names unchanged."
+          },
+          {
+            "section": "6:paragraph",
+            "text": "Recorded balance: USD 12,500.50. Review due: 30 November 2026."
+          },
+          {
+            "section": "7:table:1:1",
+            "text": "Supplier"
+          },
+          {
+            "section": "7:table:1:2",
+            "text": "Owner"
+          },
+          {
+            "section": "7:table:1:3",
+            "text": "Action"
+          },
+          {
+            "section": "7:table:2:1",
+            "text": "Northstar Devices"
+          },
+          {
+            "section": "7:table:2:2",
+            "text": "Mina Patel"
+          },
+          {
+            "section": "7:table:2:3",
+            "text": "Confirm 18 components"
+          },
+          {
+            "section": "7:table:3:1",
+            "text": "Northstar Devices"
+          },
+          {
+            "section": "7:table:3:2",
+            "text": "Jonas Lind"
+          },
+          {
+            "section": "7:table:3:3",
+            "text": "Keep existing due date"
+          },
+          {
+            "section": "8:paragraph",
+            "text": "Escalations for Northstar Devices go to Mina Patel. Reference: HS-2026-11."
+          }
+        ],
+        "row_count": 16,
+        "source_preservation_consistent": true,
+        "source_preservation_basis": "Office source preservation is checked against the saved input file and the controller's recorded before/after hashes. This is not a new observation of the original live desktop filesystem."
+      }
+    },
+    {
+      "id": "20261108T131448-4ecfbe",
+      "task_id": "invoice-lookup",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "invoice_number",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "paid",
+          "balance",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_number": "INV-260916",
+            "customer": "Beacon Paperworks",
+            "invoice_date": "2026-09-16",
+            "due_date": "2026-10-10",
+            "amount": "1000.00",
+            "paid": "600.00",
+            "balance": "400.00",
+            "status": "issued"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T131514-8a3844",
+      "task_id": "customer-update",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "customer_id",
+          "customer",
+          "email",
+          "phone"
+        ],
+        "rows": [
+          {
+            "customer_id": "2",
+            "customer": "Beacon Paperworks",
+            "email": "billing@beacon.example",
+            "phone": "+1-555-0142"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T131544-24f089",
+      "task_id": "invoice-entry",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "reference",
+          "customer_id",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "status"
+        ],
+        "rows": [
+          {
+            "reference": "DRAFT-261101",
+            "customer_id": "3",
+            "customer": "Cedar Trail Foods",
+            "invoice_date": "2026-11-01",
+            "due_date": "2026-12-01",
+            "amount": "1250.50",
+            "status": "draft"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T131616-a86325",
+      "task_id": "payment-entry",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "reference",
+          "invoice_number",
+          "customer",
+          "payment",
+          "paid_total",
+          "balance"
+        ],
+        "rows": [
+          {
+            "reference": "RCPT-1001",
+            "invoice_number": "INV-260916",
+            "customer": "Beacon Paperworks",
+            "payment": "125.25",
+            "paid_total": "725.25",
+            "balance": "274.75"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T131646-e9ee98",
+      "task_id": "csv-import",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 3,
+        "headers": [
+          "reference",
+          "customer_id",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "status"
+        ],
+        "rows": [
+          {
+            "reference": "000101",
+            "customer_id": "1",
+            "customer": "Alder Robotics",
+            "invoice_date": "2026-11-02",
+            "due_date": "2026-12-02",
+            "amount": "210.10",
+            "status": "draft"
+          },
+          {
+            "reference": "000102",
+            "customer_id": "2",
+            "customer": "Beacon Paperworks",
+            "invoice_date": "2026-11-03",
+            "due_date": "2026-12-03",
+            "amount": "325.00",
+            "status": "draft"
+          },
+          {
+            "reference": "000103",
+            "customer_id": "6",
+            "customer": "Fernlight Design",
+            "invoice_date": "2026-11-04",
+            "due_date": "2026-12-04",
+            "amount": "99.95",
+            "status": "draft"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T131711-504f5f",
+      "task_id": "calc-sort-export",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "invoice_id",
+          "customer",
+          "outstanding_balance",
+          "due_date",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_id": "INV-003",
+            "customer": "Northstar Manufacturing",
+            "outstanding_balance": "10000.00",
+            "due_date": "2026-10-03",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-001",
+            "customer": "Northstar Manufacturing",
+            "outstanding_balance": "1234.50",
+            "due_date": "2026-10-01",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-005",
+            "customer": "Amber Research",
+            "outstanding_balance": "1234.50",
+            "due_date": "2026-09-29",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-006",
+            "customer": "Cedar Services",
+            "outstanding_balance": "999.99",
+            "due_date": "2026-10-12",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "INV-008",
+            "customer": "Beacon Tools",
+            "outstanding_balance": "100.00",
+            "due_date": "2026-10-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-002",
+            "customer": "Cedar Services",
+            "outstanding_balance": "50.00",
+            "due_date": "2026-10-02",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "INV-007",
+            "customer": "Beacon Tools",
+            "outstanding_balance": "9.50",
+            "due_date": "2026-10-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-004",
+            "customer": "Harbor Supply",
+            "outstanding_balance": "0.00",
+            "due_date": "2026-10-04",
+            "status": "settled"
+          }
+        ],
+        "row_count": 8,
+        "source_preservation_consistent": true,
+        "source_preservation_basis": "Office source preservation is checked against the saved input file and the controller's recorded before/after hashes. This is not a new observation of the original live desktop filesystem."
+      }
+    },
+    {
+      "id": "20261108T131840-ae5119",
+      "task_id": "writer-find-replace",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "section",
+          "text"
+        ],
+        "rows": [
+          {
+            "section": "1:heading:1",
+            "text": "Supplier handover memo"
+          },
+          {
+            "section": "2:paragraph",
+            "text": "Prepared on 8 November 2026. All figures below are synthetic."
+          },
+          {
+            "section": "3:heading:2",
+            "text": "Supplier overview"
+          },
+          {
+            "section": "4:paragraph",
+            "text": "Northstar Devices is the primary supplier. Northstar Devices owns the quarterly delivery plan."
+          },
+          {
+            "section": "5:paragraph",
+            "text": "Harbour Systems and Harbor System are different suppliers; leave those names unchanged."
+          },
+          {
+            "section": "6:paragraph",
+            "text": "Recorded balance: USD 12,500.50. Review due: 30 November 2026."
+          },
+          {
+            "section": "7:table:1:1",
+            "text": "Supplier"
+          },
+          {
+            "section": "7:table:1:2",
+            "text": "Owner"
+          },
+          {
+            "section": "7:table:1:3",
+            "text": "Action"
+          },
+          {
+            "section": "7:table:2:1",
+            "text": "Northstar Devices"
+          },
+          {
+            "section": "7:table:2:2",
+            "text": "Mina Patel"
+          },
+          {
+            "section": "7:table:2:3",
+            "text": "Confirm 18 components"
+          },
+          {
+            "section": "7:table:3:1",
+            "text": "Northstar Devices"
+          },
+          {
+            "section": "7:table:3:2",
+            "text": "Jonas Lind"
+          },
+          {
+            "section": "7:table:3:3",
+            "text": "Keep existing due date"
+          },
+          {
+            "section": "8:paragraph",
+            "text": "Escalations for Northstar Devices go to Mina Patel. Reference: HS-2026-11."
+          }
+        ],
+        "row_count": 16,
+        "source_preservation_consistent": true,
+        "source_preservation_basis": "Office source preservation is checked against the saved input file and the controller's recorded before/after hashes. This is not a new observation of the original live desktop filesystem."
+      }
+    },
+    {
+      "id": "20261108T131916-4278d5",
+      "task_id": "invoice-lookup",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "invoice_number",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "paid",
+          "balance",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_number": "INV-260916",
+            "customer": "Beacon Paperworks",
+            "invoice_date": "2026-09-16",
+            "due_date": "2026-10-10",
+            "amount": "1000.00",
+            "paid": "600.00",
+            "balance": "400.00",
+            "status": "issued"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T131938-4596a9",
+      "task_id": "customer-update",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "customer_id",
+          "customer",
+          "email",
+          "phone"
+        ],
+        "rows": [
+          {
+            "customer_id": "2",
+            "customer": "Beacon Paperworks",
+            "email": "billing@beacon.example",
+            "phone": "+1-555-0142"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T132007-8d84f1",
+      "task_id": "invoice-entry",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "reference",
+          "customer_id",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "status"
+        ],
+        "rows": [
+          {
+            "reference": "DRAFT-261101",
+            "customer_id": "3",
+            "customer": "Cedar Trail Foods",
+            "invoice_date": "2026-11-01",
+            "due_date": "2026-12-01",
+            "amount": "1250.50",
+            "status": "draft"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T132039-c8a694",
+      "task_id": "payment-entry",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "reference",
+          "invoice_number",
+          "customer",
+          "payment",
+          "paid_total",
+          "balance"
+        ],
+        "rows": [
+          {
+            "reference": "RCPT-1001",
+            "invoice_number": "INV-260916",
+            "customer": "Beacon Paperworks",
+            "payment": "125.25",
+            "paid_total": "725.25",
+            "balance": "274.75"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T132109-7713fe",
+      "task_id": "csv-import",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 3,
+        "headers": [
+          "reference",
+          "customer_id",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "status"
+        ],
+        "rows": [
+          {
+            "reference": "000101",
+            "customer_id": "1",
+            "customer": "Alder Robotics",
+            "invoice_date": "2026-11-02",
+            "due_date": "2026-12-02",
+            "amount": "210.10",
+            "status": "draft"
+          },
+          {
+            "reference": "000102",
+            "customer_id": "2",
+            "customer": "Beacon Paperworks",
+            "invoice_date": "2026-11-03",
+            "due_date": "2026-12-03",
+            "amount": "325.00",
+            "status": "draft"
+          },
+          {
+            "reference": "000103",
+            "customer_id": "6",
+            "customer": "Fernlight Design",
+            "invoice_date": "2026-11-04",
+            "due_date": "2026-12-04",
+            "amount": "99.95",
+            "status": "draft"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T132135-e792ff",
+      "task_id": "calc-sort-export",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "invoice_id",
+          "customer",
+          "outstanding_balance",
+          "due_date",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_id": "INV-003",
+            "customer": "Northstar Manufacturing",
+            "outstanding_balance": "10000.00",
+            "due_date": "2026-10-03",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-001",
+            "customer": "Northstar Manufacturing",
+            "outstanding_balance": "1234.50",
+            "due_date": "2026-10-01",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-005",
+            "customer": "Amber Research",
+            "outstanding_balance": "1234.50",
+            "due_date": "2026-09-29",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-006",
+            "customer": "Cedar Services",
+            "outstanding_balance": "999.99",
+            "due_date": "2026-10-12",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "INV-008",
+            "customer": "Beacon Tools",
+            "outstanding_balance": "100.00",
+            "due_date": "2026-10-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-002",
+            "customer": "Cedar Services",
+            "outstanding_balance": "50.00",
+            "due_date": "2026-10-02",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "INV-007",
+            "customer": "Beacon Tools",
+            "outstanding_balance": "9.50",
+            "due_date": "2026-10-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-004",
+            "customer": "Harbor Supply",
+            "outstanding_balance": "0.00",
+            "due_date": "2026-10-04",
+            "status": "settled"
+          }
+        ],
+        "row_count": 8,
+        "source_preservation_consistent": true,
+        "source_preservation_basis": "Office source preservation is checked against the saved input file and the controller's recorded before/after hashes. This is not a new observation of the original live desktop filesystem."
+      }
+    },
+    {
+      "id": "20261108T132306-bde79a",
+      "task_id": "writer-find-replace",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "section",
+          "text"
+        ],
+        "rows": [
+          {
+            "section": "1:heading:1",
+            "text": "Supplier handover memo"
+          },
+          {
+            "section": "2:paragraph",
+            "text": "Prepared on 8 November 2026. All figures below are synthetic."
+          },
+          {
+            "section": "3:heading:2",
+            "text": "Supplier overview"
+          },
+          {
+            "section": "4:paragraph",
+            "text": "Northstar Devices is the primary supplier. Northstar Devices owns the quarterly delivery plan."
+          },
+          {
+            "section": "5:paragraph",
+            "text": "Harbour Systems and Harbor System are different suppliers; leave those names unchanged."
+          },
+          {
+            "section": "6:paragraph",
+            "text": "Recorded balance: USD 12,500.50. Review due: 30 November 2026."
+          },
+          {
+            "section": "7:table:1:1",
+            "text": "Supplier"
+          },
+          {
+            "section": "7:table:1:2",
+            "text": "Owner"
+          },
+          {
+            "section": "7:table:1:3",
+            "text": "Action"
+          },
+          {
+            "section": "7:table:2:1",
+            "text": "Northstar Devices"
+          },
+          {
+            "section": "7:table:2:2",
+            "text": "Mina Patel"
+          },
+          {
+            "section": "7:table:2:3",
+            "text": "Confirm 18 components"
+          },
+          {
+            "section": "7:table:3:1",
+            "text": "Northstar Devices"
+          },
+          {
+            "section": "7:table:3:2",
+            "text": "Jonas Lind"
+          },
+          {
+            "section": "7:table:3:3",
+            "text": "Keep existing due date"
+          },
+          {
+            "section": "8:paragraph",
+            "text": "Escalations for Northstar Devices go to Mina Patel. Reference: HS-2026-11."
+          }
+        ],
+        "row_count": 16,
+        "source_preservation_consistent": true,
+        "source_preservation_basis": "Office source preservation is checked against the saved input file and the controller's recorded before/after hashes. This is not a new observation of the original live desktop filesystem."
+      }
+    },
+    {
+      "id": "20261108T132341-503d81",
+      "task_id": "invoice-lookup",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "invoice_number",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "paid",
+          "balance",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_number": "INV-260916",
+            "customer": "Beacon Paperworks",
+            "invoice_date": "2026-09-16",
+            "due_date": "2026-10-10",
+            "amount": "1000.00",
+            "paid": "600.00",
+            "balance": "400.00",
+            "status": "issued"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T132403-72adf3",
+      "task_id": "customer-update",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "customer_id",
+          "customer",
+          "email",
+          "phone"
+        ],
+        "rows": [
+          {
+            "customer_id": "2",
+            "customer": "Beacon Paperworks",
+            "email": "billing@beacon.example",
+            "phone": "+1-555-0142"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T132437-3fd1b8",
+      "task_id": "invoice-entry",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "reference",
+          "customer_id",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "status"
+        ],
+        "rows": [
+          {
+            "reference": "DRAFT-261101",
+            "customer_id": "3",
+            "customer": "Cedar Trail Foods",
+            "invoice_date": "2026-11-01",
+            "due_date": "2026-12-01",
+            "amount": "1250.50",
+            "status": "draft"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T132511-bfec41",
+      "task_id": "payment-entry",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "reference",
+          "invoice_number",
+          "customer",
+          "payment",
+          "paid_total",
+          "balance"
+        ],
+        "rows": [
+          {
+            "reference": "RCPT-1001",
+            "invoice_number": "INV-260916",
+            "customer": "Beacon Paperworks",
+            "payment": "125.25",
+            "paid_total": "725.25",
+            "balance": "274.75"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T132536-8c6317",
+      "task_id": "csv-import",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 3,
+        "headers": [
+          "reference",
+          "customer_id",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "status"
+        ],
+        "rows": [
+          {
+            "reference": "000101",
+            "customer_id": "1",
+            "customer": "Alder Robotics",
+            "invoice_date": "2026-11-02",
+            "due_date": "2026-12-02",
+            "amount": "210.10",
+            "status": "draft"
+          },
+          {
+            "reference": "000102",
+            "customer_id": "2",
+            "customer": "Beacon Paperworks",
+            "invoice_date": "2026-11-03",
+            "due_date": "2026-12-03",
+            "amount": "325.00",
+            "status": "draft"
+          },
+          {
+            "reference": "000103",
+            "customer_id": "6",
+            "customer": "Fernlight Design",
+            "invoice_date": "2026-11-04",
+            "due_date": "2026-12-04",
+            "amount": "99.95",
+            "status": "draft"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T132603-2477b1",
+      "task_id": "calc-sort-export",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "invoice_id",
+          "customer",
+          "outstanding_balance",
+          "due_date",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_id": "INV-003",
+            "customer": "Northstar Manufacturing",
+            "outstanding_balance": "10000.00",
+            "due_date": "2026-10-03",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-001",
+            "customer": "Northstar Manufacturing",
+            "outstanding_balance": "1234.50",
+            "due_date": "2026-10-01",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-005",
+            "customer": "Amber Research",
+            "outstanding_balance": "1234.50",
+            "due_date": "2026-09-29",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-006",
+            "customer": "Cedar Services",
+            "outstanding_balance": "999.99",
+            "due_date": "2026-10-12",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "INV-008",
+            "customer": "Beacon Tools",
+            "outstanding_balance": "100.00",
+            "due_date": "2026-10-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-002",
+            "customer": "Cedar Services",
+            "outstanding_balance": "50.00",
+            "due_date": "2026-10-02",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "INV-007",
+            "customer": "Beacon Tools",
+            "outstanding_balance": "9.50",
+            "due_date": "2026-10-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-004",
+            "customer": "Harbor Supply",
+            "outstanding_balance": "0.00",
+            "due_date": "2026-10-04",
+            "status": "settled"
+          }
+        ],
+        "row_count": 8,
+        "source_preservation_consistent": true,
+        "source_preservation_basis": "Office source preservation is checked against the saved input file and the controller's recorded before/after hashes. This is not a new observation of the original live desktop filesystem."
+      }
+    },
+    {
+      "id": "20261108T132652-83bc8d",
+      "task_id": "writer-find-replace",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "section",
+          "text"
+        ],
+        "rows": [
+          {
+            "section": "1:heading:1",
+            "text": "Supplier handover memo"
+          },
+          {
+            "section": "2:paragraph",
+            "text": "Prepared on 8 November 2026. All figures below are synthetic."
+          },
+          {
+            "section": "3:heading:2",
+            "text": "Supplier overview"
+          },
+          {
+            "section": "4:paragraph",
+            "text": "Northstar Devices is the primary supplier. Northstar Devices owns the quarterly delivery plan."
+          },
+          {
+            "section": "5:paragraph",
+            "text": "Harbour Systems and Harbor System are different suppliers; leave those names unchanged."
+          },
+          {
+            "section": "6:paragraph",
+            "text": "Recorded balance: USD 12,500.50. Review due: 30 November 2026."
+          },
+          {
+            "section": "7:table:1:1",
+            "text": "Supplier"
+          },
+          {
+            "section": "7:table:1:2",
+            "text": "Owner"
+          },
+          {
+            "section": "7:table:1:3",
+            "text": "Action"
+          },
+          {
+            "section": "7:table:2:1",
+            "text": "Northstar Devices"
+          },
+          {
+            "section": "7:table:2:2",
+            "text": "Mina Patel"
+          },
+          {
+            "section": "7:table:2:3",
+            "text": "Confirm 18 components"
+          },
+          {
+            "section": "7:table:3:1",
+            "text": "Northstar Devices"
+          },
+          {
+            "section": "7:table:3:2",
+            "text": "Jonas Lind"
+          },
+          {
+            "section": "7:table:3:3",
+            "text": "Keep existing due date"
+          },
+          {
+            "section": "8:paragraph",
+            "text": "Escalations for Northstar Devices go to Mina Patel. Reference: HS-2026-11."
+          }
+        ],
+        "row_count": 16,
+        "source_preservation_consistent": true,
+        "source_preservation_basis": "Office source preservation is checked against the saved input file and the controller's recorded before/after hashes. This is not a new observation of the original live desktop filesystem."
+      }
+    },
+    {
+      "id": "20261108T132733-d4bbba",
+      "task_id": "invoice-lookup",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "invoice_number",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "paid",
+          "balance",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_number": "INV-260916",
+            "customer": "Beacon Paperworks",
+            "invoice_date": "2026-09-16",
+            "due_date": "2026-10-10",
+            "amount": "1000.00",
+            "paid": "600.00",
+            "balance": "400.00",
+            "status": "issued"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T132800-41c7cc",
+      "task_id": "customer-update",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "customer_id",
+          "customer",
+          "email",
+          "phone"
+        ],
+        "rows": [
+          {
+            "customer_id": "2",
+            "customer": "Beacon Paperworks",
+            "email": "billing@beacon.example",
+            "phone": "+1-555-0142"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T132828-fde1e3",
+      "task_id": "invoice-entry",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "reference",
+          "customer_id",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "status"
+        ],
+        "rows": [
+          {
+            "reference": "DRAFT-261101",
+            "customer_id": "3",
+            "customer": "Cedar Trail Foods",
+            "invoice_date": "2026-11-01",
+            "due_date": "2026-12-01",
+            "amount": "1250.50",
+            "status": "draft"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T132900-870ba6",
+      "task_id": "payment-entry",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 1,
+        "headers": [
+          "reference",
+          "invoice_number",
+          "customer",
+          "payment",
+          "paid_total",
+          "balance"
+        ],
+        "rows": [
+          {
+            "reference": "RCPT-1001",
+            "invoice_number": "INV-260916",
+            "customer": "Beacon Paperworks",
+            "payment": "125.25",
+            "paid_total": "725.25",
+            "balance": "274.75"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T132928-de4d96",
+      "task_id": "csv-import",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "row_count": 3,
+        "headers": [
+          "reference",
+          "customer_id",
+          "customer",
+          "invoice_date",
+          "due_date",
+          "amount",
+          "status"
+        ],
+        "rows": [
+          {
+            "reference": "000101",
+            "customer_id": "1",
+            "customer": "Alder Robotics",
+            "invoice_date": "2026-11-02",
+            "due_date": "2026-12-02",
+            "amount": "210.10",
+            "status": "draft"
+          },
+          {
+            "reference": "000102",
+            "customer_id": "2",
+            "customer": "Beacon Paperworks",
+            "invoice_date": "2026-11-03",
+            "due_date": "2026-12-03",
+            "amount": "325.00",
+            "status": "draft"
+          },
+          {
+            "reference": "000103",
+            "customer_id": "6",
+            "customer": "Fernlight Design",
+            "invoice_date": "2026-11-04",
+            "due_date": "2026-12-04",
+            "amount": "99.95",
+            "status": "draft"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261108T132953-995b98",
+      "task_id": "calc-sort-export",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "invoice_id",
+          "customer",
+          "outstanding_balance",
+          "due_date",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_id": "INV-003",
+            "customer": "Northstar Manufacturing",
+            "outstanding_balance": "10000.00",
+            "due_date": "2026-10-03",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-001",
+            "customer": "Northstar Manufacturing",
+            "outstanding_balance": "1234.50",
+            "due_date": "2026-10-01",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-005",
+            "customer": "Amber Research",
+            "outstanding_balance": "1234.50",
+            "due_date": "2026-09-29",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-006",
+            "customer": "Cedar Services",
+            "outstanding_balance": "999.99",
+            "due_date": "2026-10-12",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "INV-008",
+            "customer": "Beacon Tools",
+            "outstanding_balance": "100.00",
+            "due_date": "2026-10-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-002",
+            "customer": "Cedar Services",
+            "outstanding_balance": "50.00",
+            "due_date": "2026-10-02",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "INV-007",
+            "customer": "Beacon Tools",
+            "outstanding_balance": "9.50",
+            "due_date": "2026-10-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "INV-004",
+            "customer": "Harbor Supply",
+            "outstanding_balance": "0.00",
+            "due_date": "2026-10-04",
+            "status": "settled"
+          }
+        ],
+        "row_count": 8,
+        "source_preservation_consistent": true,
+        "source_preservation_basis": "Office source preservation is checked against the saved input file and the controller's recorded before/after hashes. This is not a new observation of the original live desktop filesystem."
+      }
+    },
+    {
+      "id": "20261108T133042-88fdb5",
+      "task_id": "writer-find-replace",
+      "cohort": "new_76",
+      "recorded_status": "passed",
+      "effective_status": "passed",
+      "recorded_pass_reverified": true,
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "section",
+          "text"
+        ],
+        "rows": [
+          {
+            "section": "1:heading:1",
+            "text": "Supplier handover memo"
+          },
+          {
+            "section": "2:paragraph",
+            "text": "Prepared on 8 November 2026. All figures below are synthetic."
+          },
+          {
+            "section": "3:heading:2",
+            "text": "Supplier overview"
+          },
+          {
+            "section": "4:paragraph",
+            "text": "Northstar Devices is the primary supplier. Northstar Devices owns the quarterly delivery plan."
+          },
+          {
+            "section": "5:paragraph",
+            "text": "Harbour Systems and Harbor System are different suppliers; leave those names unchanged."
+          },
+          {
+            "section": "6:paragraph",
+            "text": "Recorded balance: USD 12,500.50. Review due: 30 November 2026."
+          },
+          {
+            "section": "7:table:1:1",
+            "text": "Supplier"
+          },
+          {
+            "section": "7:table:1:2",
+            "text": "Owner"
+          },
+          {
+            "section": "7:table:1:3",
+            "text": "Action"
+          },
+          {
+            "section": "7:table:2:1",
+            "text": "Northstar Devices"
+          },
+          {
+            "section": "7:table:2:2",
+            "text": "Mina Patel"
+          },
+          {
+            "section": "7:table:2:3",
+            "text": "Confirm 18 components"
+          },
+          {
+            "section": "7:table:3:1",
+            "text": "Northstar Devices"
+          },
+          {
+            "section": "7:table:3:2",
+            "text": "Jonas Lind"
+          },
+          {
+            "section": "7:table:3:3",
+            "text": "Keep existing due date"
+          },
+          {
+            "section": "8:paragraph",
+            "text": "Escalations for Northstar Devices go to Mina Patel. Reference: HS-2026-11."
+          }
+        ],
+        "row_count": 16,
+        "source_preservation_consistent": true,
+        "source_preservation_basis": "Office source preservation is checked against the saved input file and the controller's recorded before/after hashes. This is not a new observation of the original live desktop filesystem."
+      }
+    }
+  ]
+}

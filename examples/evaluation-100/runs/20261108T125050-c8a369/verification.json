@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "errors": [],
+  "row_count": 3,
+  "headers": [
+    "reference",
+    "customer_id",
+    "customer",
+    "invoice_date",
+    "due_date",
+    "amount",
+    "status"
+  ],
+  "rows": [
+    {
+      "reference": "000101",
+      "customer_id": "1",
+      "customer": "Alder Robotics",
+      "invoice_date": "2026-11-02",
+      "due_date": "2026-12-02",
+      "amount": "210.10",
+      "status": "draft"
+    },
+    {
+      "reference": "000102",
+      "customer_id": "2",
+      "customer": "Beacon Paperworks",
+      "invoice_date": "2026-11-03",
+      "due_date": "2026-12-03",
+      "amount": "325.00",
+      "status": "draft"
+    },
+    {
+      "reference": "000103",
+      "customer_id": "6",
+      "customer": "Fernlight Design",
+      "invoice_date": "2026-11-04",
+      "due_date": "2026-12-04",
+      "amount": "99.95",
+      "status": "draft"
+    }
+  ]
+}

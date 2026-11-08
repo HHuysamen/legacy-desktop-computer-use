@@ -1,3 +1,5 @@
+> Current release: the article and supporting methods page now reference 100 attempts across ten tasks (99 verified passes). Use `examples/evaluation-100/` for current evidence; preserve the original nine- and 24-run archives.
+
 # Website integration copy
 
 ## Project card

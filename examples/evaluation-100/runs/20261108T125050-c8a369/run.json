@@ -1,0 +1,36 @@
+{
+  "id": "20261108T125050-c8a369",
+  "task_id": "csv-import",
+  "instruction": "In LedgerDesk, import the configured file invoices.csv into draft invoices. It contains three new drafts with references 000101, 000102 and 000103; preserve the leading zeros. Confirm the import and export its audit result as CSV. Do not post or send invoices.",
+  "started_at": "2026-11-08T12:50:50.482850+00:00",
+  "as_of": "2026-10-15",
+  "model": "gpt-6.1-terra",
+  "status": "passed",
+  "error": null,
+  "action_count": 7,
+  "request_count": 7,
+  "limits": {
+    "actions": 80,
+    "requests": 30,
+    "seconds": 420,
+    "budget_usd": 1.0
+  },
+  "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+  "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+  "application": "LedgerDesk",
+  "protocol": "expanded-100-v1",
+  "source_revision": "c523e5300fe10fa60b1ada0210c55f6d55bd3156",
+  "source_tree_sha256": "380c38f0404782de5be7076514de1faf34540d679511040097a23d4892625ae7",
+  "image_id": "c19eb9212b23a4eb39c297186c5c6464e3cb1b52e603dff8686dc4c34e5568d0",
+  "usage": {
+    "input_tokens": 45182,
+    "output_tokens": 263,
+    "total_tokens": 45445,
+    "complete": true
+  },
+  "estimated_cost_usd": 0.046497,
+  "model_text": "Imported and confirmed the three draft invoices with references 000101, 000102, and 000103. The audit result was exported as `csv-import.csv`. No invoices were posted or sent.",
+  "recording_available": true,
+  "elapsed_seconds": 27.36,
+  "finished_at": "2026-11-08T12:51:17.842314+00:00"
+}

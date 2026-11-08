@@ -17,7 +17,11 @@ import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
 TASKS = ("monthly-revenue", "overdue-invoices", "reconciliation-exceptions")
-FILES = ("report.html", "run.json", "events.jsonl", "verification.json", "export.csv")
+STATE_TASKS = ("invoice-lookup", "customer-update", "invoice-entry", "payment-entry", "csv-import")
+OFFICE_SOURCES = {"calc-sort-export": "calc-source.ods", "writer-find-replace": "writer-source.odt"}
+ALL_TASKS = (*TASKS, *STATE_TASKS, *OFFICE_SOURCES)
+FILES = ("report.html", "run.json", "events.jsonl", "verification.json", "export.csv",
+         "export.odt", "final.db", *OFFICE_SOURCES.values())
 
 
 def _json(path: Path):
@@ -50,11 +54,21 @@ def _read_run(source: Path) -> dict:
         raise ValueError("Run ID is not a safe evidence directory name.")
     if run.get("status") not in {"passed", "failed", "blocked"} or not run.get("finished_at"):
         raise ValueError(f"Run {identifier} is not finished.")
+    task_id = run.get("task_id")
+    if task_id not in ALL_TASKS:
+        raise ValueError(f"Run {identifier} has an unknown task.")
     verification = _json(source / "verification.json") if (source / "verification.json").exists() else None
     if run["status"] == "passed" and (verification is None or verification.get("passed") is not True):
         raise ValueError(f"Run {identifier} claims success without a passing verifier.")
-    if run["status"] == "passed" and not (source / "export.csv").is_file():
-        raise ValueError(f"Verified run {identifier} is missing its exported CSV.")
+    if run["status"] == "passed":
+        required = ["export.odt" if task_id == "writer-find-replace" else "export.csv"]
+        if task_id in STATE_TASKS:
+            required.append("final.db")
+        if task_id in OFFICE_SOURCES:
+            required.append(OFFICE_SOURCES[task_id])
+        for name in required:
+            if not (source / name).is_file():
+                raise ValueError(f"Verified run {identifier} is missing {name}.")
     return run
 
 
@@ -107,7 +121,22 @@ def _scorecard(summary: dict) -> str:
         return escape(str(value), quote=True)
 
     attempts = summary["completed_attempts"]
-    per_task = attempts // len(TASKS)
+    task_ids = summary.get("task_ids", list(TASKS))
+    per_task = attempts // len(task_ids)
+    original_tasks = tuple(task_ids) == TASKS
+    applications = sorted({
+        run.get("application") or ("LibreOffice" if run["task_id"] in OFFICE_SOURCES else "LedgerDesk")
+        for run in summary["runs"]
+    })
+    task_description = "Three reporting tasks" if original_tasks else f"{len(task_ids)} desktop tasks"
+    application_note = "" if original_tasks else f" Recorded applications: {text(', '.join(applications))}."
+    result_description = (
+        "The model operated the fictional native application through screenshots and mouse or keyboard actions. "
+        "A separate verifier checked each exported CSV against the fixture."
+        if original_tasks else
+        "The model operated the recorded native applications through screenshots and mouse or keyboard actions. "
+        "Separate verifiers checked each saved output and, where applicable, the final database against the task's fixture."
+    )
     cards = []
     for task, stats in summary["tasks"].items():
         action_range = stats["action_range"]
@@ -124,7 +153,7 @@ def _scorecard(summary: dict) -> str:
     usage_note = f"Usage and cost estimates are available for all {attempts} attempts." if complete else "Usage or cost is incomplete for at least one attempt. Known costs are partial totals, not a full bill."
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; media-src 'self'; img-src 'self'; base-uri 'none'"><title>LedgerDesk — {attempts}-attempt scorecard</title><style>
 *{{box-sizing:border-box}}body{{margin:0;background:#edf2f5;color:#1b3041;font:15px/1.55 system-ui,sans-serif}}header{{background:#153245;color:white;padding:45px max(24px,calc((100vw - 1150px)/2));border-bottom:5px solid #49b8b7}}header p{{color:#c4dce6;max-width:780px}}.eyebrow{{text-transform:uppercase;letter-spacing:.12em;font-size:12px}}h1{{font-size:34px;line-height:1.2;margin:10px 0}}main{{max-width:1198px;margin:auto;padding:28px 24px 50px}}.cards{{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}}article,section{{background:white;border:1px solid #d5e0e7;border-radius:8px;padding:23px;margin-bottom:23px}}article h2{{font-size:17px;margin-top:0}}article strong{{font-size:37px;color:#126d65}}article p{{margin-top:0;color:#516d7c}}dl{{display:grid;grid-template-columns:1fr 1fr;font-size:12px;gap:7px}}dt{{color:#647884}}dd{{margin:0;text-align:right;font-weight:650}}h2{{font-size:20px}}.scroll{{overflow:auto}}table{{border-collapse:collapse;width:100%;font-size:12px}}td,th{{text-align:left;padding:12px;border-bottom:1px solid #e1e7eb;white-space:nowrap}}th{{background:#edf4f6}}small{{display:block;color:#667e8d;font-size:10px}}a{{color:#076778}}.passed{{color:#137653;font-weight:700}}.failed,.blocked{{color:#963e35;font-weight:700}}video{{max-width:100%;width:900px;background:#122c3c}}.note{{font-size:13px;color:#526c7c}}@media(max-width:800px){{.cards{{grid-template-columns:1fr}}h1{{font-size:27px}}}}footer{{font-size:12px;color:#6a7d89}}
-</style></head><body><header><p class="eyebrow">LedgerDesk / Recorded evaluation</p><h1>{summary['overall']['verified']} of {attempts} attempts independently verified</h1><p>Three reporting tasks. {per_task} attempts each. Every evaluated outcome is retained, including failures and blocked attempts.</p></header><main><div class="cards">{''.join(cards)}</div><section><h2>All {attempts} attempts</h2><div class="scroll"><table><thead><tr><th>Task / evidence</th><th>Outcome</th><th>Elapsed</th><th>Actions</th><th>Requests</th><th>Estimated cost</th><th>API usage</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div><p class="note">{usage_note} Costs use published standard token rates and exclude cache discounts; provider billing remains authoritative.</p></section><section><h2>Watch a verified attempt</h2><video controls preload="metadata" src="demo.mp4" poster="poster.png">Download demo.mp4 to watch this recorded native desktop session.</video><p><a href="sample-report.html">Open its self-contained evidence report</a> · <a href="summary.json">Machine-readable summary</a> · <a href="manifest.json">SHA-256 manifest</a></p>{pilot_html}</section><section><h2>What these results establish</h2><p>The model operated the fictional native application through screenshots and mouse or keyboard actions. A separate verifier checked each exported CSV against the fixture. The model's completion text alone cannot pass a run.</p><p class="note">This is a small, fixed-fixture demonstration on one recorded desktop configuration. It does not establish general reliability across applications, layouts or operating systems.</p></section><footer>Packaged {text(summary['packaged_at'])}. Files retain their original run identifiers.</footer></main></body></html>'''
+</style></head><body><header><p class="eyebrow">LedgerDesk / Recorded evaluation</p><h1>{summary['overall']['verified']} of {attempts} attempts independently verified</h1><p>{task_description}. {per_task} attempts each.{application_note} Every evaluated outcome is retained, including failures and blocked attempts.</p></header><main><div class="cards">{''.join(cards)}</div><section><h2>All {attempts} attempts</h2><div class="scroll"><table><thead><tr><th>Task / evidence</th><th>Outcome</th><th>Elapsed</th><th>Actions</th><th>Requests</th><th>Estimated cost</th><th>API usage</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div><p class="note">{usage_note} Costs use published standard token rates and exclude cache discounts; provider billing remains authoritative.</p></section><section><h2>Watch a verified attempt</h2><video controls preload="metadata" src="demo.mp4" poster="poster.png">Download demo.mp4 to watch this recorded native desktop session.</video><p><a href="sample-report.html">Open its self-contained evidence report</a> · <a href="summary.json">Machine-readable summary</a> · <a href="manifest.json">SHA-256 manifest</a></p>{pilot_html}</section><section><h2>What these results establish</h2><p>{result_description} The model's completion text alone cannot pass a run.</p><p class="note">This is a fixed-fixture demonstration on one recorded desktop configuration. It does not establish general reliability across applications, layouts or operating systems.</p></section><footer>Packaged {text(summary['packaged_at'])}. Files retain their original run identifiers.</footer></main></body></html>'''
 
 
 def package_evidence(evaluation_path: Path, destination: Path, *, pilot: Path | None = None) -> Path:
@@ -133,9 +162,15 @@ def package_evidence(evaluation_path: Path, destination: Path, *, pilot: Path | 
     runs_root = (workspace / "output" / "runs").resolve()
     evaluation = _json(evaluation_path)
     entries = evaluation.get("runs", [])
+    task_ids = evaluation.get("task_ids", list(TASKS))
+    if (not isinstance(task_ids, list) or not task_ids
+            or any(not isinstance(task, str) or task not in ALL_TASKS for task in task_ids)
+            or len(set(task_ids)) != len(task_ids)):
+        raise ValueError("Task IDs must be a nonempty list of unique supported tasks.")
     attempts = evaluation.get("planned_attempts")
-    if type(attempts) is not int or attempts <= 0 or attempts % len(TASKS):
-        raise ValueError("Planned attempts must be a positive multiple of three.")
+    if type(attempts) is not int or attempts <= 0 or attempts % len(task_ids):
+        divisor = "three" if tuple(task_ids) == TASKS else "the declared task count"
+        raise ValueError(f"Planned attempts must be a positive multiple of {divisor}.")
     if evaluation.get("completed_attempts") != attempts or len(entries) != attempts:
         label = "nine-attempt" if attempts == 9 else f"{attempts}-attempt"
         raise ValueError(f"Packaging requires the completed {label} evaluation.")
@@ -143,15 +178,17 @@ def package_evidence(evaluation_path: Path, destination: Path, *, pilot: Path | 
     if len(set(sources)) != attempts:
         raise ValueError("Evaluation contains duplicate run directories.")
     runs = [_read_run(source) for source in sources]
-    per_task = attempts // len(TASKS)
-    if Counter(run.get("task_id") for run in runs) != Counter({task: per_task for task in TASKS}):
-        raise ValueError(f"Evaluation must contain exactly {per_task} attempts for each reporting task.")
+    per_task = attempts // len(task_ids)
+    if Counter(run.get("task_id") for run in runs) != Counter({task: per_task for task in task_ids}):
+        raise ValueError(f"Evaluation must contain exactly {per_task} attempts for each declared task.")
     if len({run["id"] for run in runs}) != attempts:
         raise ValueError("Evaluation contains duplicate run IDs.")
     for entry, run in zip(entries, runs):
         if any(key in entry and entry[key] != run[key] for key in ("id", "task_id", "status")):
             raise ValueError("Evaluation metadata disagrees with the recorded run.")
-    selected = next(((source, run) for source, run in zip(sources, runs) if run["status"] == "passed" and (source / "recording.mp4").is_file()), None)
+    candidates = list(zip(sources, runs))
+    candidates.sort(key=lambda item: item[1]["task_id"] not in TASKS)
+    selected = next(((source, run) for source, run in candidates if run["status"] == "passed" and (source / "recording.mp4").is_file()), None)
     if selected is None:
         raise ValueError("A verified evaluated run with a recording is required for demo.mp4.")
     pilot_source = _source(Path(pilot) if Path(pilot).is_absolute() else workspace / pilot, runs_root) if pilot is not None else None
@@ -165,7 +202,8 @@ def package_evidence(evaluation_path: Path, destination: Path, *, pilot: Path | 
     summary = {
         "schema_version": 1, "packaged_at": datetime.now(timezone.utc).isoformat(),
         "planned_attempts": attempts, "completed_attempts": attempts, "pilot_excluded_from_statistics": True,
-        "overall": _stats(runs), "tasks": {task: _stats([run for run in runs if run["task_id"] == task]) for task in TASKS},
+        "task_ids": task_ids,
+        "overall": _stats(runs), "tasks": {task: _stats([run for run in runs if run["task_id"] == task]) for task in task_ids},
         "runs": runs, "pilot": pilot_run, "demo_run_id": selected[1]["id"],
     }
     with tempfile.TemporaryDirectory(prefix=".ledgerdesk-evidence-", dir=destination.parent) as temporary:

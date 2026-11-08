@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "errors": [],
+  "row_count": 1,
+  "headers": [
+    "customer_id",
+    "customer",
+    "email",
+    "phone"
+  ],
+  "rows": [
+    {
+      "customer_id": "2",
+      "customer": "Beacon Paperworks",
+      "email": "billing@beacon.example",
+      "phone": "+1-555-0142"
+    }
+  ]
+}

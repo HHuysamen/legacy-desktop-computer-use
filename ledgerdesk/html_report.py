@@ -42,14 +42,14 @@ def _preview(verification: dict | None) -> str:
     headers = verification.get("headers", [])
     rows = verification.get("rows", [])
     if not headers:
-        return note + '<p class="muted">No CSV preview is available.</p>'
+        return note + '<p class="muted">No output preview is available.</p>'
     head = "".join(f'<th scope="col">{_text(header)}</th>' for header in headers)
     body = "".join(
         "<tr>" + "".join(f"<td>{_text(row.get(header, ''))}</td>" for header in headers) + "</tr>"
         for row in rows
     )
     if not rows:
-        body = f'<tr><td colspan="{len(headers)}">The CSV contains no data rows.</td></tr>'
+        body = f'<tr><td colspan="{len(headers)}">The output contains no data rows.</td></tr>'
     return note + f'<div class="table-scroll"><table><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></div>'
 
 
@@ -111,10 +111,12 @@ def write_report(run_dir: Path) -> Path:
 
     error_html = f'<p class="run-error">{_text(run["error"])}</p>' if run.get("error") else ""
     verification_explanation = (
-        "The exported CSV matches the independently computed expected report."
+        "The saved output matches the independent verifier."
         if verdict == "Verified pass" else
-        "This run did not establish a verified successful export. See the recorded outcome below."
+        "This run did not establish a verified successful outcome. See the recorded outcome below."
     )
+    companion_files = [name for name in ("export.csv", "export.odt", "final.db", "calc-source.ods", "writer-source.odt", "run.json", "events.jsonl", "verification.json") if (run_dir / name).is_file()]
+    downloads = " · ".join(f'<a href="{name}">{name}</a>' for name in companion_files)
     limits = json.dumps(run.get("limits", {}), ensure_ascii=False, indent=2)
     html = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
@@ -137,10 +139,11 @@ section{{background:var(--paper);border:1px solid var(--line);border-radius:8px;
 details{{border-top:1px solid var(--line)}}summary{{padding:12px 0;cursor:pointer;font-weight:600;font-size:13px}}.step{{color:#7d909c;font-variant-numeric:tabular-nums;margin-right:8px}}time{{float:right;color:var(--muted);font-size:11px;font-weight:400}}pre{{overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;background:#f2f5f7;padding:14px 17px;border-radius:5px;font:12px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace}}blockquote{{margin:12px 0;padding:13px 17px;border-left:3px solid #c5cfd7;background:#f8fafb;white-space:pre-wrap;font-size:14px}}footer{{color:var(--muted);font-size:12px;text-align:center;padding:5px 16px}}a{{color:var(--accent)}}
 @media(max-width:800px){{.metrics{{grid-template-columns:repeat(2,minmax(0,1fr))}}.gallery{{grid-template-columns:1fr}}section{{padding:20px}}time{{float:none;display:block;margin-left:27px}}}}@media print{{body{{background:white}}header{{padding:24px;color:black;background:white;border-color:#bbb}}.eyebrow,.subtitle,.badge{{color:black}}main{{padding:20px 0}}section,figure{{break-inside:avoid}}details{{display:block}}}}
 </style></head><body>
-<header><p class="eyebrow">LedgerDesk / Run evidence</p><div class="badge {tone}">{_text(verdict)}</div><h1>{_text(run.get('task_id', 'Desktop reporting task'))}</h1><p class="subtitle">A native desktop reporting task, operated through screenshots and mouse or keyboard actions, checked against a separate trusted verifier.</p></header>
+<header><p class="eyebrow">LedgerDesk / Run evidence</p><div class="badge {tone}">{_text(verdict)}</div><h1>{_text(run.get('task_id', 'Desktop reporting task'))}</h1><p class="subtitle">A native desktop task, operated through screenshots and mouse or keyboard actions, checked against a separate trusted verifier.</p></header>
 <main><div class="metrics">{metrics}</div>
 <section><h2>The task</h2><p class="instruction">{_text(run.get('instruction', 'No task instruction recorded.'))}</p><p class="meta">Run {_text(run.get('id', run_dir.name))} · Model {_text(run.get('model', 'Not recorded'))}<br>Started {_text(run.get('started_at', 'Not recorded'))} · Finished {_text(run.get('finished_at', 'Not recorded'))}</p>{error_html}</section>
-<section><h2>Independent CSV verification</h2><p>{_text(verification_explanation)}</p><p class="muted">The model cannot access the fixture database, expected results or verifier. Its completion message is not evidence that the CSV is correct.</p>{_preview(verification)}</section>
+<section><h2>Independent output verification</h2><p>{_text(verification_explanation)}</p><p class="muted">The model cannot call the verifier or inspect its expected-state calculations. Its completion message is not evidence that the output is correct.</p>{_preview(verification)}</section>
+<section><h2>Companion evidence files</h2><p>{downloads}</p><p class="muted">These relative links work in the complete evidence package.</p></section>
 <section><h2>What the model reported</h2><p class="muted">These are recorded model statements, shown separately from the verifier's result.</p>{''.join(model_messages) or '<p class="muted">No model completion text was recorded.</p>'}</section>
 <section><h2>Desktop screenshots</h2><div class="gallery">{''.join(screenshots) or '<p class="muted">No screenshots were recorded.</p>'}</div></section>
 <section><h2>Action and event trace</h2><p class="muted">Events are listed in recorded order. Expand a row to inspect its payload.</p>{''.join(traces) or '<p class="muted">No events were recorded.</p>'}</section>

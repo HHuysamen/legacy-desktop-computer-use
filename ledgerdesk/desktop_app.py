@@ -24,7 +24,8 @@ def write_csv_export(
     rows: list[dict[str, str]],
 ) -> Path:
     """Save a completed preview under an application-controlled filename."""
-    if report_id not in reports.REPORTS:
+    from .workflows import WORKFLOWS
+    if report_id not in reports.REPORTS and report_id not in WORKFLOWS:
         raise ValueError("Unknown report")
     export_dir = Path(export_dir).resolve()
     export_dir.mkdir(parents=True, exist_ok=True)
@@ -274,7 +275,117 @@ def main(db_path: Path, export_dir: Path) -> None:
     db_path = Path(db_path)
     if not db_path.exists():
         reset_database(db_path)
-    LedgerDesk(db_path, Path(export_dir)).mainloop()
+    from .workflows import WORKFLOWS, initialize_workflow_data, write_import_fixture
+    task = os.environ.get("LEDGERDESK_TASK", "monthly-revenue")
+    if task in WORKFLOWS:
+        initialize_workflow_data(db_path)
+        write_import_fixture()
+        WorkflowDesk(db_path, Path(export_dir)).mainloop()
+    else:
+        LedgerDesk(db_path, Path(export_dir)).mainloop()
+
+
+class WorkflowDesk(LedgerDesk):
+    """Ordinary forms for record maintenance in the same native demo app."""
+    def __init__(self, db_path: Path, export_dir: Path):
+        from .workflows import WORKFLOWS
+        tk.Tk.__init__(self)
+        self.db_path, self.export_dir = db_path, export_dir
+        self.title(WINDOW_TITLE)
+        self.geometry("1100x760+35+35")
+        self.resizable(False, False)
+        self._configure_style()
+        self.operation = tk.StringVar(value="Choose an operation…")
+        self.status = tk.StringVar(value="Select an operation, enter the requested values, then review.")
+        self._result = None
+        self._pending = None
+        body = ttk.Frame(self, padding=24)
+        body.pack(fill="both", expand=True)
+        ttk.Label(body, text="LedgerDesk · Operations", font=("DejaVu Sans", 22, "bold")).pack(anchor="w", pady=(0, 12))
+        ttk.Label(body, text="DEMO RECORDS ONLY · No external payments or messages").pack(anchor="w", pady=(0, 18))
+        selector = ttk.Combobox(body, textvariable=self.operation, values=list(WORKFLOWS.values()), state="readonly", width=55)
+        selector.pack(anchor="w", pady=(0, 12))
+        selector.bind("<<ComboboxSelected>>", self._select_operation)
+        self.form = ttk.LabelFrame(body, text="Record details", padding=12)
+        self.form.pack(fill="x")
+        self.entries = {}
+        controls = ttk.Frame(body)
+        controls.pack(fill="x", pady=12)
+        self.review_button = ttk.Button(controls, text="Review action", command=self._review, state="disabled")
+        self.review_button.pack(side="left")
+        self.confirm_button = ttk.Button(controls, text="Confirm action", command=self._confirm, state="disabled")
+        self.confirm_button.pack(side="left", padx=12)
+        self.export_button = ttk.Button(controls, text="Export CSV", command=self._export_workflow, state="disabled")
+        self.export_button.pack(side="right")
+        self.table = ttk.Treeview(body, show="headings", height=8)
+        self.table.pack(fill="both", expand=True, pady=12)
+        ttk.Label(body, textvariable=self.status, wraplength=1020).pack(anchor="w")
+
+    def _operation_id(self):
+        from .workflows import WORKFLOWS
+        return next((k for k, v in WORKFLOWS.items() if v == self.operation.get()), None)
+
+    def _select_operation(self, _event=None):
+        from .workflows import FIELDS
+        for child in self.form.winfo_children():
+            child.destroy()
+        self.entries = {}
+        self._result = self._pending = None
+        self.confirm_button.configure(state="disabled")
+        self.export_button.configure(state="disabled")
+        self.table.delete(*self.table.get_children())
+        for index, (name, label) in enumerate(FIELDS[self._operation_id()]):
+            row, col = divmod(index, 3)
+            ttk.Label(self.form, text=label).grid(row=row * 2, column=col, sticky="w", padx=8)
+            entry = ttk.Entry(self.form, width=29)
+            entry.grid(row=row * 2 + 1, column=col, sticky="w", padx=8, pady=(4, 10))
+            self.entries[name] = entry
+        self.review_button.configure(state="normal")
+        self.status.set("Enter the requested record details, then click Review action.")
+
+    def _review(self):
+        self._pending = (self._operation_id(), {key: entry.get() for key, entry in self.entries.items()})
+        self.confirm_button.configure(state="normal")
+        self.export_button.configure(state="disabled")
+        self.status.set("Review: " + "; ".join(f"{key}={value}" for key, value in self._pending[1].items()) + ". Click Confirm action to apply.")
+
+    def _confirm(self):
+        from .workflows import execute_workflow
+        if self._pending is None:
+            return
+        operation, fields = self._pending
+        # Editing a field after review invalidates that confirmation.
+        if fields != {key: entry.get() for key, entry in self.entries.items()} or operation != self._operation_id():
+            self.status.set("Details changed. Review the action again.")
+            self.confirm_button.configure(state="disabled")
+            return
+        self._pending = None
+        self.confirm_button.configure(state="disabled")
+        try:
+            headers, rows = execute_workflow(self.db_path, operation, fields)
+        except (ValueError, OSError, sqlite3.Error) as error:
+            self.status.set(f"Action failed: {error}")
+            return
+        self._result = operation, headers, rows
+        self.table.delete(*self.table.get_children())
+        self.table.configure(columns=headers)
+        for header in headers:
+            self.table.heading(header, text=header.replace("_", " ").title())
+            self.table.column(header, width=105, minwidth=60, stretch=True)
+        for row in rows:
+            self.table.insert("", "end", values=[row[h] for h in headers])
+        self.export_button.configure(state="normal")
+        self.status.set(f"Action complete. {len(rows)} result rows. Export CSV to save the result.")
+
+    def _export_workflow(self):
+        if self._result:
+            operation, headers, rows = self._result
+            try:
+                output = write_csv_export(self.export_dir, operation, headers, rows)
+            except OSError as error:
+                self.status.set(f"Export failed: {error}")
+                return
+            self.status.set(f"Export complete: {output.name}.")
 
 
 if __name__ == "__main__":

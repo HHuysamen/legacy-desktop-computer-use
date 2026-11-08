@@ -5,6 +5,8 @@ import base64
 from contextlib import redirect_stdout
 import io
 import json
+import os
+import re
 from pathlib import Path
 import subprocess
 import sys
@@ -19,7 +21,12 @@ KEYS = {
     "ARROWUP": "up", "ARROWDOWN": "down", "ARROWLEFT": "left", "ARROWRIGHT": "right",
     "HOME": "home", "END": "end", "PAGEUP": "pageup", "PAGEDOWN": "pagedown",
     "CTRL": "ctrl", "CONTROL": "ctrl", "SHIFT": "shift", "A": "a",
+    "S": "s", "H": "h",
 }
+
+
+def is_office() -> bool:
+    return os.environ.get("LEDGERDESK_TASK") in {"calc-sort-export", "writer-find-replace"}
 
 
 def command(*args: str) -> str:
@@ -29,16 +36,41 @@ def command(*args: str) -> str:
 def window_bounds() -> tuple[int, int, int, int]:
     """Read window-manager metadata only; never inspect widgets or app data."""
     expected_pid = int(Path("/tmp/ledgerdesk/app.pid").read_text().strip())
+    if expected_pid <= 1:
+        raise RuntimeError("Invalid target process identity")
     windows = command("wmctrl", "-lpG").splitlines()
-    matches = [line.split(None, 8) for line in windows if line.endswith(TITLE)]
+    matches = [line.split(None, 8) for line in windows if is_office() or line.endswith(TITLE)]
     matches = [parts for parts in matches if len(parts) == 9 and int(parts[2]) == expected_pid]
+    active = int(command("xdotool", "getactivewindow"))
+    if is_office():
+        # Native application dialogs are allowed only within the same process.
+        if not any(int(parts[0], 16) == active for parts in matches):
+            raise RuntimeError("Target application lost focus")
+        office_windows = matches[:]
+        matches = [parts for parts in matches if int(parts[0], 16) == active]
     if len(matches) != 1:
         raise RuntimeError("LedgerDesk window missing or ambiguous")
     parts = matches[0]
-    active = int(command("xdotool", "getactivewindow"))
     if active != int(parts[0], 16):
         raise RuntimeError("LedgerDesk lost focus")
     bounds = tuple(map(int, parts[3:7]))
+    if is_office():
+        # wmctrl can double-count decorations on maximized LibreOffice windows.
+        # Read X11's absolute client geometry, not application content.
+        labels = ("Absolute upper-left X", "Absolute upper-left Y", "Width", "Height")
+        rectangles = []
+        for window in office_windows:
+            geometry = command("xwininfo", "-id", window[0])
+            values = [re.search(rf"^\s*{label}:\s*(-?\d+)", geometry, re.MULTILINE) for label in labels]
+            if any(value is None for value in values):
+                raise RuntimeError("Target client geometry is unavailable")
+            rectangles.append(tuple(int(value.group(1)) for value in values))
+        # A combo-box popup can extend outside its dialog onto the owned main window.
+        left = min(r[0] for r in rectangles)
+        top = min(r[1] for r in rectangles)
+        right = max(r[0] + r[2] for r in rectangles)
+        bottom = max(r[1] + r[3] for r in rectangles)
+        bounds = (left, top, right - left, bottom - top)
     x, y, width, height = bounds
     if width <= 0 or height <= 0 or x < 0 or y < 0 or x + width > WIDTH or y + height > HEIGHT:
         raise RuntimeError("LedgerDesk client area is outside the captured display")
@@ -69,11 +101,15 @@ def validate_action(action: dict, bounds: tuple[int, int, int, int]) -> None:
             raise ValueError("Only short printable ASCII parameter values are allowed")
     if kind == "keypress":
         keys = action.get("keys", [])
-        if not isinstance(keys, list) or not keys or len(keys) > 2 or any(k not in KEYS for k in keys):
+        if not isinstance(keys, list) or not keys or len(keys) > 3 or any(k not in KEYS for k in keys):
             raise ValueError("Unsupported keys")
-        if len(keys) == 2 and keys not in (["CTRL", "A"], ["CONTROL", "A"], ["SHIFT", "TAB"]):
+        combinations = [["CTRL", "A"], ["CONTROL", "A"], ["SHIFT", "TAB"]]
+        if is_office():
+            combinations += [[modifier, key] for modifier in ("CTRL", "CONTROL") for key in ("S", "H", "HOME", "END")]
+            combinations += [[modifier, "SHIFT", "S"] for modifier in ("CTRL", "CONTROL")]
+        if len(keys) > 1 and keys not in combinations:
             raise ValueError("Unsupported key combination")
-        if len(keys) == 1 and keys[0] in {"CTRL", "CONTROL", "SHIFT", "A"}:
+        if len(keys) == 1 and keys[0] in {"CTRL", "CONTROL", "SHIFT", "A", "S", "H"}:
             raise ValueError("Standalone modifier or letter is disabled")
 
 
