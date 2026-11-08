@@ -62,6 +62,23 @@ The attempts used 93 completed input actions and 42 model requests. Mean elapsed
 
 The [manifest](../examples/gnucash-9/manifest.json) indexes 105 files; all byte lengths and SHA-256 hashes were verified. All 99 copied per-run files match the originals, as do the protocol, ledger and status copies. The archive retains nine reports and nine recordings. It uses the same original source revision and image identified above; no original outcome has been replaced.
 
-### Planned repair cohort
+### Completed repair cohort
 
-A separately frozen nine-attempt cohort will exercise the same fixtures after a host-side key-name correction. Its source identity, results and costs will be reported separately. This is a repair check selected after observing the original failures, not independent held-out evidence. No repaired outcome is claimed here before that cohort and its offline checks complete.
+The separately frozen repair cohort completed with **nine of nine verified successes, no failures and no unverified slots**. All nine outputs and source-preservation checks pass the offline recheck. The [repair archive](../examples/gnucash-9-repaired/index.html), [summary](../examples/gnucash-9-repaired/summary.json) and [rechecks](../examples/gnucash-9-repaired/recheck.json) are separate from the original archive.
+
+| Task | Verified / attempted | Model cost, USD |
+| --- | ---: | ---: |
+| `gnucash-expense` | 3 / 3 | 0.183937 |
+| `gnucash-split` | 3 / 3 | 0.323920 |
+| `gnucash-transfer` | 3 / 3 | 0.211903 |
+| Repair cohort total | 9 / 9 | 0.719760 |
+
+The repair used 179 completed input actions and 83 model requests, with zero recorded operator interventions. Mean elapsed time was 51.0219 seconds and median elapsed time 49.769 seconds. Its complete model-cost estimate is **USD 0.719760**, or USD 0.079973333 per verified success within the repair cohort.
+
+The original and repair protocols contain exactly the same fixture manifest. The repair follows a host-side key-name correction and uses source revision `ab67ca3e7bded15c8137e60917ad2b86ec0ee69e`, with image `sha256:b3935bd320422c6e786f3a71846ee004e46544e9ce7f41b6411d252a35a1432e`. It is a repair check selected after observing the original failures, **not independent held-out evidence**. The original zero-of-nine result remains unchanged; the repair does not replace it or prove reliability on new tasks.
+
+All 152 files indexed by the repair [manifest](../examples/gnucash-9-repaired/manifest.json) passed byte-length and SHA-256 checks. Its 146 copied per-run files match the originals; protocol, ledger and status copies also match. All nine reports and recordings are retained.
+
+### Cost accounting across the follow-ups
+
+The two GnuCash cohorts together cost **USD 0.962288**: USD 0.242528 for the original failed cohort plus USD 0.719760 for the repair cohort. Including the separate Office tasks and controls, the three follow-up campaigns cost **USD 2.970318**. These totals include known costs from the original failures; outcome denominators remain separate. They exclude the earlier 100-attempt study, setup work, hosting and media production.

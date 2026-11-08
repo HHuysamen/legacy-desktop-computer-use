@@ -1,0 +1,26 @@
+{
+  "protocol": "gnucash-native-9-v1",
+  "planned": 9,
+  "completed": 9,
+  "remaining": 0,
+  "grades": {
+    "positive": {
+      "completed": 9,
+      "passed": 9,
+      "failed": 0,
+      "unverified": 0
+    },
+    "negative_control": {
+      "completed": 0,
+      "passed": 0,
+      "failed": 0,
+      "unverified": 0
+    }
+  },
+  "estimated_cost_usd_known": 0.71976,
+  "estimated_cost_usd": 0.71976,
+  "cost_complete": true,
+  "budget_reserved_usd": 0.71976,
+  "total_budget_usd": 10.0,
+  "stop_reason": null
+}

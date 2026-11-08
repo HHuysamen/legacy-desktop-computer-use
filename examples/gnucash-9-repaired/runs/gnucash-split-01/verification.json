@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "errors": [],
+  "headers": [
+    "date",
+    "description",
+    "account",
+    "amount"
+  ],
+  "rows": [
+    {
+      "date": "2026-10-01",
+      "description": "Synthetic opening balance",
+      "account": "Checking",
+      "amount": "10000.00"
+    },
+    {
+      "date": "2026-10-01",
+      "description": "Synthetic opening balance",
+      "account": "EquityOpening",
+      "amount": "-10000.00"
+    },
+    {
+      "date": "2026-11-11",
+      "description": "SPL-02 Regional meeting",
+      "account": "Checking",
+      "amount": "-139.75"
+    },
+    {
+      "date": "2026-11-11",
+      "description": "SPL-02 Regional meeting",
+      "account": "ExpenseTravel",
+      "amount": "97.50"
+    },
+    {
+      "date": "2026-11-11",
+      "description": "SPL-02 Regional meeting",
+      "account": "ExpenseMeals",
+      "amount": "42.25"
+    }
+  ],
+  "row_count": 5,
+  "source_unchanged": true,
+  "expected_input_sha256": "cc9147360d100e5d8655df6b5d96dfb4e9a2b422443e0e843f639d413167ab46",
+  "source_sha256_after": "cc9147360d100e5d8655df6b5d96dfb4e9a2b422443e0e843f639d413167ab46"
+}

@@ -27,7 +27,7 @@ The first Calc run, `20261108T125117-bdb21f`, was stopped at the Save As format 
 - First expansion cohort, `c523e53`: 12/13 passed.
 - Corrected expansion cohort, `e041a50`: 63/63 passed.
 
-The failed attempt was not replaced. This is an iterative evaluation of fixed tasks, not 100 trials of one frozen driver. See the [methodology](evaluation-methodology.md) and [use-case selection](desktop-use-cases.md). There are no held-out inputs, layout perturbations, production accounts or human/API baselines.
+The failed attempt was not replaced. This is an iterative evaluation of fixed tasks, not 100 trials of one frozen driver. See the [methodology](evaluation-methodology.md) and [use-case selection](desktop-use-cases.md). That 100-attempt study has no held-out inputs, layout perturbations, production accounts or human/API baselines; the separate follow-up below adds input and layout variation.
 
 ## Cost
 
@@ -43,3 +43,13 @@ At one attempt per workday, the equally weighted task average projects to USD 1.
 - **220 unit and integration tests passed locally.** These cover business rules, atomic/duplicate handling, independent oracles, native window/PID/focus bounds, popup handling, limits, packaging and study accounting. See CI for the current test result.
 - Presentation reports were regenerated after execution to add companion-file links and label non-CSV output correctly; raw run records, actions, screenshots and exports were not changed.
 - Desktop containers were stopped after the completed study. Credentials are excluded from source, evidence and the guest desktop.
+
+## Frozen follow-up studies
+
+The Office follow-up verified 24/24 business tasks and 6/6 separately graded controls. All 12 identical-file/instruction pairs passed in normal and changed geometry. The original GnuCash cohort achieved 0/9 verified results because all nine attempts stopped at a `Tab`/`TAB` compatibility boundary. A separately committed repair normalizes ASCII key-name case without widening the guest allowlist; the same nine fixtures then verified 9/9. These repair results are not independent held-out evidence.
+
+Original follow-up runtime: `7f269cd03b47dd83b62ca77a2aefba4b6058bf51`. Repaired runtime: `ab67ca3e7bded15c8137e60917ad2b86ec0ee69e`. Each archive retains its own full source/image identity, fixed inputs and instructions, append-only execution ledger, artifacts and offline checks. The original failed cohort remains intact.
+
+Total model cost across the 48 new slots is USD 2.970318: Office tasks USD 1.936222, controls USD 0.071808, original GnuCash USD 0.242528 and repaired GnuCash USD 0.719760. All usage is complete and all attempts record zero operator interventions. Timings include setup, agent and verification but exclude final teardown. Synthetic Linux cases do not establish Windows or production reliability.
+
+The current deterministic suite passes **363 tests**. The detailed [follow-up results](follow-up-results.md), [protocol](robustness-methodology.md) and [reproduction instructions](follow-up-reproduction.md) document the evidence and limitations. Earlier immutable archives are unchanged.

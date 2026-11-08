@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "errors": [],
+  "headers": [
+    "date",
+    "description",
+    "account",
+    "amount"
+  ],
+  "rows": [
+    {
+      "date": "2026-10-01",
+      "description": "Synthetic opening balance",
+      "account": "Checking",
+      "amount": "10000.00"
+    },
+    {
+      "date": "2026-10-01",
+      "description": "Synthetic opening balance",
+      "account": "EquityOpening",
+      "amount": "-10000.00"
+    },
+    {
+      "date": "2026-11-10",
+      "description": "SPL-01 Client visit",
+      "account": "Checking",
+      "amount": "-240.00"
+    },
+    {
+      "date": "2026-11-10",
+      "description": "SPL-01 Client visit",
+      "account": "ExpenseTravel",
+      "amount": "180.00"
+    },
+    {
+      "date": "2026-11-10",
+      "description": "SPL-01 Client visit",
+      "account": "ExpenseMeals",
+      "amount": "60.00"
+    }
+  ],
+  "row_count": 5,
+  "source_unchanged": true,
+  "expected_input_sha256": "6fd9ee6c9ddae6444692ad36dc86be492843d4f490f415703390d4d5f021ad44",
+  "source_sha256_after": "6fd9ee6c9ddae6444692ad36dc86be492843d4f490f415703390d4d5f021ad44"
+}

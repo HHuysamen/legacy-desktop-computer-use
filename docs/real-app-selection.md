@@ -1,6 +1,6 @@
 # Selecting a real finance application
 
-Research checked 8 November 2026. **GnuCash was selected and installed for the native application study, with HomeBank retained as the fallback.** A manual development smoke check succeeded, but the original nine measured agent attempts all failed at a driver key-name boundary. Application feasibility and measured agent success are separate findings; see the [follow-up results](follow-up-results.md).
+Research checked 8 November 2026. **GnuCash was selected and installed for the native application study, with HomeBank retained as the fallback.** A manual development smoke check succeeded. The original nine measured agent attempts all failed at a driver key-name boundary; a separately frozen repair cohort passed all nine checks on the same fixtures. These are separate results, not a single uninterrupted success series; see the [follow-up results](follow-up-results.md).
 
 ## Why GnuCash
 
@@ -38,7 +38,9 @@ The model receives instructions and screenshots, with the existing bounded mouse
 
 A manual development smoke check opened a generated synthetic book, entered a supplies expense and saved a copy through the GUI. The retained `output/gnucash-preflight` artifact passes the independent semantic verifier, including its original-source check. This established one prepared GUI path; it did not test every key spelling the model might choose. The package depends on WebKit for some features; these selected tasks exercise native registers and dialogs, not an embedded report view. [Package dependencies](https://packages.debian.org/bookworm/gnucash)
 
-The original measured cohort retained all nine failures and their complete USD 0.242528 model-cost estimate. In every trace the driver rejected the model's `Tab` key spelling while accepting `TAB`. None produced a verified requested result: six outputs were missing and three retained outputs failed semantic checks. All original source-preservation checks passed. A separately frozen repair cohort is planned with the same fixtures after correcting host key-name handling; it is not independent held-out evidence and cannot erase these failures.
+The original measured cohort retained all nine failures and their complete USD 0.242528 model-cost estimate. In every trace the driver rejected the model's `Tab` key spelling while accepting `TAB`. None produced a verified requested result: six outputs were missing and three retained outputs failed semantic checks. All original source-preservation checks passed.
+
+After correcting host key-name handling, a separately frozen repair cohort passed all nine task and source-preservation checks, costing USD 0.719760. It uses the same fixture manifest and is not independent held-out evidence. The [original archive](../examples/gnucash-9/index.html) and [repair archive](../examples/gnucash-9-repaired/index.html) retain their own source/image identities and outcomes. Total model cost across both cohorts is USD 0.962288, including the original failures; the repaired results do not erase them.
 
 Retain source books, available saved books, source hashes, screenshots, action traces, usage and independent verdicts for every cohort. These small synthetic cases cannot establish reliability across arbitrary accounting software, production books or Windows desktops.
 

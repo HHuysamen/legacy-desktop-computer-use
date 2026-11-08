@@ -1,0 +1,2001 @@
+{
+  "schema_version": 1,
+  "protocol": "gnucash-native-9-v1",
+  "campaign": "gnucash",
+  "packaged_at": "2026-11-08T15:54:56.485760+00:00",
+  "protocol_sha256": "3319d45f7c28e83db8d6c2f293b1235bf2371d41a27138d3f611ccbf5e6cac16",
+  "planned": 9,
+  "completed": 9,
+  "positive": {
+    "attempts": 9,
+    "passed": 9,
+    "failed": 0,
+    "unverified": 0,
+    "cost_values_available": 9,
+    "estimated_cost_usd_known": 0.71976,
+    "estimated_cost_usd": 0.71976,
+    "cost_complete": true,
+    "cost_per_verified_success": 0.07997333333333333,
+    "elapsed_seconds": {
+      "available": 9,
+      "complete": true,
+      "known_total": 459.197,
+      "total": 459.197,
+      "mean": 51.02188888888889,
+      "median": 49.769,
+      "min": 41.286,
+      "max": 67.571
+    },
+    "setup_elapsed_seconds": {
+      "available": 9,
+      "complete": true,
+      "known_total": 32.286,
+      "total": 32.286,
+      "mean": 3.5873333333333335,
+      "median": 3.532,
+      "min": 3.465,
+      "max": 4.106
+    },
+    "agent_elapsed_seconds": {
+      "available": 9,
+      "complete": true,
+      "known_total": 415.377,
+      "total": 415.377,
+      "mean": 46.153,
+      "median": 44.645,
+      "min": 36.069,
+      "max": 62.749
+    },
+    "verification_elapsed_seconds": {
+      "available": 9,
+      "complete": true,
+      "known_total": 2.312,
+      "total": 2.312,
+      "mean": 0.2568888888888889,
+      "median": 0.242,
+      "min": 0.201,
+      "max": 0.42
+    },
+    "action_count": {
+      "available": 9,
+      "complete": true,
+      "known_total": 179,
+      "total": 179,
+      "mean": 19.88888888888889,
+      "median": 17,
+      "min": 17,
+      "max": 27
+    },
+    "executed_actions": {
+      "available": 9,
+      "complete": true,
+      "known_total": 179,
+      "total": 179,
+      "mean": 19.88888888888889,
+      "median": 17,
+      "min": 17,
+      "max": 27
+    },
+    "request_count": {
+      "available": 9,
+      "complete": true,
+      "known_total": 83,
+      "total": 83,
+      "mean": 9.222222222222221,
+      "median": 9,
+      "min": 7,
+      "max": 12
+    },
+    "operator_interventions": {
+      "available": 9,
+      "complete": true,
+      "known_total": 0,
+      "total": 0,
+      "mean": 0,
+      "median": 0,
+      "min": 0,
+      "max": 0
+    },
+    "input_tokens": {
+      "available": 9,
+      "complete": true,
+      "known_total": 695355,
+      "total": 695355,
+      "mean": 77261.66666666667,
+      "median": 72458,
+      "min": 46427,
+      "max": 121729
+    },
+    "output_tokens": {
+      "available": 9,
+      "complete": true,
+      "known_total": 4881,
+      "total": 4881,
+      "mean": 542.3333333333334,
+      "median": 537,
+      "min": 401,
+      "max": 682
+    },
+    "total_tokens": {
+      "available": 9,
+      "complete": true,
+      "known_total": 700236,
+      "total": 700236,
+      "mean": 77804,
+      "median": 72995,
+      "min": 46828,
+      "max": 122361
+    }
+  },
+  "negative_controls": {
+    "attempts": 0,
+    "passed": 0,
+    "failed": 0,
+    "unverified": 0,
+    "cost_values_available": 0,
+    "estimated_cost_usd_known": 0.0,
+    "estimated_cost_usd": 0.0,
+    "cost_complete": true,
+    "cost_per_verified_success": null,
+    "elapsed_seconds": {
+      "available": 0,
+      "complete": true,
+      "known_total": null,
+      "total": 0,
+      "mean": null,
+      "median": null,
+      "min": null,
+      "max": null
+    },
+    "setup_elapsed_seconds": {
+      "available": 0,
+      "complete": true,
+      "known_total": null,
+      "total": 0,
+      "mean": null,
+      "median": null,
+      "min": null,
+      "max": null
+    },
+    "agent_elapsed_seconds": {
+      "available": 0,
+      "complete": true,
+      "known_total": null,
+      "total": 0,
+      "mean": null,
+      "median": null,
+      "min": null,
+      "max": null
+    },
+    "verification_elapsed_seconds": {
+      "available": 0,
+      "complete": true,
+      "known_total": null,
+      "total": 0,
+      "mean": null,
+      "median": null,
+      "min": null,
+      "max": null
+    },
+    "action_count": {
+      "available": 0,
+      "complete": true,
+      "known_total": null,
+      "total": 0,
+      "mean": null,
+      "median": null,
+      "min": null,
+      "max": null
+    },
+    "executed_actions": {
+      "available": 0,
+      "complete": true,
+      "known_total": null,
+      "total": 0,
+      "mean": null,
+      "median": null,
+      "min": null,
+      "max": null
+    },
+    "request_count": {
+      "available": 0,
+      "complete": true,
+      "known_total": null,
+      "total": 0,
+      "mean": null,
+      "median": null,
+      "min": null,
+      "max": null
+    },
+    "operator_interventions": {
+      "available": 0,
+      "complete": true,
+      "known_total": null,
+      "total": 0,
+      "mean": null,
+      "median": null,
+      "min": null,
+      "max": null
+    },
+    "input_tokens": {
+      "available": 0,
+      "complete": true,
+      "known_total": null,
+      "total": 0,
+      "mean": null,
+      "median": null,
+      "min": null,
+      "max": null
+    },
+    "output_tokens": {
+      "available": 0,
+      "complete": true,
+      "known_total": null,
+      "total": 0,
+      "mean": null,
+      "median": null,
+      "min": null,
+      "max": null
+    },
+    "total_tokens": {
+      "available": 0,
+      "complete": true,
+      "known_total": null,
+      "total": 0,
+      "mean": null,
+      "median": null,
+      "min": null,
+      "max": null
+    }
+  },
+  "all_cases": {
+    "attempts": 9,
+    "passed": 9,
+    "failed": 0,
+    "unverified": 0,
+    "cost_values_available": 9,
+    "estimated_cost_usd_known": 0.71976,
+    "estimated_cost_usd": 0.71976,
+    "cost_complete": true,
+    "cost_per_verified_success": null,
+    "elapsed_seconds": {
+      "available": 9,
+      "complete": true,
+      "known_total": 459.197,
+      "total": 459.197,
+      "mean": 51.02188888888889,
+      "median": 49.769,
+      "min": 41.286,
+      "max": 67.571
+    },
+    "setup_elapsed_seconds": {
+      "available": 9,
+      "complete": true,
+      "known_total": 32.286,
+      "total": 32.286,
+      "mean": 3.5873333333333335,
+      "median": 3.532,
+      "min": 3.465,
+      "max": 4.106
+    },
+    "agent_elapsed_seconds": {
+      "available": 9,
+      "complete": true,
+      "known_total": 415.377,
+      "total": 415.377,
+      "mean": 46.153,
+      "median": 44.645,
+      "min": 36.069,
+      "max": 62.749
+    },
+    "verification_elapsed_seconds": {
+      "available": 9,
+      "complete": true,
+      "known_total": 2.312,
+      "total": 2.312,
+      "mean": 0.2568888888888889,
+      "median": 0.242,
+      "min": 0.201,
+      "max": 0.42
+    },
+    "action_count": {
+      "available": 9,
+      "complete": true,
+      "known_total": 179,
+      "total": 179,
+      "mean": 19.88888888888889,
+      "median": 17,
+      "min": 17,
+      "max": 27
+    },
+    "executed_actions": {
+      "available": 9,
+      "complete": true,
+      "known_total": 179,
+      "total": 179,
+      "mean": 19.88888888888889,
+      "median": 17,
+      "min": 17,
+      "max": 27
+    },
+    "request_count": {
+      "available": 9,
+      "complete": true,
+      "known_total": 83,
+      "total": 83,
+      "mean": 9.222222222222221,
+      "median": 9,
+      "min": 7,
+      "max": 12
+    },
+    "operator_interventions": {
+      "available": 9,
+      "complete": true,
+      "known_total": 0,
+      "total": 0,
+      "mean": 0,
+      "median": 0,
+      "min": 0,
+      "max": 0
+    },
+    "input_tokens": {
+      "available": 9,
+      "complete": true,
+      "known_total": 695355,
+      "total": 695355,
+      "mean": 77261.66666666667,
+      "median": 72458,
+      "min": 46427,
+      "max": 121729
+    },
+    "output_tokens": {
+      "available": 9,
+      "complete": true,
+      "known_total": 4881,
+      "total": 4881,
+      "mean": 542.3333333333334,
+      "median": 537,
+      "min": 401,
+      "max": 682
+    },
+    "total_tokens": {
+      "available": 9,
+      "complete": true,
+      "known_total": 700236,
+      "total": 700236,
+      "mean": 77804,
+      "median": 72995,
+      "min": 46828,
+      "max": 122361
+    }
+  },
+  "positive_by_application": {
+    "GnuCash": {
+      "attempts": 9,
+      "passed": 9,
+      "failed": 0,
+      "unverified": 0,
+      "cost_values_available": 9,
+      "estimated_cost_usd_known": 0.71976,
+      "estimated_cost_usd": 0.71976,
+      "cost_complete": true,
+      "cost_per_verified_success": 0.07997333333333333,
+      "elapsed_seconds": {
+        "available": 9,
+        "complete": true,
+        "known_total": 459.197,
+        "total": 459.197,
+        "mean": 51.02188888888889,
+        "median": 49.769,
+        "min": 41.286,
+        "max": 67.571
+      },
+      "setup_elapsed_seconds": {
+        "available": 9,
+        "complete": true,
+        "known_total": 32.286,
+        "total": 32.286,
+        "mean": 3.5873333333333335,
+        "median": 3.532,
+        "min": 3.465,
+        "max": 4.106
+      },
+      "agent_elapsed_seconds": {
+        "available": 9,
+        "complete": true,
+        "known_total": 415.377,
+        "total": 415.377,
+        "mean": 46.153,
+        "median": 44.645,
+        "min": 36.069,
+        "max": 62.749
+      },
+      "verification_elapsed_seconds": {
+        "available": 9,
+        "complete": true,
+        "known_total": 2.312,
+        "total": 2.312,
+        "mean": 0.2568888888888889,
+        "median": 0.242,
+        "min": 0.201,
+        "max": 0.42
+      },
+      "action_count": {
+        "available": 9,
+        "complete": true,
+        "known_total": 179,
+        "total": 179,
+        "mean": 19.88888888888889,
+        "median": 17,
+        "min": 17,
+        "max": 27
+      },
+      "executed_actions": {
+        "available": 9,
+        "complete": true,
+        "known_total": 179,
+        "total": 179,
+        "mean": 19.88888888888889,
+        "median": 17,
+        "min": 17,
+        "max": 27
+      },
+      "request_count": {
+        "available": 9,
+        "complete": true,
+        "known_total": 83,
+        "total": 83,
+        "mean": 9.222222222222221,
+        "median": 9,
+        "min": 7,
+        "max": 12
+      },
+      "operator_interventions": {
+        "available": 9,
+        "complete": true,
+        "known_total": 0,
+        "total": 0,
+        "mean": 0,
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "input_tokens": {
+        "available": 9,
+        "complete": true,
+        "known_total": 695355,
+        "total": 695355,
+        "mean": 77261.66666666667,
+        "median": 72458,
+        "min": 46427,
+        "max": 121729
+      },
+      "output_tokens": {
+        "available": 9,
+        "complete": true,
+        "known_total": 4881,
+        "total": 4881,
+        "mean": 542.3333333333334,
+        "median": 537,
+        "min": 401,
+        "max": 682
+      },
+      "total_tokens": {
+        "available": 9,
+        "complete": true,
+        "known_total": 700236,
+        "total": 700236,
+        "mean": 77804,
+        "median": 72995,
+        "min": 46828,
+        "max": 122361
+      }
+    }
+  },
+  "positive_by_split": {
+    "not-applicable": {
+      "attempts": 9,
+      "passed": 9,
+      "failed": 0,
+      "unverified": 0,
+      "cost_values_available": 9,
+      "estimated_cost_usd_known": 0.71976,
+      "estimated_cost_usd": 0.71976,
+      "cost_complete": true,
+      "cost_per_verified_success": 0.07997333333333333,
+      "elapsed_seconds": {
+        "available": 9,
+        "complete": true,
+        "known_total": 459.197,
+        "total": 459.197,
+        "mean": 51.02188888888889,
+        "median": 49.769,
+        "min": 41.286,
+        "max": 67.571
+      },
+      "setup_elapsed_seconds": {
+        "available": 9,
+        "complete": true,
+        "known_total": 32.286,
+        "total": 32.286,
+        "mean": 3.5873333333333335,
+        "median": 3.532,
+        "min": 3.465,
+        "max": 4.106
+      },
+      "agent_elapsed_seconds": {
+        "available": 9,
+        "complete": true,
+        "known_total": 415.377,
+        "total": 415.377,
+        "mean": 46.153,
+        "median": 44.645,
+        "min": 36.069,
+        "max": 62.749
+      },
+      "verification_elapsed_seconds": {
+        "available": 9,
+        "complete": true,
+        "known_total": 2.312,
+        "total": 2.312,
+        "mean": 0.2568888888888889,
+        "median": 0.242,
+        "min": 0.201,
+        "max": 0.42
+      },
+      "action_count": {
+        "available": 9,
+        "complete": true,
+        "known_total": 179,
+        "total": 179,
+        "mean": 19.88888888888889,
+        "median": 17,
+        "min": 17,
+        "max": 27
+      },
+      "executed_actions": {
+        "available": 9,
+        "complete": true,
+        "known_total": 179,
+        "total": 179,
+        "mean": 19.88888888888889,
+        "median": 17,
+        "min": 17,
+        "max": 27
+      },
+      "request_count": {
+        "available": 9,
+        "complete": true,
+        "known_total": 83,
+        "total": 83,
+        "mean": 9.222222222222221,
+        "median": 9,
+        "min": 7,
+        "max": 12
+      },
+      "operator_interventions": {
+        "available": 9,
+        "complete": true,
+        "known_total": 0,
+        "total": 0,
+        "mean": 0,
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "input_tokens": {
+        "available": 9,
+        "complete": true,
+        "known_total": 695355,
+        "total": 695355,
+        "mean": 77261.66666666667,
+        "median": 72458,
+        "min": 46427,
+        "max": 121729
+      },
+      "output_tokens": {
+        "available": 9,
+        "complete": true,
+        "known_total": 4881,
+        "total": 4881,
+        "mean": 542.3333333333334,
+        "median": 537,
+        "min": 401,
+        "max": 682
+      },
+      "total_tokens": {
+        "available": 9,
+        "complete": true,
+        "known_total": 700236,
+        "total": 700236,
+        "mean": 77804,
+        "median": 72995,
+        "min": 46828,
+        "max": 122361
+      }
+    }
+  },
+  "positive_by_geometry": {
+    "normal": {
+      "attempts": 9,
+      "passed": 9,
+      "failed": 0,
+      "unverified": 0,
+      "cost_values_available": 9,
+      "estimated_cost_usd_known": 0.71976,
+      "estimated_cost_usd": 0.71976,
+      "cost_complete": true,
+      "cost_per_verified_success": 0.07997333333333333,
+      "elapsed_seconds": {
+        "available": 9,
+        "complete": true,
+        "known_total": 459.197,
+        "total": 459.197,
+        "mean": 51.02188888888889,
+        "median": 49.769,
+        "min": 41.286,
+        "max": 67.571
+      },
+      "setup_elapsed_seconds": {
+        "available": 9,
+        "complete": true,
+        "known_total": 32.286,
+        "total": 32.286,
+        "mean": 3.5873333333333335,
+        "median": 3.532,
+        "min": 3.465,
+        "max": 4.106
+      },
+      "agent_elapsed_seconds": {
+        "available": 9,
+        "complete": true,
+        "known_total": 415.377,
+        "total": 415.377,
+        "mean": 46.153,
+        "median": 44.645,
+        "min": 36.069,
+        "max": 62.749
+      },
+      "verification_elapsed_seconds": {
+        "available": 9,
+        "complete": true,
+        "known_total": 2.312,
+        "total": 2.312,
+        "mean": 0.2568888888888889,
+        "median": 0.242,
+        "min": 0.201,
+        "max": 0.42
+      },
+      "action_count": {
+        "available": 9,
+        "complete": true,
+        "known_total": 179,
+        "total": 179,
+        "mean": 19.88888888888889,
+        "median": 17,
+        "min": 17,
+        "max": 27
+      },
+      "executed_actions": {
+        "available": 9,
+        "complete": true,
+        "known_total": 179,
+        "total": 179,
+        "mean": 19.88888888888889,
+        "median": 17,
+        "min": 17,
+        "max": 27
+      },
+      "request_count": {
+        "available": 9,
+        "complete": true,
+        "known_total": 83,
+        "total": 83,
+        "mean": 9.222222222222221,
+        "median": 9,
+        "min": 7,
+        "max": 12
+      },
+      "operator_interventions": {
+        "available": 9,
+        "complete": true,
+        "known_total": 0,
+        "total": 0,
+        "mean": 0,
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "input_tokens": {
+        "available": 9,
+        "complete": true,
+        "known_total": 695355,
+        "total": 695355,
+        "mean": 77261.66666666667,
+        "median": 72458,
+        "min": 46427,
+        "max": 121729
+      },
+      "output_tokens": {
+        "available": 9,
+        "complete": true,
+        "known_total": 4881,
+        "total": 4881,
+        "mean": 542.3333333333334,
+        "median": 537,
+        "min": 401,
+        "max": 682
+      },
+      "total_tokens": {
+        "available": 9,
+        "complete": true,
+        "known_total": 700236,
+        "total": 700236,
+        "mean": 77804,
+        "median": 72995,
+        "min": 46828,
+        "max": 122361
+      }
+    }
+  },
+  "controls_by_type": {},
+  "metric_definitions": {
+    "cost_per_verified_success": "Positive tasks only: total model cost in USD, including failed attempts, divided by rechecked passes. Null if any cost or outcome is unknown, or there are no passes.",
+    "operator_interventions": "Recorded operator intervention counts across all attempts in the group; missing values remain unknown.",
+    "paired_deltas": "Changed geometry minus normal geometry for the matched input, including failed attempts. Null if either measurement is unknown."
+  },
+  "pairs": [],
+  "cases": [
+    {
+      "case": {
+        "fixture_id": "gnucash-split-01",
+        "task_id": "gnucash-split",
+        "fixture_index": 1,
+        "input_name": "gnucash-source.gnucash",
+        "output_name": "gnucash-split.gnucash",
+        "input_sha256": "cc9147360d100e5d8655df6b5d96dfb4e9a2b422443e0e843f639d413167ab46",
+        "instruction_sha256": "9d3773d3b5a1c558b4caa6b2e95c47a6278dd2b90732906452cc3aa9cf200a8a",
+        "expected_sha256": "e138639601f9e765a6ff71fcb6c87c6162ad94d63ea05262c929bc0ee14860fe",
+        "case_id": "gnucash-split-01",
+        "geometry": "normal",
+        "control": null,
+        "kind": "positive"
+      },
+      "metadata": {
+        "id": "20261108T154649-99ced2",
+        "case_id": "gnucash-split-01",
+        "task_id": "gnucash-split",
+        "instruction": "A synthetic USD book is open in GnuCash. Record one split expense paid from Checking: USD 97.50 to ExpenseTravel and USD 42.25 to ExpenseMeals. Use one transaction with three splits, not two separate transactions. Use date 2026-11-11 (11/11/26 in the displayed MM/DD/YY field) and exact Description 'SPL-02 Regional meeting'. Leave Num and split memos blank. Add exactly one transaction and leave it unreconciled. Preserve all existing accounts and transactions. Use Save As to save the XML GnuCash book to /tmp/ledgerdesk/exports/gnucash-split.gnucash. Do not overwrite the source book. Use only the application's normal controls.",
+        "started_at": "2026-11-08T15:46:49.599239+00:00",
+        "source_revision": "ab67ca3e7bded15c8137e60917ad2b86ec0ee69e",
+        "image_id": "sha256:b3935bd320422c6e786f3a71846ee004e46544e9ce7f41b6411d252a35a1432e",
+        "spec": {
+          "fixture_id": "gnucash-split-01",
+          "task_id": "gnucash-split",
+          "fixture_index": 1,
+          "input_name": "gnucash-source.gnucash",
+          "output_name": "gnucash-split.gnucash",
+          "input_sha256": "cc9147360d100e5d8655df6b5d96dfb4e9a2b422443e0e843f639d413167ab46",
+          "instruction_sha256": "9d3773d3b5a1c558b4caa6b2e95c47a6278dd2b90732906452cc3aa9cf200a8a",
+          "expected_sha256": "e138639601f9e765a6ff71fcb6c87c6162ad94d63ea05262c929bc0ee14860fe",
+          "case_id": "gnucash-split-01",
+          "geometry": "normal",
+          "control": null,
+          "kind": "positive",
+          "expected_image_id": "sha256:b3935bd320422c6e786f3a71846ee004e46544e9ce7f41b6411d252a35a1432e",
+          "expected_source_revision": "ab67ca3e7bded15c8137e60917ad2b86ec0ee69e"
+        },
+        "limits": {
+          "budget_usd": 1.0,
+          "max_requests": 30,
+          "max_actions": 80,
+          "timeout": 420
+        },
+        "model": "gpt-6.1-terra",
+        "status": "passed",
+        "error": null,
+        "action_count": 27,
+        "request_count": 11,
+        "estimated_cost_usd": 0.107741,
+        "usage": {
+          "input_tokens": 104331,
+          "output_tokens": 682,
+          "total_tokens": 105013,
+          "complete": true
+        },
+        "operator_interventions": 0,
+        "environment": "Linux arm64/X11; 1200x900; isolated Docker",
+        "reasoning_effort": "medium",
+        "application": "GnuCash",
+        "setup_elapsed_seconds": 3.599,
+        "window_bounds": [
+          0,
+          19,
+          1200,
+          881
+        ],
+        "application_version": "GnuCash 4.13\nBuild ID: 4.13+(2022-12-17)",
+        "input_sha256": "cc9147360d100e5d8655df6b5d96dfb4e9a2b422443e0e843f639d413167ab46",
+        "model_text": "Completed and saved the book to `/tmp/ledgerdesk/exports/gnucash-split.gnucash`.",
+        "observed_model": "gpt-6.1-terra",
+        "agent_status": "completed",
+        "agent_elapsed_seconds": 45.934,
+        "verification_elapsed_seconds": 0.207,
+        "recording_available": true,
+        "elapsed_seconds": 50.561,
+        "finished_at": "2026-11-08T15:47:40.160556+00:00",
+        "executed_actions": 27
+      },
+      "application": "GnuCash",
+      "recorded_grade": {
+        "passed": true,
+        "errors": []
+      },
+      "recheck": {
+        "passed": true,
+        "artifact_passed": true,
+        "source_check_passed": true,
+        "saved_input_sha256": "cc9147360d100e5d8655df6b5d96dfb4e9a2b422443e0e843f639d413167ab46",
+        "recorded_source_sha256_after": "cc9147360d100e5d8655df6b5d96dfb4e9a2b422443e0e843f639d413167ab46",
+        "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+        "errors": [],
+        "artifact_verification": {
+          "passed": true,
+          "errors": [],
+          "headers": [
+            "date",
+            "description",
+            "account",
+            "amount"
+          ],
+          "rows": [
+            {
+              "date": "2026-10-01",
+              "description": "Synthetic opening balance",
+              "account": "Checking",
+              "amount": "10000.00"
+            },
+            {
+              "date": "2026-10-01",
+              "description": "Synthetic opening balance",
+              "account": "EquityOpening",
+              "amount": "-10000.00"
+            },
+            {
+              "date": "2026-11-11",
+              "description": "SPL-02 Regional meeting",
+              "account": "Checking",
+              "amount": "-139.75"
+            },
+            {
+              "date": "2026-11-11",
+              "description": "SPL-02 Regional meeting",
+              "account": "ExpenseTravel",
+              "amount": "97.50"
+            },
+            {
+              "date": "2026-11-11",
+              "description": "SPL-02 Regional meeting",
+              "account": "ExpenseMeals",
+              "amount": "42.25"
+            }
+          ],
+          "row_count": 5,
+          "source_unchanged": null,
+          "expected_input_sha256": "cc9147360d100e5d8655df6b5d96dfb4e9a2b422443e0e843f639d413167ab46"
+        }
+      },
+      "evidence_path": "runs/gnucash-split-01",
+      "has_report": true,
+      "has_recording": true
+    },
+    {
+      "case": {
+        "fixture_id": "gnucash-transfer-00",
+        "task_id": "gnucash-transfer",
+        "fixture_index": 0,
+        "input_name": "gnucash-source.gnucash",
+        "output_name": "gnucash-transfer.gnucash",
+        "input_sha256": "f0cc00d3211a777a542a97dec6d8d4267032bc9f31296226532e057e31dd8e50",
+        "instruction_sha256": "17c7eb15d4af54ce846fa452659b2d2ddf7788a2aed362f84ff1c60cde509468",
+        "expected_sha256": "c3c0f66617c8c380c4f28f4147aa596a6fe8793678777626066503019cba28cb",
+        "case_id": "gnucash-transfer-00",
+        "geometry": "normal",
+        "control": null,
+        "kind": "positive"
+      },
+      "metadata": {
+        "id": "20261108T154740-8afe6b",
+        "case_id": "gnucash-transfer-00",
+        "task_id": "gnucash-transfer",
+        "instruction": "A synthetic USD book is open in GnuCash. Record a transfer of USD 500.00 from Checking to Savings. Use date 2026-11-10 (11/10/26 in the displayed MM/DD/YY field) and exact Description 'TRF-01 Reserve transfer'. Leave Num and split memos blank. Add exactly one transaction and leave it unreconciled. Preserve all existing accounts and transactions. Use Save As to save the XML GnuCash book to /tmp/ledgerdesk/exports/gnucash-transfer.gnucash. Do not overwrite the source book. Use only the application's normal controls.",
+        "started_at": "2026-11-08T15:47:40.805035+00:00",
+        "source_revision": "ab67ca3e7bded15c8137e60917ad2b86ec0ee69e",
+        "image_id": "sha256:b3935bd320422c6e786f3a71846ee004e46544e9ce7f41b6411d252a35a1432e",
+        "spec": {
+          "fixture_id": "gnucash-transfer-00",
+          "task_id": "gnucash-transfer",
+          "fixture_index": 0,
+          "input_name": "gnucash-source.gnucash",
+          "output_name": "gnucash-transfer.gnucash",
+          "input_sha256": "f0cc00d3211a777a542a97dec6d8d4267032bc9f31296226532e057e31dd8e50",
+          "instruction_sha256": "17c7eb15d4af54ce846fa452659b2d2ddf7788a2aed362f84ff1c60cde509468",
+          "expected_sha256": "c3c0f66617c8c380c4f28f4147aa596a6fe8793678777626066503019cba28cb",
+          "case_id": "gnucash-transfer-00",
+          "geometry": "normal",
+          "control": null,
+          "kind": "positive",
+          "expected_image_id": "sha256:b3935bd320422c6e786f3a71846ee004e46544e9ce7f41b6411d252a35a1432e",
+          "expected_source_revision": "ab67ca3e7bded15c8137e60917ad2b86ec0ee69e"
+        },
+        "limits": {
+          "budget_usd": 1.0,
+          "max_requests": 30,
+          "max_actions": 80,
+          "timeout": 420
+        },
+        "model": "gpt-6.1-terra",
+        "status": "passed",
+        "error": null,
+        "action_count": 18,
+        "request_count": 8,
+        "estimated_cost_usd": 0.061368,
+        "usage": {
+          "input_tokens": 58868,
+          "output_tokens": 500,
+          "total_tokens": 59368,
+          "complete": true
+        },
+        "operator_interventions": 0,
+        "environment": "Linux arm64/X11; 1200x900; isolated Docker",
+        "reasoning_effort": "medium",
+        "application": "GnuCash",
+        "setup_elapsed_seconds": 3.465,
+        "window_bounds": [
+          0,
+          19,
+          1200,
+          881
+        ],
+        "application_version": "GnuCash 4.13\nBuild ID: 4.13+(2022-12-17)",
+        "input_sha256": "f0cc00d3211a777a542a97dec6d8d4267032bc9f31296226532e057e31dd8e50",
+        "model_text": "Recorded the transaction and saved the XML book to `/tmp/ledgerdesk/exports/gnucash-transfer.gnucash`.",
+        "observed_model": "gpt-6.1-terra",
+        "agent_status": "completed",
+        "agent_elapsed_seconds": 38.462,
+        "verification_elapsed_seconds": 0.223,
+        "recording_available": true,
+        "elapsed_seconds": 42.999,
+        "finished_at": "2026-11-08T15:48:23.803967+00:00",
+        "executed_actions": 18
+      },
+      "application": "GnuCash",
+      "recorded_grade": {
+        "passed": true,
+        "errors": []
+      },
+      "recheck": {
+        "passed": true,
+        "artifact_passed": true,
+        "source_check_passed": true,
+        "saved_input_sha256": "f0cc00d3211a777a542a97dec6d8d4267032bc9f31296226532e057e31dd8e50",
+        "recorded_source_sha256_after": "f0cc00d3211a777a542a97dec6d8d4267032bc9f31296226532e057e31dd8e50",
+        "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+        "errors": [],
+        "artifact_verification": {
+          "passed": true,
+          "errors": [],
+          "headers": [
+            "date",
+            "description",
+            "account",
+            "amount"
+          ],
+          "rows": [
+            {
+              "date": "2026-10-01",
+              "description": "Synthetic opening balance",
+              "account": "Checking",
+              "amount": "10000.00"
+            },
+            {
+              "date": "2026-10-01",
+              "description": "Synthetic opening balance",
+              "account": "EquityOpening",
+              "amount": "-10000.00"
+            },
+            {
+              "date": "2026-11-10",
+              "description": "TRF-01 Reserve transfer",
+              "account": "Savings",
+              "amount": "500.00"
+            },
+            {
+              "date": "2026-11-10",
+              "description": "TRF-01 Reserve transfer",
+              "account": "Checking",
+              "amount": "-500.00"
+            }
+          ],
+          "row_count": 4,
+          "source_unchanged": null,
+          "expected_input_sha256": "f0cc00d3211a777a542a97dec6d8d4267032bc9f31296226532e057e31dd8e50"
+        }
+      },
+      "evidence_path": "runs/gnucash-transfer-00",
+      "has_report": true,
+      "has_recording": true
+    },
+    {
+      "case": {
+        "fixture_id": "gnucash-transfer-02",
+        "task_id": "gnucash-transfer",
+        "fixture_index": 2,
+        "input_name": "gnucash-source.gnucash",
+        "output_name": "gnucash-transfer.gnucash",
+        "input_sha256": "6303d93cb3d00b9512288446ead2b147f3c2dca3139c1b86034950f77a13c74e",
+        "instruction_sha256": "c7573d640e7a7d5938b0dcd73c999c32d355cddae30de11bbe3c4510a835623b",
+        "expected_sha256": "d6c0cfd63de440e1b939b0be5ced0bfe7a818408399b6446dbd2cfe5147f624d",
+        "case_id": "gnucash-transfer-02",
+        "geometry": "normal",
+        "control": null,
+        "kind": "positive"
+      },
+      "metadata": {
+        "id": "20261108T154824-632f11",
+        "case_id": "gnucash-transfer-02",
+        "task_id": "gnucash-transfer",
+        "instruction": "A synthetic USD book is open in GnuCash. Record a transfer of USD 310.00 from Checking to Savings. Use date 2026-11-12 (11/12/26 in the displayed MM/DD/YY field) and exact Description 'TRF-03 Cash reserve'. Leave Num and split memos blank. Add exactly one transaction and leave it unreconciled. Preserve all existing accounts and transactions. Use Save As to save the XML GnuCash book to /tmp/ledgerdesk/exports/gnucash-transfer.gnucash. Do not overwrite the source book. Use only the application's normal controls.",
+        "started_at": "2026-11-08T15:48:24.451328+00:00",
+        "source_revision": "ab67ca3e7bded15c8137e60917ad2b86ec0ee69e",
+        "image_id": "sha256:b3935bd320422c6e786f3a71846ee004e46544e9ce7f41b6411d252a35a1432e",
+        "spec": {
+          "fixture_id": "gnucash-transfer-02",
+          "task_id": "gnucash-transfer",
+          "fixture_index": 2,
+          "input_name": "gnucash-source.gnucash",
+          "output_name": "gnucash-transfer.gnucash",
+          "input_sha256": "6303d93cb3d00b9512288446ead2b147f3c2dca3139c1b86034950f77a13c74e",
+          "instruction_sha256": "c7573d640e7a7d5938b0dcd73c999c32d355cddae30de11bbe3c4510a835623b",
+          "expected_sha256": "d6c0cfd63de440e1b939b0be5ced0bfe7a818408399b6446dbd2cfe5147f624d",
+          "case_id": "gnucash-transfer-02",
+          "geometry": "normal",
+          "control": null,
+          "kind": "positive",
+          "expected_image_id": "sha256:b3935bd320422c6e786f3a71846ee004e46544e9ce7f41b6411d252a35a1432e",
+          "expected_source_revision": "ab67ca3e7bded15c8137e60917ad2b86ec0ee69e"
+        },
+        "limits": {
+          "budget_usd": 1.0,
+          "max_requests": 30,
+          "max_actions": 80,
+          "timeout": 420
+        },
+        "model": "gpt-6.1-terra",
+        "status": "passed",
+        "error": null,
+        "action_count": 17,
+        "request_count": 9,
+        "estimated_cost_usd": 0.075392,
+        "usage": {
+          "input_tokens": 72657,
+          "output_tokens": 547,
+          "total_tokens": 73204,
+          "complete": true
+        },
+        "operator_interventions": 0,
+        "environment": "Linux arm64/X11; 1200x900; isolated Docker",
+        "reasoning_effort": "medium",
+        "application": "GnuCash",
+        "setup_elapsed_seconds": 3.533,
+        "window_bounds": [
+          0,
+          19,
+          1200,
+          881
+        ],
+        "application_version": "GnuCash 4.13\nBuild ID: 4.13+(2022-12-17)",
+        "input_sha256": "6303d93cb3d00b9512288446ead2b147f3c2dca3139c1b86034950f77a13c74e",
+        "model_text": "Recorded the transaction and saved the XML book to `/tmp/ledgerdesk/exports/gnucash-transfer.gnucash`.",
+        "observed_model": "gpt-6.1-terra",
+        "agent_status": "completed",
+        "agent_elapsed_seconds": 47.449,
+        "verification_elapsed_seconds": 0.42,
+        "recording_available": true,
+        "elapsed_seconds": 52.93,
+        "finished_at": "2026-11-08T15:49:17.381730+00:00",
+        "executed_actions": 17
+      },
+      "application": "GnuCash",
+      "recorded_grade": {
+        "passed": true,
+        "errors": []
+      },
+      "recheck": {
+        "passed": true,
+        "artifact_passed": true,
+        "source_check_passed": true,
+        "saved_input_sha256": "6303d93cb3d00b9512288446ead2b147f3c2dca3139c1b86034950f77a13c74e",
+        "recorded_source_sha256_after": "6303d93cb3d00b9512288446ead2b147f3c2dca3139c1b86034950f77a13c74e",
+        "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+        "errors": [],
+        "artifact_verification": {
+          "passed": true,
+          "errors": [],
+          "headers": [
+            "date",
+            "description",
+            "account",
+            "amount"
+          ],
+          "rows": [
+            {
+              "date": "2026-10-01",
+              "description": "Synthetic opening balance",
+              "account": "Checking",
+              "amount": "10000.00"
+            },
+            {
+              "date": "2026-10-01",
+              "description": "Synthetic opening balance",
+              "account": "EquityOpening",
+              "amount": "-10000.00"
+            },
+            {
+              "date": "2026-11-12",
+              "description": "TRF-03 Cash reserve",
+              "account": "Savings",
+              "amount": "310.00"
+            },
+            {
+              "date": "2026-11-12",
+              "description": "TRF-03 Cash reserve",
+              "account": "Checking",
+              "amount": "-310.00"
+            }
+          ],
+          "row_count": 4,
+          "source_unchanged": null,
+          "expected_input_sha256": "6303d93cb3d00b9512288446ead2b147f3c2dca3139c1b86034950f77a13c74e"
+        }
+      },
+      "evidence_path": "runs/gnucash-transfer-02",
+      "has_report": true,
+      "has_recording": true
+    },
+    {
+      "case": {
+        "fixture_id": "gnucash-expense-00",
+        "task_id": "gnucash-expense",
+        "fixture_index": 0,
+        "input_name": "gnucash-source.gnucash",
+        "output_name": "gnucash-expense.gnucash",
+        "input_sha256": "2d85e80fe0fb235ea6e4b1b297fb9d1922418d94d85c508b1c6edc218a0ddd1d",
+        "instruction_sha256": "6bdd700355dadeb787d5a8d7aaee5e09911efda6471191abc08ab63d8fdd020c",
+        "expected_sha256": "8266b89c12e0ce0b8a220ebeaf9fb409e532bfb6d5c46078bb2697ad54393c33",
+        "case_id": "gnucash-expense-00",
+        "geometry": "normal",
+        "control": null,
+        "kind": "positive"
+      },
+      "metadata": {
+        "id": "20261108T154918-fd72a8",
+        "case_id": "gnucash-expense-00",
+        "task_id": "gnucash-expense",
+        "instruction": "A synthetic USD book is open in GnuCash. Record a supplies expense of USD 125.50, paid from Checking to ExpenseSupplies. Use date 2026-11-10 (11/10/26 in the displayed MM/DD/YY field) and exact Description 'EXP-01 Printer supplies'. Leave Num and split memos blank. Add exactly one transaction and leave it unreconciled. Preserve all existing accounts and transactions. Use Save As to save the XML GnuCash book to /tmp/ledgerdesk/exports/gnucash-expense.gnucash. Do not overwrite the source book. Use only the application's normal controls.",
+        "started_at": "2026-11-08T15:49:18.577921+00:00",
+        "source_revision": "ab67ca3e7bded15c8137e60917ad2b86ec0ee69e",
+        "image_id": "sha256:b3935bd320422c6e786f3a71846ee004e46544e9ce7f41b6411d252a35a1432e",
+        "spec": {
+          "fixture_id": "gnucash-expense-00",
+          "task_id": "gnucash-expense",
+          "fixture_index": 0,
+          "input_name": "gnucash-source.gnucash",
+          "output_name": "gnucash-expense.gnucash",
+          "input_sha256": "2d85e80fe0fb235ea6e4b1b297fb9d1922418d94d85c508b1c6edc218a0ddd1d",
+          "instruction_sha256": "6bdd700355dadeb787d5a8d7aaee5e09911efda6471191abc08ab63d8fdd020c",
+          "expected_sha256": "8266b89c12e0ce0b8a220ebeaf9fb409e532bfb6d5c46078bb2697ad54393c33",
+          "case_id": "gnucash-expense-00",
+          "geometry": "normal",
+          "control": null,
+          "kind": "positive",
+          "expected_image_id": "sha256:b3935bd320422c6e786f3a71846ee004e46544e9ce7f41b6411d252a35a1432e",
+          "expected_source_revision": "ab67ca3e7bded15c8137e60917ad2b86ec0ee69e"
+        },
+        "limits": {
+          "budget_usd": 1.0,
+          "max_requests": 30,
+          "max_actions": 80,
+          "timeout": 420
+        },
+        "model": "gpt-6.1-terra",
+        "status": "passed",
+        "error": null,
+        "action_count": 17,
+        "request_count": 7,
+        "estimated_cost_usd": 0.048432,
+        "usage": {
+          "input_tokens": 46427,
+          "output_tokens": 401,
+          "total_tokens": 46828,
+          "complete": true
+        },
+        "operator_interventions": 0,
+        "environment": "Linux arm64/X11; 1200x900; isolated Docker",
+        "reasoning_effort": "medium",
+        "application": "GnuCash",
+        "setup_elapsed_seconds": 4.106,
+        "window_bounds": [
+          0,
+          19,
+          1200,
+          881
+        ],
+        "application_version": "GnuCash 4.13\nBuild ID: 4.13+(2022-12-17)",
+        "input_sha256": "2d85e80fe0fb235ea6e4b1b297fb9d1922418d94d85c508b1c6edc218a0ddd1d",
+        "model_text": "Completed and saved the book to `/tmp/ledgerdesk/exports/gnucash-expense.gnucash`.",
+        "observed_model": "gpt-6.1-terra",
+        "agent_status": "completed",
+        "agent_elapsed_seconds": 36.069,
+        "verification_elapsed_seconds": 0.242,
+        "recording_available": true,
+        "elapsed_seconds": 41.286,
+        "finished_at": "2026-11-08T15:49:59.863636+00:00",
+        "executed_actions": 17
+      },
+      "application": "GnuCash",
+      "recorded_grade": {
+        "passed": true,
+        "errors": []
+      },
+      "recheck": {
+        "passed": true,
+        "artifact_passed": true,
+        "source_check_passed": true,
+        "saved_input_sha256": "2d85e80fe0fb235ea6e4b1b297fb9d1922418d94d85c508b1c6edc218a0ddd1d",
+        "recorded_source_sha256_after": "2d85e80fe0fb235ea6e4b1b297fb9d1922418d94d85c508b1c6edc218a0ddd1d",
+        "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+        "errors": [],
+        "artifact_verification": {
+          "passed": true,
+          "errors": [],
+          "headers": [
+            "date",
+            "description",
+            "account",
+            "amount"
+          ],
+          "rows": [
+            {
+              "date": "2026-10-01",
+              "description": "Synthetic opening balance",
+              "account": "Checking",
+              "amount": "10000.00"
+            },
+            {
+              "date": "2026-10-01",
+              "description": "Synthetic opening balance",
+              "account": "EquityOpening",
+              "amount": "-10000.00"
+            },
+            {
+              "date": "2026-11-10",
+              "description": "EXP-01 Printer supplies",
+              "account": "Checking",
+              "amount": "-125.50"
+            },
+            {
+              "date": "2026-11-10",
+              "description": "EXP-01 Printer supplies",
+              "account": "ExpenseSupplies",
+              "amount": "125.50"
+            }
+          ],
+          "row_count": 4,
+          "source_unchanged": null,
+          "expected_input_sha256": "2d85e80fe0fb235ea6e4b1b297fb9d1922418d94d85c508b1c6edc218a0ddd1d"
+        }
+      },
+      "evidence_path": "runs/gnucash-expense-00",
+      "has_report": true,
+      "has_recording": true
+    },
+    {
+      "case": {
+        "fixture_id": "gnucash-split-00",
+        "task_id": "gnucash-split",
+        "fixture_index": 0,
+        "input_name": "gnucash-source.gnucash",
+        "output_name": "gnucash-split.gnucash",
+        "input_sha256": "6fd9ee6c9ddae6444692ad36dc86be492843d4f490f415703390d4d5f021ad44",
+        "instruction_sha256": "0fb156364a8599a737182c3c8e0f6c5bf68fb71af38e225a5c85322d326452e9",
+        "expected_sha256": "348f58ef875dd9036a022d5806a165835643e46a50703657543f31191035dc66",
+        "case_id": "gnucash-split-00",
+        "geometry": "normal",
+        "control": null,
+        "kind": "positive"
+      },
+      "metadata": {
+        "id": "20261108T155000-6a7578",
+        "case_id": "gnucash-split-00",
+        "task_id": "gnucash-split",
+        "instruction": "A synthetic USD book is open in GnuCash. Record one split expense paid from Checking: USD 180.00 to ExpenseTravel and USD 60.00 to ExpenseMeals. Use one transaction with three splits, not two separate transactions. Use date 2026-11-10 (11/10/26 in the displayed MM/DD/YY field) and exact Description 'SPL-01 Client visit'. Leave Num and split memos blank. Add exactly one transaction and leave it unreconciled. Preserve all existing accounts and transactions. Use Save As to save the XML GnuCash book to /tmp/ledgerdesk/exports/gnucash-split.gnucash. Do not overwrite the source book. Use only the application's normal controls.",
+        "started_at": "2026-11-08T15:50:00.580131+00:00",
+        "source_revision": "ab67ca3e7bded15c8137e60917ad2b86ec0ee69e",
+        "image_id": "sha256:b3935bd320422c6e786f3a71846ee004e46544e9ce7f41b6411d252a35a1432e",
+        "spec": {
+          "fixture_id": "gnucash-split-00",
+          "task_id": "gnucash-split",
+          "fixture_index": 0,
+          "input_name": "gnucash-source.gnucash",
+          "output_name": "gnucash-split.gnucash",
+          "input_sha256": "6fd9ee6c9ddae6444692ad36dc86be492843d4f490f415703390d4d5f021ad44",
+          "instruction_sha256": "0fb156364a8599a737182c3c8e0f6c5bf68fb71af38e225a5c85322d326452e9",
+          "expected_sha256": "348f58ef875dd9036a022d5806a165835643e46a50703657543f31191035dc66",
+          "case_id": "gnucash-split-00",
+          "geometry": "normal",
+          "control": null,
+          "kind": "positive",
+          "expected_image_id": "sha256:b3935bd320422c6e786f3a71846ee004e46544e9ce7f41b6411d252a35a1432e",
+          "expected_source_revision": "ab67ca3e7bded15c8137e60917ad2b86ec0ee69e"
+        },
+        "limits": {
+          "budget_usd": 1.0,
+          "max_requests": 30,
+          "max_actions": 80,
+          "timeout": 420
+        },
+        "model": "gpt-6.1-terra",
+        "status": "passed",
+        "error": null,
+        "action_count": 25,
+        "request_count": 10,
+        "estimated_cost_usd": 0.09129,
+        "usage": {
+          "input_tokens": 88175,
+          "output_tokens": 623,
+          "total_tokens": 88798,
+          "complete": true
+        },
+        "operator_interventions": 0,
+        "environment": "Linux arm64/X11; 1200x900; isolated Docker",
+        "reasoning_effort": "medium",
+        "application": "GnuCash",
+        "setup_elapsed_seconds": 3.483,
+        "window_bounds": [
+          0,
+          19,
+          1200,
+          881
+        ],
+        "application_version": "GnuCash 4.13\nBuild ID: 4.13+(2022-12-17)",
+        "input_sha256": "6fd9ee6c9ddae6444692ad36dc86be492843d4f490f415703390d4d5f021ad44",
+        "model_text": "Completed and saved the split transaction to `/tmp/ledgerdesk/exports/gnucash-split.gnucash`.",
+        "observed_model": "gpt-6.1-terra",
+        "agent_status": "completed",
+        "agent_elapsed_seconds": 58.514,
+        "verification_elapsed_seconds": 0.223,
+        "recording_available": true,
+        "elapsed_seconds": 63.277,
+        "finished_at": "2026-11-08T15:51:03.856599+00:00",
+        "executed_actions": 25
+      },
+      "application": "GnuCash",
+      "recorded_grade": {
+        "passed": true,
+        "errors": []
+      },
+      "recheck": {
+        "passed": true,
+        "artifact_passed": true,
+        "source_check_passed": true,
+        "saved_input_sha256": "6fd9ee6c9ddae6444692ad36dc86be492843d4f490f415703390d4d5f021ad44",
+        "recorded_source_sha256_after": "6fd9ee6c9ddae6444692ad36dc86be492843d4f490f415703390d4d5f021ad44",
+        "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+        "errors": [],
+        "artifact_verification": {
+          "passed": true,
+          "errors": [],
+          "headers": [
+            "date",
+            "description",
+            "account",
+            "amount"
+          ],
+          "rows": [
+            {
+              "date": "2026-10-01",
+              "description": "Synthetic opening balance",
+              "account": "Checking",
+              "amount": "10000.00"
+            },
+            {
+              "date": "2026-10-01",
+              "description": "Synthetic opening balance",
+              "account": "EquityOpening",
+              "amount": "-10000.00"
+            },
+            {
+              "date": "2026-11-10",
+              "description": "SPL-01 Client visit",
+              "account": "Checking",
+              "amount": "-240.00"
+            },
+            {
+              "date": "2026-11-10",
+              "description": "SPL-01 Client visit",
+              "account": "ExpenseTravel",
+              "amount": "180.00"
+            },
+            {
+              "date": "2026-11-10",
+              "description": "SPL-01 Client visit",
+              "account": "ExpenseMeals",
+              "amount": "60.00"
+            }
+          ],
+          "row_count": 5,
+          "source_unchanged": null,
+          "expected_input_sha256": "6fd9ee6c9ddae6444692ad36dc86be492843d4f490f415703390d4d5f021ad44"
+        }
+      },
+      "evidence_path": "runs/gnucash-split-00",
+      "has_report": true,
+      "has_recording": true
+    },
+    {
+      "case": {
+        "fixture_id": "gnucash-expense-02",
+        "task_id": "gnucash-expense",
+        "fixture_index": 2,
+        "input_name": "gnucash-source.gnucash",
+        "output_name": "gnucash-expense.gnucash",
+        "input_sha256": "a40a2869d58ad78709248cce9b3e900c309861a1fccffe3b26058e8481dd309a",
+        "instruction_sha256": "fe57bbb445a65db9095e06bfdb1d40ca17dabe85eec10e3e8c03a8b5fda8e357",
+        "expected_sha256": "e9ad45ca138088b87dd42cfd4f686cfd8c4eb029ef110cf98a21e991cdb441c0",
+        "case_id": "gnucash-expense-02",
+        "geometry": "normal",
+        "control": null,
+        "kind": "positive"
+      },
+      "metadata": {
+        "id": "20261108T155104-bb9edf",
+        "case_id": "gnucash-expense-02",
+        "task_id": "gnucash-expense",
+        "instruction": "A synthetic USD book is open in GnuCash. Record a supplies expense of USD 219.80, paid from Checking to ExpenseSupplies. Use date 2026-11-12 (11/12/26 in the displayed MM/DD/YY field) and exact Description 'EXP-03 Stationery'. Leave Num and split memos blank. Add exactly one transaction and leave it unreconciled. Preserve all existing accounts and transactions. Use Save As to save the XML GnuCash book to /tmp/ledgerdesk/exports/gnucash-expense.gnucash. Do not overwrite the source book. Use only the application's normal controls.",
+        "started_at": "2026-11-08T15:51:04.597234+00:00",
+        "source_revision": "ab67ca3e7bded15c8137e60917ad2b86ec0ee69e",
+        "image_id": "sha256:b3935bd320422c6e786f3a71846ee004e46544e9ce7f41b6411d252a35a1432e",
+        "spec": {
+          "fixture_id": "gnucash-expense-02",
+          "task_id": "gnucash-expense",
+          "fixture_index": 2,
+          "input_name": "gnucash-source.gnucash",
+          "output_name": "gnucash-expense.gnucash",
+          "input_sha256": "a40a2869d58ad78709248cce9b3e900c309861a1fccffe3b26058e8481dd309a",
+          "instruction_sha256": "fe57bbb445a65db9095e06bfdb1d40ca17dabe85eec10e3e8c03a8b5fda8e357",
+          "expected_sha256": "e9ad45ca138088b87dd42cfd4f686cfd8c4eb029ef110cf98a21e991cdb441c0",
+          "case_id": "gnucash-expense-02",
+          "geometry": "normal",
+          "control": null,
+          "kind": "positive",
+          "expected_image_id": "sha256:b3935bd320422c6e786f3a71846ee004e46544e9ce7f41b6411d252a35a1432e",
+          "expected_source_revision": "ab67ca3e7bded15c8137e60917ad2b86ec0ee69e"
+        },
+        "limits": {
+          "budget_usd": 1.0,
+          "max_requests": 30,
+          "max_actions": 80,
+          "timeout": 420
+        },
+        "model": "gpt-6.1-terra",
+        "status": "passed",
+        "error": null,
+        "action_count": 17,
+        "request_count": 9,
+        "estimated_cost_usd": 0.074453,
+        "usage": {
+          "input_tokens": 72048,
+          "output_tokens": 481,
+          "total_tokens": 72529,
+          "complete": true
+        },
+        "operator_interventions": 0,
+        "environment": "Linux arm64/X11; 1200x900; isolated Docker",
+        "reasoning_effort": "medium",
+        "application": "GnuCash",
+        "setup_elapsed_seconds": 3.621,
+        "window_bounds": [
+          0,
+          19,
+          1200,
+          881
+        ],
+        "application_version": "GnuCash 4.13\nBuild ID: 4.13+(2022-12-17)",
+        "input_sha256": "a40a2869d58ad78709248cce9b3e900c309861a1fccffe3b26058e8481dd309a",
+        "model_text": "Completed and saved the book to `/tmp/ledgerdesk/exports/gnucash-expense.gnucash`.",
+        "observed_model": "gpt-6.1-terra",
+        "agent_status": "completed",
+        "agent_elapsed_seconds": 44.645,
+        "verification_elapsed_seconds": 0.245,
+        "recording_available": true,
+        "elapsed_seconds": 49.769,
+        "finished_at": "2026-11-08T15:51:54.366601+00:00",
+        "executed_actions": 17
+      },
+      "application": "GnuCash",
+      "recorded_grade": {
+        "passed": true,
+        "errors": []
+      },
+      "recheck": {
+        "passed": true,
+        "artifact_passed": true,
+        "source_check_passed": true,
+        "saved_input_sha256": "a40a2869d58ad78709248cce9b3e900c309861a1fccffe3b26058e8481dd309a",
+        "recorded_source_sha256_after": "a40a2869d58ad78709248cce9b3e900c309861a1fccffe3b26058e8481dd309a",
+        "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+        "errors": [],
+        "artifact_verification": {
+          "passed": true,
+          "errors": [],
+          "headers": [
+            "date",
+            "description",
+            "account",
+            "amount"
+          ],
+          "rows": [
+            {
+              "date": "2026-10-01",
+              "description": "Synthetic opening balance",
+              "account": "Checking",
+              "amount": "10000.00"
+            },
+            {
+              "date": "2026-10-01",
+              "description": "Synthetic opening balance",
+              "account": "EquityOpening",
+              "amount": "-10000.00"
+            },
+            {
+              "date": "2026-11-12",
+              "description": "EXP-03 Stationery",
+              "account": "Checking",
+              "amount": "-219.80"
+            },
+            {
+              "date": "2026-11-12",
+              "description": "EXP-03 Stationery",
+              "account": "ExpenseSupplies",
+              "amount": "219.80"
+            }
+          ],
+          "row_count": 4,
+          "source_unchanged": null,
+          "expected_input_sha256": "a40a2869d58ad78709248cce9b3e900c309861a1fccffe3b26058e8481dd309a"
+        }
+      },
+      "evidence_path": "runs/gnucash-expense-02",
+      "has_report": true,
+      "has_recording": true
+    },
+    {
+      "case": {
+        "fixture_id": "gnucash-expense-01",
+        "task_id": "gnucash-expense",
+        "fixture_index": 1,
+        "input_name": "gnucash-source.gnucash",
+        "output_name": "gnucash-expense.gnucash",
+        "input_sha256": "c186244749a74006997c4c98f2890aad26fe9adde2d2fe279f485d32c89fd9e8",
+        "instruction_sha256": "530aeb6e195813a1bc99b25aef8dc3c0882478ca2cfa9627b4ede1a23931f5d0",
+        "expected_sha256": "88cf65fa6ea5a8d94a3961249ad01379bcbe1c2bfff683ec45180cb3826f4f1b",
+        "case_id": "gnucash-expense-01",
+        "geometry": "normal",
+        "control": null,
+        "kind": "positive"
+      },
+      "metadata": {
+        "id": "20261108T155155-36173f",
+        "case_id": "gnucash-expense-01",
+        "task_id": "gnucash-expense",
+        "instruction": "A synthetic USD book is open in GnuCash. Record a supplies expense of USD 87.35, paid from Checking to ExpenseSupplies. Use date 2026-11-11 (11/11/26 in the displayed MM/DD/YY field) and exact Description 'EXP-02 Packing materials'. Leave Num and split memos blank. Add exactly one transaction and leave it unreconciled. Preserve all existing accounts and transactions. Use Save As to save the XML GnuCash book to /tmp/ledgerdesk/exports/gnucash-expense.gnucash. Do not overwrite the source book. Use only the application's normal controls.",
+        "started_at": "2026-11-08T15:51:55.104314+00:00",
+        "source_revision": "ab67ca3e7bded15c8137e60917ad2b86ec0ee69e",
+        "image_id": "sha256:b3935bd320422c6e786f3a71846ee004e46544e9ce7f41b6411d252a35a1432e",
+        "spec": {
+          "fixture_id": "gnucash-expense-01",
+          "task_id": "gnucash-expense",
+          "fixture_index": 1,
+          "input_name": "gnucash-source.gnucash",
+          "output_name": "gnucash-expense.gnucash",
+          "input_sha256": "c186244749a74006997c4c98f2890aad26fe9adde2d2fe279f485d32c89fd9e8",
+          "instruction_sha256": "530aeb6e195813a1bc99b25aef8dc3c0882478ca2cfa9627b4ede1a23931f5d0",
+          "expected_sha256": "88cf65fa6ea5a8d94a3961249ad01379bcbe1c2bfff683ec45180cb3826f4f1b",
+          "case_id": "gnucash-expense-01",
+          "geometry": "normal",
+          "control": null,
+          "kind": "positive",
+          "expected_image_id": "sha256:b3935bd320422c6e786f3a71846ee004e46544e9ce7f41b6411d252a35a1432e",
+          "expected_source_revision": "ab67ca3e7bded15c8137e60917ad2b86ec0ee69e"
+        },
+        "limits": {
+          "budget_usd": 1.0,
+          "max_requests": 30,
+          "max_actions": 80,
+          "timeout": 420
+        },
+        "model": "gpt-6.1-terra",
+        "status": "passed",
+        "error": null,
+        "action_count": 17,
+        "request_count": 8,
+        "estimated_cost_usd": 0.061052,
+        "usage": {
+          "input_tokens": 58662,
+          "output_tokens": 478,
+          "total_tokens": 59140,
+          "complete": true
+        },
+        "operator_interventions": 0,
+        "environment": "Linux arm64/X11; 1200x900; isolated Docker",
+        "reasoning_effort": "medium",
+        "application": "GnuCash",
+        "setup_elapsed_seconds": 3.532,
+        "window_bounds": [
+          0,
+          19,
+          1200,
+          881
+        ],
+        "application_version": "GnuCash 4.13\nBuild ID: 4.13+(2022-12-17)",
+        "input_sha256": "c186244749a74006997c4c98f2890aad26fe9adde2d2fe279f485d32c89fd9e8",
+        "model_text": "Completed and saved the book to `/tmp/ledgerdesk/exports/gnucash-expense.gnucash`.",
+        "observed_model": "gpt-6.1-terra",
+        "agent_status": "completed",
+        "agent_elapsed_seconds": 39.423,
+        "verification_elapsed_seconds": 0.249,
+        "recording_available": true,
+        "elapsed_seconds": 44.145,
+        "finished_at": "2026-11-08T15:52:39.249742+00:00",
+        "executed_actions": 17
+      },
+      "application": "GnuCash",
+      "recorded_grade": {
+        "passed": true,
+        "errors": []
+      },
+      "recheck": {
+        "passed": true,
+        "artifact_passed": true,
+        "source_check_passed": true,
+        "saved_input_sha256": "c186244749a74006997c4c98f2890aad26fe9adde2d2fe279f485d32c89fd9e8",
+        "recorded_source_sha256_after": "c186244749a74006997c4c98f2890aad26fe9adde2d2fe279f485d32c89fd9e8",
+        "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+        "errors": [],
+        "artifact_verification": {
+          "passed": true,
+          "errors": [],
+          "headers": [
+            "date",
+            "description",
+            "account",
+            "amount"
+          ],
+          "rows": [
+            {
+              "date": "2026-10-01",
+              "description": "Synthetic opening balance",
+              "account": "Checking",
+              "amount": "10000.00"
+            },
+            {
+              "date": "2026-10-01",
+              "description": "Synthetic opening balance",
+              "account": "EquityOpening",
+              "amount": "-10000.00"
+            },
+            {
+              "date": "2026-11-11",
+              "description": "EXP-02 Packing materials",
+              "account": "Checking",
+              "amount": "-87.35"
+            },
+            {
+              "date": "2026-11-11",
+              "description": "EXP-02 Packing materials",
+              "account": "ExpenseSupplies",
+              "amount": "87.35"
+            }
+          ],
+          "row_count": 4,
+          "source_unchanged": null,
+          "expected_input_sha256": "c186244749a74006997c4c98f2890aad26fe9adde2d2fe279f485d32c89fd9e8"
+        }
+      },
+      "evidence_path": "runs/gnucash-expense-01",
+      "has_report": true,
+      "has_recording": true
+    },
+    {
+      "case": {
+        "fixture_id": "gnucash-transfer-01",
+        "task_id": "gnucash-transfer",
+        "fixture_index": 1,
+        "input_name": "gnucash-source.gnucash",
+        "output_name": "gnucash-transfer.gnucash",
+        "input_sha256": "0d888692cf7564d47dbc8b8e8703e72d6591d524d8d8e0c3d1df4858dd169637",
+        "instruction_sha256": "d86ae648d0264a6fcdf3e09e4b91f1a4d86041e67d7473e101ff3426b37793d7",
+        "expected_sha256": "468126f9b279f5bd48090966d2aa784d7bca4cf64ef322f147a615d85b337ada",
+        "case_id": "gnucash-transfer-01",
+        "geometry": "normal",
+        "control": null,
+        "kind": "positive"
+      },
+      "metadata": {
+        "id": "20261108T155239-dffcf6",
+        "case_id": "gnucash-transfer-01",
+        "task_id": "gnucash-transfer",
+        "instruction": "A synthetic USD book is open in GnuCash. Record a transfer of USD 725.25 from Checking to Savings. Use date 2026-11-11 (11/11/26 in the displayed MM/DD/YY field) and exact Description 'TRF-02 Savings allocation'. Leave Num and split memos blank. Add exactly one transaction and leave it unreconciled. Preserve all existing accounts and transactions. Use Save As to save the XML GnuCash book to /tmp/ledgerdesk/exports/gnucash-transfer.gnucash. Do not overwrite the source book. Use only the application's normal controls.",
+        "started_at": "2026-11-08T15:52:39.980111+00:00",
+        "source_revision": "ab67ca3e7bded15c8137e60917ad2b86ec0ee69e",
+        "image_id": "sha256:b3935bd320422c6e786f3a71846ee004e46544e9ce7f41b6411d252a35a1432e",
+        "spec": {
+          "fixture_id": "gnucash-transfer-01",
+          "task_id": "gnucash-transfer",
+          "fixture_index": 1,
+          "input_name": "gnucash-source.gnucash",
+          "output_name": "gnucash-transfer.gnucash",
+          "input_sha256": "0d888692cf7564d47dbc8b8e8703e72d6591d524d8d8e0c3d1df4858dd169637",
+          "instruction_sha256": "d86ae648d0264a6fcdf3e09e4b91f1a4d86041e67d7473e101ff3426b37793d7",
+          "expected_sha256": "468126f9b279f5bd48090966d2aa784d7bca4cf64ef322f147a615d85b337ada",
+          "case_id": "gnucash-transfer-01",
+          "geometry": "normal",
+          "control": null,
+          "kind": "positive",
+          "expected_image_id": "sha256:b3935bd320422c6e786f3a71846ee004e46544e9ce7f41b6411d252a35a1432e",
+          "expected_source_revision": "ab67ca3e7bded15c8137e60917ad2b86ec0ee69e"
+        },
+        "limits": {
+          "budget_usd": 1.0,
+          "max_requests": 30,
+          "max_actions": 80,
+          "timeout": 420
+        },
+        "model": "gpt-6.1-terra",
+        "status": "passed",
+        "error": null,
+        "action_count": 17,
+        "request_count": 9,
+        "estimated_cost_usd": 0.075143,
+        "usage": {
+          "input_tokens": 72458,
+          "output_tokens": 537,
+          "total_tokens": 72995,
+          "complete": true
+        },
+        "operator_interventions": 0,
+        "environment": "Linux arm64/X11; 1200x900; isolated Docker",
+        "reasoning_effort": "medium",
+        "application": "GnuCash",
+        "setup_elapsed_seconds": 3.476,
+        "window_bounds": [
+          0,
+          19,
+          1200,
+          881
+        ],
+        "application_version": "GnuCash 4.13\nBuild ID: 4.13+(2022-12-17)",
+        "input_sha256": "0d888692cf7564d47dbc8b8e8703e72d6591d524d8d8e0c3d1df4858dd169637",
+        "model_text": "Recorded the transaction and saved the XML book to `/tmp/ledgerdesk/exports/gnucash-transfer.gnucash`.",
+        "observed_model": "gpt-6.1-terra",
+        "agent_status": "completed",
+        "agent_elapsed_seconds": 42.132,
+        "verification_elapsed_seconds": 0.201,
+        "recording_available": true,
+        "elapsed_seconds": 46.659,
+        "finished_at": "2026-11-08T15:53:26.639370+00:00",
+        "executed_actions": 17
+      },
+      "application": "GnuCash",
+      "recorded_grade": {
+        "passed": true,
+        "errors": []
+      },
+      "recheck": {
+        "passed": true,
+        "artifact_passed": true,
+        "source_check_passed": true,
+        "saved_input_sha256": "0d888692cf7564d47dbc8b8e8703e72d6591d524d8d8e0c3d1df4858dd169637",
+        "recorded_source_sha256_after": "0d888692cf7564d47dbc8b8e8703e72d6591d524d8d8e0c3d1df4858dd169637",
+        "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+        "errors": [],
+        "artifact_verification": {
+          "passed": true,
+          "errors": [],
+          "headers": [
+            "date",
+            "description",
+            "account",
+            "amount"
+          ],
+          "rows": [
+            {
+              "date": "2026-10-01",
+              "description": "Synthetic opening balance",
+              "account": "Checking",
+              "amount": "10000.00"
+            },
+            {
+              "date": "2026-10-01",
+              "description": "Synthetic opening balance",
+              "account": "EquityOpening",
+              "amount": "-10000.00"
+            },
+            {
+              "date": "2026-11-11",
+              "description": "TRF-02 Savings allocation",
+              "account": "Savings",
+              "amount": "725.25"
+            },
+            {
+              "date": "2026-11-11",
+              "description": "TRF-02 Savings allocation",
+              "account": "Checking",
+              "amount": "-725.25"
+            }
+          ],
+          "row_count": 4,
+          "source_unchanged": null,
+          "expected_input_sha256": "0d888692cf7564d47dbc8b8e8703e72d6591d524d8d8e0c3d1df4858dd169637"
+        }
+      },
+      "evidence_path": "runs/gnucash-transfer-01",
+      "has_report": true,
+      "has_recording": true
+    },
+    {
+      "case": {
+        "fixture_id": "gnucash-split-02",
+        "task_id": "gnucash-split",
+        "fixture_index": 2,
+        "input_name": "gnucash-source.gnucash",
+        "output_name": "gnucash-split.gnucash",
+        "input_sha256": "2a05378b4e54bcda33fec717e4eeda8107279a024aab51d577a2247a93a8b3ab",
+        "instruction_sha256": "575ea6ff1e27acc0c54484c0f9599a6f6bf233854abf64e0a84364a21417475c",
+        "expected_sha256": "0960754adb676d2d9eb9e63ccb052a651f1a879fbb374d014f89b4f30168b054",
+        "case_id": "gnucash-split-02",
+        "geometry": "normal",
+        "control": null,
+        "kind": "positive"
+      },
+      "metadata": {
+        "id": "20261108T155327-bd073c",
+        "case_id": "gnucash-split-02",
+        "task_id": "gnucash-split",
+        "instruction": "A synthetic USD book is open in GnuCash. Record one split expense paid from Checking: USD 221.10 to ExpenseTravel and USD 78.90 to ExpenseMeals. Use one transaction with three splits, not two separate transactions. Use date 2026-11-12 (11/12/26 in the displayed MM/DD/YY field) and exact Description 'SPL-03 Supplier visit'. Leave Num and split memos blank. Add exactly one transaction and leave it unreconciled. Preserve all existing accounts and transactions. Use Save As to save the XML GnuCash book to /tmp/ledgerdesk/exports/gnucash-split.gnucash. Do not overwrite the source book. Use only the application's normal controls.",
+        "started_at": "2026-11-08T15:53:27.253323+00:00",
+        "source_revision": "ab67ca3e7bded15c8137e60917ad2b86ec0ee69e",
+        "image_id": "sha256:b3935bd320422c6e786f3a71846ee004e46544e9ce7f41b6411d252a35a1432e",
+        "spec": {
+          "fixture_id": "gnucash-split-02",
+          "task_id": "gnucash-split",
+          "fixture_index": 2,
+          "input_name": "gnucash-source.gnucash",
+          "output_name": "gnucash-split.gnucash",
+          "input_sha256": "2a05378b4e54bcda33fec717e4eeda8107279a024aab51d577a2247a93a8b3ab",
+          "instruction_sha256": "575ea6ff1e27acc0c54484c0f9599a6f6bf233854abf64e0a84364a21417475c",
+          "expected_sha256": "0960754adb676d2d9eb9e63ccb052a651f1a879fbb374d014f89b4f30168b054",
+          "case_id": "gnucash-split-02",
+          "geometry": "normal",
+          "control": null,
+          "kind": "positive",
+          "expected_image_id": "sha256:b3935bd320422c6e786f3a71846ee004e46544e9ce7f41b6411d252a35a1432e",
+          "expected_source_revision": "ab67ca3e7bded15c8137e60917ad2b86ec0ee69e"
+        },
+        "limits": {
+          "budget_usd": 1.0,
+          "max_requests": 30,
+          "max_actions": 80,
+          "timeout": 420
+        },
+        "model": "gpt-6.1-terra",
+        "status": "passed",
+        "error": null,
+        "action_count": 24,
+        "request_count": 12,
+        "estimated_cost_usd": 0.124889,
+        "usage": {
+          "input_tokens": 121729,
+          "output_tokens": 632,
+          "total_tokens": 122361,
+          "complete": true
+        },
+        "operator_interventions": 0,
+        "environment": "Linux arm64/X11; 1200x900; isolated Docker",
+        "reasoning_effort": "medium",
+        "application": "GnuCash",
+        "setup_elapsed_seconds": 3.471,
+        "window_bounds": [
+          0,
+          19,
+          1200,
+          881
+        ],
+        "application_version": "GnuCash 4.13\nBuild ID: 4.13+(2022-12-17)",
+        "input_sha256": "2a05378b4e54bcda33fec717e4eeda8107279a024aab51d577a2247a93a8b3ab",
+        "model_text": "Completed and saved the book to `/tmp/ledgerdesk/exports/gnucash-split.gnucash`.",
+        "observed_model": "gpt-6.1-terra",
+        "agent_status": "completed",
+        "agent_elapsed_seconds": 62.749,
+        "verification_elapsed_seconds": 0.302,
+        "recording_available": true,
+        "elapsed_seconds": 67.571,
+        "finished_at": "2026-11-08T15:54:34.824044+00:00",
+        "executed_actions": 24
+      },
+      "application": "GnuCash",
+      "recorded_grade": {
+        "passed": true,
+        "errors": []
+      },
+      "recheck": {
+        "passed": true,
+        "artifact_passed": true,
+        "source_check_passed": true,
+        "saved_input_sha256": "2a05378b4e54bcda33fec717e4eeda8107279a024aab51d577a2247a93a8b3ab",
+        "recorded_source_sha256_after": "2a05378b4e54bcda33fec717e4eeda8107279a024aab51d577a2247a93a8b3ab",
+        "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+        "errors": [],
+        "artifact_verification": {
+          "passed": true,
+          "errors": [],
+          "headers": [
+            "date",
+            "description",
+            "account",
+            "amount"
+          ],
+          "rows": [
+            {
+              "date": "2026-10-01",
+              "description": "Synthetic opening balance",
+              "account": "Checking",
+              "amount": "10000.00"
+            },
+            {
+              "date": "2026-10-01",
+              "description": "Synthetic opening balance",
+              "account": "EquityOpening",
+              "amount": "-10000.00"
+            },
+            {
+              "date": "2026-11-12",
+              "description": "SPL-03 Supplier visit",
+              "account": "Checking",
+              "amount": "-300.00"
+            },
+            {
+              "date": "2026-11-12",
+              "description": "SPL-03 Supplier visit",
+              "account": "ExpenseTravel",
+              "amount": "221.10"
+            },
+            {
+              "date": "2026-11-12",
+              "description": "SPL-03 Supplier visit",
+              "account": "ExpenseMeals",
+              "amount": "78.90"
+            }
+          ],
+          "row_count": 5,
+          "source_unchanged": null,
+          "expected_input_sha256": "2a05378b4e54bcda33fec717e4eeda8107279a024aab51d577a2247a93a8b3ab"
+        }
+      },
+      "evidence_path": "runs/gnucash-split-02",
+      "has_report": true,
+      "has_recording": true
+    }
+  ]
+}

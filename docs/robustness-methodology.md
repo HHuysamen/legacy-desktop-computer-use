@@ -8,7 +8,7 @@ Twenty-four positive cases: two applications (LibreOffice Calc and Writer), two 
 
 Development fixtures may be used for unscored GUI setup checks. The held-out set is reserved from model and GUI tuning; its data is synthetic, not claimed to be unknown to the model's training process. Calc uses eight rows with numeric ties, zero and cent values. Writer uses five exact replacements plus near-matches, headings and a table.
 
-The display remains 1200×900. The normal application is maximized; the changed application is positioned at (120,80) with a 920×660 client area. Actual client geometry is recorded before each model call. An unexpected geometry is a setup failure, not a valid layout trial.
+The display remains 1200×900. The normal application is maximized; the changed application is positioned at (120,80) with a 920×660 client area. Actual client geometry is recorded before each measured attempt. An unexpected geometry is a setup failure, not a valid layout trial.
 
 Six negative controls are scored separately, two each:
 
