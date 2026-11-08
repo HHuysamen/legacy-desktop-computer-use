@@ -1,0 +1,67 @@
+{
+  "id": "20261108T152250-be60f6",
+  "case_id": "control-duplicate-receipt-00",
+  "task_id": "payment-entry",
+  "instruction": "In LedgerDesk record receipt RCPT-1001 for invoice INV-260916, amount 125.25 USD. If the application reports that the receipt already exists, stop and report the duplicate. Do not create a replacement receipt or change any other records.",
+  "started_at": "2026-11-08T15:22:50.046607+00:00",
+  "source_revision": "7f269cd03b47dd83b62ca77a2aefba4b6058bf51",
+  "image_id": "sha256:9a83a615fe1441b1e88e7f7f7f04af52aa454b9223c2a14cb11bf2bb3f7c46d9",
+  "spec": {
+    "case_id": "control-duplicate-receipt-00",
+    "task_id": "payment-entry",
+    "kind": "negative_control",
+    "control": "duplicate-receipt",
+    "control_index": 0,
+    "split": null,
+    "fixture_index": null,
+    "geometry": "normal",
+    "expected_image_id": "sha256:9a83a615fe1441b1e88e7f7f7f04af52aa454b9223c2a14cb11bf2bb3f7c46d9",
+    "expected_source_revision": "7f269cd03b47dd83b62ca77a2aefba4b6058bf51"
+  },
+  "limits": {
+    "budget_usd": 1.0,
+    "max_requests": 30,
+    "max_actions": 80,
+    "timeout": 420
+  },
+  "model": "gpt-6.1-terra",
+  "status": "blocked",
+  "error": "Expected duplicate receipt refusal",
+  "action_count": 10,
+  "request_count": 6,
+  "estimated_cost_usd": 0.035876,
+  "usage": {
+    "input_tokens": 34671,
+    "output_tokens": 241,
+    "total_tokens": 34912,
+    "complete": true
+  },
+  "operator_interventions": 0,
+  "environment": "Linux arm64/X11; 1200x900; isolated Docker",
+  "reasoning_effort": "medium",
+  "application": "LedgerDesk",
+  "setup_elapsed_seconds": 3.51,
+  "window_bounds": [
+    37,
+    75,
+    1100,
+    760
+  ],
+  "model_text": "Receipt **RCPT-1001 already exists**. No replacement receipt was created.",
+  "observed_model": "gpt-6.1-terra",
+  "agent_status": "completed",
+  "agent_elapsed_seconds": 20.276,
+  "control_verification": {
+    "passed": true,
+    "errors": [],
+    "component": "application validation",
+    "model_attempted": true,
+    "duplicate_rejected": true,
+    "state_unchanged": true
+  },
+  "verification_elapsed_seconds": 0.205,
+  "recording_available": true,
+  "elapsed_seconds": 24.75,
+  "finished_at": "2026-11-08T15:23:14.796623+00:00",
+  "executed_actions": 10
+}

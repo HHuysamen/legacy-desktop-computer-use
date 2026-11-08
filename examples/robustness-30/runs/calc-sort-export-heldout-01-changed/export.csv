@@ -1,0 +1,9 @@
+invoice_id,customer,outstanding_balance,due_date,status
+HO2-004,Larch Instruments,15999.99,2026-11-04,open
+HO2-003,Elm Components,8500.00,2026-11-05,partial
+HO2-008,Indigo Supply,8500.00,2026-11-01,open
+HO2-005,Topaz Fabrication,999.98,2026-11-16,partial
+HO2-006,Birch Distribution,706.06,2026-11-12,open
+HO2-001,Orion Workshop,78.00,2026-11-15,open
+HO2-002,Aspen Research,13.00,2026-11-02,partial
+HO2-007,Hazel Devices,0.00,2026-11-03,settled

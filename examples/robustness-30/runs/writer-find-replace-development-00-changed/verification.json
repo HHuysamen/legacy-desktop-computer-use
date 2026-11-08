@@ -1,0 +1,77 @@
+{
+  "passed": true,
+  "errors": [],
+  "headers": [
+    "section",
+    "text"
+  ],
+  "rows": [
+    {
+      "section": "1:heading:1",
+      "text": "Supplier handover memo"
+    },
+    {
+      "section": "2:paragraph",
+      "text": "Prepared on 8 November 2026. Case DEV-001-2026. All figures below are synthetic."
+    },
+    {
+      "section": "3:heading:2",
+      "text": "Supplier overview"
+    },
+    {
+      "section": "4:paragraph",
+      "text": "Summit Devices is the primary supplier. Summit Devices owns the quarterly delivery plan."
+    },
+    {
+      "section": "5:paragraph",
+      "text": "Aster System and Astor Systems are different suppliers; leave those names unchanged."
+    },
+    {
+      "section": "6:paragraph",
+      "text": "Recorded balance: USD 12,500.50. Review due: 30 November 2026."
+    },
+    {
+      "section": "7:table:1:1",
+      "text": "Supplier"
+    },
+    {
+      "section": "7:table:1:2",
+      "text": "Owner"
+    },
+    {
+      "section": "7:table:1:3",
+      "text": "Action"
+    },
+    {
+      "section": "7:table:2:1",
+      "text": "Summit Devices"
+    },
+    {
+      "section": "7:table:2:2",
+      "text": "Mara Chen"
+    },
+    {
+      "section": "7:table:2:3",
+      "text": "Confirm 18 components"
+    },
+    {
+      "section": "7:table:3:1",
+      "text": "Summit Devices"
+    },
+    {
+      "section": "7:table:3:2",
+      "text": "Elias Vale"
+    },
+    {
+      "section": "7:table:3:3",
+      "text": "Keep existing due date"
+    },
+    {
+      "section": "8:paragraph",
+      "text": "Escalations for Summit Devices go to Mara Chen. Reference: DEV-001-2026."
+    }
+  ],
+  "row_count": 16,
+  "source_unchanged": true,
+  "source_sha256_after": "55c9171bf47b098e2877c93e79b2e36d99c42625af48335ae4d11de0ded05643"
+}

@@ -1,0 +1,63 @@
+{
+  "id": "20261108T151848-f4483a",
+  "case_id": "writer-find-replace-heldout-00-normal",
+  "task_id": "writer-find-replace",
+  "instruction": "The supplied supplier handover memo is open in LibreOffice Writer. Replace every exact occurrence of 'Willow Systems' with 'Beacon Devices', including occurrences in the table. Do not change the similar names 'Willow System' or 'Wallow Systems', or any other text, numbers, paragraph order or table content. Save the edited document as OpenDocument Text to /tmp/ledgerdesk/exports/writer-find-replace.odt, leaving the source ODT unchanged.",
+  "started_at": "2026-11-08T15:18:48.772923+00:00",
+  "source_revision": "7f269cd03b47dd83b62ca77a2aefba4b6058bf51",
+  "image_id": "sha256:9a83a615fe1441b1e88e7f7f7f04af52aa454b9223c2a14cb11bf2bb3f7c46d9",
+  "spec": {
+    "fixture_id": "writer-find-replace-heldout-00",
+    "task_id": "writer-find-replace",
+    "split": "heldout",
+    "fixture_index": 0,
+    "case_id": "writer-find-replace-heldout-00-normal",
+    "geometry": "normal",
+    "control": null,
+    "input_sha256": "e10026725ce782d2f00f1f308a4e8ce82f031f85232c8e259988fff17c4b7065",
+    "instruction_sha256": "c10193dcb8c4f92f5801b0d062d048dfa84fab78215c88f845526d9451038158",
+    "kind": "positive",
+    "expected_image_id": "sha256:9a83a615fe1441b1e88e7f7f7f04af52aa454b9223c2a14cb11bf2bb3f7c46d9",
+    "expected_source_revision": "7f269cd03b47dd83b62ca77a2aefba4b6058bf51"
+  },
+  "limits": {
+    "budget_usd": 1.0,
+    "max_requests": 30,
+    "max_actions": 80,
+    "timeout": 420
+  },
+  "model": "gpt-6.1-terra",
+  "status": "passed",
+  "error": null,
+  "action_count": 14,
+  "request_count": 6,
+  "estimated_cost_usd": 0.037215,
+  "usage": {
+    "input_tokens": 35350,
+    "output_tokens": 373,
+    "total_tokens": 35723,
+    "complete": true
+  },
+  "operator_interventions": 0,
+  "environment": "Linux arm64/X11; 1200x900; isolated Docker",
+  "reasoning_effort": "medium",
+  "application": "LibreOffice",
+  "setup_elapsed_seconds": 3.508,
+  "window_bounds": [
+    0,
+    19,
+    1200,
+    881
+  ],
+  "application_version": "LibreOffice 7.4.7.2 40(Build:2)",
+  "input_sha256": "e10026725ce782d2f00f1f308a4e8ce82f031f85232c8e259988fff17c4b7065",
+  "model_text": "Completed and saved the edited document as [writer-find-replace.odt](sandbox:/tmp/ledgerdesk/exports/writer-find-replace.odt).",
+  "observed_model": "gpt-6.1-terra",
+  "agent_status": "completed",
+  "agent_elapsed_seconds": 25.486,
+  "verification_elapsed_seconds": 0.271,
+  "recording_available": true,
+  "elapsed_seconds": 30.345,
+  "finished_at": "2026-11-08T15:19:19.117858+00:00",
+  "executed_actions": 14
+}

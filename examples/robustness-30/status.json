@@ -1,0 +1,26 @@
+{
+  "protocol": "office-robustness-30-v1",
+  "planned": 30,
+  "completed": 30,
+  "remaining": 0,
+  "grades": {
+    "positive": {
+      "completed": 24,
+      "passed": 24,
+      "failed": 0,
+      "unverified": 0
+    },
+    "negative_control": {
+      "completed": 6,
+      "passed": 6,
+      "failed": 0,
+      "unverified": 0
+    }
+  },
+  "estimated_cost_usd_known": 2.00803,
+  "estimated_cost_usd": 2.00803,
+  "cost_complete": true,
+  "budget_reserved_usd": 2.00803,
+  "total_budget_usd": 20.0,
+  "stop_reason": null
+}

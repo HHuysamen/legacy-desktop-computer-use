@@ -1,0 +1,63 @@
+{
+  "id": "20261108T153512-30b829",
+  "case_id": "writer-find-replace-development-02-changed",
+  "task_id": "writer-find-replace",
+  "instruction": "The supplied supplier handover memo is open in LibreOffice Writer. Replace every exact occurrence of 'Juniper Labs' with 'Atlas Devices', including occurrences in the table. Do not change the similar names 'Juniper Lab' or 'Juniper Labx', or any other text, numbers, paragraph order or table content. Save the edited document as OpenDocument Text to /tmp/ledgerdesk/exports/writer-find-replace.odt, leaving the source ODT unchanged.",
+  "started_at": "2026-11-08T15:35:12.145942+00:00",
+  "source_revision": "7f269cd03b47dd83b62ca77a2aefba4b6058bf51",
+  "image_id": "sha256:9a83a615fe1441b1e88e7f7f7f04af52aa454b9223c2a14cb11bf2bb3f7c46d9",
+  "spec": {
+    "fixture_id": "writer-find-replace-development-02",
+    "task_id": "writer-find-replace",
+    "split": "development",
+    "fixture_index": 2,
+    "case_id": "writer-find-replace-development-02-changed",
+    "geometry": "changed",
+    "control": null,
+    "input_sha256": "7a043203739fd6103e27df7158373a10711cafebe6a97301340589b04e2dca8e",
+    "instruction_sha256": "0931333613275eb4e123742e8f3d1b91065880a90ff97bae47f3e8c338c5cb70",
+    "kind": "positive",
+    "expected_image_id": "sha256:9a83a615fe1441b1e88e7f7f7f04af52aa454b9223c2a14cb11bf2bb3f7c46d9",
+    "expected_source_revision": "7f269cd03b47dd83b62ca77a2aefba4b6058bf51"
+  },
+  "limits": {
+    "budget_usd": 1.0,
+    "max_requests": 30,
+    "max_actions": 80,
+    "timeout": 420
+  },
+  "model": "gpt-6.1-terra",
+  "status": "passed",
+  "error": null,
+  "action_count": 14,
+  "request_count": 6,
+  "estimated_cost_usd": 0.037515,
+  "usage": {
+    "input_tokens": 35480,
+    "output_tokens": 407,
+    "total_tokens": 35887,
+    "complete": true
+  },
+  "operator_interventions": 0,
+  "environment": "Linux arm64/X11; 1200x900; isolated Docker",
+  "reasoning_effort": "medium",
+  "application": "LibreOffice",
+  "setup_elapsed_seconds": 3.806,
+  "window_bounds": [
+    120,
+    80,
+    920,
+    660
+  ],
+  "application_version": "LibreOffice 7.4.7.2 40(Build:2)",
+  "input_sha256": "7a043203739fd6103e27df7158373a10711cafebe6a97301340589b04e2dca8e",
+  "model_text": "Completed and saved the edited document as [writer-find-replace.odt](sandbox:/tmp/ledgerdesk/exports/writer-find-replace.odt).",
+  "observed_model": "gpt-6.1-terra",
+  "agent_status": "completed",
+  "agent_elapsed_seconds": 34.897,
+  "verification_elapsed_seconds": 0.238,
+  "recording_available": true,
+  "elapsed_seconds": 40.094,
+  "finished_at": "2026-11-08T15:35:52.240287+00:00",
+  "executed_actions": 14
+}

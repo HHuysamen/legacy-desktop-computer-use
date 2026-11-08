@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "errors": [],
+  "headers": [
+    "date",
+    "description",
+    "account",
+    "amount"
+  ],
+  "rows": [
+    {
+      "date": "2026-10-01",
+      "description": "Synthetic opening balance",
+      "account": "Checking",
+      "amount": "10000.00"
+    },
+    {
+      "date": "2026-10-01",
+      "description": "Synthetic opening balance",
+      "account": "EquityOpening",
+      "amount": "-10000.00"
+    },
+    {
+      "date": "2026-11-12",
+      "description": "EXP-03 Stationery",
+      "account": "Checking",
+      "amount": "-219.80"
+    },
+    {
+      "date": "2026-11-12",
+      "description": "EXP-03 Stationery",
+      "account": "ExpenseSupplies",
+      "amount": "219.80"
+    }
+  ],
+  "row_count": 4,
+  "source_unchanged": true,
+  "expected_input_sha256": "a40a2869d58ad78709248cce9b3e900c309861a1fccffe3b26058e8481dd309a",
+  "source_sha256_after": "a40a2869d58ad78709248cce9b3e900c309861a1fccffe3b26058e8481dd309a"
+}

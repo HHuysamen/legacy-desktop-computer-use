@@ -1,0 +1,9 @@
+invoice_id,customer,outstanding_balance,due_date,status
+DV3-003,Willow Devices,10000.00,2026-11-05,partial
+DV3-004,Juniper Research,2750.50,2026-11-04,open
+DV3-007,Cobalt Supply,2750.50,2026-11-03,open
+DV3-002,Amber Fabrication,1499.99,2026-11-02,partial
+DV3-005,Maple Distribution,890.00,2026-11-16,partial
+DV3-008,Summit Workshop,45.00,2026-11-01,open
+DV3-001,Aster Components,9.99,2026-11-15,open
+DV3-006,Cedar Instruments,0.00,2026-11-12,settled

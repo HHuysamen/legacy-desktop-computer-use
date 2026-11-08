@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "errors": [],
+  "headers": [
+    "invoice_id",
+    "customer",
+    "outstanding_balance",
+    "due_date",
+    "status"
+  ],
+  "rows": [
+    {
+      "invoice_id": "DV2-002",
+      "customer": "Summit Workshop",
+      "outstanding_balance": "14999.99",
+      "due_date": "2026-11-02",
+      "status": "partial"
+    },
+    {
+      "invoice_id": "DV2-004",
+      "customer": "Cobalt Supply",
+      "outstanding_balance": "7500.00",
+      "due_date": "2026-11-04",
+      "status": "open"
+    },
+    {
+      "invoice_id": "DV2-006",
+      "customer": "Willow Devices",
+      "outstanding_balance": "7500.00",
+      "due_date": "2026-11-12",
+      "status": "open"
+    },
+    {
+      "invoice_id": "DV2-005",
+      "customer": "Aster Components",
+      "outstanding_balance": "999.99",
+      "due_date": "2026-11-16",
+      "status": "partial"
+    },
+    {
+      "invoice_id": "DV2-007",
+      "customer": "Amber Fabrication",
+      "outstanding_balance": "805.05",
+      "due_date": "2026-11-03",
+      "status": "open"
+    },
+    {
+      "invoice_id": "DV2-001",
+      "customer": "Cedar Instruments",
+      "outstanding_balance": "68.00",
+      "due_date": "2026-11-15",
+      "status": "open"
+    },
+    {
+      "invoice_id": "DV2-003",
+      "customer": "Juniper Research",
+      "outstanding_balance": "12.00",
+      "due_date": "2026-11-05",
+      "status": "partial"
+    },
+    {
+      "invoice_id": "DV2-008",
+      "customer": "Maple Distribution",
+      "outstanding_balance": "0.00",
+      "due_date": "2026-11-01",
+      "status": "settled"
+    }
+  ],
+  "row_count": 8,
+  "source_unchanged": true,
+  "source_sha256_after": "35b4a2f746c6f5a60d815b005cdf7078c370923d10db30f877cb549b733bc391"
+}

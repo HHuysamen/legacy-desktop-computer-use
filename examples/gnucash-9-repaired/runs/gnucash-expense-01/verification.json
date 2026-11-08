@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "errors": [],
+  "headers": [
+    "date",
+    "description",
+    "account",
+    "amount"
+  ],
+  "rows": [
+    {
+      "date": "2026-10-01",
+      "description": "Synthetic opening balance",
+      "account": "Checking",
+      "amount": "10000.00"
+    },
+    {
+      "date": "2026-10-01",
+      "description": "Synthetic opening balance",
+      "account": "EquityOpening",
+      "amount": "-10000.00"
+    },
+    {
+      "date": "2026-11-11",
+      "description": "EXP-02 Packing materials",
+      "account": "Checking",
+      "amount": "-87.35"
+    },
+    {
+      "date": "2026-11-11",
+      "description": "EXP-02 Packing materials",
+      "account": "ExpenseSupplies",
+      "amount": "87.35"
+    }
+  ],
+  "row_count": 4,
+  "source_unchanged": true,
+  "expected_input_sha256": "c186244749a74006997c4c98f2890aad26fe9adde2d2fe279f485d32c89fd9e8",
+  "source_sha256_after": "c186244749a74006997c4c98f2890aad26fe9adde2d2fe279f485d32c89fd9e8"
+}

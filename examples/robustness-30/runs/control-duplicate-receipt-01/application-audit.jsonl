@@ -1,0 +1,1 @@
+{"operation": "payment-entry", "status": "rejected", "fields": {"reference": "RCPT-1001", "invoice_number": "INV-260916", "amount": "125.25"}, "reason": "UNIQUE constraint failed: receipts.reference"}

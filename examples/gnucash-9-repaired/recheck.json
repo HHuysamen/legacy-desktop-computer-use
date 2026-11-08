@@ -1,0 +1,474 @@
+{
+  "protocol_sha256": "3319d45f7c28e83db8d6c2f293b1235bf2371d41a27138d3f611ccbf5e6cac16",
+  "rechecked_at": "2026-11-08T15:54:56.485760+00:00",
+  "cases": [
+    {
+      "case_id": "gnucash-split-01",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "cc9147360d100e5d8655df6b5d96dfb4e9a2b422443e0e843f639d413167ab46",
+      "recorded_source_sha256_after": "cc9147360d100e5d8655df6b5d96dfb4e9a2b422443e0e843f639d413167ab46",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "date",
+          "description",
+          "account",
+          "amount"
+        ],
+        "rows": [
+          {
+            "date": "2026-10-01",
+            "description": "Synthetic opening balance",
+            "account": "Checking",
+            "amount": "10000.00"
+          },
+          {
+            "date": "2026-10-01",
+            "description": "Synthetic opening balance",
+            "account": "EquityOpening",
+            "amount": "-10000.00"
+          },
+          {
+            "date": "2026-11-11",
+            "description": "SPL-02 Regional meeting",
+            "account": "Checking",
+            "amount": "-139.75"
+          },
+          {
+            "date": "2026-11-11",
+            "description": "SPL-02 Regional meeting",
+            "account": "ExpenseTravel",
+            "amount": "97.50"
+          },
+          {
+            "date": "2026-11-11",
+            "description": "SPL-02 Regional meeting",
+            "account": "ExpenseMeals",
+            "amount": "42.25"
+          }
+        ],
+        "row_count": 5,
+        "source_unchanged": null,
+        "expected_input_sha256": "cc9147360d100e5d8655df6b5d96dfb4e9a2b422443e0e843f639d413167ab46"
+      }
+    },
+    {
+      "case_id": "gnucash-transfer-00",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "f0cc00d3211a777a542a97dec6d8d4267032bc9f31296226532e057e31dd8e50",
+      "recorded_source_sha256_after": "f0cc00d3211a777a542a97dec6d8d4267032bc9f31296226532e057e31dd8e50",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "date",
+          "description",
+          "account",
+          "amount"
+        ],
+        "rows": [
+          {
+            "date": "2026-10-01",
+            "description": "Synthetic opening balance",
+            "account": "Checking",
+            "amount": "10000.00"
+          },
+          {
+            "date": "2026-10-01",
+            "description": "Synthetic opening balance",
+            "account": "EquityOpening",
+            "amount": "-10000.00"
+          },
+          {
+            "date": "2026-11-10",
+            "description": "TRF-01 Reserve transfer",
+            "account": "Savings",
+            "amount": "500.00"
+          },
+          {
+            "date": "2026-11-10",
+            "description": "TRF-01 Reserve transfer",
+            "account": "Checking",
+            "amount": "-500.00"
+          }
+        ],
+        "row_count": 4,
+        "source_unchanged": null,
+        "expected_input_sha256": "f0cc00d3211a777a542a97dec6d8d4267032bc9f31296226532e057e31dd8e50"
+      }
+    },
+    {
+      "case_id": "gnucash-transfer-02",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "6303d93cb3d00b9512288446ead2b147f3c2dca3139c1b86034950f77a13c74e",
+      "recorded_source_sha256_after": "6303d93cb3d00b9512288446ead2b147f3c2dca3139c1b86034950f77a13c74e",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "date",
+          "description",
+          "account",
+          "amount"
+        ],
+        "rows": [
+          {
+            "date": "2026-10-01",
+            "description": "Synthetic opening balance",
+            "account": "Checking",
+            "amount": "10000.00"
+          },
+          {
+            "date": "2026-10-01",
+            "description": "Synthetic opening balance",
+            "account": "EquityOpening",
+            "amount": "-10000.00"
+          },
+          {
+            "date": "2026-11-12",
+            "description": "TRF-03 Cash reserve",
+            "account": "Savings",
+            "amount": "310.00"
+          },
+          {
+            "date": "2026-11-12",
+            "description": "TRF-03 Cash reserve",
+            "account": "Checking",
+            "amount": "-310.00"
+          }
+        ],
+        "row_count": 4,
+        "source_unchanged": null,
+        "expected_input_sha256": "6303d93cb3d00b9512288446ead2b147f3c2dca3139c1b86034950f77a13c74e"
+      }
+    },
+    {
+      "case_id": "gnucash-expense-00",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "2d85e80fe0fb235ea6e4b1b297fb9d1922418d94d85c508b1c6edc218a0ddd1d",
+      "recorded_source_sha256_after": "2d85e80fe0fb235ea6e4b1b297fb9d1922418d94d85c508b1c6edc218a0ddd1d",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "date",
+          "description",
+          "account",
+          "amount"
+        ],
+        "rows": [
+          {
+            "date": "2026-10-01",
+            "description": "Synthetic opening balance",
+            "account": "Checking",
+            "amount": "10000.00"
+          },
+          {
+            "date": "2026-10-01",
+            "description": "Synthetic opening balance",
+            "account": "EquityOpening",
+            "amount": "-10000.00"
+          },
+          {
+            "date": "2026-11-10",
+            "description": "EXP-01 Printer supplies",
+            "account": "Checking",
+            "amount": "-125.50"
+          },
+          {
+            "date": "2026-11-10",
+            "description": "EXP-01 Printer supplies",
+            "account": "ExpenseSupplies",
+            "amount": "125.50"
+          }
+        ],
+        "row_count": 4,
+        "source_unchanged": null,
+        "expected_input_sha256": "2d85e80fe0fb235ea6e4b1b297fb9d1922418d94d85c508b1c6edc218a0ddd1d"
+      }
+    },
+    {
+      "case_id": "gnucash-split-00",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "6fd9ee6c9ddae6444692ad36dc86be492843d4f490f415703390d4d5f021ad44",
+      "recorded_source_sha256_after": "6fd9ee6c9ddae6444692ad36dc86be492843d4f490f415703390d4d5f021ad44",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "date",
+          "description",
+          "account",
+          "amount"
+        ],
+        "rows": [
+          {
+            "date": "2026-10-01",
+            "description": "Synthetic opening balance",
+            "account": "Checking",
+            "amount": "10000.00"
+          },
+          {
+            "date": "2026-10-01",
+            "description": "Synthetic opening balance",
+            "account": "EquityOpening",
+            "amount": "-10000.00"
+          },
+          {
+            "date": "2026-11-10",
+            "description": "SPL-01 Client visit",
+            "account": "Checking",
+            "amount": "-240.00"
+          },
+          {
+            "date": "2026-11-10",
+            "description": "SPL-01 Client visit",
+            "account": "ExpenseTravel",
+            "amount": "180.00"
+          },
+          {
+            "date": "2026-11-10",
+            "description": "SPL-01 Client visit",
+            "account": "ExpenseMeals",
+            "amount": "60.00"
+          }
+        ],
+        "row_count": 5,
+        "source_unchanged": null,
+        "expected_input_sha256": "6fd9ee6c9ddae6444692ad36dc86be492843d4f490f415703390d4d5f021ad44"
+      }
+    },
+    {
+      "case_id": "gnucash-expense-02",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "a40a2869d58ad78709248cce9b3e900c309861a1fccffe3b26058e8481dd309a",
+      "recorded_source_sha256_after": "a40a2869d58ad78709248cce9b3e900c309861a1fccffe3b26058e8481dd309a",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "date",
+          "description",
+          "account",
+          "amount"
+        ],
+        "rows": [
+          {
+            "date": "2026-10-01",
+            "description": "Synthetic opening balance",
+            "account": "Checking",
+            "amount": "10000.00"
+          },
+          {
+            "date": "2026-10-01",
+            "description": "Synthetic opening balance",
+            "account": "EquityOpening",
+            "amount": "-10000.00"
+          },
+          {
+            "date": "2026-11-12",
+            "description": "EXP-03 Stationery",
+            "account": "Checking",
+            "amount": "-219.80"
+          },
+          {
+            "date": "2026-11-12",
+            "description": "EXP-03 Stationery",
+            "account": "ExpenseSupplies",
+            "amount": "219.80"
+          }
+        ],
+        "row_count": 4,
+        "source_unchanged": null,
+        "expected_input_sha256": "a40a2869d58ad78709248cce9b3e900c309861a1fccffe3b26058e8481dd309a"
+      }
+    },
+    {
+      "case_id": "gnucash-expense-01",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "c186244749a74006997c4c98f2890aad26fe9adde2d2fe279f485d32c89fd9e8",
+      "recorded_source_sha256_after": "c186244749a74006997c4c98f2890aad26fe9adde2d2fe279f485d32c89fd9e8",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "date",
+          "description",
+          "account",
+          "amount"
+        ],
+        "rows": [
+          {
+            "date": "2026-10-01",
+            "description": "Synthetic opening balance",
+            "account": "Checking",
+            "amount": "10000.00"
+          },
+          {
+            "date": "2026-10-01",
+            "description": "Synthetic opening balance",
+            "account": "EquityOpening",
+            "amount": "-10000.00"
+          },
+          {
+            "date": "2026-11-11",
+            "description": "EXP-02 Packing materials",
+            "account": "Checking",
+            "amount": "-87.35"
+          },
+          {
+            "date": "2026-11-11",
+            "description": "EXP-02 Packing materials",
+            "account": "ExpenseSupplies",
+            "amount": "87.35"
+          }
+        ],
+        "row_count": 4,
+        "source_unchanged": null,
+        "expected_input_sha256": "c186244749a74006997c4c98f2890aad26fe9adde2d2fe279f485d32c89fd9e8"
+      }
+    },
+    {
+      "case_id": "gnucash-transfer-01",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "0d888692cf7564d47dbc8b8e8703e72d6591d524d8d8e0c3d1df4858dd169637",
+      "recorded_source_sha256_after": "0d888692cf7564d47dbc8b8e8703e72d6591d524d8d8e0c3d1df4858dd169637",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "date",
+          "description",
+          "account",
+          "amount"
+        ],
+        "rows": [
+          {
+            "date": "2026-10-01",
+            "description": "Synthetic opening balance",
+            "account": "Checking",
+            "amount": "10000.00"
+          },
+          {
+            "date": "2026-10-01",
+            "description": "Synthetic opening balance",
+            "account": "EquityOpening",
+            "amount": "-10000.00"
+          },
+          {
+            "date": "2026-11-11",
+            "description": "TRF-02 Savings allocation",
+            "account": "Savings",
+            "amount": "725.25"
+          },
+          {
+            "date": "2026-11-11",
+            "description": "TRF-02 Savings allocation",
+            "account": "Checking",
+            "amount": "-725.25"
+          }
+        ],
+        "row_count": 4,
+        "source_unchanged": null,
+        "expected_input_sha256": "0d888692cf7564d47dbc8b8e8703e72d6591d524d8d8e0c3d1df4858dd169637"
+      }
+    },
+    {
+      "case_id": "gnucash-split-02",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "2a05378b4e54bcda33fec717e4eeda8107279a024aab51d577a2247a93a8b3ab",
+      "recorded_source_sha256_after": "2a05378b4e54bcda33fec717e4eeda8107279a024aab51d577a2247a93a8b3ab",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "date",
+          "description",
+          "account",
+          "amount"
+        ],
+        "rows": [
+          {
+            "date": "2026-10-01",
+            "description": "Synthetic opening balance",
+            "account": "Checking",
+            "amount": "10000.00"
+          },
+          {
+            "date": "2026-10-01",
+            "description": "Synthetic opening balance",
+            "account": "EquityOpening",
+            "amount": "-10000.00"
+          },
+          {
+            "date": "2026-11-12",
+            "description": "SPL-03 Supplier visit",
+            "account": "Checking",
+            "amount": "-300.00"
+          },
+          {
+            "date": "2026-11-12",
+            "description": "SPL-03 Supplier visit",
+            "account": "ExpenseTravel",
+            "amount": "221.10"
+          },
+          {
+            "date": "2026-11-12",
+            "description": "SPL-03 Supplier visit",
+            "account": "ExpenseMeals",
+            "amount": "78.90"
+          }
+        ],
+        "row_count": 5,
+        "source_unchanged": null,
+        "expected_input_sha256": "2a05378b4e54bcda33fec717e4eeda8107279a024aab51d577a2247a93a8b3ab"
+      }
+    }
+  ]
+}

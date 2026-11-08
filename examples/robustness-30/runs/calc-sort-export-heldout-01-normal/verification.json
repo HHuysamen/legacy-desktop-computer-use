@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "errors": [],
+  "headers": [
+    "invoice_id",
+    "customer",
+    "outstanding_balance",
+    "due_date",
+    "status"
+  ],
+  "rows": [
+    {
+      "invoice_id": "HO2-004",
+      "customer": "Larch Instruments",
+      "outstanding_balance": "15999.99",
+      "due_date": "2026-11-04",
+      "status": "open"
+    },
+    {
+      "invoice_id": "HO2-003",
+      "customer": "Elm Components",
+      "outstanding_balance": "8500.00",
+      "due_date": "2026-11-05",
+      "status": "partial"
+    },
+    {
+      "invoice_id": "HO2-008",
+      "customer": "Indigo Supply",
+      "outstanding_balance": "8500.00",
+      "due_date": "2026-11-01",
+      "status": "open"
+    },
+    {
+      "invoice_id": "HO2-005",
+      "customer": "Topaz Fabrication",
+      "outstanding_balance": "999.98",
+      "due_date": "2026-11-16",
+      "status": "partial"
+    },
+    {
+      "invoice_id": "HO2-006",
+      "customer": "Birch Distribution",
+      "outstanding_balance": "706.06",
+      "due_date": "2026-11-12",
+      "status": "open"
+    },
+    {
+      "invoice_id": "HO2-001",
+      "customer": "Orion Workshop",
+      "outstanding_balance": "78.00",
+      "due_date": "2026-11-15",
+      "status": "open"
+    },
+    {
+      "invoice_id": "HO2-002",
+      "customer": "Aspen Research",
+      "outstanding_balance": "13.00",
+      "due_date": "2026-11-02",
+      "status": "partial"
+    },
+    {
+      "invoice_id": "HO2-007",
+      "customer": "Hazel Devices",
+      "outstanding_balance": "0.00",
+      "due_date": "2026-11-03",
+      "status": "settled"
+    }
+  ],
+  "row_count": 8,
+  "source_unchanged": true,
+  "source_sha256_after": "7e183bd590c23fce879f4284b2fa0808e5b8275ca7ef159daf929c5d7344d678"
+}

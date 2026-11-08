@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "errors": [],
+  "headers": [
+    "date",
+    "description",
+    "account",
+    "amount"
+  ],
+  "rows": [
+    {
+      "date": "2026-10-01",
+      "description": "Synthetic opening balance",
+      "account": "Checking",
+      "amount": "10000.00"
+    },
+    {
+      "date": "2026-10-01",
+      "description": "Synthetic opening balance",
+      "account": "EquityOpening",
+      "amount": "-10000.00"
+    },
+    {
+      "date": "2026-11-11",
+      "description": "TRF-02 Savings allocation",
+      "account": "Savings",
+      "amount": "725.25"
+    },
+    {
+      "date": "2026-11-11",
+      "description": "TRF-02 Savings allocation",
+      "account": "Checking",
+      "amount": "-725.25"
+    }
+  ],
+  "row_count": 4,
+  "source_unchanged": true,
+  "expected_input_sha256": "0d888692cf7564d47dbc8b8e8703e72d6591d524d8d8e0c3d1df4858dd169637",
+  "source_sha256_after": "0d888692cf7564d47dbc8b8e8703e72d6591d524d8d8e0c3d1df4858dd169637"
+}

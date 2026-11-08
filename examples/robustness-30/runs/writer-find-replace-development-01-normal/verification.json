@@ -1,0 +1,77 @@
+{
+  "passed": true,
+  "errors": [],
+  "headers": [
+    "section",
+    "text"
+  ],
+  "rows": [
+    {
+      "section": "1:heading:1",
+      "text": "Supplier handover memo"
+    },
+    {
+      "section": "2:paragraph",
+      "text": "Prepared on 8 November 2026. Case DEV-002-2026. All figures below are synthetic."
+    },
+    {
+      "section": "3:heading:2",
+      "text": "Supplier overview"
+    },
+    {
+      "section": "4:paragraph",
+      "text": "Maple Devices is the primary supplier. Maple Devices owns the quarterly delivery plan."
+    },
+    {
+      "section": "5:paragraph",
+      "text": "Cobalt Work and Cobolt Works are different suppliers; leave those names unchanged."
+    },
+    {
+      "section": "6:paragraph",
+      "text": "Recorded balance: USD 12,637.50. Review due: 30 November 2026."
+    },
+    {
+      "section": "7:table:1:1",
+      "text": "Supplier"
+    },
+    {
+      "section": "7:table:1:2",
+      "text": "Owner"
+    },
+    {
+      "section": "7:table:1:3",
+      "text": "Action"
+    },
+    {
+      "section": "7:table:2:1",
+      "text": "Maple Devices"
+    },
+    {
+      "section": "7:table:2:2",
+      "text": "Nina Cole"
+    },
+    {
+      "section": "7:table:2:3",
+      "text": "Confirm 19 components"
+    },
+    {
+      "section": "7:table:3:1",
+      "text": "Maple Devices"
+    },
+    {
+      "section": "7:table:3:2",
+      "text": "Tomas Reed"
+    },
+    {
+      "section": "7:table:3:3",
+      "text": "Keep existing due date"
+    },
+    {
+      "section": "8:paragraph",
+      "text": "Escalations for Maple Devices go to Nina Cole. Reference: DEV-002-2026."
+    }
+  ],
+  "row_count": 16,
+  "source_unchanged": true,
+  "source_sha256_after": "aa58107528b56814368730619cd21c398a345eee3db3ceecef3dd0d0efe6eec6"
+}

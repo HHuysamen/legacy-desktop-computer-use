@@ -109,6 +109,10 @@ def test_failed_confirmation_cannot_export(tmp_path, monkeypatch):
     assert view._pending is None
     assert view.export_button.state == "disabled"
     assert "Action failed" in view.status.value
+    import json
+    audit = json.loads((tmp_path / "application-audit.jsonl").read_text())
+    assert audit["operation"] == "invoice-lookup" and audit["status"] == "rejected"
+    assert audit["reason"] == "Invalid payment"
 
 
 def test_workflow_export_reports_write_failure_in_ui(tmp_path, monkeypatch):

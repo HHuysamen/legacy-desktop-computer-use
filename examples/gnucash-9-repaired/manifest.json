@@ -1,0 +1,767 @@
+{
+  "schema_version": 1,
+  "generator": "package_followup_study",
+  "protocol_sha256": "3319d45f7c28e83db8d6c2f293b1235bf2371d41a27138d3f611ccbf5e6cac16",
+  "files": [
+    {
+      "path": "events.jsonl",
+      "bytes": 28631,
+      "sha256": "e57d2de5bfafd93c4c8785b2c29356fbf554da8f4ad11b6051b302f8c0041459"
+    },
+    {
+      "path": "index.html",
+      "bytes": 5562,
+      "sha256": "d2150cf8cde1989010065cbe2ed6a49101f8e4c30dcb2f7041fb23b55cf9479a"
+    },
+    {
+      "path": "protocol.json",
+      "bytes": 19589,
+      "sha256": "3319d45f7c28e83db8d6c2f293b1235bf2371d41a27138d3f611ccbf5e6cac16"
+    },
+    {
+      "path": "recheck.json",
+      "bytes": 15446,
+      "sha256": "91edb4d7242787a682c7b8f8916c98da8be24f41536bb8fcc5fa1297da4a2703"
+    },
+    {
+      "path": "runs/gnucash-expense-00/events.jsonl",
+      "bytes": 8995,
+      "sha256": "1e5213a0e81ec19687deacf7d07f8488588723d0f2a4c5be3046098576e00101"
+    },
+    {
+      "path": "runs/gnucash-expense-00/export.gnucash",
+      "bytes": 1585,
+      "sha256": "414041e4c7dd1a83b3d0c01e9f4f7b76145f2c5ec4d7291cad39502ee8fb5a0a"
+    },
+    {
+      "path": "runs/gnucash-expense-00/gnucash-source.gnucash",
+      "bytes": 4218,
+      "sha256": "2d85e80fe0fb235ea6e4b1b297fb9d1922418d94d85c508b1c6edc218a0ddd1d"
+    },
+    {
+      "path": "runs/gnucash-expense-00/recording.mp4",
+      "bytes": 536463,
+      "sha256": "2d7eeee147a4f300576a215015f6f6fc3993c66f49f49674ad077b226aa07809"
+    },
+    {
+      "path": "runs/gnucash-expense-00/report.html",
+      "bytes": 552171,
+      "sha256": "d18e180f3982af3e55c0b38563bf93337b8be904b40a2ce594776886cf7c8fcf"
+    },
+    {
+      "path": "runs/gnucash-expense-00/run.json",
+      "bytes": 2792,
+      "sha256": "77452944ed51d5c363943d3391dcf97aea686c1915746320fd5e7f37e8c96219"
+    },
+    {
+      "path": "runs/gnucash-expense-00/screenshots/001.png",
+      "bytes": 58973,
+      "sha256": "3d811d325eb148902fbe45b513a9181a05607a825a56c774aa1576fd0a47d71f"
+    },
+    {
+      "path": "runs/gnucash-expense-00/screenshots/002.png",
+      "bytes": 58973,
+      "sha256": "3d811d325eb148902fbe45b513a9181a05607a825a56c774aa1576fd0a47d71f"
+    },
+    {
+      "path": "runs/gnucash-expense-00/screenshots/003.png",
+      "bytes": 46374,
+      "sha256": "a0ddd6cdc257b69cca7f28e7059337de7c53a6e7ca79a2d9c5c3201bce112846"
+    },
+    {
+      "path": "runs/gnucash-expense-00/screenshots/004.png",
+      "bytes": 46791,
+      "sha256": "4b90f2cd9b60f92823712b7b1fed231578c4cae5fbfbc04c04bad2b269e245b7"
+    },
+    {
+      "path": "runs/gnucash-expense-00/screenshots/005.png",
+      "bytes": 59020,
+      "sha256": "095e59bfd73ea93887acd608901280b22d5fa6aabf650342407ba1d48636ae06"
+    },
+    {
+      "path": "runs/gnucash-expense-00/screenshots/006.png",
+      "bytes": 70114,
+      "sha256": "8e9e3b9f8fe759c81df27714124582555f260e8fd49204b73a16bbc4316a620a"
+    },
+    {
+      "path": "runs/gnucash-expense-00/screenshots/007.png",
+      "bytes": 53851,
+      "sha256": "c231c994bf6d1e1c8e0b608d9e0860afdc4d50a1225dcfb86c7a7a83b2c1a1a3"
+    },
+    {
+      "path": "runs/gnucash-expense-00/verification.json",
+      "bytes": 960,
+      "sha256": "602cda8b8c0a09158668745b7f8ecfd2ad70c8ef975b903382278f7a4e68cfff"
+    },
+    {
+      "path": "runs/gnucash-expense-01/events.jsonl",
+      "bytes": 9329,
+      "sha256": "aee493b4b9973901479689f949725a0080a2f06f37b73e4452a194c900d02d2c"
+    },
+    {
+      "path": "runs/gnucash-expense-01/export.gnucash",
+      "bytes": 1590,
+      "sha256": "eb21371c2499ca9b7756225208e5ac3785b9f101c54d2bf0720ff8b7eaf339a9"
+    },
+    {
+      "path": "runs/gnucash-expense-01/gnucash-source.gnucash",
+      "bytes": 4218,
+      "sha256": "c186244749a74006997c4c98f2890aad26fe9adde2d2fe279f485d32c89fd9e8"
+    },
+    {
+      "path": "runs/gnucash-expense-01/recording.mp4",
+      "bytes": 558746,
+      "sha256": "f9206b0637296c9224911cc0b16123643f41ac561b7e52328147589593786422"
+    },
+    {
+      "path": "runs/gnucash-expense-01/report.html",
+      "bytes": 601422,
+      "sha256": "a88e521b6b7b767267c0f462f7db980b9a8ae696154da2025a43efcf3b26089f"
+    },
+    {
+      "path": "runs/gnucash-expense-01/run.json",
+      "bytes": 2792,
+      "sha256": "89cf5a6e23f9645e91f9592439d1b433746b557ae70f5463b38ade06ea0cbeb2"
+    },
+    {
+      "path": "runs/gnucash-expense-01/screenshots/001.png",
+      "bytes": 58973,
+      "sha256": "3d811d325eb148902fbe45b513a9181a05607a825a56c774aa1576fd0a47d71f"
+    },
+    {
+      "path": "runs/gnucash-expense-01/screenshots/002.png",
+      "bytes": 58973,
+      "sha256": "3d811d325eb148902fbe45b513a9181a05607a825a56c774aa1576fd0a47d71f"
+    },
+    {
+      "path": "runs/gnucash-expense-01/screenshots/003.png",
+      "bytes": 40248,
+      "sha256": "5f4d711fd7e3a6bb93812f3185010736354eca640c1de64cd23ea0bbe4f1fe46"
+    },
+    {
+      "path": "runs/gnucash-expense-01/screenshots/004.png",
+      "bytes": 46374,
+      "sha256": "a0ddd6cdc257b69cca7f28e7059337de7c53a6e7ca79a2d9c5c3201bce112846"
+    },
+    {
+      "path": "runs/gnucash-expense-01/screenshots/005.png",
+      "bytes": 46572,
+      "sha256": "ba5277787ea8564797e4119577780c361814a6a80125ec8043e8e9a0bbc12e43"
+    },
+    {
+      "path": "runs/gnucash-expense-01/screenshots/006.png",
+      "bytes": 54333,
+      "sha256": "b563bc97c7883b6420a800ef82feb4689532bcd104c78846c2e72b9485f69633"
+    },
+    {
+      "path": "runs/gnucash-expense-01/screenshots/007.png",
+      "bytes": 70217,
+      "sha256": "22aefd12bf986495c37b2c573a28fa054eaba6190f8620bffff3c518ee94ad6c"
+    },
+    {
+      "path": "runs/gnucash-expense-01/screenshots/008.png",
+      "bytes": 54694,
+      "sha256": "57b1f9e41e2f33ac12eec3edd78774c39b9567edbaadf5e054b8d22c16877cf2"
+    },
+    {
+      "path": "runs/gnucash-expense-01/verification.json",
+      "bytes": 960,
+      "sha256": "79b1e4731dfc302babae4c251906cfe3891cfb2e8bf1814c293dfd7c5dd0ffe8"
+    },
+    {
+      "path": "runs/gnucash-expense-02/events.jsonl",
+      "bytes": 9636,
+      "sha256": "ed549f5196c4ff56c3e17e3f368cce1ca96719131d59533c2def6bc72c777d41"
+    },
+    {
+      "path": "runs/gnucash-expense-02/export.gnucash",
+      "bytes": 1583,
+      "sha256": "9fd043671933325587341d2d446bda7ac566b11f92c462131339d544760e4293"
+    },
+    {
+      "path": "runs/gnucash-expense-02/gnucash-source.gnucash",
+      "bytes": 4218,
+      "sha256": "a40a2869d58ad78709248cce9b3e900c309861a1fccffe3b26058e8481dd309a"
+    },
+    {
+      "path": "runs/gnucash-expense-02/recording.mp4",
+      "bytes": 521705,
+      "sha256": "3c2aa27a62261a1246ab4c864ebfbd7975e50f81b394a3ff619388ccdcf04beb"
+    },
+    {
+      "path": "runs/gnucash-expense-02/report.html",
+      "bytes": 635212,
+      "sha256": "123b50d3f2be9a482c06ac2abd460566074711c4321de86c0e5d3b081fd950ae"
+    },
+    {
+      "path": "runs/gnucash-expense-02/run.json",
+      "bytes": 2786,
+      "sha256": "465b41d4c871c6fee7783c353497c0870192a7525b4394a2871d82b47cd3851b"
+    },
+    {
+      "path": "runs/gnucash-expense-02/screenshots/001.png",
+      "bytes": 58973,
+      "sha256": "3d811d325eb148902fbe45b513a9181a05607a825a56c774aa1576fd0a47d71f"
+    },
+    {
+      "path": "runs/gnucash-expense-02/screenshots/002.png",
+      "bytes": 58973,
+      "sha256": "3d811d325eb148902fbe45b513a9181a05607a825a56c774aa1576fd0a47d71f"
+    },
+    {
+      "path": "runs/gnucash-expense-02/screenshots/003.png",
+      "bytes": 40248,
+      "sha256": "5f4d711fd7e3a6bb93812f3185010736354eca640c1de64cd23ea0bbe4f1fe46"
+    },
+    {
+      "path": "runs/gnucash-expense-02/screenshots/004.png",
+      "bytes": 55154,
+      "sha256": "ed77f17fe8131fbb9cc824117ca7394e1862911a9155b4e81881a25c1b227597"
+    },
+    {
+      "path": "runs/gnucash-expense-02/screenshots/005.png",
+      "bytes": 40242,
+      "sha256": "f19a8e93cbcf5215e13b76a8c9cf32f82133ceef2dda6e45da616f3667657180"
+    },
+    {
+      "path": "runs/gnucash-expense-02/screenshots/006.png",
+      "bytes": 46444,
+      "sha256": "e5617d55449aaf4738b137b37dac9da1908e1383f7e6f254921fde2e728475f1"
+    },
+    {
+      "path": "runs/gnucash-expense-02/screenshots/007.png",
+      "bytes": 46503,
+      "sha256": "d212e00733e926004acb0cee189854ba094896de6f779b46d5bebc175d46b607"
+    },
+    {
+      "path": "runs/gnucash-expense-02/screenshots/008.png",
+      "bytes": 53849,
+      "sha256": "5f4553d71839e6d64d149a40e3e877a8a02988d19206c5118c21c2423080e56b"
+    },
+    {
+      "path": "runs/gnucash-expense-02/screenshots/009.png",
+      "bytes": 54798,
+      "sha256": "9776b45325276d5a0ee3c4ce62ffa7de7932025bc3ddc9919abe6bac17892312"
+    },
+    {
+      "path": "runs/gnucash-expense-02/verification.json",
+      "bytes": 948,
+      "sha256": "d03466095a255825cbeda2ebb77809fb7a2e1a960a99619dbf762498bf4d8899"
+    },
+    {
+      "path": "runs/gnucash-split-00/events.jsonl",
+      "bytes": 13128,
+      "sha256": "88f4415197f27b5934202f9b8c56e88f1a2d21f224f47c71a09c6bb75a092f84"
+    },
+    {
+      "path": "runs/gnucash-split-00/export.gnucash",
+      "bytes": 1621,
+      "sha256": "1e97bcf9ad6c17480fcac69ca8097bca9b358c82c048f865aaf92bac53387aa8"
+    },
+    {
+      "path": "runs/gnucash-split-00/gnucash-source.gnucash",
+      "bytes": 4218,
+      "sha256": "6fd9ee6c9ddae6444692ad36dc86be492843d4f490f415703390d4d5f021ad44"
+    },
+    {
+      "path": "runs/gnucash-split-00/recording.mp4",
+      "bytes": 688602,
+      "sha256": "2db95461f3b66f1aa10eba89f4a8a8d4cabf227f21fc0002cf2b24752699f5b8"
+    },
+    {
+      "path": "runs/gnucash-split-00/report.html",
+      "bytes": 789404,
+      "sha256": "838d6f41bbfd4872b4b8f47cc4c1c8f6c92336d106f772afafb45134ec939fd8"
+    },
+    {
+      "path": "runs/gnucash-split-00/run.json",
+      "bytes": 2879,
+      "sha256": "b0e2fc8f9113b2549cb25f3c7701bf5b3e2f1d571d01288df4a3045396760a89"
+    },
+    {
+      "path": "runs/gnucash-split-00/screenshots/001.png",
+      "bytes": 58973,
+      "sha256": "3d811d325eb148902fbe45b513a9181a05607a825a56c774aa1576fd0a47d71f"
+    },
+    {
+      "path": "runs/gnucash-split-00/screenshots/002.png",
+      "bytes": 58973,
+      "sha256": "3d811d325eb148902fbe45b513a9181a05607a825a56c774aa1576fd0a47d71f"
+    },
+    {
+      "path": "runs/gnucash-split-00/screenshots/003.png",
+      "bytes": 46374,
+      "sha256": "a0ddd6cdc257b69cca7f28e7059337de7c53a6e7ca79a2d9c5c3201bce112846"
+    },
+    {
+      "path": "runs/gnucash-split-00/screenshots/004.png",
+      "bytes": 51542,
+      "sha256": "46788f3faacded68d0fbb9a2bf962ec77b78c48a8f9f56badeb2ae14a43429f3"
+    },
+    {
+      "path": "runs/gnucash-split-00/screenshots/005.png",
+      "bytes": 49239,
+      "sha256": "14f657d3e558984b7773b20dae9a9a76830dc3061612dde8982351572b4543ec"
+    },
+    {
+      "path": "runs/gnucash-split-00/screenshots/006.png",
+      "bytes": 54459,
+      "sha256": "2d5df4d96e9074f69f560369727df894d35160e73c8cdc8e15a9740bae8739a0"
+    },
+    {
+      "path": "runs/gnucash-split-00/screenshots/007.png",
+      "bytes": 57951,
+      "sha256": "a2095441621c146e3bee564cbf56e1e823b7a6d6c6548a8e5605ea863c58b0bc"
+    },
+    {
+      "path": "runs/gnucash-split-00/screenshots/008.png",
+      "bytes": 61783,
+      "sha256": "12359eb7b563c7f3e422e5017a256b6986280f6ffc0f2e1590ef10d918272475"
+    },
+    {
+      "path": "runs/gnucash-split-00/screenshots/009.png",
+      "bytes": 69692,
+      "sha256": "131277a68c5de8e07c001e09129534b6168115f07b287a370ac380aca41c1fb7"
+    },
+    {
+      "path": "runs/gnucash-split-00/screenshots/010.png",
+      "bytes": 56291,
+      "sha256": "0cada10b013a85d8578ad68a349d052353e817da4ee6b37b35b95a2fd4eb4226"
+    },
+    {
+      "path": "runs/gnucash-split-00/verification.json",
+      "bytes": 1092,
+      "sha256": "4b9cc868e45f42aa8f7866d62cc61d802fb0b947c5f2673330c966a3ca5943b0"
+    },
+    {
+      "path": "runs/gnucash-split-01/events.jsonl",
+      "bytes": 14247,
+      "sha256": "fa8514e3343102cb877c8c54f58da1795c2eba5d26374c50d56ff5c3c4bba508"
+    },
+    {
+      "path": "runs/gnucash-split-01/export.gnucash",
+      "bytes": 1630,
+      "sha256": "84fbb96ae00a8b814d8a322891a8ca526842876d77eed9cb3dc31668be3e5234"
+    },
+    {
+      "path": "runs/gnucash-split-01/gnucash-source.gnucash",
+      "bytes": 4218,
+      "sha256": "cc9147360d100e5d8655df6b5d96dfb4e9a2b422443e0e843f639d413167ab46"
+    },
+    {
+      "path": "runs/gnucash-split-01/recording.mp4",
+      "bytes": 742518,
+      "sha256": "50328b7331fd8a8d3b056bc5ededb1f4b1aeb850527929d66c96cf23820c8814"
+    },
+    {
+      "path": "runs/gnucash-split-01/report.html",
+      "bytes": 848666,
+      "sha256": "a628f687b950d997bb56c19e1abe45daa5e8bf85247fbb62c27f8e18d60f6fea"
+    },
+    {
+      "path": "runs/gnucash-split-01/run.json",
+      "bytes": 2872,
+      "sha256": "3d73ecf59f7abd7a9aa956ce7130f40aad716516c83bdc9683db92e42cd38136"
+    },
+    {
+      "path": "runs/gnucash-split-01/screenshots/001.png",
+      "bytes": 58973,
+      "sha256": "3d811d325eb148902fbe45b513a9181a05607a825a56c774aa1576fd0a47d71f"
+    },
+    {
+      "path": "runs/gnucash-split-01/screenshots/002.png",
+      "bytes": 58973,
+      "sha256": "3d811d325eb148902fbe45b513a9181a05607a825a56c774aa1576fd0a47d71f"
+    },
+    {
+      "path": "runs/gnucash-split-01/screenshots/003.png",
+      "bytes": 40248,
+      "sha256": "5f4d711fd7e3a6bb93812f3185010736354eca640c1de64cd23ea0bbe4f1fe46"
+    },
+    {
+      "path": "runs/gnucash-split-01/screenshots/004.png",
+      "bytes": 55154,
+      "sha256": "ed77f17fe8131fbb9cc824117ca7394e1862911a9155b4e81881a25c1b227597"
+    },
+    {
+      "path": "runs/gnucash-split-01/screenshots/005.png",
+      "bytes": 46374,
+      "sha256": "a0ddd6cdc257b69cca7f28e7059337de7c53a6e7ca79a2d9c5c3201bce112846"
+    },
+    {
+      "path": "runs/gnucash-split-01/screenshots/006.png",
+      "bytes": 53225,
+      "sha256": "1a09bf2247ef8ea4912d0a945a0310a09153537e4d32710a1370f63e2e11ee8e"
+    },
+    {
+      "path": "runs/gnucash-split-01/screenshots/007.png",
+      "bytes": 50366,
+      "sha256": "6206b15cafb7ea957e4f176ce6b73bbd3f607c2f3a6638795c42ae4704966efe"
+    },
+    {
+      "path": "runs/gnucash-split-01/screenshots/008.png",
+      "bytes": 55547,
+      "sha256": "5fb4c4355594962cc6dfd283f3569ffcb52c429e99b4636224249ba86862d923"
+    },
+    {
+      "path": "runs/gnucash-split-01/screenshots/009.png",
+      "bytes": 59074,
+      "sha256": "7d32ce94ed74111662e36e56b0a63b9e6da6e5fb605584dac6937a0957c883a9"
+    },
+    {
+      "path": "runs/gnucash-split-01/screenshots/010.png",
+      "bytes": 72635,
+      "sha256": "0bfa1582bc8e964bcb08f752b131ade20770dfef85fe14ecf4badaaaad9cd511"
+    },
+    {
+      "path": "runs/gnucash-split-01/screenshots/011.png",
+      "bytes": 57310,
+      "sha256": "64b9f3984cd912b1172b3a0f208932f0f27eca041301125a698fa34799fe8edc"
+    },
+    {
+      "path": "runs/gnucash-split-01/verification.json",
+      "bytes": 1103,
+      "sha256": "94418c2f351cb34762ae2b868c7b6674105513ada6c5e5b12cd0dbdd2213e9a7"
+    },
+    {
+      "path": "runs/gnucash-split-02/events.jsonl",
+      "bytes": 13293,
+      "sha256": "34145789ab1ecff645f147150493276d94fcd282eabc94124c107ae92c1c382c"
+    },
+    {
+      "path": "runs/gnucash-split-02/export.gnucash",
+      "bytes": 1624,
+      "sha256": "2156dd6371e67396844530e1e6fdcd0f0b08b7324f3419a3724a5c7c90e8181a"
+    },
+    {
+      "path": "runs/gnucash-split-02/gnucash-source.gnucash",
+      "bytes": 4218,
+      "sha256": "2a05378b4e54bcda33fec717e4eeda8107279a024aab51d577a2247a93a8b3ab"
+    },
+    {
+      "path": "runs/gnucash-split-02/recording.mp4",
+      "bytes": 774267,
+      "sha256": "8f66f63b7672c30b18e751ebfd8471ce9ca47013f0e737c6f3649cfbe308454e"
+    },
+    {
+      "path": "runs/gnucash-split-02/report.html",
+      "bytes": 870015,
+      "sha256": "fce5bb73e641851b56dfb02bf5bd46601b0f15db56369a23c0643d5cc69a1375"
+    },
+    {
+      "path": "runs/gnucash-split-02/run.json",
+      "bytes": 2871,
+      "sha256": "58ae63f829a8f5787840b85e893e9509f18de1b587966c30ebfac304605e1867"
+    },
+    {
+      "path": "runs/gnucash-split-02/screenshots/001.png",
+      "bytes": 58973,
+      "sha256": "3d811d325eb148902fbe45b513a9181a05607a825a56c774aa1576fd0a47d71f"
+    },
+    {
+      "path": "runs/gnucash-split-02/screenshots/002.png",
+      "bytes": 58973,
+      "sha256": "3d811d325eb148902fbe45b513a9181a05607a825a56c774aa1576fd0a47d71f"
+    },
+    {
+      "path": "runs/gnucash-split-02/screenshots/003.png",
+      "bytes": 40248,
+      "sha256": "5f4d711fd7e3a6bb93812f3185010736354eca640c1de64cd23ea0bbe4f1fe46"
+    },
+    {
+      "path": "runs/gnucash-split-02/screenshots/004.png",
+      "bytes": 55154,
+      "sha256": "ed77f17fe8131fbb9cc824117ca7394e1862911a9155b4e81881a25c1b227597"
+    },
+    {
+      "path": "runs/gnucash-split-02/screenshots/005.png",
+      "bytes": 40030,
+      "sha256": "a2782d2a1b10112186998619aa5dcf26471eddf6b92133cc9af47b2b29fa25e2"
+    },
+    {
+      "path": "runs/gnucash-split-02/screenshots/006.png",
+      "bytes": 46395,
+      "sha256": "622faf990d7e854f5324b82fe856965ecb7ef1e1fe14aac83f030e6296cb95c7"
+    },
+    {
+      "path": "runs/gnucash-split-02/screenshots/007.png",
+      "bytes": 51739,
+      "sha256": "e5d66574619e9ae2d451abd81ec5402c239a8015217d8c3cdbe95c8448176b69"
+    },
+    {
+      "path": "runs/gnucash-split-02/screenshots/008.png",
+      "bytes": 50904,
+      "sha256": "1c6ed8a717292859377a4f83c34d958efe35a130e21ef040f898997be41167b9"
+    },
+    {
+      "path": "runs/gnucash-split-02/screenshots/009.png",
+      "bytes": 54747,
+      "sha256": "28f1beeafee57dea250472e6257e0afade27b0cbabf37e018cf07dff2c5f9fe3"
+    },
+    {
+      "path": "runs/gnucash-split-02/screenshots/010.png",
+      "bytes": 53626,
+      "sha256": "4c1ee10bcceaaddf7c81577a6b4f2abacb853fb35ca3082ce233d7ed8acce611"
+    },
+    {
+      "path": "runs/gnucash-split-02/screenshots/011.png",
+      "bytes": 57748,
+      "sha256": "8495963e8ba636eb3c028bb6f160f2fc4139821895cdbdc34be331761e5b7fa2"
+    },
+    {
+      "path": "runs/gnucash-split-02/screenshots/012.png",
+      "bytes": 56747,
+      "sha256": "f4c940cad87e040d7c98e454f4fe504752de7ba20d3fb46d741225583b208712"
+    },
+    {
+      "path": "runs/gnucash-split-02/verification.json",
+      "bytes": 1098,
+      "sha256": "c82852377db6a81e906f6f65b81ba186f6b895ed6ac71935e70a5de8c498ca16"
+    },
+    {
+      "path": "runs/gnucash-transfer-00/events.jsonl",
+      "bytes": 9621,
+      "sha256": "82d254646a5adf7bdaa631c44de4373a14e4ad4c583487a0247f00bb4c273f9f"
+    },
+    {
+      "path": "runs/gnucash-transfer-00/export.gnucash",
+      "bytes": 1585,
+      "sha256": "48b538de3a83f3a7378e9e4353fae2875ff2b4c8105c79473f0448ebfa3e9cbd"
+    },
+    {
+      "path": "runs/gnucash-transfer-00/gnucash-source.gnucash",
+      "bytes": 4218,
+      "sha256": "f0cc00d3211a777a542a97dec6d8d4267032bc9f31296226532e057e31dd8e50"
+    },
+    {
+      "path": "runs/gnucash-transfer-00/recording.mp4",
+      "bytes": 550178,
+      "sha256": "a642729cc4fdc25c3f02e458588262a74a7247bfe21ab1b744ee6ed9c08423d4"
+    },
+    {
+      "path": "runs/gnucash-transfer-00/report.html",
+      "bytes": 594895,
+      "sha256": "2940d7ca4c81a47e59903e1fd1e9fa458a55bcd77a211bbadfafb48bf37ea8aa"
+    },
+    {
+      "path": "runs/gnucash-transfer-00/run.json",
+      "bytes": 2797,
+      "sha256": "15c57c0811d1b127e36c4d8c267947b4bca01a107bdfa3afc91d66ee2b187044"
+    },
+    {
+      "path": "runs/gnucash-transfer-00/screenshots/001.png",
+      "bytes": 58973,
+      "sha256": "3d811d325eb148902fbe45b513a9181a05607a825a56c774aa1576fd0a47d71f"
+    },
+    {
+      "path": "runs/gnucash-transfer-00/screenshots/002.png",
+      "bytes": 58973,
+      "sha256": "3d811d325eb148902fbe45b513a9181a05607a825a56c774aa1576fd0a47d71f"
+    },
+    {
+      "path": "runs/gnucash-transfer-00/screenshots/003.png",
+      "bytes": 40248,
+      "sha256": "5f4d711fd7e3a6bb93812f3185010736354eca640c1de64cd23ea0bbe4f1fe46"
+    },
+    {
+      "path": "runs/gnucash-transfer-00/screenshots/004.png",
+      "bytes": 46374,
+      "sha256": "a0ddd6cdc257b69cca7f28e7059337de7c53a6e7ca79a2d9c5c3201bce112846"
+    },
+    {
+      "path": "runs/gnucash-transfer-00/screenshots/005.png",
+      "bytes": 46124,
+      "sha256": "203ded50ba8f48e4ee49c70d9b45c88ec101a3032edb2a0c680d93c96c404fa7"
+    },
+    {
+      "path": "runs/gnucash-transfer-00/screenshots/006.png",
+      "bytes": 52475,
+      "sha256": "5d130f82dc7b077aecaeb3efaea49dacf7c2512bb3264a0fd6294c6a2f5e3a5c"
+    },
+    {
+      "path": "runs/gnucash-transfer-00/screenshots/007.png",
+      "bytes": 68986,
+      "sha256": "08ccd79406acf46c5d06b9b7c9e292ff157a5301744b14c786413abb83d8c7d8"
+    },
+    {
+      "path": "runs/gnucash-transfer-00/screenshots/008.png",
+      "bytes": 52891,
+      "sha256": "57369967aaa4a0c8da87d6888ea81bfe85280819356dc33105d7e3790fd2bb49"
+    },
+    {
+      "path": "runs/gnucash-transfer-00/verification.json",
+      "bytes": 952,
+      "sha256": "2fb3f51d6b81d2f87630449fe0eb3425684559c452ebef1f2dcd468da170881b"
+    },
+    {
+      "path": "runs/gnucash-transfer-01/events.jsonl",
+      "bytes": 9658,
+      "sha256": "856bf54e9ae4e9cc91a00aa9bb5fb17e0ee330d7f6a935e3f8b795e936b3c6bd"
+    },
+    {
+      "path": "runs/gnucash-transfer-01/export.gnucash",
+      "bytes": 1588,
+      "sha256": "d142573b01428e5befdaaf0027c1977d3e595a6524e17ba1cc204911b1dcbd49"
+    },
+    {
+      "path": "runs/gnucash-transfer-01/gnucash-source.gnucash",
+      "bytes": 4218,
+      "sha256": "0d888692cf7564d47dbc8b8e8703e72d6591d524d8d8e0c3d1df4858dd169637"
+    },
+    {
+      "path": "runs/gnucash-transfer-01/recording.mp4",
+      "bytes": 525748,
+      "sha256": "a081f636931c6ea8bd267e397ac01e15a61390bc7ad3d057582b2eda71f05d12"
+    },
+    {
+      "path": "runs/gnucash-transfer-01/report.html",
+      "bytes": 633695,
+      "sha256": "faf78801900f1f44588626c604b200c5c4a8983ac992cfe9f7223aa952723843"
+    },
+    {
+      "path": "runs/gnucash-transfer-01/run.json",
+      "bytes": 2799,
+      "sha256": "98b4327cfe3c2a315954b9547862b25833c3bd2d6d570898b93be293fe77bfed"
+    },
+    {
+      "path": "runs/gnucash-transfer-01/screenshots/001.png",
+      "bytes": 58973,
+      "sha256": "3d811d325eb148902fbe45b513a9181a05607a825a56c774aa1576fd0a47d71f"
+    },
+    {
+      "path": "runs/gnucash-transfer-01/screenshots/002.png",
+      "bytes": 58973,
+      "sha256": "3d811d325eb148902fbe45b513a9181a05607a825a56c774aa1576fd0a47d71f"
+    },
+    {
+      "path": "runs/gnucash-transfer-01/screenshots/003.png",
+      "bytes": 40248,
+      "sha256": "5f4d711fd7e3a6bb93812f3185010736354eca640c1de64cd23ea0bbe4f1fe46"
+    },
+    {
+      "path": "runs/gnucash-transfer-01/screenshots/004.png",
+      "bytes": 55154,
+      "sha256": "ed77f17fe8131fbb9cc824117ca7394e1862911a9155b4e81881a25c1b227597"
+    },
+    {
+      "path": "runs/gnucash-transfer-01/screenshots/005.png",
+      "bytes": 40203,
+      "sha256": "6e873912fe1c0afcfa97ffe3327b7831dfd524715b21b7d8c221c4df2d401534"
+    },
+    {
+      "path": "runs/gnucash-transfer-01/screenshots/006.png",
+      "bytes": 46469,
+      "sha256": "3cc330d08e35e0e152b541d8d8a168fecf85144b83532cb1312927f22d0f51ca"
+    },
+    {
+      "path": "runs/gnucash-transfer-01/screenshots/007.png",
+      "bytes": 46121,
+      "sha256": "97646d106bab998e2de2414ee01609bea86769db0891e76d29d7fba5bf19d55a"
+    },
+    {
+      "path": "runs/gnucash-transfer-01/screenshots/008.png",
+      "bytes": 53414,
+      "sha256": "64d87cef1be80813ec21cab8afbbbc47c24aae1f48090a7105d036ed19a38d8e"
+    },
+    {
+      "path": "runs/gnucash-transfer-01/screenshots/009.png",
+      "bytes": 54460,
+      "sha256": "914d61176b59ac50c0ab12b44290dfa2cec601310e037ae53f8ac549875edfe9"
+    },
+    {
+      "path": "runs/gnucash-transfer-01/verification.json",
+      "bytes": 956,
+      "sha256": "613afe28d721e549ffce3f13400fe9ca6abe5bbe355dab15d47a25e9d6b77606"
+    },
+    {
+      "path": "runs/gnucash-transfer-02/events.jsonl",
+      "bytes": 9647,
+      "sha256": "6148eba9cd1abf3716872e6b34df67de8844fda308f4a3b54eb20717d6a91193"
+    },
+    {
+      "path": "runs/gnucash-transfer-02/export.gnucash",
+      "bytes": 1582,
+      "sha256": "e44fcd34e6debe52f63fa355dee56874563960b97315db59cf1bf9b835afbe49"
+    },
+    {
+      "path": "runs/gnucash-transfer-02/gnucash-source.gnucash",
+      "bytes": 4218,
+      "sha256": "6303d93cb3d00b9512288446ead2b147f3c2dca3139c1b86034950f77a13c74e"
+    },
+    {
+      "path": "runs/gnucash-transfer-02/recording.mp4",
+      "bytes": 530626,
+      "sha256": "05f3440ca7e998d08a2cf18590280f55edc799533a67255fde7a97e08f7a4ea5"
+    },
+    {
+      "path": "runs/gnucash-transfer-02/report.html",
+      "bytes": 632202,
+      "sha256": "1bf27f0f9d2f84aef149ba7cef2bb7332b2a0cb6b097eb6d6c9dc9354180a6bb"
+    },
+    {
+      "path": "runs/gnucash-transfer-02/run.json",
+      "bytes": 2791,
+      "sha256": "4aed14e140e73c6731aa0bb50da223ddfb02c25dbf6728d40bfa6df47a2815eb"
+    },
+    {
+      "path": "runs/gnucash-transfer-02/screenshots/001.png",
+      "bytes": 58973,
+      "sha256": "3d811d325eb148902fbe45b513a9181a05607a825a56c774aa1576fd0a47d71f"
+    },
+    {
+      "path": "runs/gnucash-transfer-02/screenshots/002.png",
+      "bytes": 58973,
+      "sha256": "3d811d325eb148902fbe45b513a9181a05607a825a56c774aa1576fd0a47d71f"
+    },
+    {
+      "path": "runs/gnucash-transfer-02/screenshots/003.png",
+      "bytes": 40248,
+      "sha256": "5f4d711fd7e3a6bb93812f3185010736354eca640c1de64cd23ea0bbe4f1fe46"
+    },
+    {
+      "path": "runs/gnucash-transfer-02/screenshots/004.png",
+      "bytes": 55154,
+      "sha256": "ed77f17fe8131fbb9cc824117ca7394e1862911a9155b4e81881a25c1b227597"
+    },
+    {
+      "path": "runs/gnucash-transfer-02/screenshots/005.png",
+      "bytes": 40203,
+      "sha256": "6e873912fe1c0afcfa97ffe3327b7831dfd524715b21b7d8c221c4df2d401534"
+    },
+    {
+      "path": "runs/gnucash-transfer-02/screenshots/006.png",
+      "bytes": 46469,
+      "sha256": "3cc330d08e35e0e152b541d8d8a168fecf85144b83532cb1312927f22d0f51ca"
+    },
+    {
+      "path": "runs/gnucash-transfer-02/screenshots/007.png",
+      "bytes": 46293,
+      "sha256": "b7863ad0c590aec82dbc496579da844c48107a1bb668fc853843cb81f5a4a278"
+    },
+    {
+      "path": "runs/gnucash-transfer-02/screenshots/008.png",
+      "bytes": 52778,
+      "sha256": "16c35eef7f3d261c2acd7aa5f0f08661e2730eef05a539e8917c0981f27d456a"
+    },
+    {
+      "path": "runs/gnucash-transfer-02/screenshots/009.png",
+      "bytes": 53827,
+      "sha256": "d9781f9b80c951e93db398ad2a51561d61f73813756c9352c8372cee4b7aab63"
+    },
+    {
+      "path": "runs/gnucash-transfer-02/verification.json",
+      "bytes": 944,
+      "sha256": "ae03bab791802204539b495fcba423100bc7d8b0716a96190d41c461f2890a09"
+    },
+    {
+      "path": "status.json",
+      "bytes": 514,
+      "sha256": "b0284c4bc529fca6172484c9f5ecde1f4470b72e0bf5703d326f38fa07de4af7"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 69949,
+      "sha256": "1ee09aac1101a2927ccbde091a9e0327a759df49137333f15ecfc56eb129815c"
+    }
+  ]
+}

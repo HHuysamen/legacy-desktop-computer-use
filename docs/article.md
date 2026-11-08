@@ -136,6 +136,8 @@ The total model API estimate was **US$5.04**, or about **US$0.050 per attempt**,
 
 Times include starting the desktop and checking the output. Costs use [OpenAI's published standard rates](https://developers.openai.com/api/docs/pricing), excluding desktop hosting and other operating costs; actual billing may differ. The [full 100-run results](../examples/evaluation-100/index.html), [cost calculation](../examples/evaluation-100/cost-analysis.json) and [research and methodology](evaluation-methodology.md) show the tasks, fixed inputs, driver change and retained evidence.
 
+A [follow-up study](https://www.henryhuysamen.com/demos/ledgerdesk/follow-up/) examines new input files and changed window layouts in Calc and Writer, separate stopping controls, and native GnuCash transactions. Its results and evidence are reported separately from the 100 attempts above.
+
 ## Applying this to your own application
 
 Start with a contained workflow that produces something you can verify. Define its inputs, restrict the permitted actions and decide how to handle failure before you run it. If the app has a supported integration, use that first.

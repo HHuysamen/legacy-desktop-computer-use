@@ -29,6 +29,10 @@ def is_office() -> bool:
     return os.environ.get("LEDGERDESK_TASK") in {"calc-sort-export", "writer-find-replace"}
 
 
+def uses_process_windows() -> bool:
+    return is_office() or os.environ.get("LEDGERDESK_TASK") in {"gnucash-expense", "gnucash-split", "gnucash-transfer"}
+
+
 def command(*args: str) -> str:
     return subprocess.check_output(args, text=True, timeout=2).strip()
 
@@ -39,10 +43,10 @@ def window_bounds() -> tuple[int, int, int, int]:
     if expected_pid <= 1:
         raise RuntimeError("Invalid target process identity")
     windows = command("wmctrl", "-lpG").splitlines()
-    matches = [line.split(None, 8) for line in windows if is_office() or line.endswith(TITLE)]
+    matches = [line.split(None, 8) for line in windows if uses_process_windows() or line.endswith(TITLE)]
     matches = [parts for parts in matches if len(parts) == 9 and int(parts[2]) == expected_pid]
     active = int(command("xdotool", "getactivewindow"))
-    if is_office():
+    if uses_process_windows():
         # Native application dialogs are allowed only within the same process.
         if not any(int(parts[0], 16) == active for parts in matches):
             raise RuntimeError("Target application lost focus")
@@ -54,7 +58,7 @@ def window_bounds() -> tuple[int, int, int, int]:
     if active != int(parts[0], 16):
         raise RuntimeError("LedgerDesk lost focus")
     bounds = tuple(map(int, parts[3:7]))
-    if is_office():
+    if uses_process_windows():
         # wmctrl can double-count decorations on maximized LibreOffice windows.
         # Read X11's absolute client geometry, not application content.
         labels = ("Absolute upper-left X", "Absolute upper-left Y", "Width", "Height")
@@ -106,6 +110,9 @@ def validate_action(action: dict, bounds: tuple[int, int, int, int]) -> None:
         combinations = [["CTRL", "A"], ["CONTROL", "A"], ["SHIFT", "TAB"]]
         if is_office():
             combinations += [[modifier, key] for modifier in ("CTRL", "CONTROL") for key in ("S", "H", "HOME", "END")]
+            combinations += [[modifier, "SHIFT", "S"] for modifier in ("CTRL", "CONTROL")]
+        elif uses_process_windows():
+            combinations += [[modifier, "S"] for modifier in ("CTRL", "CONTROL")]
             combinations += [[modifier, "SHIFT", "S"] for modifier in ("CTRL", "CONTROL")]
         if len(keys) > 1 and keys not in combinations:
             raise ValueError("Unsupported key combination")

@@ -1,0 +1,315 @@
+{
+  "protocol_sha256": "f8e543bde4e678d42c8930df0140e5797ff227c75ba6fb2c00b5081601e8ca37",
+  "rechecked_at": "2026-11-08T15:44:57.326087+00:00",
+  "cases": [
+    {
+      "case_id": "gnucash-split-01",
+      "recorded_status": "failed",
+      "passed": false,
+      "artifact_passed": false,
+      "source_check_passed": true,
+      "saved_input_sha256": "cc9147360d100e5d8655df6b5d96dfb4e9a2b422443e0e843f639d413167ab46",
+      "recorded_source_sha256_after": "cc9147360d100e5d8655df6b5d96dfb4e9a2b422443e0e843f639d413167ab46",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [
+        "Expected exactly one new transaction with the requested date, description and splits.",
+        "Original execution was not a verified pass; rechecking cannot upgrade it."
+      ],
+      "artifact_verification": {
+        "passed": false,
+        "errors": [
+          "Expected exactly one new transaction with the requested date, description and splits."
+        ],
+        "headers": [
+          "date",
+          "description",
+          "account",
+          "amount"
+        ],
+        "rows": [
+          {
+            "date": "2026-10-01",
+            "description": "Synthetic opening balance",
+            "account": "Checking",
+            "amount": "10000.00"
+          },
+          {
+            "date": "2026-10-01",
+            "description": "Synthetic opening balance",
+            "account": "EquityOpening",
+            "amount": "-10000.00"
+          }
+        ],
+        "row_count": 2,
+        "source_unchanged": null,
+        "expected_input_sha256": "cc9147360d100e5d8655df6b5d96dfb4e9a2b422443e0e843f639d413167ab46"
+      }
+    },
+    {
+      "case_id": "gnucash-transfer-00",
+      "recorded_status": "failed",
+      "passed": false,
+      "artifact_passed": false,
+      "source_check_passed": true,
+      "saved_input_sha256": "f0cc00d3211a777a542a97dec6d8d4267032bc9f31296226532e057e31dd8e50",
+      "recorded_source_sha256_after": "f0cc00d3211a777a542a97dec6d8d4267032bc9f31296226532e057e31dd8e50",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [
+        "Cannot verify GnuCash output: [Errno 2] No such file or directory: 'runs/gnucash-transfer-00/export.gnucash'",
+        "Original execution was not a verified pass; rechecking cannot upgrade it."
+      ],
+      "artifact_verification": {
+        "passed": false,
+        "errors": [
+          "Cannot verify GnuCash output: [Errno 2] No such file or directory: 'runs/gnucash-transfer-00/export.gnucash'"
+        ],
+        "headers": [
+          "date",
+          "description",
+          "account",
+          "amount"
+        ],
+        "rows": [],
+        "row_count": 0,
+        "source_unchanged": null,
+        "expected_input_sha256": "f0cc00d3211a777a542a97dec6d8d4267032bc9f31296226532e057e31dd8e50"
+      }
+    },
+    {
+      "case_id": "gnucash-transfer-02",
+      "recorded_status": "failed",
+      "passed": false,
+      "artifact_passed": false,
+      "source_check_passed": true,
+      "saved_input_sha256": "6303d93cb3d00b9512288446ead2b147f3c2dca3139c1b86034950f77a13c74e",
+      "recorded_source_sha256_after": "6303d93cb3d00b9512288446ead2b147f3c2dca3139c1b86034950f77a13c74e",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [
+        "Cannot verify GnuCash output: [Errno 2] No such file or directory: 'runs/gnucash-transfer-02/export.gnucash'",
+        "Original execution was not a verified pass; rechecking cannot upgrade it."
+      ],
+      "artifact_verification": {
+        "passed": false,
+        "errors": [
+          "Cannot verify GnuCash output: [Errno 2] No such file or directory: 'runs/gnucash-transfer-02/export.gnucash'"
+        ],
+        "headers": [
+          "date",
+          "description",
+          "account",
+          "amount"
+        ],
+        "rows": [],
+        "row_count": 0,
+        "source_unchanged": null,
+        "expected_input_sha256": "6303d93cb3d00b9512288446ead2b147f3c2dca3139c1b86034950f77a13c74e"
+      }
+    },
+    {
+      "case_id": "gnucash-expense-00",
+      "recorded_status": "failed",
+      "passed": false,
+      "artifact_passed": false,
+      "source_check_passed": true,
+      "saved_input_sha256": "2d85e80fe0fb235ea6e4b1b297fb9d1922418d94d85c508b1c6edc218a0ddd1d",
+      "recorded_source_sha256_after": "2d85e80fe0fb235ea6e4b1b297fb9d1922418d94d85c508b1c6edc218a0ddd1d",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [
+        "Expected exactly one new transaction with the requested date, description and splits.",
+        "Original execution was not a verified pass; rechecking cannot upgrade it."
+      ],
+      "artifact_verification": {
+        "passed": false,
+        "errors": [
+          "Expected exactly one new transaction with the requested date, description and splits."
+        ],
+        "headers": [
+          "date",
+          "description",
+          "account",
+          "amount"
+        ],
+        "rows": [
+          {
+            "date": "2026-10-01",
+            "description": "Synthetic opening balance",
+            "account": "Checking",
+            "amount": "10000.00"
+          },
+          {
+            "date": "2026-10-01",
+            "description": "Synthetic opening balance",
+            "account": "EquityOpening",
+            "amount": "-10000.00"
+          }
+        ],
+        "row_count": 2,
+        "source_unchanged": null,
+        "expected_input_sha256": "2d85e80fe0fb235ea6e4b1b297fb9d1922418d94d85c508b1c6edc218a0ddd1d"
+      }
+    },
+    {
+      "case_id": "gnucash-split-00",
+      "recorded_status": "failed",
+      "passed": false,
+      "artifact_passed": false,
+      "source_check_passed": true,
+      "saved_input_sha256": "6fd9ee6c9ddae6444692ad36dc86be492843d4f490f415703390d4d5f021ad44",
+      "recorded_source_sha256_after": "6fd9ee6c9ddae6444692ad36dc86be492843d4f490f415703390d4d5f021ad44",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [
+        "Cannot verify GnuCash output: [Errno 2] No such file or directory: 'runs/gnucash-split-00/export.gnucash'",
+        "Original execution was not a verified pass; rechecking cannot upgrade it."
+      ],
+      "artifact_verification": {
+        "passed": false,
+        "errors": [
+          "Cannot verify GnuCash output: [Errno 2] No such file or directory: 'runs/gnucash-split-00/export.gnucash'"
+        ],
+        "headers": [
+          "date",
+          "description",
+          "account",
+          "amount"
+        ],
+        "rows": [],
+        "row_count": 0,
+        "source_unchanged": null,
+        "expected_input_sha256": "6fd9ee6c9ddae6444692ad36dc86be492843d4f490f415703390d4d5f021ad44"
+      }
+    },
+    {
+      "case_id": "gnucash-expense-02",
+      "recorded_status": "failed",
+      "passed": false,
+      "artifact_passed": false,
+      "source_check_passed": true,
+      "saved_input_sha256": "a40a2869d58ad78709248cce9b3e900c309861a1fccffe3b26058e8481dd309a",
+      "recorded_source_sha256_after": "a40a2869d58ad78709248cce9b3e900c309861a1fccffe3b26058e8481dd309a",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [
+        "Cannot verify GnuCash output: [Errno 2] No such file or directory: 'runs/gnucash-expense-02/export.gnucash'",
+        "Original execution was not a verified pass; rechecking cannot upgrade it."
+      ],
+      "artifact_verification": {
+        "passed": false,
+        "errors": [
+          "Cannot verify GnuCash output: [Errno 2] No such file or directory: 'runs/gnucash-expense-02/export.gnucash'"
+        ],
+        "headers": [
+          "date",
+          "description",
+          "account",
+          "amount"
+        ],
+        "rows": [],
+        "row_count": 0,
+        "source_unchanged": null,
+        "expected_input_sha256": "a40a2869d58ad78709248cce9b3e900c309861a1fccffe3b26058e8481dd309a"
+      }
+    },
+    {
+      "case_id": "gnucash-expense-01",
+      "recorded_status": "failed",
+      "passed": false,
+      "artifact_passed": false,
+      "source_check_passed": true,
+      "saved_input_sha256": "c186244749a74006997c4c98f2890aad26fe9adde2d2fe279f485d32c89fd9e8",
+      "recorded_source_sha256_after": "c186244749a74006997c4c98f2890aad26fe9adde2d2fe279f485d32c89fd9e8",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [
+        "Cannot verify GnuCash output: [Errno 2] No such file or directory: 'runs/gnucash-expense-01/export.gnucash'",
+        "Original execution was not a verified pass; rechecking cannot upgrade it."
+      ],
+      "artifact_verification": {
+        "passed": false,
+        "errors": [
+          "Cannot verify GnuCash output: [Errno 2] No such file or directory: 'runs/gnucash-expense-01/export.gnucash'"
+        ],
+        "headers": [
+          "date",
+          "description",
+          "account",
+          "amount"
+        ],
+        "rows": [],
+        "row_count": 0,
+        "source_unchanged": null,
+        "expected_input_sha256": "c186244749a74006997c4c98f2890aad26fe9adde2d2fe279f485d32c89fd9e8"
+      }
+    },
+    {
+      "case_id": "gnucash-transfer-01",
+      "recorded_status": "failed",
+      "passed": false,
+      "artifact_passed": false,
+      "source_check_passed": true,
+      "saved_input_sha256": "0d888692cf7564d47dbc8b8e8703e72d6591d524d8d8e0c3d1df4858dd169637",
+      "recorded_source_sha256_after": "0d888692cf7564d47dbc8b8e8703e72d6591d524d8d8e0c3d1df4858dd169637",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [
+        "Cannot verify GnuCash output: [Errno 2] No such file or directory: 'runs/gnucash-transfer-01/export.gnucash'",
+        "Original execution was not a verified pass; rechecking cannot upgrade it."
+      ],
+      "artifact_verification": {
+        "passed": false,
+        "errors": [
+          "Cannot verify GnuCash output: [Errno 2] No such file or directory: 'runs/gnucash-transfer-01/export.gnucash'"
+        ],
+        "headers": [
+          "date",
+          "description",
+          "account",
+          "amount"
+        ],
+        "rows": [],
+        "row_count": 0,
+        "source_unchanged": null,
+        "expected_input_sha256": "0d888692cf7564d47dbc8b8e8703e72d6591d524d8d8e0c3d1df4858dd169637"
+      }
+    },
+    {
+      "case_id": "gnucash-split-02",
+      "recorded_status": "failed",
+      "passed": false,
+      "artifact_passed": false,
+      "source_check_passed": true,
+      "saved_input_sha256": "2a05378b4e54bcda33fec717e4eeda8107279a024aab51d577a2247a93a8b3ab",
+      "recorded_source_sha256_after": "2a05378b4e54bcda33fec717e4eeda8107279a024aab51d577a2247a93a8b3ab",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [
+        "Expected exactly one new transaction with the requested date, description and splits.",
+        "Original execution was not a verified pass; rechecking cannot upgrade it."
+      ],
+      "artifact_verification": {
+        "passed": false,
+        "errors": [
+          "Expected exactly one new transaction with the requested date, description and splits."
+        ],
+        "headers": [
+          "date",
+          "description",
+          "account",
+          "amount"
+        ],
+        "rows": [
+          {
+            "date": "2026-10-01",
+            "description": "Synthetic opening balance",
+            "account": "Checking",
+            "amount": "10000.00"
+          },
+          {
+            "date": "2026-10-01",
+            "description": "Synthetic opening balance",
+            "account": "EquityOpening",
+            "amount": "-10000.00"
+          }
+        ],
+        "row_count": 2,
+        "source_unchanged": null,
+        "expected_input_sha256": "2a05378b4e54bcda33fec717e4eeda8107279a024aab51d577a2247a93a8b3ab"
+      }
+    }
+  ]
+}

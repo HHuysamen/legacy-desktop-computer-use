@@ -1,0 +1,30 @@
+{
+  "passed": false,
+  "errors": [
+    "Expected exactly one new transaction with the requested date, description and splits."
+  ],
+  "headers": [
+    "date",
+    "description",
+    "account",
+    "amount"
+  ],
+  "rows": [
+    {
+      "date": "2026-10-01",
+      "description": "Synthetic opening balance",
+      "account": "Checking",
+      "amount": "10000.00"
+    },
+    {
+      "date": "2026-10-01",
+      "description": "Synthetic opening balance",
+      "account": "EquityOpening",
+      "amount": "-10000.00"
+    }
+  ],
+  "row_count": 2,
+  "source_unchanged": true,
+  "expected_input_sha256": "cc9147360d100e5d8655df6b5d96dfb4e9a2b422443e0e843f639d413167ab46",
+  "source_sha256_after": "cc9147360d100e5d8655df6b5d96dfb4e9a2b422443e0e843f639d413167ab46"
+}

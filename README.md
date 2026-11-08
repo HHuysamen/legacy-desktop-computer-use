@@ -33,6 +33,23 @@ The study uses `gpt-6.1-terra`, OpenAI Python SDK 3.31.0, a Linux arm64/X11 gues
 
 The [original nine-run package](examples/evaluation/index.html) and [24-run package](examples/evaluation-24/index.html) remain unchanged. The earlier pilot is excluded from all 100-run statistics. See [validation](docs/validation.md), [independent recheck](examples/evaluation-100/independent-recheck.json) and [artifact hashes](examples/evaluation-100/manifest.json).
 
+## Follow-up evidence
+
+The separate follow-up adds input/layout variation, explicit stopping controls and native GnuCash tasks. These results do not replace or extend the denominator of the original 100-attempt study.
+
+| Cohort | Verified outcomes | Estimated model cost |
+| --- | ---: | ---: |
+| Calc and Writer: new files, two window geometries | 24 / 24 business tasks | USD 1.936222 |
+| Foreign focus, missing source, duplicate receipt | 6 / 6 expected control responses | USD 0.071808 |
+| Original GnuCash | 0 / 9 business tasks | USD 0.242528 |
+| Repaired GnuCash | 9 / 9 business tasks | USD 0.719760 |
+
+Every original GnuCash attempt stopped when the model supplied `Tab` and the driver required `TAB`. A host-side correction normalizes ASCII key names while retaining the guest allowlist. The repaired cohort repeats the same nine fixtures after that observed failure; it is a repair validation, not new held-out evidence. All nine successful saved books passed an independent check of the requested transaction, balanced splits and preserved starting state.
+
+All 12 Office input/instruction pairs passed at both window sizes. All follow-up attempts recorded zero operator interventions. Total model cost across these 48 slots was **USD 2.970318**, including controls and failed attempts. GnuCash runs as a native Linux application; no Windows or production-accounting reliability is claimed. The requested API model identifier is recorded, rather than a verified immutable provider-weight snapshot.
+
+**[Read the follow-up report](https://www.henryhuysamen.com/demos/ledgerdesk/follow-up/)** · [Office archive](examples/robustness-30/index.html) · [Original GnuCash archive](examples/gnucash-9/index.html) · [Repaired GnuCash archive](examples/gnucash-9-repaired/index.html) · [Detailed results](docs/follow-up-results.md) · [Reproduction](docs/follow-up-reproduction.md)
+
 ![The native LedgerDesk fixture, before a task starts](examples/ledgerdesk.png)
 
 ## What the demo does

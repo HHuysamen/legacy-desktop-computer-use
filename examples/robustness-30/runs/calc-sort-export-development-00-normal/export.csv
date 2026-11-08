@@ -1,0 +1,9 @@
+invoice_id,customer,outstanding_balance,due_date,status
+DV1-007,Summit Workshop,12500.00,2026-11-03,open
+DV1-003,Cobalt Supply,2350.75,2026-11-05,partial
+DV1-008,Aster Components,2350.75,2026-11-01,open
+DV1-006,Juniper Research,999.99,2026-11-12,open
+DV1-005,Cedar Instruments,100.00,2026-11-16,partial
+DV1-002,Maple Distribution,50.00,2026-11-02,partial
+DV1-001,Willow Devices,9.50,2026-11-15,open
+DV1-004,Amber Fabrication,0.00,2026-11-04,settled
