@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter
-from contextlib import contextmanager
+from contextlib import contextmanager, nullcontext
 from datetime import datetime, timezone
 from decimal import Decimal
 import fcntl
@@ -343,8 +343,14 @@ def main() -> int:
     parser.add_argument("--limit", type=int, default=30, help="Cumulative attempt-slot limit, never a retry count")
     parser.add_argument("--plan-only", action="store_true")
     args = parser.parse_args()
-    status = run_study(json.loads(args.context.read_text()), args.study_dir,
-                       limit=args.limit, plan_only=args.plan_only)
+    context = json.loads(args.context.read_text())
+    if args.plan_only:
+        ownership = nullcontext()
+    else:
+        from ledgerdesk.__main__ import session_lock
+        ownership = session_lock()
+    with ownership:
+        status = run_study(context, args.study_dir, limit=args.limit, plan_only=args.plan_only)
     print(json.dumps(status, indent=2))
     grades_pass = all(group["failed"] == 0 and group["unverified"] == 0 for group in status["grades"].values())
     return 0 if args.plan_only or status["completed"] == status["planned"] and not status["stop_reason"] and grades_pass else 1

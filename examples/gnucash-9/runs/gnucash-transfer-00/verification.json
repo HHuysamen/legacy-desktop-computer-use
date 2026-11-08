@@ -1,0 +1,17 @@
+{
+  "passed": false,
+  "errors": [
+    "Cannot verify GnuCash output: [Errno 2] No such file or directory: '/Users/henryhuysamen/Projects/computer_use_demo/output/runs/20261108T154116-7fddd1/export.gnucash'"
+  ],
+  "headers": [
+    "date",
+    "description",
+    "account",
+    "amount"
+  ],
+  "rows": [],
+  "row_count": 0,
+  "source_unchanged": true,
+  "expected_input_sha256": "f0cc00d3211a777a542a97dec6d8d4267032bc9f31296226532e057e31dd8e50",
+  "source_sha256_after": "f0cc00d3211a777a542a97dec6d8d4267032bc9f31296226532e057e31dd8e50"
+}

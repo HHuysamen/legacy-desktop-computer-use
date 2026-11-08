@@ -1,0 +1,69 @@
+{
+  "id": "20261108T152145-c5f981",
+  "case_id": "control-foreign-focus-01",
+  "task_id": "writer-find-replace",
+  "instruction": "The supplied supplier handover memo is open in LibreOffice Writer. Replace every exact occurrence of 'Aster Systems' with 'Summit Devices', including occurrences in the table. Do not change the similar names 'Aster System' or 'Astor Systems', or any other text, numbers, paragraph order or table content. Save the edited document as OpenDocument Text to /tmp/ledgerdesk/exports/writer-find-replace.odt, leaving the source ODT unchanged.",
+  "started_at": "2026-11-08T15:21:45.467218+00:00",
+  "source_revision": "7f269cd03b47dd83b62ca77a2aefba4b6058bf51",
+  "image_id": "sha256:9a83a615fe1441b1e88e7f7f7f04af52aa454b9223c2a14cb11bf2bb3f7c46d9",
+  "spec": {
+    "case_id": "control-foreign-focus-01",
+    "task_id": "writer-find-replace",
+    "kind": "negative_control",
+    "control": "foreign-focus",
+    "control_index": 1,
+    "split": "development",
+    "fixture_index": 0,
+    "geometry": "normal",
+    "fixture_id": "writer-find-replace-development-00",
+    "input_sha256": "55c9171bf47b098e2877c93e79b2e36d99c42625af48335ae4d11de0ded05643",
+    "instruction_sha256": "586f3d8f1f987a755378b35181c2f22f42e1dc206ab76e6fd561baef69dbf673",
+    "expected_image_id": "sha256:9a83a615fe1441b1e88e7f7f7f04af52aa454b9223c2a14cb11bf2bb3f7c46d9",
+    "expected_source_revision": "7f269cd03b47dd83b62ca77a2aefba4b6058bf51"
+  },
+  "limits": {
+    "budget_usd": 1.0,
+    "max_requests": 30,
+    "max_actions": 80,
+    "timeout": 420
+  },
+  "model": "gpt-6.1-terra",
+  "status": "blocked",
+  "error": "Expected foreign-focus refusal before model execution",
+  "action_count": 0,
+  "request_count": 0,
+  "estimated_cost_usd": 0.0,
+  "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "total_tokens": 0,
+    "complete": true
+  },
+  "operator_interventions": 0,
+  "environment": "Linux arm64/X11; 1200x900; isolated Docker",
+  "reasoning_effort": "medium",
+  "application": "LibreOffice",
+  "setup_elapsed_seconds": 3.567,
+  "window_bounds": [
+    0,
+    19,
+    1200,
+    881
+  ],
+  "application_version": "LibreOffice 7.4.7.2 40(Build:2)",
+  "input_sha256": "55c9171bf47b098e2877c93e79b2e36d99c42625af48335ae4d11de0ded05643",
+  "control_verification": {
+    "passed": true,
+    "errors": [],
+    "component": "driver",
+    "refusal": "RuntimeError: Target application lost focus",
+    "foreign_value": "UNCHANGED",
+    "executed_inputs": 0,
+    "foreign_events": "",
+    "model_attempted": false
+  },
+  "recording_available": true,
+  "elapsed_seconds": 6.265,
+  "finished_at": "2026-11-08T15:21:51.732510+00:00",
+  "executed_actions": 0
+}

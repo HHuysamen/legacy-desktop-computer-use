@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "errors": [],
+  "component": "driver",
+  "refusal": "RuntimeError: Target application lost focus",
+  "foreign_value": "UNCHANGED",
+  "executed_inputs": 0,
+  "foreign_events": "",
+  "model_attempted": false
+}

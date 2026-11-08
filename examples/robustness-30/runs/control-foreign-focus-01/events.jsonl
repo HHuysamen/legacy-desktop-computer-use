@@ -1,0 +1,4 @@
+{"type": "screenshot", "timestamp": "2026-11-08T15:21:49.981698+00:00", "path": "screenshots/001.png"}
+{"type": "screenshot", "timestamp": "2026-11-08T15:21:50.738418+00:00", "path": "foreign-control.png", "label": "Foreign-focus control evidence; not sent to the model"}
+{"type": "action", "timestamp": "2026-11-08T15:21:50.738841+00:00", "action": {"type": "click", "x": 350, "y": 350}, "phase": "requested"}
+{"type": "driver_error", "timestamp": "2026-11-08T15:21:50.967870+00:00", "message": "RuntimeError: Target application lost focus"}

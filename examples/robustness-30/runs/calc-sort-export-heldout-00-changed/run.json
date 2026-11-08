@@ -1,0 +1,63 @@
+{
+  "id": "20261108T153742-de45ef",
+  "case_id": "calc-sort-export-heldout-00-changed",
+  "task_id": "calc-sort-export",
+  "instruction": "The supplied receivables spreadsheet is open in LibreOffice Calc. Sort the entire table by outstanding_balance numerically descending, then invoice_id ascending for ties. Keep the header first and preserve every row and every other cell value. Export the sorted sheet as a UTF-8, comma-separated CSV to /tmp/ledgerdesk/exports/calc-sort-export.csv. Use the application's normal controls and confirm the CSV format if asked. Do not overwrite the source ODS.",
+  "started_at": "2026-11-08T15:37:42.819635+00:00",
+  "source_revision": "7f269cd03b47dd83b62ca77a2aefba4b6058bf51",
+  "image_id": "sha256:9a83a615fe1441b1e88e7f7f7f04af52aa454b9223c2a14cb11bf2bb3f7c46d9",
+  "spec": {
+    "fixture_id": "calc-sort-export-heldout-00",
+    "task_id": "calc-sort-export",
+    "split": "heldout",
+    "fixture_index": 0,
+    "case_id": "calc-sort-export-heldout-00-changed",
+    "geometry": "changed",
+    "control": null,
+    "input_sha256": "ac31f352f83e58fd5330030620a02dfc07358e4aa5a536e2305937eaac0b64f6",
+    "instruction_sha256": "18f48de00f86e077d2f43870ad165f5daeb6dc6a22e12ccf36e9400e29bd12a7",
+    "kind": "positive",
+    "expected_image_id": "sha256:9a83a615fe1441b1e88e7f7f7f04af52aa454b9223c2a14cb11bf2bb3f7c46d9",
+    "expected_source_revision": "7f269cd03b47dd83b62ca77a2aefba4b6058bf51"
+  },
+  "limits": {
+    "budget_usd": 1.0,
+    "max_requests": 30,
+    "max_actions": 80,
+    "timeout": 420
+  },
+  "model": "gpt-6.1-terra",
+  "status": "passed",
+  "error": null,
+  "action_count": 23,
+  "request_count": 12,
+  "estimated_cost_usd": 0.124254,
+  "usage": {
+    "input_tokens": 121129,
+    "output_tokens": 625,
+    "total_tokens": 121754,
+    "complete": true
+  },
+  "operator_interventions": 0,
+  "environment": "Linux arm64/X11; 1200x900; isolated Docker",
+  "reasoning_effort": "medium",
+  "application": "LibreOffice",
+  "setup_elapsed_seconds": 3.99,
+  "window_bounds": [
+    120,
+    80,
+    920,
+    660
+  ],
+  "application_version": "LibreOffice 7.4.7.2 40(Build:2)",
+  "input_sha256": "ac31f352f83e58fd5330030620a02dfc07358e4aa5a536e2305937eaac0b64f6",
+  "model_text": "Completed the sort and exported the CSV to `/tmp/ledgerdesk/exports/calc-sort-export.csv`.",
+  "observed_model": "gpt-6.1-terra",
+  "agent_status": "completed",
+  "agent_elapsed_seconds": 77.119,
+  "verification_elapsed_seconds": 0.233,
+  "recording_available": true,
+  "elapsed_seconds": 82.701,
+  "finished_at": "2026-11-08T15:39:05.520291+00:00",
+  "executed_actions": 23
+}

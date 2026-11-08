@@ -1,0 +1,2086 @@
+{
+  "protocol_sha256": "e02f152ffa4ac847fd922a5c023f9797d4ba03883f434fe8b058d3232d964a11",
+  "rechecked_at": "2026-11-08T15:40:47.040907+00:00",
+  "cases": [
+    {
+      "case_id": "calc-sort-export-heldout-01-normal",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "7e183bd590c23fce879f4284b2fa0808e5b8275ca7ef159daf929c5d7344d678",
+      "recorded_source_sha256_after": "7e183bd590c23fce879f4284b2fa0808e5b8275ca7ef159daf929c5d7344d678",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "invoice_id",
+          "customer",
+          "outstanding_balance",
+          "due_date",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_id": "HO2-004",
+            "customer": "Larch Instruments",
+            "outstanding_balance": "15999.99",
+            "due_date": "2026-11-04",
+            "status": "open"
+          },
+          {
+            "invoice_id": "HO2-003",
+            "customer": "Elm Components",
+            "outstanding_balance": "8500.00",
+            "due_date": "2026-11-05",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "HO2-008",
+            "customer": "Indigo Supply",
+            "outstanding_balance": "8500.00",
+            "due_date": "2026-11-01",
+            "status": "open"
+          },
+          {
+            "invoice_id": "HO2-005",
+            "customer": "Topaz Fabrication",
+            "outstanding_balance": "999.98",
+            "due_date": "2026-11-16",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "HO2-006",
+            "customer": "Birch Distribution",
+            "outstanding_balance": "706.06",
+            "due_date": "2026-11-12",
+            "status": "open"
+          },
+          {
+            "invoice_id": "HO2-001",
+            "customer": "Orion Workshop",
+            "outstanding_balance": "78.00",
+            "due_date": "2026-11-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "HO2-002",
+            "customer": "Aspen Research",
+            "outstanding_balance": "13.00",
+            "due_date": "2026-11-02",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "HO2-007",
+            "customer": "Hazel Devices",
+            "outstanding_balance": "0.00",
+            "due_date": "2026-11-03",
+            "status": "settled"
+          }
+        ],
+        "row_count": 8
+      }
+    },
+    {
+      "case_id": "writer-find-replace-heldout-00-normal",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "e10026725ce782d2f00f1f308a4e8ce82f031f85232c8e259988fff17c4b7065",
+      "recorded_source_sha256_after": "e10026725ce782d2f00f1f308a4e8ce82f031f85232c8e259988fff17c4b7065",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "section",
+          "text"
+        ],
+        "rows": [
+          {
+            "section": "1:heading:1",
+            "text": "Supplier handover memo"
+          },
+          {
+            "section": "2:paragraph",
+            "text": "Prepared on 8 November 2026. Case HLD-001-2026. All figures below are synthetic."
+          },
+          {
+            "section": "3:heading:2",
+            "text": "Supplier overview"
+          },
+          {
+            "section": "4:paragraph",
+            "text": "Beacon Devices is the primary supplier. Beacon Devices owns the quarterly delivery plan."
+          },
+          {
+            "section": "5:paragraph",
+            "text": "Willow System and Wallow Systems are different suppliers; leave those names unchanged."
+          },
+          {
+            "section": "6:paragraph",
+            "text": "Recorded balance: USD 12,911.50. Review due: 30 November 2026."
+          },
+          {
+            "section": "7:table:1:1",
+            "text": "Supplier"
+          },
+          {
+            "section": "7:table:1:2",
+            "text": "Owner"
+          },
+          {
+            "section": "7:table:1:3",
+            "text": "Action"
+          },
+          {
+            "section": "7:table:2:1",
+            "text": "Beacon Devices"
+          },
+          {
+            "section": "7:table:2:2",
+            "text": "Mila Hart"
+          },
+          {
+            "section": "7:table:2:3",
+            "text": "Confirm 21 components"
+          },
+          {
+            "section": "7:table:3:1",
+            "text": "Beacon Devices"
+          },
+          {
+            "section": "7:table:3:2",
+            "text": "Owen Lake"
+          },
+          {
+            "section": "7:table:3:3",
+            "text": "Keep existing due date"
+          },
+          {
+            "section": "8:paragraph",
+            "text": "Escalations for Beacon Devices go to Mila Hart. Reference: HLD-001-2026."
+          }
+        ],
+        "row_count": 16
+      }
+    },
+    {
+      "case_id": "writer-find-replace-development-01-changed",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "aa58107528b56814368730619cd21c398a345eee3db3ceecef3dd0d0efe6eec6",
+      "recorded_source_sha256_after": "aa58107528b56814368730619cd21c398a345eee3db3ceecef3dd0d0efe6eec6",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "section",
+          "text"
+        ],
+        "rows": [
+          {
+            "section": "1:heading:1",
+            "text": "Supplier handover memo"
+          },
+          {
+            "section": "2:paragraph",
+            "text": "Prepared on 8 November 2026. Case DEV-002-2026. All figures below are synthetic."
+          },
+          {
+            "section": "3:heading:2",
+            "text": "Supplier overview"
+          },
+          {
+            "section": "4:paragraph",
+            "text": "Maple Devices is the primary supplier. Maple Devices owns the quarterly delivery plan."
+          },
+          {
+            "section": "5:paragraph",
+            "text": "Cobalt Work and Cobolt Works are different suppliers; leave those names unchanged."
+          },
+          {
+            "section": "6:paragraph",
+            "text": "Recorded balance: USD 12,637.50. Review due: 30 November 2026."
+          },
+          {
+            "section": "7:table:1:1",
+            "text": "Supplier"
+          },
+          {
+            "section": "7:table:1:2",
+            "text": "Owner"
+          },
+          {
+            "section": "7:table:1:3",
+            "text": "Action"
+          },
+          {
+            "section": "7:table:2:1",
+            "text": "Maple Devices"
+          },
+          {
+            "section": "7:table:2:2",
+            "text": "Nina Cole"
+          },
+          {
+            "section": "7:table:2:3",
+            "text": "Confirm 19 components"
+          },
+          {
+            "section": "7:table:3:1",
+            "text": "Maple Devices"
+          },
+          {
+            "section": "7:table:3:2",
+            "text": "Tomas Reed"
+          },
+          {
+            "section": "7:table:3:3",
+            "text": "Keep existing due date"
+          },
+          {
+            "section": "8:paragraph",
+            "text": "Escalations for Maple Devices go to Nina Cole. Reference: DEV-002-2026."
+          }
+        ],
+        "row_count": 16
+      }
+    },
+    {
+      "case_id": "writer-find-replace-heldout-00-changed",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "e10026725ce782d2f00f1f308a4e8ce82f031f85232c8e259988fff17c4b7065",
+      "recorded_source_sha256_after": "e10026725ce782d2f00f1f308a4e8ce82f031f85232c8e259988fff17c4b7065",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "section",
+          "text"
+        ],
+        "rows": [
+          {
+            "section": "1:heading:1",
+            "text": "Supplier handover memo"
+          },
+          {
+            "section": "2:paragraph",
+            "text": "Prepared on 8 November 2026. Case HLD-001-2026. All figures below are synthetic."
+          },
+          {
+            "section": "3:heading:2",
+            "text": "Supplier overview"
+          },
+          {
+            "section": "4:paragraph",
+            "text": "Beacon Devices is the primary supplier. Beacon Devices owns the quarterly delivery plan."
+          },
+          {
+            "section": "5:paragraph",
+            "text": "Willow System and Wallow Systems are different suppliers; leave those names unchanged."
+          },
+          {
+            "section": "6:paragraph",
+            "text": "Recorded balance: USD 12,911.50. Review due: 30 November 2026."
+          },
+          {
+            "section": "7:table:1:1",
+            "text": "Supplier"
+          },
+          {
+            "section": "7:table:1:2",
+            "text": "Owner"
+          },
+          {
+            "section": "7:table:1:3",
+            "text": "Action"
+          },
+          {
+            "section": "7:table:2:1",
+            "text": "Beacon Devices"
+          },
+          {
+            "section": "7:table:2:2",
+            "text": "Mila Hart"
+          },
+          {
+            "section": "7:table:2:3",
+            "text": "Confirm 21 components"
+          },
+          {
+            "section": "7:table:3:1",
+            "text": "Beacon Devices"
+          },
+          {
+            "section": "7:table:3:2",
+            "text": "Owen Lake"
+          },
+          {
+            "section": "7:table:3:3",
+            "text": "Keep existing due date"
+          },
+          {
+            "section": "8:paragraph",
+            "text": "Escalations for Beacon Devices go to Mila Hart. Reference: HLD-001-2026."
+          }
+        ],
+        "row_count": 16
+      }
+    },
+    {
+      "case_id": "control-missing-source-00",
+      "recorded_status": "blocked",
+      "passed": true,
+      "checks": {
+        "expected_missing_source_marker": true,
+        "model_not_attempted": true
+      },
+      "scope": "Consistency of the recorded missing-source preflight marker; historical source absence is not newly observed.",
+      "errors": []
+    },
+    {
+      "case_id": "writer-find-replace-heldout-02-normal",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "55cb6f907009ccbf8caf29971adcbecc1433243de1dcf4837cbafea8a178f792",
+      "recorded_source_sha256_after": "55cb6f907009ccbf8caf29971adcbecc1433243de1dcf4837cbafea8a178f792",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "section",
+          "text"
+        ],
+        "rows": [
+          {
+            "section": "1:heading:1",
+            "text": "Supplier handover memo"
+          },
+          {
+            "section": "2:paragraph",
+            "text": "Prepared on 8 November 2026. Case HLD-003-2026. All figures below are synthetic."
+          },
+          {
+            "section": "3:heading:2",
+            "text": "Supplier overview"
+          },
+          {
+            "section": "4:paragraph",
+            "text": "Orbit Devices is the primary supplier. Orbit Devices owns the quarterly delivery plan."
+          },
+          {
+            "section": "5:paragraph",
+            "text": "Cedars Works and Cedar Work are different suppliers; leave those names unchanged."
+          },
+          {
+            "section": "6:paragraph",
+            "text": "Recorded balance: USD 13,185.50. Review due: 30 November 2026."
+          },
+          {
+            "section": "7:table:1:1",
+            "text": "Supplier"
+          },
+          {
+            "section": "7:table:1:2",
+            "text": "Owner"
+          },
+          {
+            "section": "7:table:1:3",
+            "text": "Action"
+          },
+          {
+            "section": "7:table:2:1",
+            "text": "Orbit Devices"
+          },
+          {
+            "section": "7:table:2:2",
+            "text": "Eva Marsh"
+          },
+          {
+            "section": "7:table:2:3",
+            "text": "Confirm 23 components"
+          },
+          {
+            "section": "7:table:3:1",
+            "text": "Orbit Devices"
+          },
+          {
+            "section": "7:table:3:2",
+            "text": "Noah Brook"
+          },
+          {
+            "section": "7:table:3:3",
+            "text": "Keep existing due date"
+          },
+          {
+            "section": "8:paragraph",
+            "text": "Escalations for Orbit Devices go to Eva Marsh. Reference: HLD-003-2026."
+          }
+        ],
+        "row_count": 16
+      }
+    },
+    {
+      "case_id": "writer-find-replace-development-02-normal",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "7a043203739fd6103e27df7158373a10711cafebe6a97301340589b04e2dca8e",
+      "recorded_source_sha256_after": "7a043203739fd6103e27df7158373a10711cafebe6a97301340589b04e2dca8e",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "section",
+          "text"
+        ],
+        "rows": [
+          {
+            "section": "1:heading:1",
+            "text": "Supplier handover memo"
+          },
+          {
+            "section": "2:paragraph",
+            "text": "Prepared on 8 November 2026. Case DEV-003-2026. All figures below are synthetic."
+          },
+          {
+            "section": "3:heading:2",
+            "text": "Supplier overview"
+          },
+          {
+            "section": "4:paragraph",
+            "text": "Atlas Devices is the primary supplier. Atlas Devices owns the quarterly delivery plan."
+          },
+          {
+            "section": "5:paragraph",
+            "text": "Juniper Lab and Juniper Labx are different suppliers; leave those names unchanged."
+          },
+          {
+            "section": "6:paragraph",
+            "text": "Recorded balance: USD 12,774.50. Review due: 30 November 2026."
+          },
+          {
+            "section": "7:table:1:1",
+            "text": "Supplier"
+          },
+          {
+            "section": "7:table:1:2",
+            "text": "Owner"
+          },
+          {
+            "section": "7:table:1:3",
+            "text": "Action"
+          },
+          {
+            "section": "7:table:2:1",
+            "text": "Atlas Devices"
+          },
+          {
+            "section": "7:table:2:2",
+            "text": "Ava Stone"
+          },
+          {
+            "section": "7:table:2:3",
+            "text": "Confirm 20 components"
+          },
+          {
+            "section": "7:table:3:1",
+            "text": "Atlas Devices"
+          },
+          {
+            "section": "7:table:3:2",
+            "text": "Leo Finch"
+          },
+          {
+            "section": "7:table:3:3",
+            "text": "Keep existing due date"
+          },
+          {
+            "section": "8:paragraph",
+            "text": "Escalations for Atlas Devices go to Ava Stone. Reference: DEV-003-2026."
+          }
+        ],
+        "row_count": 16
+      }
+    },
+    {
+      "case_id": "control-foreign-focus-01",
+      "recorded_status": "blocked",
+      "passed": true,
+      "checks": {
+        "no_foreign_events": true,
+        "foreign_value_unchanged": true,
+        "focus_refusal_recorded": true,
+        "no_executed_inputs": true,
+        "model_not_attempted": true
+      },
+      "scope": "Recorded refusal, foreign-window event log and unchanged value; no new live action.",
+      "errors": []
+    },
+    {
+      "case_id": "calc-sort-export-development-02-changed",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "9dfb44e1ce21cc118d5eea0261a2c55cf6c3ccb6418d710a8b3b53e3708aef03",
+      "recorded_source_sha256_after": "9dfb44e1ce21cc118d5eea0261a2c55cf6c3ccb6418d710a8b3b53e3708aef03",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "invoice_id",
+          "customer",
+          "outstanding_balance",
+          "due_date",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_id": "DV3-003",
+            "customer": "Willow Devices",
+            "outstanding_balance": "10000.00",
+            "due_date": "2026-11-05",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "DV3-004",
+            "customer": "Juniper Research",
+            "outstanding_balance": "2750.50",
+            "due_date": "2026-11-04",
+            "status": "open"
+          },
+          {
+            "invoice_id": "DV3-007",
+            "customer": "Cobalt Supply",
+            "outstanding_balance": "2750.50",
+            "due_date": "2026-11-03",
+            "status": "open"
+          },
+          {
+            "invoice_id": "DV3-002",
+            "customer": "Amber Fabrication",
+            "outstanding_balance": "1499.99",
+            "due_date": "2026-11-02",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "DV3-005",
+            "customer": "Maple Distribution",
+            "outstanding_balance": "890.00",
+            "due_date": "2026-11-16",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "DV3-008",
+            "customer": "Summit Workshop",
+            "outstanding_balance": "45.00",
+            "due_date": "2026-11-01",
+            "status": "open"
+          },
+          {
+            "invoice_id": "DV3-001",
+            "customer": "Aster Components",
+            "outstanding_balance": "9.99",
+            "due_date": "2026-11-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "DV3-006",
+            "customer": "Cedar Instruments",
+            "outstanding_balance": "0.00",
+            "due_date": "2026-11-12",
+            "status": "settled"
+          }
+        ],
+        "row_count": 8
+      }
+    },
+    {
+      "case_id": "control-duplicate-receipt-00",
+      "recorded_status": "blocked",
+      "passed": true,
+      "checks": {
+        "duplicate_present_in_baseline": true,
+        "state_unchanged": true,
+        "duplicate_rejected": true,
+        "model_attempted": true
+      },
+      "scope": "Canonical database snapshots and the recorded application rejection audit.",
+      "errors": []
+    },
+    {
+      "case_id": "calc-sort-export-development-00-changed",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "19c1c0f34833d9320d0491333c50828439d41bc5d8f0892fe195da9d96c04e31",
+      "recorded_source_sha256_after": "19c1c0f34833d9320d0491333c50828439d41bc5d8f0892fe195da9d96c04e31",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "invoice_id",
+          "customer",
+          "outstanding_balance",
+          "due_date",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_id": "DV1-007",
+            "customer": "Summit Workshop",
+            "outstanding_balance": "12500.00",
+            "due_date": "2026-11-03",
+            "status": "open"
+          },
+          {
+            "invoice_id": "DV1-003",
+            "customer": "Cobalt Supply",
+            "outstanding_balance": "2350.75",
+            "due_date": "2026-11-05",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "DV1-008",
+            "customer": "Aster Components",
+            "outstanding_balance": "2350.75",
+            "due_date": "2026-11-01",
+            "status": "open"
+          },
+          {
+            "invoice_id": "DV1-006",
+            "customer": "Juniper Research",
+            "outstanding_balance": "999.99",
+            "due_date": "2026-11-12",
+            "status": "open"
+          },
+          {
+            "invoice_id": "DV1-005",
+            "customer": "Cedar Instruments",
+            "outstanding_balance": "100.00",
+            "due_date": "2026-11-16",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "DV1-002",
+            "customer": "Maple Distribution",
+            "outstanding_balance": "50.00",
+            "due_date": "2026-11-02",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "DV1-001",
+            "customer": "Willow Devices",
+            "outstanding_balance": "9.50",
+            "due_date": "2026-11-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "DV1-004",
+            "customer": "Amber Fabrication",
+            "outstanding_balance": "0.00",
+            "due_date": "2026-11-04",
+            "status": "settled"
+          }
+        ],
+        "row_count": 8
+      }
+    },
+    {
+      "case_id": "control-missing-source-01",
+      "recorded_status": "blocked",
+      "passed": true,
+      "checks": {
+        "expected_missing_source_marker": true,
+        "model_not_attempted": true
+      },
+      "scope": "Consistency of the recorded missing-source preflight marker; historical source absence is not newly observed.",
+      "errors": []
+    },
+    {
+      "case_id": "calc-sort-export-heldout-00-normal",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "ac31f352f83e58fd5330030620a02dfc07358e4aa5a536e2305937eaac0b64f6",
+      "recorded_source_sha256_after": "ac31f352f83e58fd5330030620a02dfc07358e4aa5a536e2305937eaac0b64f6",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "invoice_id",
+          "customer",
+          "outstanding_balance",
+          "due_date",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_id": "HO1-002",
+            "customer": "Indigo Supply",
+            "outstanding_balance": "13500.00",
+            "due_date": "2026-11-02",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "HO1-006",
+            "customer": "Elm Components",
+            "outstanding_balance": "3450.75",
+            "due_date": "2026-11-12",
+            "status": "open"
+          },
+          {
+            "invoice_id": "HO1-007",
+            "customer": "Aspen Research",
+            "outstanding_balance": "3450.75",
+            "due_date": "2026-11-03",
+            "status": "open"
+          },
+          {
+            "invoice_id": "HO1-001",
+            "customer": "Birch Distribution",
+            "outstanding_balance": "899.99",
+            "due_date": "2026-11-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "HO1-005",
+            "customer": "Orion Workshop",
+            "outstanding_balance": "200.00",
+            "due_date": "2026-11-16",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "HO1-003",
+            "customer": "Larch Instruments",
+            "outstanding_balance": "60.00",
+            "due_date": "2026-11-05",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "HO1-004",
+            "customer": "Hazel Devices",
+            "outstanding_balance": "9.90",
+            "due_date": "2026-11-04",
+            "status": "open"
+          },
+          {
+            "invoice_id": "HO1-008",
+            "customer": "Topaz Fabrication",
+            "outstanding_balance": "0.00",
+            "due_date": "2026-11-01",
+            "status": "settled"
+          }
+        ],
+        "row_count": 8
+      }
+    },
+    {
+      "case_id": "control-duplicate-receipt-01",
+      "recorded_status": "blocked",
+      "passed": true,
+      "checks": {
+        "duplicate_present_in_baseline": true,
+        "state_unchanged": true,
+        "duplicate_rejected": true,
+        "model_attempted": true
+      },
+      "scope": "Canonical database snapshots and the recorded application rejection audit.",
+      "errors": []
+    },
+    {
+      "case_id": "calc-sort-export-development-02-normal",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "9dfb44e1ce21cc118d5eea0261a2c55cf6c3ccb6418d710a8b3b53e3708aef03",
+      "recorded_source_sha256_after": "9dfb44e1ce21cc118d5eea0261a2c55cf6c3ccb6418d710a8b3b53e3708aef03",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "invoice_id",
+          "customer",
+          "outstanding_balance",
+          "due_date",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_id": "DV3-003",
+            "customer": "Willow Devices",
+            "outstanding_balance": "10000.00",
+            "due_date": "2026-11-05",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "DV3-004",
+            "customer": "Juniper Research",
+            "outstanding_balance": "2750.50",
+            "due_date": "2026-11-04",
+            "status": "open"
+          },
+          {
+            "invoice_id": "DV3-007",
+            "customer": "Cobalt Supply",
+            "outstanding_balance": "2750.50",
+            "due_date": "2026-11-03",
+            "status": "open"
+          },
+          {
+            "invoice_id": "DV3-002",
+            "customer": "Amber Fabrication",
+            "outstanding_balance": "1499.99",
+            "due_date": "2026-11-02",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "DV3-005",
+            "customer": "Maple Distribution",
+            "outstanding_balance": "890.00",
+            "due_date": "2026-11-16",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "DV3-008",
+            "customer": "Summit Workshop",
+            "outstanding_balance": "45.00",
+            "due_date": "2026-11-01",
+            "status": "open"
+          },
+          {
+            "invoice_id": "DV3-001",
+            "customer": "Aster Components",
+            "outstanding_balance": "9.99",
+            "due_date": "2026-11-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "DV3-006",
+            "customer": "Cedar Instruments",
+            "outstanding_balance": "0.00",
+            "due_date": "2026-11-12",
+            "status": "settled"
+          }
+        ],
+        "row_count": 8
+      }
+    },
+    {
+      "case_id": "calc-sort-export-heldout-02-changed",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "797bf46faba9a42354152b0cf17a770b0e738d3fe3695fc817fdb685e71597e6",
+      "recorded_source_sha256_after": "797bf46faba9a42354152b0cf17a770b0e738d3fe3695fc817fdb685e71597e6",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "invoice_id",
+          "customer",
+          "outstanding_balance",
+          "due_date",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_id": "HO3-004",
+            "customer": "Elm Components",
+            "outstanding_balance": "11999.99",
+            "due_date": "2026-11-04",
+            "status": "open"
+          },
+          {
+            "invoice_id": "HO3-001",
+            "customer": "Topaz Fabrication",
+            "outstanding_balance": "3750.50",
+            "due_date": "2026-11-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "HO3-002",
+            "customer": "Hazel Devices",
+            "outstanding_balance": "3750.50",
+            "due_date": "2026-11-02",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "HO3-003",
+            "customer": "Birch Distribution",
+            "outstanding_balance": "1899.99",
+            "due_date": "2026-11-05",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "HO3-005",
+            "customer": "Indigo Supply",
+            "outstanding_balance": "990.00",
+            "due_date": "2026-11-16",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "HO3-006",
+            "customer": "Orion Workshop",
+            "outstanding_balance": "55.00",
+            "due_date": "2026-11-12",
+            "status": "open"
+          },
+          {
+            "invoice_id": "HO3-008",
+            "customer": "Aspen Research",
+            "outstanding_balance": "10.01",
+            "due_date": "2026-11-01",
+            "status": "open"
+          },
+          {
+            "invoice_id": "HO3-007",
+            "customer": "Larch Instruments",
+            "outstanding_balance": "0.00",
+            "due_date": "2026-11-03",
+            "status": "settled"
+          }
+        ],
+        "row_count": 8
+      }
+    },
+    {
+      "case_id": "writer-find-replace-heldout-02-changed",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "55cb6f907009ccbf8caf29971adcbecc1433243de1dcf4837cbafea8a178f792",
+      "recorded_source_sha256_after": "55cb6f907009ccbf8caf29971adcbecc1433243de1dcf4837cbafea8a178f792",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "section",
+          "text"
+        ],
+        "rows": [
+          {
+            "section": "1:heading:1",
+            "text": "Supplier handover memo"
+          },
+          {
+            "section": "2:paragraph",
+            "text": "Prepared on 8 November 2026. Case HLD-003-2026. All figures below are synthetic."
+          },
+          {
+            "section": "3:heading:2",
+            "text": "Supplier overview"
+          },
+          {
+            "section": "4:paragraph",
+            "text": "Orbit Devices is the primary supplier. Orbit Devices owns the quarterly delivery plan."
+          },
+          {
+            "section": "5:paragraph",
+            "text": "Cedars Works and Cedar Work are different suppliers; leave those names unchanged."
+          },
+          {
+            "section": "6:paragraph",
+            "text": "Recorded balance: USD 13,185.50. Review due: 30 November 2026."
+          },
+          {
+            "section": "7:table:1:1",
+            "text": "Supplier"
+          },
+          {
+            "section": "7:table:1:2",
+            "text": "Owner"
+          },
+          {
+            "section": "7:table:1:3",
+            "text": "Action"
+          },
+          {
+            "section": "7:table:2:1",
+            "text": "Orbit Devices"
+          },
+          {
+            "section": "7:table:2:2",
+            "text": "Eva Marsh"
+          },
+          {
+            "section": "7:table:2:3",
+            "text": "Confirm 23 components"
+          },
+          {
+            "section": "7:table:3:1",
+            "text": "Orbit Devices"
+          },
+          {
+            "section": "7:table:3:2",
+            "text": "Noah Brook"
+          },
+          {
+            "section": "7:table:3:3",
+            "text": "Keep existing due date"
+          },
+          {
+            "section": "8:paragraph",
+            "text": "Escalations for Orbit Devices go to Eva Marsh. Reference: HLD-003-2026."
+          }
+        ],
+        "row_count": 16
+      }
+    },
+    {
+      "case_id": "calc-sort-export-development-01-changed",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "35b4a2f746c6f5a60d815b005cdf7078c370923d10db30f877cb549b733bc391",
+      "recorded_source_sha256_after": "35b4a2f746c6f5a60d815b005cdf7078c370923d10db30f877cb549b733bc391",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "invoice_id",
+          "customer",
+          "outstanding_balance",
+          "due_date",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_id": "DV2-002",
+            "customer": "Summit Workshop",
+            "outstanding_balance": "14999.99",
+            "due_date": "2026-11-02",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "DV2-004",
+            "customer": "Cobalt Supply",
+            "outstanding_balance": "7500.00",
+            "due_date": "2026-11-04",
+            "status": "open"
+          },
+          {
+            "invoice_id": "DV2-006",
+            "customer": "Willow Devices",
+            "outstanding_balance": "7500.00",
+            "due_date": "2026-11-12",
+            "status": "open"
+          },
+          {
+            "invoice_id": "DV2-005",
+            "customer": "Aster Components",
+            "outstanding_balance": "999.99",
+            "due_date": "2026-11-16",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "DV2-007",
+            "customer": "Amber Fabrication",
+            "outstanding_balance": "805.05",
+            "due_date": "2026-11-03",
+            "status": "open"
+          },
+          {
+            "invoice_id": "DV2-001",
+            "customer": "Cedar Instruments",
+            "outstanding_balance": "68.00",
+            "due_date": "2026-11-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "DV2-003",
+            "customer": "Juniper Research",
+            "outstanding_balance": "12.00",
+            "due_date": "2026-11-05",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "DV2-008",
+            "customer": "Maple Distribution",
+            "outstanding_balance": "0.00",
+            "due_date": "2026-11-01",
+            "status": "settled"
+          }
+        ],
+        "row_count": 8
+      }
+    },
+    {
+      "case_id": "writer-find-replace-heldout-01-normal",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "cd584e3f8892383eda14896835613a9638a42ae79af73572262dce11fdbe0bae",
+      "recorded_source_sha256_after": "cd584e3f8892383eda14896835613a9638a42ae79af73572262dce11fdbe0bae",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "section",
+          "text"
+        ],
+        "rows": [
+          {
+            "section": "1:heading:1",
+            "text": "Supplier handover memo"
+          },
+          {
+            "section": "2:paragraph",
+            "text": "Prepared on 8 November 2026. Case HLD-002-2026. All figures below are synthetic."
+          },
+          {
+            "section": "3:heading:2",
+            "text": "Supplier overview"
+          },
+          {
+            "section": "4:paragraph",
+            "text": "Acorn Devices is the primary supplier. Acorn Devices owns the quarterly delivery plan."
+          },
+          {
+            "section": "5:paragraph",
+            "text": "Harbour Tools and Harbor Tool are different suppliers; leave those names unchanged."
+          },
+          {
+            "section": "6:paragraph",
+            "text": "Recorded balance: USD 13,048.50. Review due: 30 November 2026."
+          },
+          {
+            "section": "7:table:1:1",
+            "text": "Supplier"
+          },
+          {
+            "section": "7:table:1:2",
+            "text": "Owner"
+          },
+          {
+            "section": "7:table:1:3",
+            "text": "Action"
+          },
+          {
+            "section": "7:table:2:1",
+            "text": "Acorn Devices"
+          },
+          {
+            "section": "7:table:2:2",
+            "text": "Lina West"
+          },
+          {
+            "section": "7:table:2:3",
+            "text": "Confirm 22 components"
+          },
+          {
+            "section": "7:table:3:1",
+            "text": "Acorn Devices"
+          },
+          {
+            "section": "7:table:3:2",
+            "text": "Adam Grove"
+          },
+          {
+            "section": "7:table:3:3",
+            "text": "Keep existing due date"
+          },
+          {
+            "section": "8:paragraph",
+            "text": "Escalations for Acorn Devices go to Lina West. Reference: HLD-002-2026."
+          }
+        ],
+        "row_count": 16
+      }
+    },
+    {
+      "case_id": "calc-sort-export-development-01-normal",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "35b4a2f746c6f5a60d815b005cdf7078c370923d10db30f877cb549b733bc391",
+      "recorded_source_sha256_after": "35b4a2f746c6f5a60d815b005cdf7078c370923d10db30f877cb549b733bc391",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "invoice_id",
+          "customer",
+          "outstanding_balance",
+          "due_date",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_id": "DV2-002",
+            "customer": "Summit Workshop",
+            "outstanding_balance": "14999.99",
+            "due_date": "2026-11-02",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "DV2-004",
+            "customer": "Cobalt Supply",
+            "outstanding_balance": "7500.00",
+            "due_date": "2026-11-04",
+            "status": "open"
+          },
+          {
+            "invoice_id": "DV2-006",
+            "customer": "Willow Devices",
+            "outstanding_balance": "7500.00",
+            "due_date": "2026-11-12",
+            "status": "open"
+          },
+          {
+            "invoice_id": "DV2-005",
+            "customer": "Aster Components",
+            "outstanding_balance": "999.99",
+            "due_date": "2026-11-16",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "DV2-007",
+            "customer": "Amber Fabrication",
+            "outstanding_balance": "805.05",
+            "due_date": "2026-11-03",
+            "status": "open"
+          },
+          {
+            "invoice_id": "DV2-001",
+            "customer": "Cedar Instruments",
+            "outstanding_balance": "68.00",
+            "due_date": "2026-11-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "DV2-003",
+            "customer": "Juniper Research",
+            "outstanding_balance": "12.00",
+            "due_date": "2026-11-05",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "DV2-008",
+            "customer": "Maple Distribution",
+            "outstanding_balance": "0.00",
+            "due_date": "2026-11-01",
+            "status": "settled"
+          }
+        ],
+        "row_count": 8
+      }
+    },
+    {
+      "case_id": "writer-find-replace-development-00-changed",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "55c9171bf47b098e2877c93e79b2e36d99c42625af48335ae4d11de0ded05643",
+      "recorded_source_sha256_after": "55c9171bf47b098e2877c93e79b2e36d99c42625af48335ae4d11de0ded05643",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "section",
+          "text"
+        ],
+        "rows": [
+          {
+            "section": "1:heading:1",
+            "text": "Supplier handover memo"
+          },
+          {
+            "section": "2:paragraph",
+            "text": "Prepared on 8 November 2026. Case DEV-001-2026. All figures below are synthetic."
+          },
+          {
+            "section": "3:heading:2",
+            "text": "Supplier overview"
+          },
+          {
+            "section": "4:paragraph",
+            "text": "Summit Devices is the primary supplier. Summit Devices owns the quarterly delivery plan."
+          },
+          {
+            "section": "5:paragraph",
+            "text": "Aster System and Astor Systems are different suppliers; leave those names unchanged."
+          },
+          {
+            "section": "6:paragraph",
+            "text": "Recorded balance: USD 12,500.50. Review due: 30 November 2026."
+          },
+          {
+            "section": "7:table:1:1",
+            "text": "Supplier"
+          },
+          {
+            "section": "7:table:1:2",
+            "text": "Owner"
+          },
+          {
+            "section": "7:table:1:3",
+            "text": "Action"
+          },
+          {
+            "section": "7:table:2:1",
+            "text": "Summit Devices"
+          },
+          {
+            "section": "7:table:2:2",
+            "text": "Mara Chen"
+          },
+          {
+            "section": "7:table:2:3",
+            "text": "Confirm 18 components"
+          },
+          {
+            "section": "7:table:3:1",
+            "text": "Summit Devices"
+          },
+          {
+            "section": "7:table:3:2",
+            "text": "Elias Vale"
+          },
+          {
+            "section": "7:table:3:3",
+            "text": "Keep existing due date"
+          },
+          {
+            "section": "8:paragraph",
+            "text": "Escalations for Summit Devices go to Mara Chen. Reference: DEV-001-2026."
+          }
+        ],
+        "row_count": 16
+      }
+    },
+    {
+      "case_id": "writer-find-replace-heldout-01-changed",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "cd584e3f8892383eda14896835613a9638a42ae79af73572262dce11fdbe0bae",
+      "recorded_source_sha256_after": "cd584e3f8892383eda14896835613a9638a42ae79af73572262dce11fdbe0bae",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "section",
+          "text"
+        ],
+        "rows": [
+          {
+            "section": "1:heading:1",
+            "text": "Supplier handover memo"
+          },
+          {
+            "section": "2:paragraph",
+            "text": "Prepared on 8 November 2026. Case HLD-002-2026. All figures below are synthetic."
+          },
+          {
+            "section": "3:heading:2",
+            "text": "Supplier overview"
+          },
+          {
+            "section": "4:paragraph",
+            "text": "Acorn Devices is the primary supplier. Acorn Devices owns the quarterly delivery plan."
+          },
+          {
+            "section": "5:paragraph",
+            "text": "Harbour Tools and Harbor Tool are different suppliers; leave those names unchanged."
+          },
+          {
+            "section": "6:paragraph",
+            "text": "Recorded balance: USD 13,048.50. Review due: 30 November 2026."
+          },
+          {
+            "section": "7:table:1:1",
+            "text": "Supplier"
+          },
+          {
+            "section": "7:table:1:2",
+            "text": "Owner"
+          },
+          {
+            "section": "7:table:1:3",
+            "text": "Action"
+          },
+          {
+            "section": "7:table:2:1",
+            "text": "Acorn Devices"
+          },
+          {
+            "section": "7:table:2:2",
+            "text": "Lina West"
+          },
+          {
+            "section": "7:table:2:3",
+            "text": "Confirm 22 components"
+          },
+          {
+            "section": "7:table:3:1",
+            "text": "Acorn Devices"
+          },
+          {
+            "section": "7:table:3:2",
+            "text": "Adam Grove"
+          },
+          {
+            "section": "7:table:3:3",
+            "text": "Keep existing due date"
+          },
+          {
+            "section": "8:paragraph",
+            "text": "Escalations for Acorn Devices go to Lina West. Reference: HLD-002-2026."
+          }
+        ],
+        "row_count": 16
+      }
+    },
+    {
+      "case_id": "control-foreign-focus-00",
+      "recorded_status": "blocked",
+      "passed": true,
+      "checks": {
+        "no_foreign_events": true,
+        "foreign_value_unchanged": true,
+        "focus_refusal_recorded": true,
+        "no_executed_inputs": true,
+        "model_not_attempted": true
+      },
+      "scope": "Recorded refusal, foreign-window event log and unchanged value; no new live action.",
+      "errors": []
+    },
+    {
+      "case_id": "calc-sort-export-development-00-normal",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "19c1c0f34833d9320d0491333c50828439d41bc5d8f0892fe195da9d96c04e31",
+      "recorded_source_sha256_after": "19c1c0f34833d9320d0491333c50828439d41bc5d8f0892fe195da9d96c04e31",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "invoice_id",
+          "customer",
+          "outstanding_balance",
+          "due_date",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_id": "DV1-007",
+            "customer": "Summit Workshop",
+            "outstanding_balance": "12500.00",
+            "due_date": "2026-11-03",
+            "status": "open"
+          },
+          {
+            "invoice_id": "DV1-003",
+            "customer": "Cobalt Supply",
+            "outstanding_balance": "2350.75",
+            "due_date": "2026-11-05",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "DV1-008",
+            "customer": "Aster Components",
+            "outstanding_balance": "2350.75",
+            "due_date": "2026-11-01",
+            "status": "open"
+          },
+          {
+            "invoice_id": "DV1-006",
+            "customer": "Juniper Research",
+            "outstanding_balance": "999.99",
+            "due_date": "2026-11-12",
+            "status": "open"
+          },
+          {
+            "invoice_id": "DV1-005",
+            "customer": "Cedar Instruments",
+            "outstanding_balance": "100.00",
+            "due_date": "2026-11-16",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "DV1-002",
+            "customer": "Maple Distribution",
+            "outstanding_balance": "50.00",
+            "due_date": "2026-11-02",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "DV1-001",
+            "customer": "Willow Devices",
+            "outstanding_balance": "9.50",
+            "due_date": "2026-11-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "DV1-004",
+            "customer": "Amber Fabrication",
+            "outstanding_balance": "0.00",
+            "due_date": "2026-11-04",
+            "status": "settled"
+          }
+        ],
+        "row_count": 8
+      }
+    },
+    {
+      "case_id": "writer-find-replace-development-02-changed",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "7a043203739fd6103e27df7158373a10711cafebe6a97301340589b04e2dca8e",
+      "recorded_source_sha256_after": "7a043203739fd6103e27df7158373a10711cafebe6a97301340589b04e2dca8e",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "section",
+          "text"
+        ],
+        "rows": [
+          {
+            "section": "1:heading:1",
+            "text": "Supplier handover memo"
+          },
+          {
+            "section": "2:paragraph",
+            "text": "Prepared on 8 November 2026. Case DEV-003-2026. All figures below are synthetic."
+          },
+          {
+            "section": "3:heading:2",
+            "text": "Supplier overview"
+          },
+          {
+            "section": "4:paragraph",
+            "text": "Atlas Devices is the primary supplier. Atlas Devices owns the quarterly delivery plan."
+          },
+          {
+            "section": "5:paragraph",
+            "text": "Juniper Lab and Juniper Labx are different suppliers; leave those names unchanged."
+          },
+          {
+            "section": "6:paragraph",
+            "text": "Recorded balance: USD 12,774.50. Review due: 30 November 2026."
+          },
+          {
+            "section": "7:table:1:1",
+            "text": "Supplier"
+          },
+          {
+            "section": "7:table:1:2",
+            "text": "Owner"
+          },
+          {
+            "section": "7:table:1:3",
+            "text": "Action"
+          },
+          {
+            "section": "7:table:2:1",
+            "text": "Atlas Devices"
+          },
+          {
+            "section": "7:table:2:2",
+            "text": "Ava Stone"
+          },
+          {
+            "section": "7:table:2:3",
+            "text": "Confirm 20 components"
+          },
+          {
+            "section": "7:table:3:1",
+            "text": "Atlas Devices"
+          },
+          {
+            "section": "7:table:3:2",
+            "text": "Leo Finch"
+          },
+          {
+            "section": "7:table:3:3",
+            "text": "Keep existing due date"
+          },
+          {
+            "section": "8:paragraph",
+            "text": "Escalations for Atlas Devices go to Ava Stone. Reference: DEV-003-2026."
+          }
+        ],
+        "row_count": 16
+      }
+    },
+    {
+      "case_id": "writer-find-replace-development-00-normal",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "55c9171bf47b098e2877c93e79b2e36d99c42625af48335ae4d11de0ded05643",
+      "recorded_source_sha256_after": "55c9171bf47b098e2877c93e79b2e36d99c42625af48335ae4d11de0ded05643",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "section",
+          "text"
+        ],
+        "rows": [
+          {
+            "section": "1:heading:1",
+            "text": "Supplier handover memo"
+          },
+          {
+            "section": "2:paragraph",
+            "text": "Prepared on 8 November 2026. Case DEV-001-2026. All figures below are synthetic."
+          },
+          {
+            "section": "3:heading:2",
+            "text": "Supplier overview"
+          },
+          {
+            "section": "4:paragraph",
+            "text": "Summit Devices is the primary supplier. Summit Devices owns the quarterly delivery plan."
+          },
+          {
+            "section": "5:paragraph",
+            "text": "Aster System and Astor Systems are different suppliers; leave those names unchanged."
+          },
+          {
+            "section": "6:paragraph",
+            "text": "Recorded balance: USD 12,500.50. Review due: 30 November 2026."
+          },
+          {
+            "section": "7:table:1:1",
+            "text": "Supplier"
+          },
+          {
+            "section": "7:table:1:2",
+            "text": "Owner"
+          },
+          {
+            "section": "7:table:1:3",
+            "text": "Action"
+          },
+          {
+            "section": "7:table:2:1",
+            "text": "Summit Devices"
+          },
+          {
+            "section": "7:table:2:2",
+            "text": "Mara Chen"
+          },
+          {
+            "section": "7:table:2:3",
+            "text": "Confirm 18 components"
+          },
+          {
+            "section": "7:table:3:1",
+            "text": "Summit Devices"
+          },
+          {
+            "section": "7:table:3:2",
+            "text": "Elias Vale"
+          },
+          {
+            "section": "7:table:3:3",
+            "text": "Keep existing due date"
+          },
+          {
+            "section": "8:paragraph",
+            "text": "Escalations for Summit Devices go to Mara Chen. Reference: DEV-001-2026."
+          }
+        ],
+        "row_count": 16
+      }
+    },
+    {
+      "case_id": "calc-sort-export-heldout-01-changed",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "7e183bd590c23fce879f4284b2fa0808e5b8275ca7ef159daf929c5d7344d678",
+      "recorded_source_sha256_after": "7e183bd590c23fce879f4284b2fa0808e5b8275ca7ef159daf929c5d7344d678",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "invoice_id",
+          "customer",
+          "outstanding_balance",
+          "due_date",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_id": "HO2-004",
+            "customer": "Larch Instruments",
+            "outstanding_balance": "15999.99",
+            "due_date": "2026-11-04",
+            "status": "open"
+          },
+          {
+            "invoice_id": "HO2-003",
+            "customer": "Elm Components",
+            "outstanding_balance": "8500.00",
+            "due_date": "2026-11-05",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "HO2-008",
+            "customer": "Indigo Supply",
+            "outstanding_balance": "8500.00",
+            "due_date": "2026-11-01",
+            "status": "open"
+          },
+          {
+            "invoice_id": "HO2-005",
+            "customer": "Topaz Fabrication",
+            "outstanding_balance": "999.98",
+            "due_date": "2026-11-16",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "HO2-006",
+            "customer": "Birch Distribution",
+            "outstanding_balance": "706.06",
+            "due_date": "2026-11-12",
+            "status": "open"
+          },
+          {
+            "invoice_id": "HO2-001",
+            "customer": "Orion Workshop",
+            "outstanding_balance": "78.00",
+            "due_date": "2026-11-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "HO2-002",
+            "customer": "Aspen Research",
+            "outstanding_balance": "13.00",
+            "due_date": "2026-11-02",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "HO2-007",
+            "customer": "Hazel Devices",
+            "outstanding_balance": "0.00",
+            "due_date": "2026-11-03",
+            "status": "settled"
+          }
+        ],
+        "row_count": 8
+      }
+    },
+    {
+      "case_id": "calc-sort-export-heldout-00-changed",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "ac31f352f83e58fd5330030620a02dfc07358e4aa5a536e2305937eaac0b64f6",
+      "recorded_source_sha256_after": "ac31f352f83e58fd5330030620a02dfc07358e4aa5a536e2305937eaac0b64f6",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "invoice_id",
+          "customer",
+          "outstanding_balance",
+          "due_date",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_id": "HO1-002",
+            "customer": "Indigo Supply",
+            "outstanding_balance": "13500.00",
+            "due_date": "2026-11-02",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "HO1-006",
+            "customer": "Elm Components",
+            "outstanding_balance": "3450.75",
+            "due_date": "2026-11-12",
+            "status": "open"
+          },
+          {
+            "invoice_id": "HO1-007",
+            "customer": "Aspen Research",
+            "outstanding_balance": "3450.75",
+            "due_date": "2026-11-03",
+            "status": "open"
+          },
+          {
+            "invoice_id": "HO1-001",
+            "customer": "Birch Distribution",
+            "outstanding_balance": "899.99",
+            "due_date": "2026-11-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "HO1-005",
+            "customer": "Orion Workshop",
+            "outstanding_balance": "200.00",
+            "due_date": "2026-11-16",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "HO1-003",
+            "customer": "Larch Instruments",
+            "outstanding_balance": "60.00",
+            "due_date": "2026-11-05",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "HO1-004",
+            "customer": "Hazel Devices",
+            "outstanding_balance": "9.90",
+            "due_date": "2026-11-04",
+            "status": "open"
+          },
+          {
+            "invoice_id": "HO1-008",
+            "customer": "Topaz Fabrication",
+            "outstanding_balance": "0.00",
+            "due_date": "2026-11-01",
+            "status": "settled"
+          }
+        ],
+        "row_count": 8
+      }
+    },
+    {
+      "case_id": "writer-find-replace-development-01-normal",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "aa58107528b56814368730619cd21c398a345eee3db3ceecef3dd0d0efe6eec6",
+      "recorded_source_sha256_after": "aa58107528b56814368730619cd21c398a345eee3db3ceecef3dd0d0efe6eec6",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "section",
+          "text"
+        ],
+        "rows": [
+          {
+            "section": "1:heading:1",
+            "text": "Supplier handover memo"
+          },
+          {
+            "section": "2:paragraph",
+            "text": "Prepared on 8 November 2026. Case DEV-002-2026. All figures below are synthetic."
+          },
+          {
+            "section": "3:heading:2",
+            "text": "Supplier overview"
+          },
+          {
+            "section": "4:paragraph",
+            "text": "Maple Devices is the primary supplier. Maple Devices owns the quarterly delivery plan."
+          },
+          {
+            "section": "5:paragraph",
+            "text": "Cobalt Work and Cobolt Works are different suppliers; leave those names unchanged."
+          },
+          {
+            "section": "6:paragraph",
+            "text": "Recorded balance: USD 12,637.50. Review due: 30 November 2026."
+          },
+          {
+            "section": "7:table:1:1",
+            "text": "Supplier"
+          },
+          {
+            "section": "7:table:1:2",
+            "text": "Owner"
+          },
+          {
+            "section": "7:table:1:3",
+            "text": "Action"
+          },
+          {
+            "section": "7:table:2:1",
+            "text": "Maple Devices"
+          },
+          {
+            "section": "7:table:2:2",
+            "text": "Nina Cole"
+          },
+          {
+            "section": "7:table:2:3",
+            "text": "Confirm 19 components"
+          },
+          {
+            "section": "7:table:3:1",
+            "text": "Maple Devices"
+          },
+          {
+            "section": "7:table:3:2",
+            "text": "Tomas Reed"
+          },
+          {
+            "section": "7:table:3:3",
+            "text": "Keep existing due date"
+          },
+          {
+            "section": "8:paragraph",
+            "text": "Escalations for Maple Devices go to Nina Cole. Reference: DEV-002-2026."
+          }
+        ],
+        "row_count": 16
+      }
+    },
+    {
+      "case_id": "calc-sort-export-heldout-02-normal",
+      "recorded_status": "passed",
+      "passed": true,
+      "artifact_passed": true,
+      "source_check_passed": true,
+      "saved_input_sha256": "797bf46faba9a42354152b0cf17a770b0e738d3fe3695fc817fdb685e71597e6",
+      "recorded_source_sha256_after": "797bf46faba9a42354152b0cf17a770b0e738d3fe3695fc817fdb685e71597e6",
+      "source_check_scope": "Saved initial input plus the controller's recorded post-run hash; no new live observation.",
+      "errors": [],
+      "artifact_verification": {
+        "passed": true,
+        "errors": [],
+        "headers": [
+          "invoice_id",
+          "customer",
+          "outstanding_balance",
+          "due_date",
+          "status"
+        ],
+        "rows": [
+          {
+            "invoice_id": "HO3-004",
+            "customer": "Elm Components",
+            "outstanding_balance": "11999.99",
+            "due_date": "2026-11-04",
+            "status": "open"
+          },
+          {
+            "invoice_id": "HO3-001",
+            "customer": "Topaz Fabrication",
+            "outstanding_balance": "3750.50",
+            "due_date": "2026-11-15",
+            "status": "open"
+          },
+          {
+            "invoice_id": "HO3-002",
+            "customer": "Hazel Devices",
+            "outstanding_balance": "3750.50",
+            "due_date": "2026-11-02",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "HO3-003",
+            "customer": "Birch Distribution",
+            "outstanding_balance": "1899.99",
+            "due_date": "2026-11-05",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "HO3-005",
+            "customer": "Indigo Supply",
+            "outstanding_balance": "990.00",
+            "due_date": "2026-11-16",
+            "status": "partial"
+          },
+          {
+            "invoice_id": "HO3-006",
+            "customer": "Orion Workshop",
+            "outstanding_balance": "55.00",
+            "due_date": "2026-11-12",
+            "status": "open"
+          },
+          {
+            "invoice_id": "HO3-008",
+            "customer": "Aspen Research",
+            "outstanding_balance": "10.01",
+            "due_date": "2026-11-01",
+            "status": "open"
+          },
+          {
+            "invoice_id": "HO3-007",
+            "customer": "Larch Instruments",
+            "outstanding_balance": "0.00",
+            "due_date": "2026-11-03",
+            "status": "settled"
+          }
+        ],
+        "row_count": 8
+      }
+    }
+  ]
+}

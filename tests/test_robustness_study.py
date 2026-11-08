@@ -1,4 +1,5 @@
 from collections import Counter, defaultdict
+from contextlib import contextmanager, nullcontext
 import hashlib
 import json
 from pathlib import Path
@@ -192,6 +193,8 @@ def test_corrupt_or_reordered_ledger_is_rejected(context, tmp_path):
 
 
 def test_cli_returns_failure_for_complete_study_with_failed_grade(context, tmp_path, monkeypatch):
+    from ledgerdesk import __main__ as cli
+    monkeypatch.setattr(cli, "session_lock", nullcontext)
     context_path = tmp_path / "context.json"
     context_path.write_text(json.dumps(context))
     monkeypatch.setattr(sys, "argv", ["study", "--context", str(context_path)])
@@ -200,6 +203,62 @@ def test_cli_returns_failure_for_complete_study_with_failed_grade(context, tmp_p
         "grades": {"positive": {"failed": 1, "unverified": 0}, "negative_control": {"failed": 0, "unverified": 0}},
     })
     assert study.main() == 1
+
+
+def test_cli_holds_shared_desktop_lock_around_actual_run(context, tmp_path, monkeypatch):
+    from ledgerdesk import __main__ as cli
+    context_path = tmp_path / "context.json"
+    context_path.write_text(json.dumps(context))
+    monkeypatch.setattr(sys, "argv", ["study", "--context", str(context_path)])
+    state = {"held": False}
+
+    @contextmanager
+    def lock():
+        state["held"] = True
+        try:
+            yield
+        finally:
+            state["held"] = False
+
+    def run(*args, **kwargs):
+        assert state["held"]
+        return {"planned": 30, "completed": 30, "stop_reason": None,
+                "grades": {"positive": {"failed": 0, "unverified": 0}}}
+
+    monkeypatch.setattr(cli, "session_lock", lock)
+    monkeypatch.setattr(study, "run_study", run)
+    assert study.main() == 0
+    assert state["held"] is False
+
+
+def test_plan_only_bypasses_shared_desktop_lock(context, tmp_path, monkeypatch):
+    from ledgerdesk import __main__ as cli
+    context_path = tmp_path / "context.json"
+    context_path.write_text(json.dumps(context))
+    monkeypatch.setattr(sys, "argv", ["study", "--context", str(context_path), "--plan-only"])
+    monkeypatch.setattr(cli, "session_lock", lambda: pytest.fail("Plan-only must not claim a desktop"))
+    monkeypatch.setattr(study, "run_study", lambda *args, **kwargs: {
+        "planned": 30, "completed": 0, "stop_reason": "Plan only",
+        "grades": {"positive": {"failed": 0, "unverified": 0}},
+    })
+    assert study.main() == 0
+
+
+def test_busy_shared_desktop_lock_prevents_runner_call(context, tmp_path, monkeypatch):
+    from ledgerdesk import __main__ as cli
+    context_path = tmp_path / "context.json"
+    context_path.write_text(json.dumps(context))
+    monkeypatch.setattr(sys, "argv", ["study", "--context", str(context_path)])
+
+    @contextmanager
+    def busy():
+        raise RuntimeError("Desktop already owned")
+        yield
+
+    monkeypatch.setattr(cli, "session_lock", busy)
+    monkeypatch.setattr(study, "run_study", lambda *args, **kwargs: pytest.fail("Must not run without ownership"))
+    with pytest.raises(RuntimeError, match="already owned"):
+        study.main()
 
 
 def gnucash_manifest():

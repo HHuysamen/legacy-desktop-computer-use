@@ -1,4 +1,5 @@
 """Capture the committed runtime, installed image and both deterministic input sets."""
+import argparse
 import hashlib
 import importlib.metadata
 import json
@@ -13,6 +14,14 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output-dir", type=Path, default=ROOT / "output",
+                        help="Directory for new contexts; existing freezes are never overwritten")
+    args = parser.parse_args()
+    destinations = {campaign: args.output_dir / f"{campaign}-freeze-context.json" for campaign in ("office", "gnucash")}
+    for destination in destinations.values():
+        if destination.exists() or destination.is_symlink():
+            raise RuntimeError(f"Refusing to overwrite an existing freeze: {destination}")
     paths = sorted((ROOT / "ledgerdesk").glob("*.py")) + [ROOT / name for name in (
         "scripts/run_robustness_study.py", "scripts/freeze_followup_studies.py", "compose.yaml",
         "docker/Dockerfile", "docker/start-desktop.sh", "fixtures/seed.json", "pyproject.toml")]
@@ -32,11 +41,11 @@ def main():
                 "normal_geometry": "maximized", "changed_geometry": [120, 80, 920, 660],
                 "installed_applications": versions, "guest": "Linux arm64/X11", "agent_tools": ["computer"],
                 "network": "isolated", "operator_corrections": "none during measured attempts"}}
+    args.output_dir.mkdir(parents=True, exist_ok=True)
     for campaign, manifest in (("office", variant_manifest()), ("gnucash", gnucash_manifest())):
-        destination = ROOT / "output" / f"{campaign}-freeze-context.json"
-        if destination.exists():
-            raise RuntimeError(f"Refusing to overwrite an existing freeze: {destination}")
-        destination.write_text(json.dumps({**base, "campaign": campaign, "fixtures": manifest}, indent=2) + "\n")
+        destination = destinations[campaign]
+        with destination.open("x", encoding="utf-8") as stream:
+            stream.write(json.dumps({**base, "campaign": campaign, "fixtures": manifest}, indent=2) + "\n")
         print(destination)
 
 

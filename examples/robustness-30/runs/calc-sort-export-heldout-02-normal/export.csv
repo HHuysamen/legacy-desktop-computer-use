@@ -1,0 +1,9 @@
+invoice_id,customer,outstanding_balance,due_date,status
+HO3-004,Elm Components,11999.99,2026-11-04,open
+HO3-001,Topaz Fabrication,3750.50,2026-11-15,open
+HO3-002,Hazel Devices,3750.50,2026-11-02,partial
+HO3-003,Birch Distribution,1899.99,2026-11-05,partial
+HO3-005,Indigo Supply,990.00,2026-11-16,partial
+HO3-006,Orion Workshop,55.00,2026-11-12,open
+HO3-008,Aspen Research,10.01,2026-11-01,open
+HO3-007,Larch Instruments,0.00,2026-11-03,settled

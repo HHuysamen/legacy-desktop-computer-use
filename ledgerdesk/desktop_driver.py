@@ -43,8 +43,12 @@ class DesktopDriver:
     def _action(self, action) -> None:
         data = action.model_dump(exclude_none=True) if hasattr(action, "model_dump") else dict(action)
         log_event(self.run_dir, "action", action=data, phase="requested")
+        transport = dict(data)
+        if data.get("type") == "keypress" and isinstance(data.get("keys"), list):
+            transport["keys"] = [key.upper() if isinstance(key, str) and key.isascii() else key for key in data["keys"]]
+        log_event(self.run_dir, "action_transport", action=transport)
         try:
-            self._send(data)
+            self._send(transport)
         except RuntimeError as error:
             log_event(self.run_dir, "driver_error", message=str(error))
             raise

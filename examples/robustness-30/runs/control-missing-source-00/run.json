@@ -1,0 +1,56 @@
+{
+  "id": "20261108T152024-6d2084",
+  "case_id": "control-missing-source-00",
+  "task_id": "calc-sort-export",
+  "instruction": "The supplied receivables spreadsheet is open in LibreOffice Calc. Sort the entire table by outstanding_balance numerically descending, then invoice_id ascending for ties. Keep the header first and preserve every row and every other cell value. Export the sorted sheet as a UTF-8, comma-separated CSV to /tmp/ledgerdesk/exports/calc-sort-export.csv. Use the application's normal controls and confirm the CSV format if asked. Do not overwrite the source ODS.",
+  "started_at": "2026-11-08T15:20:24.747699+00:00",
+  "source_revision": "7f269cd03b47dd83b62ca77a2aefba4b6058bf51",
+  "image_id": "sha256:9a83a615fe1441b1e88e7f7f7f04af52aa454b9223c2a14cb11bf2bb3f7c46d9",
+  "spec": {
+    "case_id": "control-missing-source-00",
+    "task_id": "calc-sort-export",
+    "kind": "negative_control",
+    "control": "missing-source",
+    "control_index": 0,
+    "split": "development",
+    "fixture_index": 0,
+    "geometry": "normal",
+    "fixture_id": "calc-sort-export-development-00",
+    "input_sha256": "19c1c0f34833d9320d0491333c50828439d41bc5d8f0892fe195da9d96c04e31",
+    "instruction_sha256": "18f48de00f86e077d2f43870ad165f5daeb6dc6a22e12ccf36e9400e29bd12a7",
+    "expected_image_id": "sha256:9a83a615fe1441b1e88e7f7f7f04af52aa454b9223c2a14cb11bf2bb3f7c46d9",
+    "expected_source_revision": "7f269cd03b47dd83b62ca77a2aefba4b6058bf51"
+  },
+  "limits": {
+    "budget_usd": 1.0,
+    "max_requests": 30,
+    "max_actions": 80,
+    "timeout": 420
+  },
+  "model": "gpt-6.1-terra",
+  "status": "blocked",
+  "error": "Expected missing-source block before model execution",
+  "action_count": 0,
+  "request_count": 0,
+  "estimated_cost_usd": 0.0,
+  "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "total_tokens": 0,
+    "complete": true
+  },
+  "operator_interventions": 0,
+  "environment": "Linux arm64/X11; 1200x900; isolated Docker",
+  "reasoning_effort": "medium",
+  "application": "LibreOffice",
+  "control_verification": {
+    "passed": true,
+    "errors": [],
+    "component": "controller preflight",
+    "model_attempted": false
+  },
+  "recording_available": false,
+  "elapsed_seconds": 0.977,
+  "finished_at": "2026-11-08T15:20:25.724460+00:00",
+  "executed_actions": 0
+}

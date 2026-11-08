@@ -1,12 +1,12 @@
 # Selecting a real finance application
 
-Research checked 8 November 2026. **Select GnuCash for the next native application study, with HomeBank as the fallback.** This is a feasibility assessment and task design, not evidence of completed agent runs.
+Research checked 8 November 2026. **GnuCash was selected and installed for the native application study, with HomeBank retained as the fallback.** A manual development smoke check succeeded, but the original nine measured agent attempts all failed at a driver key-name boundary. Application feasibility and measured agent success are separate findings; see the [follow-up results](follow-up-results.md).
 
 ## Why GnuCash
 
-GnuCash provides a real accounting register, balanced transactions and split entries. It runs on Linux, macOS and Windows. Its Debian Bookworm package is a GTK3/X11 application available for arm64, which fits the existing Apple Silicon host and Linux desktop container without introducing a Windows environment. This would validate the Linux application only; availability on Windows does not establish Windows automation performance. [GnuCash features](https://code.gnucash.org/website/features.phtml), [Debian package](https://packages.debian.org/bookworm/gnucash)
+GnuCash provides a real accounting register, balanced transactions and split entries. It runs on Linux, macOS and Windows. Its Debian Bookworm package is a GTK3/X11 application available for arm64, which fits the existing Apple Silicon host and Linux desktop container without introducing a Windows environment. The study covers the Linux application only; availability on Windows does not establish Windows automation performance. [GnuCash features](https://code.gnucash.org/website/features.phtml), [Debian package](https://packages.debian.org/bookworm/gnucash)
 
-The current [Dockerfile](../docker/Dockerfile) uses Debian Bookworm. Its packaged GnuCash version is `1:4.13-1`, so use the version 4 documentation and record the installed version and image digest. Package metadata confirms availability; dependency resolution, launch, dialogs and actual GUI operation still require a smoke test before measured attempts.
+The [Dockerfile](../docker/Dockerfile) uses Debian Bookworm. The frozen image records GnuCash `1:4.13-1`; its protocol retains the installed version and image identity. Package availability was followed by a manual GUI smoke check before measurement, rather than treated as proof that the agent could complete the tasks.
 
 | Candidate | Fit for this study | Decision |
 | --- | --- | --- |
@@ -18,7 +18,7 @@ HomeBank's package depends on GTK3 despite an older GTK2 statement in its descri
 
 ## Selected tasks
 
-Use three task types with three different fixture variants each: **nine proposed measured attempts**. Vary dates, references and amounts rather than repeating identical inputs. Freeze the task definitions, verifier and driver after the manual smoke test. These attempts are separate from the [published 100-attempt study](evaluation-methodology.md) and the new variation/control study.
+The selected design uses three task types with three different fixture variants each: **nine measured attempts in the original cohort**. Dates, references and amounts vary rather than repeating identical inputs. The task definitions, verifier and driver were frozen after the manual development smoke test. These attempts are separate from the [published 100-attempt study](evaluation-methodology.md) and the variation/control study.
 
 | Task | GUI operation | Required saved result |
 | --- | --- | --- |
@@ -36,8 +36,10 @@ Use the native XML backend. GnuCash documents it as built in, usually gzip-compr
 
 The model receives instructions and screenshots, with the existing bounded mouse/keyboard driver. It receives no file reader, SQL access, GnuCash bindings, shell or browser DOM. GnuCash does have programming interfaces; the claim is that those interfaces are unavailable to the agent, not that the application has no API. [GnuCash API documentation](https://www.wiki.gnucash.org/wiki/Using_the_API)
 
-Before scoring, build a separately tagged image with GnuCash installed using `--no-install-recommends`, start a fresh synthetic book and test saving/reopening it manually. Keep startup/import preferences isolated between attempts. Confirm the driver permits GnuCash's process-owned windows, menus and save dialogs as titles change. The package depends on WebKit for some features; these selected tasks exercise native registers and dialogs, not an embedded report view. [Package dependencies](https://packages.debian.org/bookworm/gnucash)
+A manual development smoke check opened a generated synthetic book, entered a supplies expense and saved a copy through the GUI. The retained `output/gnucash-preflight` artifact passes the independent semantic verifier, including its original-source check. This established one prepared GUI path; it did not test every key spelling the model might choose. The package depends on WebKit for some features; these selected tasks exercise native registers and dialogs, not an embedded report view. [Package dependencies](https://packages.debian.org/bookworm/gnucash)
 
-Retain the source book, saved book, source hashes, screenshots, action trace, request usage and independent verdict for every measured attempt, including failures. Publish no success rate until the attempts and artifact checks exist. These small synthetic cases can demonstrate interaction with a real application; they cannot establish reliability across arbitrary accounting software, production books or Windows desktops.
+The original measured cohort retained all nine failures and their complete USD 0.242528 model-cost estimate. In every trace the driver rejected the model's `Tab` key spelling while accepting `TAB`. None produced a verified requested result: six outputs were missing and three retained outputs failed semantic checks. All original source-preservation checks passed. A separately frozen repair cohort is planned with the same fixtures after correcting host key-name handling; it is not independent held-out evidence and cannot erase these failures.
+
+Retain source books, available saved books, source hashes, screenshots, action traces, usage and independent verdicts for every cohort. These small synthetic cases cannot establish reliability across arbitrary accounting software, production books or Windows desktops.
 
 The validation fixture uses GnuCash's displayed US short date format (MM/DD/YY). Task instructions include that representation alongside the ISO date to avoid ambiguity; this study does not test locale/date-format adaptation.
