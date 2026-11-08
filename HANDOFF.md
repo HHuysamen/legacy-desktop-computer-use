@@ -3,42 +3,44 @@ status: published
 updated: 2026-11-08
 updated_by: codex
 next_actions:
-  - Verify Google Search Console Search generative AI inclusion/inheritance and indexing when account access is available.
-  - Choose a broader follow-up study with held-out conditions and a second native desktop application.
-  - Keep future published changes on reviewed branches.
+  - Verify Search Console indexing and Search generative AI inclusion when account access is available.
+  - Use held-out inputs and layout variations for a future study.
+  - Preserve published evidence and use reviewed branches for substantive changes.
 blockers: []
 ---
 # Handoff
 
 ## Resume here
-- User approved public release on 2026-11-08. Demo repository is public: https://github.com/HHuysamen/legacy-desktop-computer-use.
-- Current branch is main; release commit 9429683 contains the 24-run evaluation, current article and narrated presentation.
+- Public repo: https://github.com/HHuysamen/legacy-desktop-computer-use. Study PR #1 merged with history preserved as befabbb.
 - Live article: https://www.henryhuysamen.com/writing/ledgerdesk-computer-use/.
-- Live evidence: https://www.henryhuysamen.com/demos/ledgerdesk/evaluation-24/index.html.
-- Website PR #2 merged as e1958f9 and initial production deployment 42480423926 succeeded.
+- Live methods: https://www.henryhuysamen.com/demos/ledgerdesk/methodology/.
+- Live evidence: https://www.henryhuysamen.com/demos/ledgerdesk/evaluation-100/.
+- Website PR #3 merged as d5f3e15; production deployment 42485648895 succeeded.
 - Website working clone: output/site-preview; canonical checkout: /Users/henryhuysamen/Projects/henryhuysamen.com.
-- Active media: examples/presentation/demo-narrated-v2.mp4, captions, poster and manifest. Raw production files remain under ignored output/narration/round-03.
-- Publishing/writing lessons are in the website repository at docs/WRITING_AND_PUBLISHING.md; demo integration notes are in docs/website-copy.md.
+- Current source/copy: docs/article.md, docs/evaluation-methodology.md, docs/desktop-use-cases.md, docs/validation.md.
+- Raw campaign: output/evaluation-100.json and output/evaluation-extension-76.json. Recheck and cost output are alongside them.
 
 ## Decisions and limits
-- All 24 actual model runs passed and all CSVs passed a separate recheck; eight runs per report. Separate pilot excluded.
-- Cost estimate: USD 0.878374 total; USD 0.036598917 per run; one task per workday over 20 workdays projects to USD 0.731978, model API only.
-- Original 116-file nine-run archive preserved; expanded evidence has 285 hashed files. Both archives and narrated assets are public.
-- Public demo CI passed 100 tests on Python 3.11 and 3.13. Website normal and preview builds passed all 11 checks.
-- Verified 11 public URLs with browser-compatible requests; article has no noindex, media hashes match, RSS/sitemap include the article.
-- Cloudflare browser-integrity rules reject some bare HTTP clients. Real Chrome and browser-compatible requests succeeded; security settings were not weakened.
-- Cloudflare-managed robots rules retain training-crawler restrictions while allowing generic search crawling.
-- Article uses the site's fonts, theme tokens, author metadata and responsive semantic workflow cards. VideoObject metadata and actual publication date are set.
-- Production assets are in website public/demos/ledgerdesk. Explicit draft-preview builds remain noindex.
-- No credentials are committed. Desktop containers stopped after evaluation.
+- Completed 100 attempts, ten per task: 99 passed, one failed, zero blocked. All 99 passes survived independent artifact recheck.
+- Added invoice lookup, contact update, draft invoice entry, synthetic receipt, CSV import, and real LibreOffice Calc/Writer tasks.
+- Original 24 reused plus 76 new; fixed inputs/layouts, synthetic data, no interactive operator correction during measured attempts.
+- First Calc run 20261108T125117-bdb21f failed at a native dropdown boundary. Failure retained; driver corrected before remaining63. Initial expansion12/13 passed; corrected63/63 passed.
+- Runtime source revisions c523e53 and e041a50 remain in public main history. Do not describe this as100 trials of one frozen driver.
+- Total model API estimate USD5.039898; new76 USD4.161524. Mean USD0.05039898/attempt; 20-workday illustration USD1.0079796. Hosting and earlier pilot excluded.
+- New archive has1292 hashed files. Original nine-run116 and 24-run285 hashes remain unchanged.
+- 220 Python tests passed locally and CI on3.11/3.13. Website15 checks pass in production and preview; desktop/mobile light/dark layouts checked.
+- Live article,100-run summary, cost, manifest and ODT match. Five sitemap URLs returned200 without noindex.
+- Seven search/retrieval UA probes returned200; training bots403. UA tests are not verified provider-IP access or proof of indexing.
+- Existing Cloudflare crawler policies retained. No credentials committed; desktop containers and release-check browser/server stopped.
+- Narrated-v2 media and original recordings unchanged. Root and website handoff files summarize current state; full evidence remains in the archives.
 
 ## Open questions
-- Search Console indexing and the Search generative AI inclusion setting remain unverified; public HTTP tests cannot establish them.
-- Cloudflare permits search/excerpts and blocks training; ai-input is unspecified. Clarify intended grounding policy before changing it.
+- Search Console indexing and account-level generative-AI inclusion remain unverified.
+- General reliability on unfamiliar inputs, layouts, applications and production data is not established.
 
 ## Recent sessions
-- 2026-11-08 (codex): Researched GEO and broader test design; live sitemap has four valid/indexable pages. Seven search/retrieval UA probes received200; training bots received403. Audit at output/geo-audit/access-audit.json; no live changes.
-- 2026-11-08 (codex): Published the approved article, narrated media and full reference archives; updated the public demo repo and transferred writing/publishing lessons to the website repo.
-- 2026-11-08 (codex): Added responsive workflow cards, author/SEO metadata and mobile navigation fix.
-- 2026-11-08 (codex): Extended evaluation to 24/24 verified runs and added monthly cost estimate.
-- 2026-11-08 (codex): Defined Computer Use and added AI Engineer / AI application wording.
+- 2026-11-08 (codex): Researched20 workflow categories; implemented7 additions, completed100 attempts, retained one failure, rechecked artifacts and published results/methods.
+- 2026-11-08 (codex): Audited public sitemap and crawler access; preserved training restrictions.
+- 2026-11-08 (codex): Published original approved article, narrated media and24-run archive.
+- 2026-11-08 (codex): Added responsive workflow cards, author metadata and mobile navigation fix.
+- 2026-11-08 (codex): Extended initial evaluation to24/24 verified runs with monthly cost example.
