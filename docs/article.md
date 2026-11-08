@@ -1,18 +1,18 @@
 # When browser agents aren't enough: automating a native desktop application
 
-Many useful business workflows still end with a person sitting in front of a desktop application: select a report, enter a date, inspect the preview and save a file. A supported integration can make that work straightforward. When an application exposes only its graphical interface, the automation problem changes.
+Many business workflows still end with someone at a desktop application: select a report, enter a date, inspect the preview and save a file. When the application exposes only a graphical interface, those ordinary steps become an automation problem.
 
 I built LedgerDesk to investigate a narrow question: **can an AI agent generate and export the right business report using only what a person sees on screen?**
 
-LedgerDesk is a small, fictional finance application built with Python and Tkinter. It has a report selector, date and tolerance fields, a results table and a CSV export confirmation. All its data is synthetic. The deliberately familiar interface makes the workflow easy to follow without introducing a real accounting system, customer information or production credentials.
+LedgerDesk is a fictional finance application built with Python and Tkinter. It has a report selector, parameter fields, a results table and a CSV export confirmation. Its familiar interface and synthetic data make the workflow easy to follow without customer information or production credentials.
 
-The project separates three things that are often blurred in AI demonstrations: what the model decided, what the software actually did and what independent checks can establish.
+The project separates model decisions, executed actions and independent verification.
 
 ## A native window, viewed through a browser
 
 The application runs in an isolated Linux desktop inside Docker. A local noVNC viewer lets a person watch or operate that desktop from a browser. Tkinter still draws the actual application window.
 
-That distinction matters. The agent has no DOM, browser selectors or application API. It receives screenshots and chooses coordinate-based clicks, typing, keypresses and scrolling through the OpenAI Responses computer tool. The implementation uses the SDK's `ComputerToolset` with a small desktop driver, following the official [computer-use integration](https://developers.openai.com/api/docs/guides/tools-computer-use-integration) and [driver guidance](https://developers.openai.com/api/docs/guides/tools-computer-use-sdk-drivers).
+The agent has no DOM, browser selectors or application API. It receives screenshots and chooses clicks, typing, keypresses and scrolling through the OpenAI Responses computer tool. The SDK's `ComputerToolset` connects to a small desktop driver, following the official [integration](https://developers.openai.com/api/docs/guides/tools-computer-use-integration) and [driver guidance](https://developers.openai.com/api/docs/guides/tools-computer-use-sdk-drivers).
 
 The controller translates those requested actions into input on the guest desktop. Fixed infrastructure code starts the environment and retrieves an exported file, but the model cannot select shell commands or use those infrastructure operations as tools. To complete the task, it must navigate the visible application.
 
@@ -46,19 +46,33 @@ Before and after an input, the driver checks the expected window and its focus. 
 
 Each attempt has action, request, time and estimated-cost limits. A pending safety approval stops the run. So do lost focus, missing observations and execution errors. Cost estimates are recorded when usage is available, and missing usage prevents continued spending based on a guessed balance. Provider billing remains authoritative.
 
-These controls give the exercise a defined boundary. They do not establish that arbitrary desktop automation is safe. The local viewer is intended for a trusted single user and is not a public remote desktop service.
+These controls bound the exercise to its fixture. The local viewer is for a trusted single user, not a public remote desktop service.
 
 ## Evidence a reader can inspect
 
 Each attempt produces a standalone HTML report with its task, outcome, CSV preview, screenshots, event trace, timing and available usage information. Model completion text is displayed separately from independent verification. The runner also attempts to record the guest desktop as a video.
 
-The intended website presentation combines this article with a standalone evidence report and a short desktop recording. Those release assets must come from a captured model run before publication. A source repository accompanies the article so readers can inspect the controls and reproduce the experiment.
+The [evaluation gallery](../examples/evaluation/index.html) contains the recorded attempts. Watch a [model-operated desktop run](../examples/evaluation/demo.mp4), open its [standalone evidence report](../examples/evaluation/sample-report.html), or inspect the [machine-readable results](../examples/evaluation/summary.json) and [artifact hashes](../examples/evaluation/manifest.json). The [source repository](https://github.com/HHuysamen/legacy-desktop-computer-use) contains the fixture, controller and verifier.
 
-## Live results pending
+## Nine evaluated runs, nine verified exports
 
-At the time of this draft, **92 automated tests pass locally**. They exercise report rules, fixture reset, CSV verification, export behavior, evidence rendering and mocked computer-tool interactions. All three reports have also been exported through the actual native GUI and independently verified using scripted plumbing checks. Those checks establish that the application and driver work; they do not measure model performance. The initial GitHub Actions run passed on Python 3.11 and 3.13 without an API key.
+On 8 November 2026, I ran each task three times using `gpt-6.1-terra` and OpenAI Python SDK 3.31.0. Every attempt began in a fresh, seeded guest with blank parameter fields. All nine exports passed verification and a subsequent independent recheck.
 
-Live model results remain pending: the first request was rejected because the configured API project had no credits, before any agent desktop action. This section will report the tested environment, model, number of attempts per task, verified outcomes, failures, timings and available cost estimates after execution. A successful run will show that this particular task completed correctly under its recorded conditions. Any broader claim will require further evidence.
+| Task | Verified | Median elapsed | Estimated cost, three runs |
+| --- | ---: | ---: | ---: |
+| Monthly revenue | 3/3 | 27.853 s | USD 0.106752 |
+| Overdue invoices | 3/3 | 25.875 s | USD 0.118259 |
+| Reconciliation exceptions | 3/3 | 25.214 s | USD 0.107082 |
+
+The nine-run median was **25.481 seconds**, with 7–8 desktop actions and 6–7 model requests per attempt. There were no failed or blocked attempts in this evaluation. The combined standard-rate API estimate was **USD 0.332093**. Cache read/write effects and provider billing may change the actual charge.
+
+One overdue-invoice run scrolled the results table before exporting, accounting for its eighth action. The live input decisions came from model computer-tool calls, not a fixed macro.
+
+A successful pilot, excluded from the table, added USD 0.035597: **USD 0.367690** estimated across ten funded runs. Earlier missing-key and quota blocks are retained separately; they were setup failures before agent interaction, not part of the nine-run evaluation. Their missing usage is not treated as zero cost.
+
+The live environment was a Linux arm64/X11 guest at 1200×900, running Python 3.12 under Docker Engine 29.9.1 on macOS 26.6.2/Apple silicon, with Python 3.13 on the host. Separately, 96 automated tests passed locally, and the initial CI run passed on Python 3.11 and 3.13.
+
+This is evidence of repeatability for one fixed dataset, layout and environment. It does not test unfamiliar applications, changing screen layouts or long workflows. Those are separate experiments.
 
 ## The business question behind the demo
 

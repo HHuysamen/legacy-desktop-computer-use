@@ -8,9 +8,19 @@ LedgerDesk is a real Tkinter desktop window inside an isolated Linux desktop. Th
 
 ## Validation status
 
-Local validation on 8 November 2026: **92 automated tests passed**, and all three reports were exported through the real GUI and independently verified (6, 7 and 4 rows respectively). The guest-only recorder and localhost VNC viewer were also checked. Tested environment: macOS 26.6.2 on Apple silicon, Docker Engine 29.9.1, Linux arm64/X11 guest, Python 3.13 host and Python 3.12 guest. The initial GitHub Actions run passed on Python 3.11 and 3.13.
+On 8 November 2026, **all 9 evaluated model runs produced independently verified CSVs**: three attempts per task, with no failed or blocked attempts in that evaluation. The fixed-fixture results were:
 
-**Live model validation is pending:** the configured API project returned `credit_balance_exhausted`. The first live attempt executed no desktop actions. The GUI checks above used scripted input to test the plumbing; they are not AI success results. No model success rate is claimed. The nine planned live attempts, agent recording and public release remain outstanding. See [validation details](docs/validation.md) and the [earlier credential-free setup report](examples/setup-blocked-report.html).
+| Task | Verified | Median elapsed | Estimated API cost, all 3 runs |
+| --- | ---: | ---: | ---: |
+| Monthly revenue | 3/3 | 27.853 s | USD 0.106752 |
+| Overdue invoices | 3/3 | 25.875 s | USD 0.118259 |
+| Reconciliation exceptions | 3/3 | 25.214 s | USD 0.107082 |
+
+Across the nine runs, median elapsed time was **25.481 seconds**, with **7–8 desktop actions** and **6–7 model requests** per run. Their combined standard-rate API estimate was **USD 0.332093**. A separate successful pilot is excluded from these statistics; its estimate was USD 0.035597, bringing the ten funded runs to USD 0.367690. Earlier missing-key and quota blocks are recorded separately, with no zero-cost assumption where usage was unavailable.
+
+**[Open the evaluation](examples/evaluation/index.html)** · [Watch the model run](examples/evaluation/demo.mp4) · [Inspect a standalone report](examples/evaluation/sample-report.html) · [Read the article](docs/article.md)
+
+The nine CSVs also passed a subsequent independent recheck. **96 automated tests passed locally**; the initial GitHub Actions run passed on Python 3.11 and 3.13. Live configuration: `gpt-6.1-terra`, OpenAI Python SDK 3.31.0, macOS 26.6.2 on Apple silicon, Docker Engine 29.9.1, a Linux arm64/X11 guest at 1200×900, Python 3.13 host and Python 3.12 guest. These results demonstrate repeatability for this fixture and layout, not general desktop reliability. See [validation details](docs/validation.md), [machine-readable results](examples/evaluation/summary.json) and the [artifact hashes](examples/evaluation/manifest.json).
 
 ![The native LedgerDesk fixture, before a task starts](examples/ledgerdesk.png)
 
@@ -75,7 +85,7 @@ python -m ledgerdesk run \
   --timeout 300
 ```
 
-The budget is an estimated API-cost guard, not a provider billing cap. Usage and estimates depend on what the API returns; provider billing remains authoritative. Conservative uncached rates were checked against [OpenAI pricing](https://developers.openai.com/api/docs/pricing) on 8 November 2026. An in-flight request can complete after the estimate approaches its limit. The time limit is cooperative: an already-running desktop operation can take up to its 30-second transport timeout; subsequent actions are refused.
+The budget is an estimated API-cost guard, not a provider billing cap. Standard rates were checked against [OpenAI pricing](https://developers.openai.com/api/docs/pricing) on 8 November 2026. The estimate applies those rates to reported input and output tokens; cache reads, cache writes and provider billing rules can change the actual charge. An in-flight request can complete after the estimate approaches its limit. The time limit is cooperative: an already-running desktop operation can take up to its 30-second transport timeout; subsequent actions are refused.
 
 Every attempt produces a directory under `output/runs/`. Open its `report.html` to review the task, independent verification, CSV preview, captured screenshots, action trace, timing and available usage information. The HTML embeds its images and can be shared as one file after reviewing its contents.
 
