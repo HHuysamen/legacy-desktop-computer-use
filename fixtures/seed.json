@@ -1,0 +1,49 @@
+{
+  "description": "Entirely synthetic LedgerDesk demonstration records. Currency: USD; amounts are net of tax and stored in integer cents.",
+  "customers": [
+    {"id": 1, "name": "Alder Robotics"},
+    {"id": 2, "name": "Beacon Paperworks"},
+    {"id": 3, "name": "Cedar Trail Foods"},
+    {"id": 4, "name": "Delta Quay Services"},
+    {"id": 5, "name": "Ember Loom Textiles"},
+    {"id": 6, "name": "Fernlight Design"}
+  ],
+  "invoices": [
+    {"invoice_number": "INV-260901", "customer_id": 1, "invoice_date": "2026-09-01", "due_date": "2026-09-30", "net_cents": 120000, "paid_cents": 120000, "status": "issued"},
+    {"invoice_number": "INV-260902", "customer_id": 2, "invoice_date": "2026-09-02", "due_date": "2026-09-20", "net_cents": 100000, "paid_cents": 100000, "status": "issued"},
+    {"invoice_number": "INV-260903", "customer_id": 3, "invoice_date": "2026-09-03", "due_date": "2026-09-25", "net_cents": 175000, "paid_cents": 0, "status": "issued"},
+    {"invoice_number": "INV-260904", "customer_id": 4, "invoice_date": "2026-09-04", "due_date": "2026-09-24", "net_cents": 90000, "paid_cents": 90000, "status": "issued"},
+    {"invoice_number": "INV-260905", "customer_id": 5, "invoice_date": "2026-09-05", "due_date": "2026-09-26", "net_cents": 125000, "paid_cents": 125000, "status": "issued"},
+    {"invoice_number": "INV-260906", "customer_id": 6, "invoice_date": "2026-09-06", "due_date": "2026-09-27", "net_cents": 70000, "paid_cents": 70000, "status": "issued"},
+    {"invoice_number": "INV-260912", "customer_id": 3, "invoice_date": "2026-09-12", "due_date": "2026-09-15", "net_cents": 777777, "paid_cents": 0, "status": "void"},
+    {"invoice_number": "INV-260915", "customer_id": 1, "invoice_date": "2026-09-15", "due_date": "2026-10-15", "net_cents": 85000, "paid_cents": 25000, "status": "issued"},
+    {"invoice_number": "INV-260916", "customer_id": 2, "invoice_date": "2026-09-16", "due_date": "2026-10-10", "net_cents": 100000, "paid_cents": 60000, "status": "issued"},
+    {"invoice_number": "INV-260917", "customer_id": 3, "invoice_date": "2026-09-17", "due_date": "2026-10-17", "net_cents": 25000, "paid_cents": 0, "status": "issued"},
+    {"invoice_number": "INV-260918", "customer_id": 4, "invoice_date": "2026-09-18", "due_date": "2026-10-14", "net_cents": 80000, "paid_cents": 0, "status": "issued"},
+    {"invoice_number": "INV-260919", "customer_id": 5, "invoice_date": "2026-09-19", "due_date": "2026-10-19", "net_cents": 10000, "paid_cents": 0, "status": "issued"},
+    {"invoice_number": "INV-260920", "customer_id": 6, "invoice_date": "2026-09-20", "due_date": "2026-10-20", "net_cents": 80000, "paid_cents": 0, "status": "issued"},
+    {"invoice_number": "INV-260928", "customer_id": 2, "invoice_date": "2026-09-28", "due_date": "2026-10-28", "net_cents": 40000, "paid_cents": 0, "status": "issued"},
+    {"invoice_number": "INV-260929", "customer_id": 3, "invoice_date": "2026-09-29", "due_date": "2026-10-01", "net_cents": 90000, "paid_cents": 0, "status": "void"},
+    {"invoice_number": "INV-260930-A", "customer_id": 1, "invoice_date": "2026-09-30", "due_date": "2026-10-30", "net_cents": 35000, "paid_cents": 0, "status": "issued"},
+    {"invoice_number": "INV-260930-D", "customer_id": 4, "invoice_date": "2026-09-30", "due_date": "2026-10-31", "net_cents": 10000, "paid_cents": 0, "status": "issued"},
+    {"invoice_number": "INV-260930-E", "customer_id": 5, "invoice_date": "2026-09-30", "due_date": "2026-10-31", "net_cents": 15000, "paid_cents": 0, "status": "issued"},
+    {"invoice_number": "INV-260930-F", "customer_id": 6, "invoice_date": "2026-09-30", "due_date": "2026-09-30", "net_cents": 0, "paid_cents": 0, "status": "issued"},
+    {"invoice_number": "INV-260831", "customer_id": 1, "invoice_date": "2026-08-31", "due_date": "2026-09-15", "net_cents": 999999, "paid_cents": 0, "status": "issued"},
+    {"invoice_number": "INV-261001", "customer_id": 2, "invoice_date": "2026-10-01", "due_date": "2026-10-31", "net_cents": 999999, "paid_cents": 0, "status": "issued"},
+    {"invoice_number": "INV-260801", "customer_id": 4, "invoice_date": "2026-08-01", "due_date": "2026-08-31", "net_cents": 50000, "paid_cents": 0, "status": "issued"},
+    {"invoice_number": "INV-261015", "customer_id": 5, "invoice_date": "2026-10-15", "due_date": "2026-10-15", "net_cents": 22000, "paid_cents": 0, "status": "issued"},
+    {"invoice_number": "INV-260820", "customer_id": 6, "invoice_date": "2026-08-20", "due_date": "2026-09-19", "net_cents": 30000, "paid_cents": 15000, "status": "issued"},
+    {"invoice_number": "INV-261014", "customer_id": 1, "invoice_date": "2026-10-14", "due_date": "2026-10-14", "net_cents": 40000, "paid_cents": 0, "status": "issued"}
+  ],
+  "transactions": [
+    {"transaction_id": "TXN-001", "recorded_cents": 120000, "expected_cents": 120000},
+    {"transaction_id": "TXN-002", "recorded_cents": 85001, "expected_cents": 85000},
+    {"transaction_id": "TXN-003", "recorded_cents": 99999, "expected_cents": 100000},
+    {"transaction_id": "TXN-004", "recorded_cents": 175002, "expected_cents": 175000},
+    {"transaction_id": "TXN-005", "recorded_cents": 79998, "expected_cents": 80000},
+    {"transaction_id": "TXN-006", "recorded_cents": 125500, "expected_cents": 125000},
+    {"transaction_id": "TXN-007", "recorded_cents": 69000, "expected_cents": 70000},
+    {"transaction_id": "TXN-008", "recorded_cents": 0, "expected_cents": 0},
+    {"transaction_id": "TXN-009", "recorded_cents": -2499, "expected_cents": -2500}
+  ]
+}

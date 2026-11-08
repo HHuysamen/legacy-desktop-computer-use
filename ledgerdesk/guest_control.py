@@ -1,0 +1,135 @@
+"""Fixed screenshot/input transport inside the isolated guest; not an agent tool."""
+from __future__ import annotations
+
+import base64
+from contextlib import redirect_stdout
+import io
+import json
+from pathlib import Path
+import subprocess
+import sys
+import time
+
+TITLE = "LedgerDesk — Demo Finance"
+WIDTH, HEIGHT = 1200, 900
+KEYS = {
+    "ENTER": "enter", "RETURN": "enter", "TAB": "tab", "ESC": "esc", "ESCAPE": "esc",
+    "BACKSPACE": "backspace", "DELETE": "delete", "SPACE": "space",
+    "UP": "up", "DOWN": "down", "LEFT": "left", "RIGHT": "right",
+    "ARROWUP": "up", "ARROWDOWN": "down", "ARROWLEFT": "left", "ARROWRIGHT": "right",
+    "HOME": "home", "END": "end", "PAGEUP": "pageup", "PAGEDOWN": "pagedown",
+    "CTRL": "ctrl", "CONTROL": "ctrl", "SHIFT": "shift", "A": "a",
+}
+
+
+def command(*args: str) -> str:
+    return subprocess.check_output(args, text=True, timeout=2).strip()
+
+
+def window_bounds() -> tuple[int, int, int, int]:
+    """Read window-manager metadata only; never inspect widgets or app data."""
+    expected_pid = int(Path("/tmp/ledgerdesk/app.pid").read_text().strip())
+    windows = command("wmctrl", "-lpG").splitlines()
+    matches = [line.split(None, 8) for line in windows if line.endswith(TITLE)]
+    matches = [parts for parts in matches if len(parts) == 9 and int(parts[2]) == expected_pid]
+    if len(matches) != 1:
+        raise RuntimeError("LedgerDesk window missing or ambiguous")
+    parts = matches[0]
+    active = int(command("xdotool", "getactivewindow"))
+    if active != int(parts[0], 16):
+        raise RuntimeError("LedgerDesk lost focus")
+    bounds = tuple(map(int, parts[3:7]))
+    x, y, width, height = bounds
+    if width <= 0 or height <= 0 or x < 0 or y < 0 or x + width > WIDTH or y + height > HEIGHT:
+        raise RuntimeError("LedgerDesk client area is outside the captured display")
+    return bounds
+
+
+def validate_action(action: dict, bounds: tuple[int, int, int, int]) -> None:
+    kind = action.get("type")
+    if kind not in {"click", "double_click", "move", "scroll", "type", "keypress", "wait", "screenshot"}:
+        raise ValueError("Unsupported desktop action")
+    if kind in {"click", "double_click", "move", "scroll"}:
+        x, y = action.get("x"), action.get("y")
+        bx, by, bw, bh = bounds
+        if type(x) is not int or type(y) is not int or not (bx <= x < bx + bw and by <= y < by + bh):
+            raise ValueError("Coordinates outside LedgerDesk client area")
+    if kind in {"click", "double_click", "move", "scroll"} and action.get("keys"):
+        raise ValueError("Pointer modifiers are disabled")
+    if kind == "click" and action.get("button", "left") != "left":
+        raise ValueError("Only left clicks are allowed")
+    if kind == "scroll":
+        for axis in ("scroll_x", "scroll_y"):
+            value = action.get(axis, 0)
+            if type(value) is not int or abs(value) > 1500:
+                raise ValueError("Scroll distance exceeds limit")
+    if kind == "type":
+        value = action.get("text", "")
+        if not isinstance(value, str) or len(value) > 100 or any(ord(c) < 32 or ord(c) > 126 for c in value):
+            raise ValueError("Only short printable ASCII parameter values are allowed")
+    if kind == "keypress":
+        keys = action.get("keys", [])
+        if not isinstance(keys, list) or not keys or len(keys) > 2 or any(k not in KEYS for k in keys):
+            raise ValueError("Unsupported keys")
+        if len(keys) == 2 and keys not in (["CTRL", "A"], ["CONTROL", "A"], ["SHIFT", "TAB"]):
+            raise ValueError("Unsupported key combination")
+        if len(keys) == 1 and keys[0] in {"CTRL", "CONTROL", "SHIFT", "A"}:
+            raise ValueError("Standalone modifier or letter is disabled")
+
+
+def execute(action: dict) -> dict:
+    import pyautogui
+    import mss
+    from PIL import Image
+    bounds = window_bounds()
+    validate_action(action, bounds)
+    kind = action["type"]
+    pyautogui.PAUSE = 0.08
+    pyautogui.FAILSAFE = True
+    if kind == "click":
+        pyautogui.click(action["x"], action["y"])
+    elif kind == "double_click":
+        pyautogui.doubleClick(action["x"], action["y"], interval=0.12)
+    elif kind == "move":
+        pyautogui.moveTo(action["x"], action["y"])
+    elif kind == "scroll":
+        pyautogui.moveTo(action["x"], action["y"])
+        pyautogui.scroll(-round(action.get("scroll_y", 0) / 100))
+        pyautogui.hscroll(round(action.get("scroll_x", 0) / 100))
+    elif kind == "type":
+        pyautogui.write(action["text"], interval=0.025)
+    elif kind == "keypress":
+        pyautogui.hotkey(*(KEYS[k] for k in action["keys"]))
+    elif kind == "wait":
+        time.sleep(0.5)
+    time.sleep(0.12)
+    # A lost focus after input stops the next action and this observation.
+    window_bounds()
+    if kind == "screenshot":
+        with mss.mss() as capture:
+            shot = capture.grab({"left": 0, "top": 0, "width": WIDTH, "height": HEIGHT})
+        image = Image.frombytes("RGB", shot.size, shot.rgb)
+        stream = io.BytesIO()
+        image.save(stream, format="PNG")
+        return {"png": base64.b64encode(stream.getvalue()).decode()}
+    return {"ok": True}
+
+
+def main() -> None:
+    try:
+        if sys.argv[1:] == ["check"]:
+            window_bounds()
+            print("ready")
+            return
+        action = json.loads(sys.stdin.read(16384))
+        # Xlib can print startup warnings; stdout is reserved for transport JSON.
+        with redirect_stdout(sys.stderr):
+            result = execute(action)
+        print(json.dumps(result))
+    except Exception as error:
+        print(json.dumps({"error": f"{type(error).__name__}: {error}"}))
+        raise SystemExit(1)
+
+
+if __name__ == "__main__":
+    main()

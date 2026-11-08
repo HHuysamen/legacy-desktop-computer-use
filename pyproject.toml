@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "legacy-desktop-computer-use"
+version = "0.1.0"
+description = "Screenshot-only OpenAI computer use against a fictional native finance app"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = ["openai==3.31.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+desktop = ["PyAutoGUI==0.9.54", "Pillow>=11,<13", "mss>=10,<11"]
+
+[project.scripts]
+ledgerdesk = "ledgerdesk.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["ledgerdesk"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"fixtures/seed.json" = "ledgerdesk/fixtures/seed.json"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

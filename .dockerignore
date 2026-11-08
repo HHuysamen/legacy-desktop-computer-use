@@ -1,0 +1,8 @@
+*
+!ledgerdesk/
+!ledgerdesk/*.py
+!fixtures/
+!fixtures/seed.json
+!docker/
+!docker/Dockerfile
+!docker/start-desktop.sh

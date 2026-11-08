@@ -1,0 +1,44 @@
+name: ledgerdesk-demo
+services:
+  desktop:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: ledgerdesk-demo:local
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=256m
+      - /home/demo:rw,noexec,nosuid,size=32m,uid=1000,gid=1000
+    networks: [desktop]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    shm_size: 128m
+    init: true
+    healthcheck:
+      test: [CMD, python, -m, ledgerdesk.guest_control, check]
+      interval: 2s
+      timeout: 2s
+      retries: 15
+  viewer:
+    image: ledgerdesk-demo:local
+    command: [websockify, --web=/usr/share/novnc, "6080", "desktop:5900"]
+    depends_on:
+      desktop:
+        condition: service_healthy
+    ports: ["127.0.0.1:6080:6080"]
+    networks: [desktop, viewer]
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    init: true
+networks:
+  desktop:
+    internal: true
+    ipam:
+      config:
+        - subnet: ${LEDGERDESK_DESKTOP_SUBNET:-10.239.20.0/24}
+  viewer:
+    ipam:
+      config:
+        - subnet: ${LEDGERDESK_VIEWER_SUBNET:-10.239.21.0/24}
