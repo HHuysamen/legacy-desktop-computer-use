@@ -5,6 +5,7 @@ import base64
 from contextlib import redirect_stdout
 import io
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -19,7 +20,12 @@ KEYS = {
     "ARROWUP": "up", "ARROWDOWN": "down", "ARROWLEFT": "left", "ARROWRIGHT": "right",
     "HOME": "home", "END": "end", "PAGEUP": "pageup", "PAGEDOWN": "pagedown",
     "CTRL": "ctrl", "CONTROL": "ctrl", "SHIFT": "shift", "A": "a",
+    "S": "s", "H": "h",
 }
+
+
+def is_office() -> bool:
+    return os.environ.get("LEDGERDESK_TASK") in {"calc-sort-export", "writer-find-replace"}
 
 
 def command(*args: str) -> str:
@@ -29,13 +35,18 @@ def command(*args: str) -> str:
 def window_bounds() -> tuple[int, int, int, int]:
     """Read window-manager metadata only; never inspect widgets or app data."""
     expected_pid = int(Path("/tmp/ledgerdesk/app.pid").read_text().strip())
+    if expected_pid <= 1:
+        raise RuntimeError("Invalid target process identity")
     windows = command("wmctrl", "-lpG").splitlines()
-    matches = [line.split(None, 8) for line in windows if line.endswith(TITLE)]
+    matches = [line.split(None, 8) for line in windows if is_office() or line.endswith(TITLE)]
     matches = [parts for parts in matches if len(parts) == 9 and int(parts[2]) == expected_pid]
+    active = int(command("xdotool", "getactivewindow"))
+    if is_office():
+        # Native application dialogs are allowed only within the same process.
+        matches = [parts for parts in matches if int(parts[0], 16) == active]
     if len(matches) != 1:
         raise RuntimeError("LedgerDesk window missing or ambiguous")
     parts = matches[0]
-    active = int(command("xdotool", "getactivewindow"))
     if active != int(parts[0], 16):
         raise RuntimeError("LedgerDesk lost focus")
     bounds = tuple(map(int, parts[3:7]))
@@ -69,11 +80,15 @@ def validate_action(action: dict, bounds: tuple[int, int, int, int]) -> None:
             raise ValueError("Only short printable ASCII parameter values are allowed")
     if kind == "keypress":
         keys = action.get("keys", [])
-        if not isinstance(keys, list) or not keys or len(keys) > 2 or any(k not in KEYS for k in keys):
+        if not isinstance(keys, list) or not keys or len(keys) > 3 or any(k not in KEYS for k in keys):
             raise ValueError("Unsupported keys")
-        if len(keys) == 2 and keys not in (["CTRL", "A"], ["CONTROL", "A"], ["SHIFT", "TAB"]):
+        combinations = [["CTRL", "A"], ["CONTROL", "A"], ["SHIFT", "TAB"]]
+        if is_office():
+            combinations += [[modifier, key] for modifier in ("CTRL", "CONTROL") for key in ("S", "H", "HOME", "END")]
+            combinations += [[modifier, "SHIFT", "S"] for modifier in ("CTRL", "CONTROL")]
+        if len(keys) > 1 and keys not in combinations:
             raise ValueError("Unsupported key combination")
-        if len(keys) == 1 and keys[0] in {"CTRL", "CONTROL", "SHIFT", "A"}:
+        if len(keys) == 1 and keys[0] in {"CTRL", "CONTROL", "SHIFT", "A", "S", "H"}:
             raise ValueError("Standalone modifier or letter is disabled")
 
 

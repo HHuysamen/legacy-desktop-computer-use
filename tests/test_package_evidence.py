@@ -4,17 +4,20 @@ from pathlib import Path
 
 import pytest
 
-from scripts.package_evidence import package_evidence, TASKS
+from scripts.package_evidence import ALL_TASKS, OFFICE_SOURCES, STATE_TASKS, package_evidence, TASKS
 
 
-def evaluation_fixture(tmp_path, count=9, filename="evaluation.json"):
+def evaluation_fixture(tmp_path, count=9, filename="evaluation.json", tasks=TASKS):
     output = tmp_path / "output"
     entries = []
     for index in range(count):
         run_dir = output / "runs" / f"run-{index}"
         (run_dir / "screenshots").mkdir(parents=True, exist_ok=True)
         passed = index != 8
-        metadata = {"id": f"run-{index}", "task_id": TASKS[index % 3], "status": "passed" if passed else "failed", "finished_at": "2026-11-08T00:00:00Z", "elapsed_seconds": index + 10, "action_count": index + 1, "request_count": index + 2, "estimated_cost_usd": 0.01 if passed else None, "usage": {"complete": passed}}
+        task_id = tasks[index % len(tasks)]
+        metadata = {"id": f"run-{index}", "task_id": task_id, "status": "passed" if passed else "failed", "finished_at": "2026-11-08T00:00:00Z", "elapsed_seconds": index + 10, "action_count": index + 1, "request_count": index + 2, "estimated_cost_usd": 0.01 if passed else None, "usage": {"complete": passed}}
+        if tasks != TASKS:
+            metadata["application"] = "LibreOffice" if task_id in OFFICE_SOURCES else "LedgerDesk"
         (run_dir / "run.json").write_text(json.dumps(metadata))
         (run_dir / "events.jsonl").write_text('{"type":"response","text":"<script>synthetic</script>"}\n')
         (run_dir / "report.html").write_text(f"<!doctype html>Run {index}")
@@ -24,10 +27,20 @@ def evaluation_fixture(tmp_path, count=9, filename="evaluation.json"):
         (run_dir / "recording.mp4").write_bytes(b"example recording")
         (run_dir / "excluded-secret.env").write_text("MUST NOT BE PACKAGED")
         if passed:
-            (run_dir / "export.csv").write_text("customer,revenue\nSynthetic,1.00\n")
+            if task_id == "writer-find-replace":
+                (run_dir / "export.odt").write_bytes(b"verified edited document")
+            else:
+                (run_dir / "export.csv").write_text("customer,revenue\nSynthetic,1.00\n")
+            if task_id in STATE_TASKS:
+                (run_dir / "final.db").write_bytes(b"verified final database")
+        if task_id in OFFICE_SOURCES:
+            (run_dir / OFFICE_SOURCES[task_id]).write_bytes(b"original office input")
         entries.append({"run_dir": str(run_dir.relative_to(tmp_path)), **metadata})
     path = output / filename
-    path.write_text(json.dumps({"planned_attempts": count, "completed_attempts": count, "runs": entries}))
+    evaluation = {"planned_attempts": count, "completed_attempts": count, "runs": entries}
+    if tasks != TASKS:
+        evaluation["task_ids"] = list(tasks)
+    path.write_text(json.dumps(evaluation))
     return path
 
 
@@ -142,4 +155,69 @@ def test_rejects_unbalanced_extension(tmp_path):
     metadata["task_id"] = TASKS[1]
     run_file.write_text(json.dumps(metadata))
     with pytest.raises(ValueError, match="exactly 8 attempts"):
+        package_evidence(source, tmp_path / "examples")
+
+
+def test_packages_balanced_hundred_attempt_plan_without_dropping_failures(tmp_path):
+    source = evaluation_fixture(tmp_path, count=100, tasks=ALL_TASKS)
+    data = json.loads(source.read_text())
+    # Start the input list with an office task; prefer an original report video.
+    data["runs"].reverse()
+    source.write_text(json.dumps(data))
+    destination = package_evidence(source, tmp_path / "examples")
+    summary = json.loads((destination / "summary.json").read_text())
+    assert summary["task_ids"] == list(ALL_TASKS)
+    assert summary["overall"]["attempts"] == 100
+    assert summary["overall"]["verified"] == 99
+    assert summary["overall"]["failed"] == 1
+    assert all(stats["attempts"] == 10 for stats in summary["tasks"].values())
+    featured = next(run for run in summary["runs"] if run["id"] == summary["demo_run_id"])
+    assert featured["task_id"] in TASKS
+    assert (destination / "runs" / "run-8" / "run.json").exists()
+    assert (destination / "runs" / "run-3" / "final.db").read_bytes() == b"verified final database"
+    html = (destination / "index.html").read_text()
+    assert "10 desktop tasks. 10 attempts each." in html
+    assert "LedgerDesk, LibreOffice" in html
+    assert "99 of 100 attempts" in html
+    assert "Three reporting tasks" not in html
+
+
+def test_writer_document_and_original_input_are_packaged_instead_of_csv(tmp_path):
+    source = evaluation_fixture(tmp_path, count=2, tasks=("writer-find-replace", "monthly-revenue"))
+    destination = package_evidence(source, tmp_path / "examples")
+    writer = destination / "runs" / "run-0"
+    assert (writer / "export.odt").read_bytes() == b"verified edited document"
+    assert (writer / "writer-source.odt").read_bytes() == b"original office input"
+    assert not (writer / "export.csv").exists()
+    manifest = json.loads((destination / "manifest.json").read_text())
+    hashes = {item["path"]: item["sha256"] for item in manifest["files"]}
+    assert hashes["runs/run-0/export.odt"] == hashlib.sha256(b"verified edited document").hexdigest()
+    assert hashes["runs/run-0/writer-source.odt"] == hashlib.sha256(b"original office input").hexdigest()
+
+
+@pytest.mark.parametrize("task_id, filename", [
+    ("writer-find-replace", "export.odt"),
+    ("writer-find-replace", "writer-source.odt"),
+    ("calc-sort-export", "calc-source.ods"),
+    ("customer-update", "final.db"),
+])
+def test_new_artifacts_cannot_escape_the_run_via_symlink(tmp_path, task_id, filename):
+    source = evaluation_fixture(tmp_path, count=2, tasks=(task_id, "monthly-revenue"))
+    artifact = tmp_path / "output" / "runs" / "run-0" / filename
+    outside = tmp_path / "outside"
+    outside.write_bytes(artifact.read_bytes())
+    artifact.unlink()
+    artifact.symlink_to(outside)
+    with pytest.raises(ValueError, match="outside its run directory"):
+        package_evidence(source, tmp_path / "examples")
+    assert not (tmp_path / "examples").exists()
+
+
+@pytest.mark.parametrize("declared", [[], ["unknown"], [TASKS[0], TASKS[0]], "monthly-revenue"])
+def test_rejects_invalid_declared_task_plan(tmp_path, declared):
+    source = evaluation_fixture(tmp_path)
+    data = json.loads(source.read_text())
+    data["task_ids"] = declared
+    source.write_text(json.dumps(data))
+    with pytest.raises(ValueError, match="unique supported tasks"):
         package_evidence(source, tmp_path / "examples")

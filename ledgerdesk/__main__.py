@@ -20,6 +20,18 @@ from .reports import REPORTS
 from .seed_data import reset_database
 from .tasks import task_instruction
 from .verify import verify_csv
+from .workflows import WORKFLOWS, initialize_workflow_data, workflow_instruction, verify_workflow
+from .office_tasks import OFFICE_TASKS, office_instruction, verify_office
+
+TASKS = {**REPORTS, **WORKFLOWS, **{k: v["name"] for k, v in OFFICE_TASKS.items()}}
+
+
+def instruction_for(task, as_of):
+    if task in WORKFLOWS:
+        return workflow_instruction(task)
+    if task in OFFICE_TASKS:
+        return office_instruction(task)
+    return task_instruction(task, as_of)
 
 
 def load_env(path: Path = ROOT / ".env") -> None:
@@ -52,7 +64,8 @@ def session_lock():
             fcntl.flock(stream, fcntl.LOCK_UN)
 
 
-def start_desktop(*, build: bool = False, reset: bool = False) -> None:
+def start_desktop(*, build: bool = False, reset: bool = False, task: str = "monthly-revenue") -> None:
+    os.environ["LEDGERDESK_TASK"] = task
     if build:
         subprocess.run(["docker", "compose", "-f", str(ROOT / "compose.yaml"), "build"], check=True)
     args = ["up", "-d", "--wait", "--wait-timeout", "60"]
@@ -62,13 +75,14 @@ def start_desktop(*, build: bool = False, reset: bool = False) -> None:
 
 
 def collect_export(run_dir: Path, report_id: str) -> Path:
-    if report_id not in REPORTS:
+    if report_id not in TASKS:
         raise ValueError("Unknown report")
-    target = run_dir / "export.csv"
+    suffix = ".odt" if report_id == "writer-find-replace" else ".csv"
+    target = run_dir / ("export" + suffix)
     # Docker's archive endpoint cannot reliably copy tmpfs files. This trusted,
     # fixed-path read happens after the model loop; it is never an agent tool.
-    exported = compose("exec", "-T", "desktop", "cat", f"/tmp/ledgerdesk/exports/{report_id}.csv").stdout
-    target.write_text(exported, encoding="utf-8")
+    exported = subprocess.run(["docker", "compose", "-f", str(ROOT / "compose.yaml"), "exec", "-T", "desktop", "cat", f"/tmp/ledgerdesk/exports/{report_id}{suffix}"], capture_output=True, check=True, timeout=30)
+    target.write_bytes(exported.stdout)
     return target
 
 
@@ -107,34 +121,49 @@ def record_stop(run_dir: Path) -> bool:
 
 
 def run_task(args) -> tuple[Path, dict]:
-    from .computer_agent import run_agent
+    from .computer_agent import run_agent, WORKFLOW_SYSTEM_INSTRUCTION, SYSTEM_INSTRUCTION
     identifier = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S") + "-" + uuid4().hex[:6]
     run_dir = ROOT / "output" / "runs" / identifier
     run_dir.mkdir(parents=True)
     started = time.monotonic()
     metadata = {
-        "id": identifier, "task_id": args.task, "instruction": task_instruction(args.task, args.as_of),
+        "id": identifier, "task_id": args.task, "instruction": instruction_for(args.task, args.as_of),
         "started_at": datetime.now(timezone.utc).isoformat(), "as_of": args.as_of,
         "model": args.model, "status": "blocked", "error": None,
         "action_count": 0, "request_count": 0,
         "limits": {"actions": args.max_actions, "requests": args.max_requests, "seconds": args.timeout, "budget_usd": args.budget_usd},
         "fixture_sha256": hashlib.sha256((ROOT / "fixtures" / "seed.json").read_bytes()).hexdigest(),
         "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+        "application": "LibreOffice" if args.task in OFFICE_TASKS else "LedgerDesk",
+        "protocol": "expanded-100-v1",
+        "source_revision": subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip(),
+        "source_tree_sha256": hashlib.sha256(b"".join(
+            str(path.relative_to(ROOT)).encode() + b"\0" + path.read_bytes()
+            for path in sorted((ROOT / "ledgerdesk").glob("*.py"))
+        )).hexdigest(),
     }
     recording = False
     try:
         if not os.environ.get("OPENAI_API_KEY"):
             raise RuntimeError("OPENAI_API_KEY is not configured; no API request made")
-        start_desktop(reset=True)
+        start_desktop(reset=True, task=args.task)
         guest_hash = compose("exec", "-T", "desktop", "sha256sum", "/opt/ledgerdesk/fixtures/seed.json").stdout.split()[0]
         if guest_hash != metadata["fixture_sha256"]:
             raise RuntimeError("Desktop fixture differs from local verifier fixture; rebuild with the desktop command")
         metadata["image_id"] = compose("images", "-q", "desktop").stdout.strip()
+        if args.task in OFFICE_TASKS:
+            source_name = OFFICE_TASKS[args.task]["input_name"]
+            input_path = f"/tmp/ledgerdesk/inputs/{source_name}"
+            metadata["input_sha256"] = compose("exec", "-T", "desktop", "sha256sum", input_path).stdout.split()[0]
+            metadata["application_version"] = compose("exec", "-T", "desktop", "libreoffice", "--version").stdout.strip()
+            source_bytes = subprocess.run(["docker", "compose", "-f", str(ROOT / "compose.yaml"), "exec", "-T", "desktop", "cat", input_path], capture_output=True, check=True, timeout=30).stdout
+            (run_dir / source_name).write_bytes(source_bytes)
         recording = record_start()
         driver = DesktopDriver(run_dir)
         result = run_agent(driver, metadata["instruction"], run_dir, model=args.model,
                            max_requests=args.max_requests, max_actions=args.max_actions,
-                           timeout_seconds=args.timeout, budget_usd=args.budget_usd)
+                           timeout_seconds=args.timeout, budget_usd=args.budget_usd,
+                           system_instruction=SYSTEM_INSTRUCTION if args.task in REPORTS else WORKFLOW_SYSTEM_INSTRUCTION)
         metadata.update(result)
         if result["status"] == "completed":
             try:
@@ -142,9 +171,25 @@ def run_task(args) -> tuple[Path, dict]:
                 # A fresh container had no export before this attempt. Use a new host
                 # fixture for the trusted oracle; neither is an agent tool.
                 oracle = run_dir / "oracle.db"
-                reset_database(oracle)
-                verification = verify_csv(csv_path, oracle, args.task, as_of=args.as_of)
-                oracle.unlink()
+                if args.task in OFFICE_TASKS:
+                    verification = verify_office(args.task, csv_path)
+                    final_hash = compose("exec", "-T", "desktop", "sha256sum", input_path).stdout.split()[0]
+                    verification["source_unchanged"] = final_hash == metadata["input_sha256"]
+                    verification["source_sha256_after"] = final_hash
+                    if not verification["source_unchanged"]:
+                        verification["errors"].append("The original input file was modified.")
+                        verification["passed"] = False
+                else:
+                    reset_database(oracle)
+                    if args.task in WORKFLOWS:
+                        initialize_workflow_data(oracle)
+                        final_db = run_dir / "final.db"
+                        state = subprocess.run(["docker", "compose", "-f", str(ROOT / "compose.yaml"), "exec", "-T", "desktop", "cat", "/tmp/ledgerdesk/ledgerdesk.db"], capture_output=True, check=True, timeout=30)
+                        final_db.write_bytes(state.stdout)
+                        verification = verify_workflow(csv_path, final_db, oracle, args.task)
+                    else:
+                        verification = verify_csv(csv_path, oracle, args.task, as_of=args.as_of)
+                    oracle.unlink()
             except subprocess.SubprocessError:
                 verification = {"passed": False, "errors": ["The GUI did not create the expected CSV."], "rows": [], "headers": [], "row_count": 0}
             save_json(run_dir / "verification.json", verification)
@@ -159,6 +204,13 @@ def run_task(args) -> tuple[Path, dict]:
         metadata["error"] = str(error) if isinstance(error, RuntimeError) else f"Setup or verification failed ({type(error).__name__})"
         log_event(run_dir, "error", message=metadata["error"])
     finally:
+        if args.task in WORKFLOWS and not (run_dir / "final.db").exists():
+            try:
+                state = subprocess.run(["docker", "compose", "-f", str(ROOT / "compose.yaml"), "exec", "-T", "desktop", "cat", "/tmp/ledgerdesk/ledgerdesk.db"], capture_output=True, check=True, timeout=30)
+                (run_dir / "final.db").write_bytes(state.stdout)
+                metadata["final_state_available"] = True
+            except subprocess.SubprocessError:
+                metadata["final_state_available"] = False
         metadata["recording_available"] = record_stop(run_dir) if recording else False
         metadata["elapsed_seconds"] = round(time.monotonic() - started, 3)
         metadata["finished_at"] = datetime.now(timezone.utc).isoformat()
@@ -210,7 +262,7 @@ def main() -> int:
     for name in ("run", "evaluate"):
         sub = commands.add_parser(name)
         if name == "run":
-            sub.add_argument("--task", choices=REPORTS, required=True)
+            sub.add_argument("--task", choices=TASKS, required=True)
         else:
             sub.add_argument("--repeats", type=int, default=3)
         sub.add_argument("--as-of", default="2026-10-15")
@@ -256,9 +308,29 @@ def dispatch(args) -> int:
         if current_hash != metadata.get("fixture_sha256"):
             raise RuntimeError("Saved run uses a different fixture; restore its source revision before reverifying")
         oracle = args.run_dir / "oracle.db"
-        reset_database(oracle)
         try:
-            result = verify_csv(args.run_dir / "export.csv", oracle, metadata["task_id"], as_of=metadata.get("as_of", "2026-10-15"))
+            task = metadata["task_id"]
+            if task in OFFICE_TASKS:
+                suffix = ".odt" if task == "writer-find-replace" else ".csv"
+                result = verify_office(task, args.run_dir / ("export" + suffix))
+                recorded = json.loads((args.run_dir / "verification.json").read_text())
+                source = args.run_dir / OFFICE_TASKS[task]["input_name"]
+                saved_hash = hashlib.sha256(source.read_bytes()).hexdigest()
+                result["source_unchanged"] = (
+                    recorded.get("source_unchanged") is True
+                    and saved_hash == metadata.get("input_sha256")
+                    and recorded.get("source_sha256_after") == saved_hash
+                )
+                if not result["source_unchanged"]:
+                    result["errors"].append("Original source preservation was not established.")
+                    result["passed"] = False
+            else:
+                reset_database(oracle)
+                if task in WORKFLOWS:
+                    initialize_workflow_data(oracle)
+                    result = verify_workflow(args.run_dir / "export.csv", args.run_dir / "final.db", oracle, task)
+                else:
+                    result = verify_csv(args.run_dir / "export.csv", oracle, task, as_of=metadata.get("as_of", "2026-10-15"))
         finally:
             oracle.unlink(missing_ok=True)
         save_json(args.run_dir / "verification.json", result)
