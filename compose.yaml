@@ -7,6 +7,7 @@ services:
     image: ledgerdesk-demo:local
     environment:
       LEDGERDESK_TASK: ${LEDGERDESK_TASK:-monthly-revenue}
+      LEDGERDESK_STUDY_SPEC: ${LEDGERDESK_STUDY_SPEC:-}
     read_only: true
     tmpfs:
       - /tmp:rw,noexec,nosuid,size=256m

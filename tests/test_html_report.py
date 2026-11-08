@@ -84,3 +84,13 @@ def test_document_output_has_correct_verification_label_and_download(tmp_path):
     assert 'Independent output verification' in html
     assert 'href="export.odt"' in html
     assert 'that the CSV is correct' not in html
+
+
+def test_expected_control_refusal_is_not_labelled_business_success(tmp_path):
+    make_run(tmp_path, status='blocked', verification=None, control_verification={'passed': True, 'errors': [], 'component': 'driver'})
+    (tmp_path/'control-verification.json').write_text('{}')
+    html = write_report(tmp_path).read_text()
+    assert 'Expected refusal verified' in html
+    assert '>Verified pass</div>' not in html
+    assert 'graded separately from business-task completion' in html
+    assert 'href="control-verification.json"' in html

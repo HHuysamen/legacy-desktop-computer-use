@@ -153,7 +153,7 @@ def test_office_startup_rejects_unknown_window_pid(monkeypatch):
     monkeypatch.setattr(launch.subprocess, "check_output", lambda *args, **kwargs: "0x000001 0 0 demo LibreOffice Writer")
     monkeypatch.setattr(launch.subprocess, "run", lambda *args, **kwargs: SimpleNamespace(returncode=0, stdout="0x000001 0 0 demo LibreOffice Writer"))
     monkeypatch.setattr(launch.time, "sleep", lambda *args: None)
-    monkeypatch.setattr(launch, "Path", lambda *args: SimpleNamespace(write_text=lambda value: None))
+    monkeypatch.setattr(launch, "Path", lambda *args: SimpleNamespace(write_text=lambda value: None, is_file=lambda: True))
     with pytest.raises(RuntimeError):
         launch.main()
 

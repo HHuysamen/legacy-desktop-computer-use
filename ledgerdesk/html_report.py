@@ -63,10 +63,14 @@ def write_report(run_dir: Path) -> Path:
     run = _read_json(run_dir / "run.json")
     verification_path = run_dir / "verification.json"
     verification = _read_json(verification_path) if verification_path.exists() else None
+    control = run.get("control_verification")
     events_path = run_dir / "events.jsonl"
     events = [json.loads(line) for line in events_path.read_text(encoding="utf-8").splitlines() if line.strip()] if events_path.exists() else []
     status = str(run.get("status", "unknown"))
-    if status == "passed" and verification is not None and verification.get("passed") is True:
+    if control is not None:
+        verification = control
+        verdict, tone = ("Expected refusal verified", "pass") if control.get("passed") is True else ("Control failed", "fail")
+    elif status == "passed" and verification is not None and verification.get("passed") is True:
         verdict, tone = "Verified pass", "pass"
     elif status == "blocked":
         verdict, tone = "Blocked", "blocked"
@@ -111,11 +115,13 @@ def write_report(run_dir: Path) -> Path:
 
     error_html = f'<p class="run-error">{_text(run["error"])}</p>' if run.get("error") else ""
     verification_explanation = (
+        "This is an operational control, graded separately from business-task completion."
+        if control is not None else
         "The saved output matches the independent verifier."
         if verdict == "Verified pass" else
         "This run did not establish a verified successful outcome. See the recorded outcome below."
     )
-    companion_files = [name for name in ("export.csv", "export.odt", "final.db", "calc-source.ods", "writer-source.odt", "run.json", "events.jsonl", "verification.json") if (run_dir / name).is_file()]
+    companion_files = [name for name in ("export.csv", "export.odt", "export.gnucash", "final.db", "baseline.db", "calc-source.ods", "writer-source.odt", "gnucash-source.gnucash", "run.json", "events.jsonl", "verification.json", "control-verification.json", "setup-blocked.json", "foreign-events.jsonl", "foreign-value.txt") if (run_dir / name).is_file()]
     downloads = " · ".join(f'<a href="{name}">{name}</a>' for name in companion_files)
     limits = json.dumps(run.get("limits", {}), ensure_ascii=False, indent=2)
     html = f'''<!doctype html>

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import csv
+import json
 import os
 from pathlib import Path
 import sqlite3
@@ -365,6 +366,8 @@ class WorkflowDesk(LedgerDesk):
             headers, rows = execute_workflow(self.db_path, operation, fields)
         except (ValueError, OSError, sqlite3.Error) as error:
             self.status.set(f"Action failed: {error}")
+            with (self.export_dir.parent / "application-audit.jsonl").open("a") as stream:
+                stream.write(json.dumps({"operation": operation, "status": "rejected", "fields": fields, "reason": str(error)}) + "\n")
             return
         self._result = operation, headers, rows
         self.table.delete(*self.table.get_children())

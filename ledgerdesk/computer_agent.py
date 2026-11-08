@@ -112,6 +112,7 @@ def run_agent(
     timeout_seconds: float = 300,
     budget_usd: float = 2.0,
     system_instruction: str = SYSTEM_INSTRUCTION,
+    reasoning_effort: str | None = None,
 ) -> dict:
     """Return execution metadata; completion never implies CSV verification.
 
@@ -177,9 +178,13 @@ def run_agent(
                 tools=[{"type": "computer"}], tool_choice="auto", store=False,
                 include=["reasoning.encrypted_content"], max_output_tokens=MAX_OUTPUT_TOKENS,
                 truncation="disabled", timeout=min(60.0, deadline - time.monotonic()),
+                **({"reasoning": {"effort": reasoning_effort}} if reasoning_effort else {}),
             )
             reported_usage = _usage(response)
-            _log(run_dir, "response", text=response.output_text, usage=reported_usage)
+            observed_model = getattr(response, "model", None)
+            if isinstance(observed_model, str) and len(observed_model) <= 128:
+                result["observed_model"] = observed_model
+            _log(run_dir, "response", text=response.output_text, usage=reported_usage, model=observed_model)
             result["model_text"] = response.output_text
             if reported_usage is None:
                 result["usage"]["complete"] = False
