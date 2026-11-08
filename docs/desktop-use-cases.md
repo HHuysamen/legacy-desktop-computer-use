@@ -1,8 +1,8 @@
 # Business use cases for native desktop automation
 
-Research checked 8 November 2026. Recommended expansion: **five synthetic business workflows in LedgerDesk plus two tasks in real LibreOffice applications**. Keep the existing monthly revenue, overdue invoice and reconciliation reports as separate tasks.
+Research checked 8 November 2026. Implemented evaluation: **five synthetic business workflows in LedgerDesk plus two tasks in real LibreOffice applications**. Keep the existing monthly revenue, overdue invoice and reconciliation reports as separate tasks.
 
-This is a catalogue of recurring workflow categories, not a statistically ranked “top 20.” Microsoft and UiPath document the broader business patterns; the concrete demo tasks and suitability judgments below are our proposed adaptations. Those sources do not establish that every installation lacks an API. Use desktop control when the particular system has no usable supported integration. LibreOffice has automation interfaces, but those must remain unavailable to the screenshot-only agent.
+This is a catalogue of recurring workflow categories, not a statistically ranked “top 20.” Microsoft and UiPath document the broader business patterns; the concrete demo tasks and suitability judgments below are our adaptations. Those sources do not establish that every installation lacks an API. Use desktop control when the particular system has no usable supported integration. LibreOffice has automation interfaces, but those must remain unavailable to the screenshot-only agent.
 
 ## Twenty recurring categories
 
@@ -35,19 +35,19 @@ This is a catalogue of recurring workflow categories, not a statistically ranked
 
 This ordering prioritizes clear verification, interaction variety and manageable implementation effort. It is not a ranking of commercial importance.
 
-| Priority / task ID | Proposed exercise | Independent success check | What it adds |
+| Priority / task ID | Selected exercise | Independent success check | What it adds |
 | --- | --- | --- | --- |
 | 1 — `invoice-lookup` | Find one exact invoice and export its displayed details. | Exact identity, customer, dates and balance; database unchanged. | Search and navigation without changing records. |
 | 2 — `customer-update` | Change one fictional customer's contact details. | Only the named record and authorized fields change. | Targeted form editing and save confirmation. |
 | 3 — `invoice-entry` | Create one invoice draft from supplied fields. | Exactly one expected row added; totals/dates correct; existing records unchanged. | Multi-field entry, validation and new-record creation. |
-| 4 — `payment-recording` | Record a synthetic received payment against one invoice. | Exact amount and allocation; correct remaining balance; no unrelated changes. | Linked records and partial-payment state. |
+| 4 — `payment-entry` | Record a synthetic received payment against one invoice. | Exact amount and allocation; correct remaining balance; no unrelated changes. | Linked records and partial-payment state. |
 | 5 — `csv-import` | Import an allowlisted sample file through the app and review the outcome. | Exact imported rows; duplicates/invalid rows handled as specified. | File selection, import confirmation and batch validation. |
 | 6 — `calc-sort-export` | In real Calc, sort a seeded register numerically and export CSV. | Header retained, complete row multiset preserved, correct order and values. | A second application's menus, dialogs and file formats. |
 | 7 — `writer-find-replace` | In real Writer, replace specified text and save an edited document. | Expected replacement count; unrelated text retained in the saved ODT. | Document editing and a different native UI. |
 
 For payment recording, demonstrate **recording money already received**, not initiating a transfer. Keep invoice entry as draft creation. Customer updates should use fictional contact/address fields, not bank details. These definitions make the actions concrete and inspectable without connecting real financial systems.
 
-The CSV import file is prepared by trusted setup. The model selects it through the GUI; it does not get a filesystem reader. Include a duplicate or invalid row so that “import finished” alone cannot satisfy the task.
+The CSV import file is prepared by trusted setup. The model selects it through the GUI; it does not get a filesystem reader. The measured import task uses three valid rows with leading-zero references. Duplicate and invalid imports are covered by deterministic unit tests; adding them to scored agent tasks is a later extension.
 
 Calc should use a small fixed register with a header, numeric sort values and a tie-break key. Verify whole rows, not just the sorted column: an incorrectly selected range can scramble relationships. Its CSV export contains only the current sheet and does not preserve workbook formatting. [CSV behavior][C]
 
@@ -64,7 +64,7 @@ OSWorld and Microsoft's Windows Agent Arena provide precedents for evaluating de
 ## Evaluation boundaries
 
 - Reset the fixture or documents before each attempt. Preserve the original 24-run report evaluation as its own evidence set.
-- Keep all new tasks marked as proposed until their implementation and real agent runs have been verified. Unit tests and scripted GUI smoke checks are separate evidence.
+- The completed study contains 100 attempts and 99 verified passes. Unit tests and scripted GUI smoke checks are separate evidence; the [methodology](evaluation-methodology.md) records the retained failure and driver correction.
 - For mutations, verify the exact permitted state change and check that unrelated records stayed unchanged. Treat duplicate creation, wrong-account edits and incorrect payment allocation as failures.
 - For LibreOffice, constrain the driver to the launched application processes and approved dialogs. Do not expose UNO, macros, shell execution or direct document reads to the model. Trusted setup and verification may read files independently.
 - Add variations in IDs, amounts, source rows and document text. Report each task's attempts and failures separately; passing several similar reports does not demonstrate all seven new skills.

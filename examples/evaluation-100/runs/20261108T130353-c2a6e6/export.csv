@@ -1,0 +1,2 @@
+reference,customer_id,customer,invoice_date,due_date,amount,status
+DRAFT-261101,3,Cedar Trail Foods,2026-11-01,2026-12-01,1250.50,draft

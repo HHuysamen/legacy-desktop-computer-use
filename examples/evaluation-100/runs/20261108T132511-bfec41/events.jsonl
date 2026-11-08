@@ -1,0 +1,37 @@
+{"type": "screenshot", "timestamp": "2026-11-08T13:25:15.713450+00:00", "path": "screenshots/001.png"}
+{"type": "response", "timestamp": "2026-11-08T13:25:17.142673+00:00", "text": "", "usage": {"input_tokens": 2329, "output_tokens": 20, "total_tokens": 2349}}
+{"type": "screenshot", "timestamp": "2026-11-08T13:25:17.553779+00:00", "path": "screenshots/002.png"}
+{"type": "response", "timestamp": "2026-11-08T13:25:18.912662+00:00", "text": "", "usage": {"input_tokens": 3668, "output_tokens": 31, "total_tokens": 3699}}
+{"type": "action", "timestamp": "2026-11-08T13:25:18.914826+00:00", "action": {"button": "left", "type": "click", "x": 575, "y": 188}, "phase": "requested"}
+{"type": "action_result", "timestamp": "2026-11-08T13:25:19.400169+00:00", "action_type": "click", "completed": true}
+{"type": "screenshot", "timestamp": "2026-11-08T13:25:19.817621+00:00", "path": "screenshots/003.png"}
+{"type": "response", "timestamp": "2026-11-08T13:25:21.556643+00:00", "text": "", "usage": {"input_tokens": 5046, "output_tokens": 31, "total_tokens": 5077}}
+{"type": "action", "timestamp": "2026-11-08T13:25:21.557692+00:00", "action": {"button": "left", "type": "click", "x": 155, "y": 268}, "phase": "requested"}
+{"type": "action_result", "timestamp": "2026-11-08T13:25:22.017754+00:00", "action_type": "click", "completed": true}
+{"type": "screenshot", "timestamp": "2026-11-08T13:25:22.437738+00:00", "path": "screenshots/004.png"}
+{"type": "response", "timestamp": "2026-11-08T13:25:24.738219+00:00", "text": "", "usage": {"input_tokens": 6424, "output_tokens": 112, "total_tokens": 6536}}
+{"type": "action", "timestamp": "2026-11-08T13:25:24.740353+00:00", "action": {"button": "left", "type": "click", "x": 178, "y": 296}, "phase": "requested"}
+{"type": "action_result", "timestamp": "2026-11-08T13:25:25.198505+00:00", "action_type": "click", "completed": true}
+{"type": "action", "timestamp": "2026-11-08T13:25:25.199199+00:00", "action": {"text": "RCPT-1001", "type": "type"}, "phase": "requested"}
+{"type": "action_result", "timestamp": "2026-11-08T13:25:25.941386+00:00", "action_type": "type", "completed": true}
+{"type": "action", "timestamp": "2026-11-08T13:25:25.942193+00:00", "action": {"button": "left", "type": "click", "x": 469, "y": 296}, "phase": "requested"}
+{"type": "action_result", "timestamp": "2026-11-08T13:25:26.403598+00:00", "action_type": "click", "completed": true}
+{"type": "action", "timestamp": "2026-11-08T13:25:26.404228+00:00", "action": {"text": "INV-260916", "type": "type"}, "phase": "requested"}
+{"type": "action_result", "timestamp": "2026-11-08T13:25:27.166444+00:00", "action_type": "type", "completed": true}
+{"type": "action", "timestamp": "2026-11-08T13:25:27.167167+00:00", "action": {"button": "left", "type": "click", "x": 758, "y": 296}, "phase": "requested"}
+{"type": "action_result", "timestamp": "2026-11-08T13:25:27.620974+00:00", "action_type": "click", "completed": true}
+{"type": "action", "timestamp": "2026-11-08T13:25:27.621669+00:00", "action": {"text": "125.25", "type": "type"}, "phase": "requested"}
+{"type": "action_result", "timestamp": "2026-11-08T13:25:28.268229+00:00", "action_type": "type", "completed": true}
+{"type": "action", "timestamp": "2026-11-08T13:25:28.268931+00:00", "action": {"button": "left", "type": "click", "x": 119, "y": 365}, "phase": "requested"}
+{"type": "action_result", "timestamp": "2026-11-08T13:25:28.706221+00:00", "action_type": "click", "completed": true}
+{"type": "screenshot", "timestamp": "2026-11-08T13:25:29.095167+00:00", "path": "screenshots/005.png"}
+{"type": "response", "timestamp": "2026-11-08T13:25:30.575192+00:00", "text": "", "usage": {"input_tokens": 7919, "output_tokens": 31, "total_tokens": 7950}}
+{"type": "action", "timestamp": "2026-11-08T13:25:30.578265+00:00", "action": {"button": "left", "type": "click", "x": 283, "y": 364}, "phase": "requested"}
+{"type": "action_result", "timestamp": "2026-11-08T13:25:31.033806+00:00", "action_type": "click", "completed": true}
+{"type": "screenshot", "timestamp": "2026-11-08T13:25:31.433889+00:00", "path": "screenshots/006.png"}
+{"type": "response", "timestamp": "2026-11-08T13:25:32.838489+00:00", "text": "", "usage": {"input_tokens": 9297, "output_tokens": 32, "total_tokens": 9329}}
+{"type": "action", "timestamp": "2026-11-08T13:25:32.840451+00:00", "action": {"button": "left", "type": "click", "x": 1039, "y": 365}, "phase": "requested"}
+{"type": "action_result", "timestamp": "2026-11-08T13:25:33.295264+00:00", "action_type": "click", "completed": true}
+{"type": "screenshot", "timestamp": "2026-11-08T13:25:33.689257+00:00", "path": "screenshots/007.png"}
+{"type": "response", "timestamp": "2026-11-08T13:25:35.537209+00:00", "text": "Confirmed demo receipt **RCPT-1001** for **INV-260916** in the amount of **125.25 USD**. The audit result was exported as `payment-entry.csv`.", "usage": {"input_tokens": 10676, "output_tokens": 43, "total_tokens": 10719}}
+{"type": "verification", "timestamp": "2026-11-08T13:25:35.781858+00:00", "passed": true, "errors": []}

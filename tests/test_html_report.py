@@ -75,3 +75,12 @@ def test_model_text_metadata_is_available_when_response_events_are_missing(tmp_p
     html = write_report(make_run(tmp_path, model_text='Exported <revenue.csv>.')).read_text()
     assert "Exported &lt;revenue.csv&gt;." in html
     assert "No model completion text was recorded." not in html
+
+
+def test_document_output_has_correct_verification_label_and_download(tmp_path):
+    make_run(tmp_path, task_id='writer-find-replace')
+    (tmp_path / 'export.odt').write_bytes(b'demo document')
+    html = write_report(tmp_path).read_text()
+    assert 'Independent output verification' in html
+    assert 'href="export.odt"' in html
+    assert 'that the CSV is correct' not in html

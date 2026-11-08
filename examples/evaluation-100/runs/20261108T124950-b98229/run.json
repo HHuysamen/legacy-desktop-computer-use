@@ -1,0 +1,36 @@
+{
+  "id": "20261108T124950-b98229",
+  "task_id": "invoice-entry",
+  "instruction": "In LedgerDesk, create one draft invoice with reference DRAFT-261101 for customer ID 3 (Cedar Trail Foods), invoice date 2026-11-01, due date 2026-12-01, and amount 1250.50 USD. Confirm creation and export the audit result as CSV. Do not post or send an invoice.",
+  "started_at": "2026-11-08T12:49:50.035112+00:00",
+  "as_of": "2026-10-15",
+  "model": "gpt-6.1-terra",
+  "status": "passed",
+  "error": null,
+  "action_count": 15,
+  "request_count": 7,
+  "limits": {
+    "actions": 80,
+    "requests": 30,
+    "seconds": 420,
+    "budget_usd": 1.0
+  },
+  "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+  "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+  "application": "LedgerDesk",
+  "protocol": "expanded-100-v1",
+  "source_revision": "c523e5300fe10fa60b1ada0210c55f6d55bd3156",
+  "source_tree_sha256": "380c38f0404782de5be7076514de1faf34540d679511040097a23d4892625ae7",
+  "image_id": "c19eb9212b23a4eb39c297186c5c6464e3cb1b52e603dff8686dc4c34e5568d0",
+  "usage": {
+    "input_tokens": 45752,
+    "output_tokens": 358,
+    "total_tokens": 46110,
+    "complete": true
+  },
+  "estimated_cost_usd": 0.047542,
+  "model_text": "Created and confirmed draft invoice **DRAFT-261101** for Cedar Trail Foods. The audit result was exported as `invoice-entry.csv`. The invoice was not posted or sent.",
+  "recording_available": true,
+  "elapsed_seconds": 29.365,
+  "finished_at": "2026-11-08T12:50:19.399419+00:00"
+}

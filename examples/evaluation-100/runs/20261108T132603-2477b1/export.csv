@@ -1,0 +1,9 @@
+invoice_id,customer,outstanding_balance,due_date,status
+INV-003,Northstar Manufacturing,10000.00,2026-10-03,open
+INV-001,Northstar Manufacturing,1234.50,2026-10-01,open
+INV-005,Amber Research,1234.50,2026-09-29,open
+INV-006,Cedar Services,999.99,2026-10-12,partial
+INV-008,Beacon Tools,100.00,2026-10-15,open
+INV-002,Cedar Services,50.00,2026-10-02,partial
+INV-007,Beacon Tools,9.50,2026-10-15,open
+INV-004,Harbor Supply,0.00,2026-10-04,settled

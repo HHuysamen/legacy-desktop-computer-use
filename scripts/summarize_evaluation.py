@@ -136,7 +136,7 @@ def _load_study(evaluation_path: Path) -> tuple[dict, list[tuple[dict, Path]], s
         saved = json.loads(_artifact(run_dir, "run.json").read_text())
         if saved.get("status") not in {"passed", "failed", "blocked"} or not saved.get("finished_at"):
             raise ValueError(f"Run {entry['id']} has no terminal recorded outcome.")
-        for field in ("id", "task_id", "status", "fixture_sha256", "model", "finished_at", "estimated_cost_usd", "usage", "elapsed_seconds", "action_count", "request_count"):
+        for field in ("id", "task_id", "status", "fixture_sha256", "model", "finished_at", "estimated_cost_usd", "usage", "elapsed_seconds", "action_count", "request_count", "source_revision", "source_tree_sha256", "image_id", "input_sha256"):
             if saved.get(field) != entry.get(field):
                 raise ValueError(f"Run {entry['id']} differs from the evaluation at {field}.")
         loaded.append((saved, run_dir))
@@ -190,6 +190,10 @@ def summarize_evaluation(evaluation_path: Path, output_dir: Path | None = None) 
         "overall": statistics(scored),
         "tasks": {task: statistics([run for run in scored if run["task_id"] == task]) for task in TASK_IDS},
         "cohorts": {cohort: statistics([run for run in scored if run["cohort"] == cohort]) for cohort in ("historical_24", "new_76")},
+        "new_source_revisions": {
+            revision: statistics([run for run in scored if run.get("source_revision") == revision])
+            for revision in sorted({run["source_revision"] for run in scored if run.get("source_revision")})
+        },
     }
     output_dir = Path(output_dir) if output_dir is not None else evaluation_path.parent
     recheck_path = output_dir / "evaluation-100-recheck.json"

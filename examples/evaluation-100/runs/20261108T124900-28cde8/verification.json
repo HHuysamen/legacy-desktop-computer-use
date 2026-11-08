@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "errors": [],
+  "row_count": 1,
+  "headers": [
+    "invoice_number",
+    "customer",
+    "invoice_date",
+    "due_date",
+    "amount",
+    "paid",
+    "balance",
+    "status"
+  ],
+  "rows": [
+    {
+      "invoice_number": "INV-260916",
+      "customer": "Beacon Paperworks",
+      "invoice_date": "2026-09-16",
+      "due_date": "2026-10-10",
+      "amount": "1000.00",
+      "paid": "600.00",
+      "balance": "400.00",
+      "status": "issued"
+    }
+  ]
+}

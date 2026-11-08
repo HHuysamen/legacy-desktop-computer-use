@@ -1,0 +1,8 @@
+customer,invoice_number,balance,due_date,days_overdue
+Delta Quay Services,INV-260801,500.00,2026-08-31,45
+Alder Robotics,INV-260831,9999.99,2026-09-15,30
+Fernlight Design,INV-260820,150.00,2026-09-19,26
+Cedar Trail Foods,INV-260903,1750.00,2026-09-25,20
+Beacon Paperworks,INV-260916,400.00,2026-10-10,5
+Delta Quay Services,INV-260918,800.00,2026-10-14,1
+Alder Robotics,INV-261014,400.00,2026-10-14,1

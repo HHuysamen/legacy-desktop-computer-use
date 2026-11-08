@@ -1,10 +1,10 @@
 # Evaluation methodology: 100 desktop attempts
 
-Protocol: `expanded-100-v1`. This document describes the planned evaluation, not its outcome. The [historical 24-run evaluation](../examples/evaluation-24/index.html) is complete and preserved separately. No result for the additional attempts is claimed here.
+Protocol: `expanded-100-v1`. The completed evaluation contains 100 attempts: 99 verified passes and one retained failure. All 99 passes were independently rechecked. The [historical 24-run evaluation](../examples/evaluation-24/index.html) is complete and preserved separately. The 76 added attempts produced 75 passes and one failure. The result table and artifacts are in the [100-run gallery](../examples/evaluation-100/index.html).
 
 ## Composition and purpose
 
-The final set is intended to contain ten attempts for each of ten fixed tasks:
+The completed set contains ten attempts for each of ten fixed tasks:
 
 | Task ID | Application | Historical attempts | New attempts | Fixed task |
 | --- | --- | ---: | ---: | --- |
@@ -18,7 +18,7 @@ The final set is intended to contain ten attempts for each of ten fixed tasks:
 | `csv-import` | LedgerDesk | 0 | 10 | Import the fixed three-row `invoices.csv`; preserve references `000101`–`000103`. |
 | `calc-sort-export` | LibreOffice Calc | 0 | 10 | Sort the eight-row receivables table by balance descending, then invoice ID ascending; export CSV. |
 | `writer-find-replace` | LibreOffice Writer | 0 | 10 | Replace exact `Harbor Systems` occurrences with `Northstar Devices`; preserve near-matches and other content; save ODT. |
-| **Total** | **Eight demo-app tasks, two Office tasks** | **24** | **76** | **100 planned attempts** |
+| **Total** | **Eight demo-app tasks, two Office tasks** | **24** | **76** | **100 completed attempts** |
 
 The seven additions were selected for distinct interactions: lookup, editing, record creation, receipt allocation, import, spreadsheet manipulation and document editing. See the [use-case research](desktop-use-cases.md). They are not sampled from a measured population of business tasks, and this is not an OSWorld or Windows Agent Arena benchmark result.
 
@@ -69,3 +69,7 @@ Publish the measured outcomes, limitations and links to the retained evidence wi
 The first 13 new attempts ran at source revision `c523e53`. Twelve passed; the first Calc attempt (`20261108T125117-bdb21f`) stopped when selecting CSV in the native Save As file-type list. That list extends below its parent dialog, outside the driver's then-permitted active-dialog rectangle. The failed attempt remains the first of Calc's ten slots.
 
 Before the remaining 63 slots, the driver was corrected to permit input across the owned application's window area while still requiring the active window to belong to the bound application process. A manual, API-free GUI check confirmed that the previously rejected dropdown click was accepted. Fixed task instructions and input fixtures were unchanged. Per-run source/image identifiers distinguish these two cohorts. This correction and the retained failure mean the combined result is an iterative system evaluation, not 100 trials of one frozen driver version.
+
+## Final result
+
+The combined estimated model API cost was USD 5.039898 (USD 4.161524 for the new 76). The first expansion cohort recorded 12/13 passes; all 63 attempts after the popup correction passed. The failed Calc attempt remains one of its ten runs. Costs, time and outcomes are available per task and source revision in the [cost analysis](../examples/evaluation-100/cost-analysis.json).

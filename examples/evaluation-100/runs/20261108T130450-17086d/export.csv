@@ -1,0 +1,4 @@
+reference,customer_id,customer,invoice_date,due_date,amount,status
+000101,1,Alder Robotics,2026-11-02,2026-12-02,210.10,draft
+000102,2,Beacon Paperworks,2026-11-03,2026-12-03,325.00,draft
+000103,6,Fernlight Design,2026-11-04,2026-12-04,99.95,draft

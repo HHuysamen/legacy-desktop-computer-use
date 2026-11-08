@@ -1,0 +1,484 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-08T13:31:26.977461+00:00",
+  "source_evaluation_sha256": "29c713c5cf227106b7da175995bb1a89e168dcd2a2b69d668f0eafe315de064c",
+  "protocol": "expanded-100-v1",
+  "historical_attempts": 24,
+  "new_attempts": 76,
+  "cost_basis": "Recorded standard-rate model API estimates; no repricing, hosting or operating costs. Provider billing may differ.",
+  "projection_basis": "Twenty workdays with one attempted task per day, using the observed mean per attempt; not a retry-until-success projection.",
+  "success_cost_basis": "All attempt costs, including failed and blocked attempts, divided by independently reverified recorded successes.",
+  "unknown_cost_policy": "Incomplete or unavailable costs make full totals, means, success costs and projections null; known subtotals are labelled separately.",
+  "recorded_pass_mismatches": [],
+  "overall": {
+    "attempts": 100,
+    "passed": 99,
+    "failed": 1,
+    "blocked": 0,
+    "mean_elapsed_seconds": 32.09954,
+    "median_elapsed_seconds": 27.880000000000003,
+    "elapsed_values_available": 100,
+    "actions": {
+      "range": [
+        7,
+        23
+      ],
+      "values_available": 100
+    },
+    "requests": {
+      "range": [
+        6,
+        12
+      ],
+      "values_available": 100
+    },
+    "cost_complete": true,
+    "cost_values_available": 100,
+    "missing_or_incomplete_cost_run_ids": [],
+    "estimated_cost_usd_known": 5.039898,
+    "estimated_cost_usd": 5.039898,
+    "mean_estimated_cost_usd_per_attempt": 0.05039898,
+    "estimated_cost_usd_per_verified_success": 0.05090806060606061,
+    "projected_20_workday_cost_usd": 1.0079796
+  },
+  "tasks": {
+    "monthly-revenue": {
+      "attempts": 10,
+      "passed": 10,
+      "failed": 0,
+      "blocked": 0,
+      "mean_elapsed_seconds": 26.8676,
+      "median_elapsed_seconds": 26.717,
+      "elapsed_values_available": 10,
+      "actions": {
+        "range": [
+          7,
+          7
+        ],
+        "values_available": 10
+      },
+      "requests": {
+        "range": [
+          6,
+          6
+        ],
+        "values_available": 10
+      },
+      "cost_complete": true,
+      "cost_values_available": 10,
+      "missing_or_incomplete_cost_run_ids": [],
+      "estimated_cost_usd_known": 0.35589,
+      "estimated_cost_usd": 0.35589,
+      "mean_estimated_cost_usd_per_attempt": 0.035589,
+      "estimated_cost_usd_per_verified_success": 0.035589,
+      "projected_20_workday_cost_usd": 0.71178
+    },
+    "overdue-invoices": {
+      "attempts": 10,
+      "passed": 10,
+      "failed": 0,
+      "blocked": 0,
+      "mean_elapsed_seconds": 28.8086,
+      "median_elapsed_seconds": 26.689500000000002,
+      "elapsed_values_available": 10,
+      "actions": {
+        "range": [
+          7,
+          8
+        ],
+        "values_available": 10
+      },
+      "requests": {
+        "range": [
+          6,
+          7
+        ],
+        "values_available": 10
+      },
+      "cost_complete": true,
+      "cost_values_available": 10,
+      "missing_or_incomplete_cost_run_ids": [],
+      "estimated_cost_usd_known": 0.401751,
+      "estimated_cost_usd": 0.401751,
+      "mean_estimated_cost_usd_per_attempt": 0.0401751,
+      "estimated_cost_usd_per_verified_success": 0.0401751,
+      "projected_20_workday_cost_usd": 0.803502
+    },
+    "reconciliation-exceptions": {
+      "attempts": 10,
+      "passed": 10,
+      "failed": 0,
+      "blocked": 0,
+      "mean_elapsed_seconds": 25.0225,
+      "median_elapsed_seconds": 25.281,
+      "elapsed_values_available": 10,
+      "actions": {
+        "range": [
+          7,
+          7
+        ],
+        "values_available": 10
+      },
+      "requests": {
+        "range": [
+          6,
+          6
+        ],
+        "values_available": 10
+      },
+      "cost_complete": true,
+      "cost_values_available": 10,
+      "missing_or_incomplete_cost_run_ids": [],
+      "estimated_cost_usd_known": 0.356849,
+      "estimated_cost_usd": 0.356849,
+      "mean_estimated_cost_usd_per_attempt": 0.0356849,
+      "estimated_cost_usd_per_verified_success": 0.0356849,
+      "projected_20_workday_cost_usd": 0.713698
+    },
+    "invoice-lookup": {
+      "attempts": 10,
+      "passed": 10,
+      "failed": 0,
+      "blocked": 0,
+      "mean_elapsed_seconds": 24.8946,
+      "median_elapsed_seconds": 25.3445,
+      "elapsed_values_available": 10,
+      "actions": {
+        "range": [
+          7,
+          7
+        ],
+        "values_available": 10
+      },
+      "requests": {
+        "range": [
+          7,
+          7
+        ],
+        "values_available": 10
+      },
+      "cost_complete": true,
+      "cost_values_available": 10,
+      "missing_or_incomplete_cost_run_ids": [],
+      "estimated_cost_usd_known": 0.461666,
+      "estimated_cost_usd": 0.461666,
+      "mean_estimated_cost_usd_per_attempt": 0.0461666,
+      "estimated_cost_usd_per_verified_success": 0.0461666,
+      "projected_20_workday_cost_usd": 0.923332
+    },
+    "customer-update": {
+      "attempts": 10,
+      "passed": 10,
+      "failed": 0,
+      "blocked": 0,
+      "mean_elapsed_seconds": 28.5562,
+      "median_elapsed_seconds": 28.070999999999998,
+      "elapsed_values_available": 10,
+      "actions": {
+        "range": [
+          11,
+          11
+        ],
+        "values_available": 10
+      },
+      "requests": {
+        "range": [
+          7,
+          7
+        ],
+        "values_available": 10
+      },
+      "cost_complete": true,
+      "cost_values_available": 10,
+      "missing_or_incomplete_cost_run_ids": [],
+      "estimated_cost_usd_known": 0.467634,
+      "estimated_cost_usd": 0.467634,
+      "mean_estimated_cost_usd_per_attempt": 0.0467634,
+      "estimated_cost_usd_per_verified_success": 0.0467634,
+      "projected_20_workday_cost_usd": 0.935268
+    },
+    "invoice-entry": {
+      "attempts": 10,
+      "passed": 10,
+      "failed": 0,
+      "blocked": 0,
+      "mean_elapsed_seconds": 31.3729,
+      "median_elapsed_seconds": 31.83,
+      "elapsed_values_available": 10,
+      "actions": {
+        "range": [
+          15,
+          15
+        ],
+        "values_available": 10
+      },
+      "requests": {
+        "range": [
+          7,
+          7
+        ],
+        "values_available": 10
+      },
+      "cost_complete": true,
+      "cost_values_available": 10,
+      "missing_or_incomplete_cost_run_ids": [],
+      "estimated_cost_usd_known": 0.473586,
+      "estimated_cost_usd": 0.473586,
+      "mean_estimated_cost_usd_per_attempt": 0.0473586,
+      "estimated_cost_usd_per_verified_success": 0.0473586,
+      "projected_20_workday_cost_usd": 0.947172
+    },
+    "payment-entry": {
+      "attempts": 10,
+      "passed": 10,
+      "failed": 0,
+      "blocked": 0,
+      "mean_elapsed_seconds": 28.6388,
+      "median_elapsed_seconds": 29.511000000000003,
+      "elapsed_values_available": 10,
+      "actions": {
+        "range": [
+          11,
+          11
+        ],
+        "values_available": 10
+      },
+      "requests": {
+        "range": [
+          7,
+          7
+        ],
+        "values_available": 10
+      },
+      "cost_complete": true,
+      "cost_values_available": 10,
+      "missing_or_incomplete_cost_run_ids": [],
+      "estimated_cost_usd_known": 0.46859,
+      "estimated_cost_usd": 0.46859,
+      "mean_estimated_cost_usd_per_attempt": 0.046859,
+      "estimated_cost_usd_per_verified_success": 0.046859,
+      "projected_20_workday_cost_usd": 0.93718
+    },
+    "csv-import": {
+      "attempts": 10,
+      "passed": 10,
+      "failed": 0,
+      "blocked": 0,
+      "mean_elapsed_seconds": 26.3709,
+      "median_elapsed_seconds": 26.1075,
+      "elapsed_values_available": 10,
+      "actions": {
+        "range": [
+          7,
+          7
+        ],
+        "values_available": 10
+      },
+      "requests": {
+        "range": [
+          7,
+          7
+        ],
+        "values_available": 10
+      },
+      "cost_complete": true,
+      "cost_values_available": 10,
+      "missing_or_incomplete_cost_run_ids": [],
+      "estimated_cost_usd_known": 0.464835,
+      "estimated_cost_usd": 0.464835,
+      "mean_estimated_cost_usd_per_attempt": 0.0464835,
+      "estimated_cost_usd_per_verified_success": 0.0464835,
+      "projected_20_workday_cost_usd": 0.92967
+    },
+    "calc-sort-export": {
+      "attempts": 10,
+      "passed": 9,
+      "failed": 1,
+      "blocked": 0,
+      "mean_elapsed_seconds": 64.9927,
+      "median_elapsed_seconds": 57.492000000000004,
+      "elapsed_values_available": 10,
+      "actions": {
+        "range": [
+          17,
+          23
+        ],
+        "values_available": 10
+      },
+      "requests": {
+        "range": [
+          9,
+          12
+        ],
+        "values_available": 10
+      },
+      "cost_complete": true,
+      "cost_values_available": 10,
+      "missing_or_incomplete_cost_run_ids": [],
+      "estimated_cost_usd_known": 1.173531,
+      "estimated_cost_usd": 1.173531,
+      "mean_estimated_cost_usd_per_attempt": 0.1173531,
+      "estimated_cost_usd_per_verified_success": 0.13039233333333333,
+      "projected_20_workday_cost_usd": 2.347062
+    },
+    "writer-find-replace": {
+      "attempts": 10,
+      "passed": 10,
+      "failed": 0,
+      "blocked": 0,
+      "mean_elapsed_seconds": 35.4706,
+      "median_elapsed_seconds": 35.6815,
+      "elapsed_values_available": 10,
+      "actions": {
+        "range": [
+          14,
+          16
+        ],
+        "values_available": 10
+      },
+      "requests": {
+        "range": [
+          6,
+          7
+        ],
+        "values_available": 10
+      },
+      "cost_complete": true,
+      "cost_values_available": 10,
+      "missing_or_incomplete_cost_run_ids": [],
+      "estimated_cost_usd_known": 0.415566,
+      "estimated_cost_usd": 0.415566,
+      "mean_estimated_cost_usd_per_attempt": 0.0415566,
+      "estimated_cost_usd_per_verified_success": 0.0415566,
+      "projected_20_workday_cost_usd": 0.831132
+    }
+  },
+  "cohorts": {
+    "historical_24": {
+      "attempts": 24,
+      "passed": 24,
+      "failed": 0,
+      "blocked": 0,
+      "mean_elapsed_seconds": 26.35075,
+      "median_elapsed_seconds": 25.7395,
+      "elapsed_values_available": 24,
+      "actions": {
+        "range": [
+          7,
+          8
+        ],
+        "values_available": 24
+      },
+      "requests": {
+        "range": [
+          6,
+          7
+        ],
+        "values_available": 24
+      },
+      "cost_complete": true,
+      "cost_values_available": 24,
+      "missing_or_incomplete_cost_run_ids": [],
+      "estimated_cost_usd_known": 0.878374,
+      "estimated_cost_usd": 0.878374,
+      "mean_estimated_cost_usd_per_attempt": 0.03659891666666667,
+      "estimated_cost_usd_per_verified_success": 0.03659891666666667,
+      "projected_20_workday_cost_usd": 0.7319783333333333
+    },
+    "new_76": {
+      "attempts": 76,
+      "passed": 75,
+      "failed": 1,
+      "blocked": 0,
+      "mean_elapsed_seconds": 33.91494736842105,
+      "median_elapsed_seconds": 29.4225,
+      "elapsed_values_available": 76,
+      "actions": {
+        "range": [
+          7,
+          23
+        ],
+        "values_available": 76
+      },
+      "requests": {
+        "range": [
+          6,
+          12
+        ],
+        "values_available": 76
+      },
+      "cost_complete": true,
+      "cost_values_available": 76,
+      "missing_or_incomplete_cost_run_ids": [],
+      "estimated_cost_usd_known": 4.161524,
+      "estimated_cost_usd": 4.161524,
+      "mean_estimated_cost_usd_per_attempt": 0.05475689473684211,
+      "estimated_cost_usd_per_verified_success": 0.05548698666666667,
+      "projected_20_workday_cost_usd": 1.0951378947368422
+    }
+  },
+  "new_source_revisions": {
+    "c523e5300fe10fa60b1ada0210c55f6d55bd3156": {
+      "attempts": 13,
+      "passed": 12,
+      "failed": 1,
+      "blocked": 0,
+      "mean_elapsed_seconds": 31.112923076923078,
+      "median_elapsed_seconds": 29.365,
+      "elapsed_values_available": 13,
+      "actions": {
+        "range": [
+          7,
+          17
+        ],
+        "values_available": 13
+      },
+      "requests": {
+        "range": [
+          6,
+          9
+        ],
+        "values_available": 13
+      },
+      "cost_complete": true,
+      "cost_values_available": 13,
+      "missing_or_incomplete_cost_run_ids": [],
+      "estimated_cost_usd_known": 0.581149,
+      "estimated_cost_usd": 0.581149,
+      "mean_estimated_cost_usd_per_attempt": 0.04470376923076923,
+      "estimated_cost_usd_per_verified_success": 0.04842908333333333,
+      "projected_20_workday_cost_usd": 0.8940753846153846
+    },
+    "e041a50035652d9602afd117e820716d2f96cdc6": {
+      "attempts": 63,
+      "passed": 63,
+      "failed": 0,
+      "blocked": 0,
+      "mean_elapsed_seconds": 34.49314285714286,
+      "median_elapsed_seconds": 29.48,
+      "elapsed_values_available": 63,
+      "actions": {
+        "range": [
+          7,
+          23
+        ],
+        "values_available": 63
+      },
+      "requests": {
+        "range": [
+          6,
+          12
+        ],
+        "values_available": 63
+      },
+      "cost_complete": true,
+      "cost_values_available": 63,
+      "missing_or_incomplete_cost_run_ids": [],
+      "estimated_cost_usd_known": 3.580375,
+      "estimated_cost_usd": 3.580375,
+      "mean_estimated_cost_usd_per_attempt": 0.056831349206349205,
+      "estimated_cost_usd_per_verified_success": 0.056831349206349205,
+      "projected_20_workday_cost_usd": 1.136626984126984
+    }
+  }
+}

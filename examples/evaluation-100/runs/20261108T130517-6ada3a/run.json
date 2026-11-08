@@ -1,0 +1,38 @@
+{
+  "id": "20261108T130517-6ada3a",
+  "task_id": "calc-sort-export",
+  "instruction": "The supplied receivables spreadsheet is open in LibreOffice Calc. Sort the entire table by outstanding_balance numerically descending, then invoice_id ascending for ties. Keep the header first and preserve every row and every other cell value. Export the sorted sheet as a UTF-8, comma-separated CSV to /tmp/ledgerdesk/exports/calc-sort-export.csv. Use the application's normal controls and confirm the CSV format if asked. Do not overwrite the source ODS.",
+  "started_at": "2026-11-08T13:05:17.222076+00:00",
+  "as_of": "2026-10-15",
+  "model": "gpt-6.1-terra",
+  "status": "passed",
+  "error": null,
+  "action_count": 23,
+  "request_count": 12,
+  "limits": {
+    "actions": 80,
+    "requests": 30,
+    "seconds": 420,
+    "budget_usd": 1.0
+  },
+  "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+  "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+  "application": "LibreOffice",
+  "protocol": "expanded-100-v1",
+  "source_revision": "e041a50035652d9602afd117e820716d2f96cdc6",
+  "source_tree_sha256": "f6649d658a5500e587c4c146cd2f1231f435a3928106357c4af85e0a68ab3c33",
+  "image_id": "70e965016c611aeed85f7460e8e65562bcf83bf80e37244de8f23466e1af7c1f",
+  "input_sha256": "5fde92b4986a9c70907dac4f323f98d85db7cdb32440bb30b56e061f6277a139",
+  "application_version": "LibreOffice 7.4.7.2 40(Build:2)",
+  "usage": {
+    "input_tokens": 121009,
+    "output_tokens": 605,
+    "total_tokens": 121614,
+    "complete": true
+  },
+  "estimated_cost_usd": 0.124034,
+  "model_text": "Completed the sort and exported the CSV to `/tmp/ledgerdesk/exports/calc-sort-export.csv`.",
+  "recording_available": true,
+  "elapsed_seconds": 52.267,
+  "finished_at": "2026-11-08T13:06:09.490028+00:00"
+}

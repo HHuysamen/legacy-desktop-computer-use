@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "errors": [],
+  "headers": [
+    "invoice_id",
+    "customer",
+    "outstanding_balance",
+    "due_date",
+    "status"
+  ],
+  "rows": [
+    {
+      "invoice_id": "INV-003",
+      "customer": "Northstar Manufacturing",
+      "outstanding_balance": "10000.00",
+      "due_date": "2026-10-03",
+      "status": "open"
+    },
+    {
+      "invoice_id": "INV-001",
+      "customer": "Northstar Manufacturing",
+      "outstanding_balance": "1234.50",
+      "due_date": "2026-10-01",
+      "status": "open"
+    },
+    {
+      "invoice_id": "INV-005",
+      "customer": "Amber Research",
+      "outstanding_balance": "1234.50",
+      "due_date": "2026-09-29",
+      "status": "open"
+    },
+    {
+      "invoice_id": "INV-006",
+      "customer": "Cedar Services",
+      "outstanding_balance": "999.99",
+      "due_date": "2026-10-12",
+      "status": "partial"
+    },
+    {
+      "invoice_id": "INV-008",
+      "customer": "Beacon Tools",
+      "outstanding_balance": "100.00",
+      "due_date": "2026-10-15",
+      "status": "open"
+    },
+    {
+      "invoice_id": "INV-002",
+      "customer": "Cedar Services",
+      "outstanding_balance": "50.00",
+      "due_date": "2026-10-02",
+      "status": "partial"
+    },
+    {
+      "invoice_id": "INV-007",
+      "customer": "Beacon Tools",
+      "outstanding_balance": "9.50",
+      "due_date": "2026-10-15",
+      "status": "open"
+    },
+    {
+      "invoice_id": "INV-004",
+      "customer": "Harbor Supply",
+      "outstanding_balance": "0.00",
+      "due_date": "2026-10-04",
+      "status": "settled"
+    }
+  ],
+  "row_count": 8,
+  "source_unchanged": true,
+  "source_sha256_after": "5fde92b4986a9c70907dac4f323f98d85db7cdb32440bb30b56e061f6277a139"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "20261108T125218-1d9d9e",
+  "task_id": "writer-find-replace",
+  "instruction": "The supplied supplier handover memo is open in LibreOffice Writer. Replace every exact occurrence of 'Harbor Systems' with 'Northstar Devices', including occurrences in the table. Do not change the similar names 'Harbour Systems' or 'Harbor System', or any other text, numbers, paragraph order or table content. Save the edited document as OpenDocument Text to /tmp/ledgerdesk/exports/writer-find-replace.odt, leaving the source ODT unchanged.",
+  "started_at": "2026-11-08T12:52:18.350562+00:00",
+  "as_of": "2026-10-15",
+  "model": "gpt-6.1-terra",
+  "status": "passed",
+  "error": null,
+  "action_count": 14,
+  "request_count": 6,
+  "limits": {
+    "actions": 80,
+    "requests": 30,
+    "seconds": 420,
+    "budget_usd": 1.0
+  },
+  "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+  "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+  "application": "LibreOffice",
+  "protocol": "expanded-100-v1",
+  "source_revision": "c523e5300fe10fa60b1ada0210c55f6d55bd3156",
+  "source_tree_sha256": "380c38f0404782de5be7076514de1faf34540d679511040097a23d4892625ae7",
+  "image_id": "c19eb9212b23a4eb39c297186c5c6464e3cb1b52e603dff8686dc4c34e5568d0",
+  "input_sha256": "ee9774599621a8d5f59306e517fde437345acf2ee1388754c74220092719b73f",
+  "application_version": "LibreOffice 7.4.7.2 40(Build:2)",
+  "usage": {
+    "input_tokens": 35319,
+    "output_tokens": 357,
+    "total_tokens": 35676,
+    "complete": true
+  },
+  "estimated_cost_usd": 0.037104,
+  "model_text": "Done. Saved the edited document as `/tmp/ledgerdesk/exports/writer-find-replace.odt`.",
+  "recording_available": true,
+  "elapsed_seconds": 31.802,
+  "finished_at": "2026-11-08T12:52:50.152264+00:00"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "20261108T125509-681219",
+  "task_id": "invoice-lookup",
+  "instruction": "In LedgerDesk, look up invoice INV-260916 by its exact invoice number. Do not modify any records. Export the lookup result as CSV.",
+  "started_at": "2026-11-08T12:55:09.793424+00:00",
+  "as_of": "2026-10-15",
+  "model": "gpt-6.1-terra",
+  "status": "passed",
+  "error": null,
+  "action_count": 7,
+  "request_count": 7,
+  "limits": {
+    "actions": 80,
+    "requests": 30,
+    "seconds": 420,
+    "budget_usd": 1.0
+  },
+  "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+  "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+  "application": "LedgerDesk",
+  "protocol": "expanded-100-v1",
+  "source_revision": "e041a50035652d9602afd117e820716d2f96cdc6",
+  "source_tree_sha256": "f6649d658a5500e587c4c146cd2f1231f435a3928106357c4af85e0a68ab3c33",
+  "image_id": "70e965016c611aeed85f7460e8e65562bcf83bf80e37244de8f23466e1af7c1f",
+  "usage": {
+    "input_tokens": 44981,
+    "output_tokens": 242,
+    "total_tokens": 45223,
+    "complete": true
+  },
+  "estimated_cost_usd": 0.046191,
+  "model_text": "Exported the lookup result for INV-260916 as `invoice-lookup.csv`. No records were modified.",
+  "recording_available": true,
+  "elapsed_seconds": 25.804,
+  "finished_at": "2026-11-08T12:55:35.597376+00:00"
+}
