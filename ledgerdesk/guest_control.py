@@ -44,6 +44,9 @@ def window_bounds() -> tuple[int, int, int, int]:
     active = int(command("xdotool", "getactivewindow"))
     if is_office():
         # Native application dialogs are allowed only within the same process.
+        if not any(int(parts[0], 16) == active for parts in matches):
+            raise RuntimeError("Target application lost focus")
+        office_windows = matches[:]
         matches = [parts for parts in matches if int(parts[0], 16) == active]
     if len(matches) != 1:
         raise RuntimeError("LedgerDesk window missing or ambiguous")
@@ -54,12 +57,20 @@ def window_bounds() -> tuple[int, int, int, int]:
     if is_office():
         # wmctrl can double-count decorations on maximized LibreOffice windows.
         # Read X11's absolute client geometry, not application content.
-        geometry = command("xwininfo", "-id", parts[0])
         labels = ("Absolute upper-left X", "Absolute upper-left Y", "Width", "Height")
-        values = [re.search(rf"^\s*{label}:\s*(-?\d+)", geometry, re.MULTILINE) for label in labels]
-        if any(value is None for value in values):
-            raise RuntimeError("Target client geometry is unavailable")
-        bounds = tuple(int(value.group(1)) for value in values)
+        rectangles = []
+        for window in office_windows:
+            geometry = command("xwininfo", "-id", window[0])
+            values = [re.search(rf"^\s*{label}:\s*(-?\d+)", geometry, re.MULTILINE) for label in labels]
+            if any(value is None for value in values):
+                raise RuntimeError("Target client geometry is unavailable")
+            rectangles.append(tuple(int(value.group(1)) for value in values))
+        # A combo-box popup can extend outside its dialog onto the owned main window.
+        left = min(r[0] for r in rectangles)
+        top = min(r[1] for r in rectangles)
+        right = max(r[0] + r[2] for r in rectangles)
+        bottom = max(r[1] + r[3] for r in rectangles)
+        bounds = (left, top, right - left, bottom - top)
     x, y, width, height = bounds
     if width <= 0 or height <= 0 or x < 0 or y < 0 or x + width > WIDTH or y + height > HEIGHT:
         raise RuntimeError("LedgerDesk client area is outside the captured display")

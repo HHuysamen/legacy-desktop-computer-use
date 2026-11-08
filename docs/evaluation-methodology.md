@@ -63,3 +63,9 @@ Report outcomes and cost per task and per cohort, alongside the overall result. 
 ## Publishing the result
 
 Publish the measured outcomes, limitations and links to the retained evidence without claiming general business reliability. The Google Search guidance on [original, first-hand content](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide?hl=en) supports making the actual work understandable rather than manufacturing generic summaries. That guidance is about presentation and discovery; it does not validate this protocol or guarantee indexing or citations.
+
+## Recorded protocol amendment
+
+The first 13 new attempts ran at source revision `c523e53`. Twelve passed; the first Calc attempt (`20261108T125117-bdb21f`) stopped when selecting CSV in the native Save As file-type list. That list extends below its parent dialog, outside the driver's then-permitted active-dialog rectangle. The failed attempt remains the first of Calc's ten slots.
+
+Before the remaining 63 slots, the driver was corrected to permit input across the owned application's window area while still requiring the active window to belong to the bound application process. A manual, API-free GUI check confirmed that the previously rejected dropdown click was accepted. Fixed task instructions and input fixtures were unchanged. Per-run source/image identifiers distinguish these two cohorts. This correction and the retained failure mean the combined result is an iterative system evaluation, not 100 trials of one frozen driver version.

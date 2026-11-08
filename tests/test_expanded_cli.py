@@ -156,3 +156,38 @@ def test_office_startup_rejects_unknown_window_pid(monkeypatch):
     monkeypatch.setattr(launch, "Path", lambda *args: SimpleNamespace(write_text=lambda value: None))
     with pytest.raises(RuntimeError):
         launch.main()
+
+
+def test_office_popup_can_extend_below_its_owned_dialog(monkeypatch):
+    monkeypatch.setenv('LEDGERDESK_TASK', 'calc-sort-export')
+    monkeypatch.setattr(guest_control, 'Path', lambda _: SimpleNamespace(read_text=lambda: '222'))
+    active = '2'
+    def command(*args):
+        if args[0] == 'wmctrl':
+            return ('0x000001 0 222 0 38 1200 881 demo LibreOffice Calc\n'
+                    '0x000002 0 222 255 250 690 415 demo Save As\n'
+                    '0x000003 0 999 0 0 1200 900 demo Other app')
+        if args[0] == 'xdotool':
+            return active
+        x, y, width, height = (0, 19, 1200, 881) if args[-1] == '0x000001' else (255, 250, 690, 415)
+        return f'Absolute upper-left X: {x}\nAbsolute upper-left Y: {y}\nWidth: {width}\nHeight: {height}'
+    monkeypatch.setattr(guest_control, 'command', command)
+    bounds = guest_control.window_bounds()
+    assert bounds == (0, 19, 1200, 881)
+    guest_control.validate_action({'type': 'click', 'x': 391, 'y': 742}, bounds)
+    active = '3'
+    with pytest.raises(RuntimeError, match='lost focus'):
+        guest_control.window_bounds()
+
+
+def test_action_rejection_keeps_fixed_driver_reason(tmp_path, monkeypatch):
+    from ledgerdesk.desktop_driver import DesktopDriver
+    driver = DesktopDriver(tmp_path)
+    def refuse(_):
+        raise RuntimeError('ValueError: Coordinates outside LedgerDesk client area')
+    monkeypatch.setattr(driver, '_send', refuse)
+    with pytest.raises(RuntimeError):
+        driver.click({'type': 'click', 'x': 391, 'y': 742})
+    rows = [json.loads(line) for line in (tmp_path / 'events.jsonl').read_text().splitlines()]
+    assert rows[-1]['type'] == 'driver_error'
+    assert rows[-1]['message'].startswith('ValueError: Coordinates outside')

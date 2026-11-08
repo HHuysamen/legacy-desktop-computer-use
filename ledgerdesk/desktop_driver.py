@@ -43,7 +43,11 @@ class DesktopDriver:
     def _action(self, action) -> None:
         data = action.model_dump(exclude_none=True) if hasattr(action, "model_dump") else dict(action)
         log_event(self.run_dir, "action", action=data, phase="requested")
-        self._send(data)
+        try:
+            self._send(data)
+        except RuntimeError as error:
+            log_event(self.run_dir, "driver_error", message=str(error))
+            raise
         log_event(self.run_dir, "action_result", action_type=data["type"], completed=True)
 
     click = _action
