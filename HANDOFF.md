@@ -3,9 +3,8 @@ status: published
 updated: 2026-11-08
 updated_by: codex
 next_actions:
-  - Verify actual Search Console indexing when account access is available.
-  - Mirror the follow-up link to Medium only if requested; its import is not live-synced.
-  - Investigate the pre-existing optional Workers build failure separately from Pages.
+  - Recheck Google indexing after processing; both URLs were accepted into the priority crawl queue on 2026-11-08.
+  - Optionally mirror the separate follow-up link to Medium; its canonical already points to the main site.
 blockers: []
 ---
 # Handoff
@@ -22,6 +21,7 @@ blockers: []
 - Raw ledgers: output/robustness-study, output/gnucash-study, output/gnucash-study-repaired; run evidence under output/runs.
 
 ## Decisions and limits
+- Search Console: sitemap-index.xml submitted successfully with status Success on 2026-11-08; article and follow-up indexing requests both accepted into the priority crawl queue. Submission is not proof of indexing; do not resubmit repeatedly.
 - Office variation: 24/24 positive tasks verified, 6/6 stopping controls passed separately. All12 input/instruction pairs passed both geometries.
 - Original native GnuCash: 0/9 verified. Every attempt stopped at model key Tab versus the driver's uppercase TAB allowlist. All failures retained.
 - Repaired native GnuCash: 9/9 verified, using the same fixtures after the observed bug; this is repair validation, not new held-out evidence.
@@ -34,17 +34,17 @@ blockers: []
 - 363 Python tests passed locally; Python3.11/3.13 CI passed;22 website checks passed in production and preview. Desktop/mobile light/dark checked, no page overflow.
 - Live article/follow-up/sitemap and all3 summaries return200; summaries match local hashes. Seven search/retrieval UA probes return200; not verified crawler IPs or indexing.
 - Managed robots still disallows training crawlers. GPTBot UA returned200 on the new route; robots policy is distinct from HTTP enforcement. No crawler settings changed.
-- Pages deployment succeeded. Separate Workers build check already failed on pre-change main and still fails; no unrelated integration settings changed.
+- Worker Git builds disconnected and UI verified Connect state on 2026-11-08; PR#1 is closed. Existing Worker, Pages workflow, DNS and routes retained. Old failed build checks are historical.
 - Local test browser/server stopped; desktop containers stopped. Secrets remain in ignored local configuration, never guest or archives.
 - Prior100 study remains99/100, including its original Calc failure. Narrated-v2 media unchanged.
 
 ## Open questions
 - Actual search/AI-search indexing and generalization to unfamiliar applications, locales, Windows and production data remain unverified.
-- Prior canonical notes record Medium syndication at https://medium.com/@hhuysamen/automating-a-legacy-desktop-app-with-computer-use-66d0d428a984; it was not updated in this session.
+- Medium live settings verified: originally published elsewhere enabled; canonical is https://www.henryhuysamen.com/writing/ledgerdesk-computer-use/. Visible links point back to the main site; no separate follow-up link observed.
 
 ## Recent sessions
-- 2026-11-08 (codex): Completed frozen Office30 and Gnu9, retained nine failures, repaired key casing, verified9/9 repair cases and published separate evidence.
-- 2026-11-08 (claude-code, prior canonical note): Published Medium copy with canonical link to the site; import is one-time.
-- 2026-11-08 (codex): Published100-attempt study and preserved failed Calc case.
-- 2026-11-08 (codex): Audited sitemap and crawler access without changing training policies.
-- 2026-11-08 (codex): Published approved article, narrated media and24-run archive.
+- 2026-11-08 (codex): Closed session work; Worker Git builds disconnected, obsolete PR#1 closed, Medium canonical verified, sitemap accepted and both indexing requests queued. Only Google processing remains pending.
+- 2026-11-08 (codex): Published separately frozen Office/control and original/repaired GnuCash evidence; retained all failures and complete costs.
+- 2026-11-08 (claude-code, prior note): Published Medium syndication with the site article as canonical; preserved local handoff history.
+- 2026-11-08 (codex): Published100-attempt study, including original Calc failure, with source-linked methods and evidence.
+- 2026-11-08 (codex): Published original article and narrated media; tested sitemap and crawler access.
