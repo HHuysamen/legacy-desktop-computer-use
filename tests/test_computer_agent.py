@@ -4,6 +4,8 @@ import struct
 from types import SimpleNamespace
 
 import pytest
+import httpx2
+from openai import APIStatusError, RateLimitError
 from openai.types.responses import ResponseComputerToolCall, ResponseOutputMessage
 
 from ledgerdesk import computer_agent
@@ -247,3 +249,37 @@ def test_no_subsequent_effect_after_slow_driver_action(monkeypatch, tmp_path):
     assert "time limit" in result["error"]
     assert driver.actions == ["click"]
     assert result["action_count"] == 1
+
+
+def test_credit_exhaustion_is_blocked_and_diagnostic_is_sanitized(monkeypatch, tmp_path):
+    request = httpx2.Request("POST", "https://api.openai.com/v1/responses", headers={"Authorization": "Bearer SECRET-KEY"})
+    error = RateLimitError("PRIVATE PROVIDER MESSAGE", response=httpx2.Response(429, request=request, headers={"x-request-id": "PRIVATE-REQUEST"}), body={"code": "credit_balance_exhausted", "type": "insufficient_quota", "message": "PRIVATE BODY"})
+    fake_client(monkeypatch, [error])
+    driver = Driver()
+    result = computer_agent.run_agent(driver, "Export.", tmp_path)
+    assert result["status"] == "blocked"
+    assert "add credits" in result["error"]
+    assert result["api_error"] == {"status_code": 429, "code": "credit_balance_exhausted", "type": "insufficient_quota"}
+    assert result["usage"]["complete"] is False and result["estimated_cost_usd"] is None
+    assert driver.actions == []
+    serialized = json.dumps(result) + (tmp_path / "events.jsonl").read_text()
+    assert "PRIVATE" not in serialized and "SECRET-KEY" not in serialized
+
+
+@pytest.mark.parametrize(("status", "expected"), [(401, "blocked"), (403, "blocked"), (429, "blocked"), (400, "failed"), (500, "failed")])
+def test_http_access_and_quota_errors_are_not_task_failures(monkeypatch, tmp_path, status, expected):
+    error = APIStatusError("private", response=httpx2.Response(status, request=httpx2.Request("POST", "https://api.openai.com/v1/responses")), body={"code": "generic_error", "type": "api_error"})
+    fake_client(monkeypatch, [error])
+    result = computer_agent.run_agent(Driver(), "Export.", tmp_path)
+    assert result["status"] == expected
+    assert result["api_error"]["status_code"] == status
+    assert result["estimated_cost_usd"] is None
+
+
+def test_api_error_identifiers_reject_unsafe_or_oversized_values(monkeypatch, tmp_path):
+    error = RateLimitError("private", response=httpx2.Response(429, request=httpx2.Request("POST", "https://api.openai.com/v1/responses")), body={"code": "<script>SECRET</script>", "type": "x" * 101})
+    fake_client(monkeypatch, [error])
+    result = computer_agent.run_agent(Driver(), "Export.", tmp_path)
+    assert result["api_error"] == {"status_code": 429, "code": None, "type": None}
+    assert "SECRET" not in json.dumps(result)
+    assert "SECRET" not in (tmp_path / "events.jsonl").read_text()

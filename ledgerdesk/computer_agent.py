@@ -6,10 +6,11 @@ import base64
 from datetime import datetime, timezone
 import json
 from pathlib import Path
+import re
 import struct
 import time
 
-from openai import ComputerToolset, OpenAI
+from openai import APIStatusError, ComputerToolset, OpenAI
 from openai.lib.computer import ComputerUseError
 
 
@@ -76,6 +77,19 @@ def _usage(response) -> dict | None:
     if values["total_tokens"] != values["input_tokens"] + values["output_tokens"]:
         return None
     return values
+
+
+def _api_error(error: APIStatusError) -> dict:
+    """Keep only small protocol identifiers; never retain provider prose or headers."""
+    def identifier(value):
+        return value if isinstance(value, str) and re.fullmatch(r"[A-Za-z0-9_.-]{1,100}", value) else None
+
+    status = error.status_code
+    return {
+        "status_code": status if type(status) is int and 100 <= status <= 599 else None,
+        "code": identifier(error.code),
+        "type": identifier(error.type),
+    }
 
 
 def run_agent(
@@ -216,6 +230,19 @@ def run_agent(
             result["usage"]["complete"] = False
             result["estimated_cost_usd"] = None
             result["error"] = f"API request failed ({category}); usage may be incomplete."
+            if isinstance(error, APIStatusError):
+                result["api_error"] = _api_error(error)
+                status = result["api_error"]["status_code"]
+                if status in {401, 403, 429}:
+                    result["status"] = "blocked"
+                    if status == 401:
+                        result["error"] = "API authentication failed; check the project's local API key."
+                    elif status == 403:
+                        result["error"] = "API access denied; check the project's model and computer-tool access."
+                    elif result["api_error"]["code"] == "credit_balance_exhausted":
+                        result["error"] = "OpenAI API credits are exhausted; add credits to the API project and rerun."
+                    else:
+                        result["error"] = "API rate or quota limit reached; check billing and project limits before rerunning."
         elif phase == "response":
             result["error"] = f"Model response validation failed ({category})."
         elif isinstance(error, ComputerUseError):
@@ -228,5 +255,6 @@ def run_agent(
         if client is not None:
             client.close()
         if result["error"]:
-            _log(run_dir, "error", message=result["error"])
+            details = {"api_error": result["api_error"]} if "api_error" in result else {}
+            _log(run_dir, "error", message=result["error"], **details)
     return result

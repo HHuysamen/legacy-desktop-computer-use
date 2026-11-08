@@ -56,9 +56,9 @@ The intended website presentation combines this article with a standalone eviden
 
 ## Live results pending
 
-At the time of this draft, **85 automated tests pass locally**. They exercise report rules, fixture reset, CSV verification, export behavior, evidence rendering and mocked computer-tool interactions. All three reports have also been exported through the actual native GUI and independently verified using scripted plumbing checks. Those checks establish that the application and driver work; they do not measure model performance. GitHub Actions is configured for Python 3.11 and 3.13 without an API key.
+At the time of this draft, **92 automated tests pass locally**. They exercise report rules, fixture reset, CSV verification, export behavior, evidence rendering and mocked computer-tool interactions. All three reports have also been exported through the actual native GUI and independently verified using scripted plumbing checks. Those checks establish that the application and driver work; they do not measure model performance. The initial GitHub Actions run passed on Python 3.11 and 3.13 without an API key.
 
-Live model results remain pending. This section will report the tested environment, model, number of attempts per task, verified outcomes, failures, timings and available cost estimates after execution. A successful run will show that this particular task completed correctly under its recorded conditions. Any broader claim will require further evidence.
+Live model results remain pending: the first request was rejected because the configured API project had no credits, before any agent desktop action. This section will report the tested environment, model, number of attempts per task, verified outcomes, failures, timings and available cost estimates after execution. A successful run will show that this particular task completed correctly under its recorded conditions. Any broader claim will require further evidence.
 
 ## The business question behind the demo
 

@@ -8,9 +8,9 @@ LedgerDesk is a real Tkinter desktop window inside an isolated Linux desktop. Th
 
 ## Validation status
 
-Local validation on 8 November 2026: **85 automated tests passed**, and all three reports were exported through the real GUI and independently verified (6, 7 and 4 rows respectively). The guest-only recorder and localhost VNC viewer were also checked. Tested environment: macOS 26.6.2 on Apple silicon, Docker Engine 29.9.1, Linux arm64/X11 guest, Python 3.13 host and Python 3.12 guest.
+Local validation on 8 November 2026: **92 automated tests passed**, and all three reports were exported through the real GUI and independently verified (6, 7 and 4 rows respectively). The guest-only recorder and localhost VNC viewer were also checked. Tested environment: macOS 26.6.2 on Apple silicon, Docker Engine 29.9.1, Linux arm64/X11 guest, Python 3.13 host and Python 3.12 guest. The initial GitHub Actions run passed on Python 3.11 and 3.13.
 
-**Live model validation is pending:** the local API key has not yet been configured. The GUI checks above used scripted input to test the plumbing; they are not AI success results. No model success rate is claimed. The nine planned live attempts, agent recording and public release remain outstanding. See [validation details](docs/validation.md) and the [actual setup-blocked report](examples/setup-blocked-report.html).
+**Live model validation is pending:** the configured API project returned `credit_balance_exhausted`. The first live attempt executed no desktop actions. The GUI checks above used scripted input to test the plumbing; they are not AI success results. No model success rate is claimed. The nine planned live attempts, agent recording and public release remain outstanding. See [validation details](docs/validation.md) and the [earlier credential-free setup report](examples/setup-blocked-report.html).
 
 ![The native LedgerDesk fixture, before a task starts](examples/ledgerdesk.png)
 
