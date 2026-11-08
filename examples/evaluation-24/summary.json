@@ -1,0 +1,888 @@
+{
+  "schema_version": 1,
+  "packaged_at": "2026-11-08T12:13:26.971823+00:00",
+  "planned_attempts": 24,
+  "completed_attempts": 24,
+  "pilot_excluded_from_statistics": true,
+  "overall": {
+    "attempts": 24,
+    "verified": 24,
+    "failed": 0,
+    "blocked": 0,
+    "median_elapsed_seconds": 25.7395,
+    "elapsed_values_available": 24,
+    "action_range": [
+      7,
+      8
+    ],
+    "request_range": [
+      6,
+      7
+    ],
+    "estimated_cost_usd_known": 0.878374,
+    "cost_values_available": 24,
+    "usage_complete": true
+  },
+  "tasks": {
+    "monthly-revenue": {
+      "attempts": 8,
+      "verified": 8,
+      "failed": 0,
+      "blocked": 0,
+      "median_elapsed_seconds": 26.717,
+      "elapsed_values_available": 8,
+      "action_range": [
+        7,
+        7
+      ],
+      "request_range": [
+        6,
+        6
+      ],
+      "estimated_cost_usd_known": 0.284688,
+      "cost_values_available": 8,
+      "usage_complete": true
+    },
+    "overdue-invoices": {
+      "attempts": 8,
+      "verified": 8,
+      "failed": 0,
+      "blocked": 0,
+      "median_elapsed_seconds": 26.415,
+      "elapsed_values_available": 8,
+      "action_range": [
+        7,
+        8
+      ],
+      "request_range": [
+        6,
+        7
+      ],
+      "estimated_cost_usd_known": 0.308254,
+      "cost_values_available": 8,
+      "usage_complete": true
+    },
+    "reconciliation-exceptions": {
+      "attempts": 8,
+      "verified": 8,
+      "failed": 0,
+      "blocked": 0,
+      "median_elapsed_seconds": 24.9305,
+      "elapsed_values_available": 8,
+      "action_range": [
+        7,
+        7
+      ],
+      "request_range": [
+        6,
+        6
+      ],
+      "estimated_cost_usd_known": 0.285432,
+      "cost_values_available": 8,
+      "usage_complete": true
+    }
+  },
+  "runs": [
+    {
+      "id": "20261108T084829-36a77a",
+      "task_id": "monthly-revenue",
+      "instruction": "In LedgerDesk, generate Monthly revenue for September 2026, grouped by customer and sorted by revenue descending (customer name ascending for ties). Use invoice-date net amounts, excluding voided invoices. Export the result as CSV.",
+      "started_at": "2026-11-08T08:48:29.937162+00:00",
+      "as_of": "2026-10-15",
+      "model": "gpt-6.1-terra",
+      "status": "passed",
+      "error": null,
+      "action_count": 7,
+      "request_count": 6,
+      "limits": {
+        "actions": 40,
+        "requests": 20,
+        "seconds": 300,
+        "budget_usd": 1.0
+      },
+      "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+      "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+      "image_id": "726f4bd46ae3df3565cabeb0b65e8e92a3c924300ba3eb927bbb634ae2d17b8b",
+      "usage": {
+        "input_tokens": 34464,
+        "output_tokens": 224,
+        "total_tokens": 34688,
+        "complete": true
+      },
+      "estimated_cost_usd": 0.035584,
+      "model_text": "Generated the September 2026 Monthly revenue report and exported its 6 customer rows to `monthly-revenue.csv`.",
+      "recording_available": true,
+      "elapsed_seconds": 28.51,
+      "finished_at": "2026-11-08T08:48:58.447003+00:00"
+    },
+    {
+      "id": "20261108T084858-15367b",
+      "task_id": "overdue-invoices",
+      "instruction": "In LedgerDesk, generate Overdue invoices as of 2026-10-15. Include issued invoices with an outstanding balance and a due date strictly before that date, including partially paid invoices. Include customer, invoice number, balance, due date and days overdue. Sort by due date, then invoice number, ascending. Export as CSV.",
+      "started_at": "2026-11-08T08:48:58.451451+00:00",
+      "as_of": "2026-10-15",
+      "model": "gpt-6.1-terra",
+      "status": "passed",
+      "error": null,
+      "action_count": 7,
+      "request_count": 6,
+      "limits": {
+        "actions": 40,
+        "requests": 20,
+        "seconds": 300,
+        "budget_usd": 0.964416
+      },
+      "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+      "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+      "image_id": "726f4bd46ae3df3565cabeb0b65e8e92a3c924300ba3eb927bbb634ae2d17b8b",
+      "usage": {
+        "input_tokens": 34614,
+        "output_tokens": 234,
+        "total_tokens": 34848,
+        "complete": true
+      },
+      "estimated_cost_usd": 0.035784,
+      "model_text": "Generated the Overdue invoices report as of 2026-10-15 and exported 7 rows to `overdue-invoices.csv`.",
+      "recording_available": true,
+      "elapsed_seconds": 25.348,
+      "finished_at": "2026-11-08T08:49:23.799337+00:00"
+    },
+    {
+      "id": "20261108T084923-399815",
+      "task_id": "reconciliation-exceptions",
+      "instruction": "In LedgerDesk, generate Reconciliation exceptions with a tolerance of 0.01. Include transactions whose absolute difference is strictly greater than the tolerance. Show transaction ID, recorded amount, expected amount and signed difference (recorded minus expected), sorted by transaction ID ascending. Export as CSV.",
+      "started_at": "2026-11-08T08:49:23.804237+00:00",
+      "as_of": "2026-10-15",
+      "model": "gpt-6.1-terra",
+      "status": "passed",
+      "error": null,
+      "action_count": 7,
+      "request_count": 6,
+      "limits": {
+        "actions": 40,
+        "requests": 20,
+        "seconds": 300,
+        "budget_usd": 0.928632
+      },
+      "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+      "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+      "image_id": "726f4bd46ae3df3565cabeb0b65e8e92a3c924300ba3eb927bbb634ae2d17b8b",
+      "usage": {
+        "input_tokens": 34534,
+        "output_tokens": 226,
+        "total_tokens": 34760,
+        "complete": true
+      },
+      "estimated_cost_usd": 0.035664,
+      "model_text": "Generated the Reconciliation exceptions report with a 0.01 tolerance and exported 4 rows to `reconciliation-exceptions.csv`.",
+      "recording_available": true,
+      "elapsed_seconds": 25.214,
+      "finished_at": "2026-11-08T08:49:49.018911+00:00"
+    },
+    {
+      "id": "20261108T084949-b53163",
+      "task_id": "monthly-revenue",
+      "instruction": "In LedgerDesk, generate Monthly revenue for September 2026, grouped by customer and sorted by revenue descending (customer name ascending for ties). Use invoice-date net amounts, excluding voided invoices. Export the result as CSV.",
+      "started_at": "2026-11-08T08:49:49.023385+00:00",
+      "as_of": "2026-10-15",
+      "model": "gpt-6.1-terra",
+      "status": "passed",
+      "error": null,
+      "action_count": 7,
+      "request_count": 6,
+      "limits": {
+        "actions": 40,
+        "requests": 20,
+        "seconds": 300,
+        "budget_usd": 0.892968
+      },
+      "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+      "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+      "image_id": "726f4bd46ae3df3565cabeb0b65e8e92a3c924300ba3eb927bbb634ae2d17b8b",
+      "usage": {
+        "input_tokens": 34464,
+        "output_tokens": 225,
+        "total_tokens": 34689,
+        "complete": true
+      },
+      "estimated_cost_usd": 0.035589,
+      "model_text": "Generated the September 2026 Monthly revenue report and exported its 6 customer rows to **monthly-revenue.csv**.",
+      "recording_available": true,
+      "elapsed_seconds": 27.853,
+      "finished_at": "2026-11-08T08:50:16.877126+00:00"
+    },
+    {
+      "id": "20261108T085016-68d748",
+      "task_id": "overdue-invoices",
+      "instruction": "In LedgerDesk, generate Overdue invoices as of 2026-10-15. Include issued invoices with an outstanding balance and a due date strictly before that date, including partially paid invoices. Include customer, invoice number, balance, due date and days overdue. Sort by due date, then invoice number, ascending. Export as CSV.",
+      "started_at": "2026-11-08T08:50:16.881344+00:00",
+      "as_of": "2026-10-15",
+      "model": "gpt-6.1-terra",
+      "status": "passed",
+      "error": null,
+      "action_count": 8,
+      "request_count": 7,
+      "limits": {
+        "actions": 40,
+        "requests": 20,
+        "seconds": 300,
+        "budget_usd": 0.857379
+      },
+      "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+      "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+      "image_id": "726f4bd46ae3df3565cabeb0b65e8e92a3c924300ba3eb927bbb634ae2d17b8b",
+      "usage": {
+        "input_tokens": 45288,
+        "output_tokens": 283,
+        "total_tokens": 45571,
+        "complete": true
+      },
+      "estimated_cost_usd": 0.046703,
+      "model_text": "Generated the overdue invoices report as of 2026-10-15 and exported 7 rows to `overdue-invoices.csv`.",
+      "recording_available": true,
+      "elapsed_seconds": 31.613,
+      "finished_at": "2026-11-08T08:50:48.494221+00:00"
+    },
+    {
+      "id": "20261108T085048-1c7409",
+      "task_id": "reconciliation-exceptions",
+      "instruction": "In LedgerDesk, generate Reconciliation exceptions with a tolerance of 0.01. Include transactions whose absolute difference is strictly greater than the tolerance. Show transaction ID, recorded amount, expected amount and signed difference (recorded minus expected), sorted by transaction ID ascending. Export as CSV.",
+      "started_at": "2026-11-08T08:50:48.499424+00:00",
+      "as_of": "2026-10-15",
+      "model": "gpt-6.1-terra",
+      "status": "passed",
+      "error": null,
+      "action_count": 7,
+      "request_count": 6,
+      "limits": {
+        "actions": 40,
+        "requests": 20,
+        "seconds": 300,
+        "budget_usd": 0.810676
+      },
+      "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+      "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+      "image_id": "726f4bd46ae3df3565cabeb0b65e8e92a3c924300ba3eb927bbb634ae2d17b8b",
+      "usage": {
+        "input_tokens": 34534,
+        "output_tokens": 244,
+        "total_tokens": 34778,
+        "complete": true
+      },
+      "estimated_cost_usd": 0.035754,
+      "model_text": "Generated the Reconciliation exceptions report with a 0.01 tolerance and exported the 4 matching rows to **reconciliation-exceptions.csv**.",
+      "recording_available": true,
+      "elapsed_seconds": 25.481,
+      "finished_at": "2026-11-08T08:51:13.980637+00:00"
+    },
+    {
+      "id": "20261108T085113-321f8e",
+      "task_id": "monthly-revenue",
+      "instruction": "In LedgerDesk, generate Monthly revenue for September 2026, grouped by customer and sorted by revenue descending (customer name ascending for ties). Use invoice-date net amounts, excluding voided invoices. Export the result as CSV.",
+      "started_at": "2026-11-08T08:51:13.985789+00:00",
+      "as_of": "2026-10-15",
+      "model": "gpt-6.1-terra",
+      "status": "passed",
+      "error": null,
+      "action_count": 7,
+      "request_count": 6,
+      "limits": {
+        "actions": 40,
+        "requests": 20,
+        "seconds": 300,
+        "budget_usd": 0.774922
+      },
+      "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+      "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+      "image_id": "726f4bd46ae3df3565cabeb0b65e8e92a3c924300ba3eb927bbb634ae2d17b8b",
+      "usage": {
+        "input_tokens": 34464,
+        "output_tokens": 223,
+        "total_tokens": 34687,
+        "complete": true
+      },
+      "estimated_cost_usd": 0.035579,
+      "model_text": "Generated the September 2026 Monthly revenue report and exported its six customer rows to `monthly-revenue.csv`.",
+      "recording_available": true,
+      "elapsed_seconds": 25.24,
+      "finished_at": "2026-11-08T08:51:39.225628+00:00"
+    },
+    {
+      "id": "20261108T085139-8ece50",
+      "task_id": "overdue-invoices",
+      "instruction": "In LedgerDesk, generate Overdue invoices as of 2026-10-15. Include issued invoices with an outstanding balance and a due date strictly before that date, including partially paid invoices. Include customer, invoice number, balance, due date and days overdue. Sort by due date, then invoice number, ascending. Export as CSV.",
+      "started_at": "2026-11-08T08:51:39.229835+00:00",
+      "as_of": "2026-10-15",
+      "model": "gpt-6.1-terra",
+      "status": "passed",
+      "error": null,
+      "action_count": 7,
+      "request_count": 6,
+      "limits": {
+        "actions": 40,
+        "requests": 20,
+        "seconds": 300,
+        "budget_usd": 0.739343
+      },
+      "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+      "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+      "image_id": "726f4bd46ae3df3565cabeb0b65e8e92a3c924300ba3eb927bbb634ae2d17b8b",
+      "usage": {
+        "input_tokens": 34612,
+        "output_tokens": 232,
+        "total_tokens": 34844,
+        "complete": true
+      },
+      "estimated_cost_usd": 0.035772,
+      "model_text": "Generated the overdue invoices report as of 2026-10-15 and exported 7 rows to `overdue-invoices.csv`.",
+      "recording_available": true,
+      "elapsed_seconds": 25.875,
+      "finished_at": "2026-11-08T08:52:05.104483+00:00"
+    },
+    {
+      "id": "20261108T085205-4642ca",
+      "task_id": "reconciliation-exceptions",
+      "instruction": "In LedgerDesk, generate Reconciliation exceptions with a tolerance of 0.01. Include transactions whose absolute difference is strictly greater than the tolerance. Show transaction ID, recorded amount, expected amount and signed difference (recorded minus expected), sorted by transaction ID ascending. Export as CSV.",
+      "started_at": "2026-11-08T08:52:05.109369+00:00",
+      "as_of": "2026-10-15",
+      "model": "gpt-6.1-terra",
+      "status": "passed",
+      "error": null,
+      "action_count": 7,
+      "request_count": 6,
+      "limits": {
+        "actions": 40,
+        "requests": 20,
+        "seconds": 300,
+        "budget_usd": 0.703571
+      },
+      "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+      "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+      "image_id": "726f4bd46ae3df3565cabeb0b65e8e92a3c924300ba3eb927bbb634ae2d17b8b",
+      "usage": {
+        "input_tokens": 34534,
+        "output_tokens": 226,
+        "total_tokens": 34760,
+        "complete": true
+      },
+      "estimated_cost_usd": 0.035664,
+      "model_text": "Generated the Reconciliation exceptions report with a 0.01 tolerance and exported its four rows to `reconciliation-exceptions.csv`.",
+      "recording_available": true,
+      "elapsed_seconds": 24.647,
+      "finished_at": "2026-11-08T08:52:29.736863+00:00"
+    },
+    {
+      "id": "20261108T120633-3175e2",
+      "task_id": "monthly-revenue",
+      "instruction": "In LedgerDesk, generate Monthly revenue for September 2026, grouped by customer and sorted by revenue descending (customer name ascending for ties). Use invoice-date net amounts, excluding voided invoices. Export the result as CSV.",
+      "started_at": "2026-11-08T12:06:33.730563+00:00",
+      "as_of": "2026-10-15",
+      "model": "gpt-6.1-terra",
+      "status": "passed",
+      "error": null,
+      "action_count": 7,
+      "request_count": 6,
+      "limits": {
+        "actions": 40,
+        "requests": 20,
+        "seconds": 300,
+        "budget_usd": 1.0
+      },
+      "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+      "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+      "image_id": "726f4bd46ae3df3565cabeb0b65e8e92a3c924300ba3eb927bbb634ae2d17b8b",
+      "usage": {
+        "input_tokens": 34464,
+        "output_tokens": 223,
+        "total_tokens": 34687,
+        "complete": true
+      },
+      "estimated_cost_usd": 0.035579,
+      "model_text": "Generated the September 2026 Monthly revenue report and exported its six customer rows to `monthly-revenue.csv`.",
+      "recording_available": true,
+      "elapsed_seconds": 35.256,
+      "finished_at": "2026-11-08T12:07:08.985704+00:00"
+    },
+    {
+      "id": "20261108T120708-320174",
+      "task_id": "overdue-invoices",
+      "instruction": "In LedgerDesk, generate Overdue invoices as of 2026-10-15. Include issued invoices with an outstanding balance and a due date strictly before that date, including partially paid invoices. Include customer, invoice number, balance, due date and days overdue. Sort by due date, then invoice number, ascending. Export as CSV.",
+      "started_at": "2026-11-08T12:07:08.990011+00:00",
+      "as_of": "2026-10-15",
+      "model": "gpt-6.1-terra",
+      "status": "passed",
+      "error": null,
+      "action_count": 8,
+      "request_count": 7,
+      "limits": {
+        "actions": 40,
+        "requests": 20,
+        "seconds": 300,
+        "budget_usd": 1.0
+      },
+      "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+      "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+      "image_id": "726f4bd46ae3df3565cabeb0b65e8e92a3c924300ba3eb927bbb634ae2d17b8b",
+      "usage": {
+        "input_tokens": 45294,
+        "output_tokens": 286,
+        "total_tokens": 45580,
+        "complete": true
+      },
+      "estimated_cost_usd": 0.046724,
+      "model_text": "Generated the overdue invoices report as of 2026-10-15 and exported 7 rows to **overdue-invoices.csv**.",
+      "recording_available": true,
+      "elapsed_seconds": 32.642,
+      "finished_at": "2026-11-08T12:07:41.631837+00:00"
+    },
+    {
+      "id": "20261108T120741-271e02",
+      "task_id": "reconciliation-exceptions",
+      "instruction": "In LedgerDesk, generate Reconciliation exceptions with a tolerance of 0.01. Include transactions whose absolute difference is strictly greater than the tolerance. Show transaction ID, recorded amount, expected amount and signed difference (recorded minus expected), sorted by transaction ID ascending. Export as CSV.",
+      "started_at": "2026-11-08T12:07:41.636506+00:00",
+      "as_of": "2026-10-15",
+      "model": "gpt-6.1-terra",
+      "status": "passed",
+      "error": null,
+      "action_count": 7,
+      "request_count": 6,
+      "limits": {
+        "actions": 40,
+        "requests": 20,
+        "seconds": 300,
+        "budget_usd": 1.0
+      },
+      "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+      "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+      "image_id": "726f4bd46ae3df3565cabeb0b65e8e92a3c924300ba3eb927bbb634ae2d17b8b",
+      "usage": {
+        "input_tokens": 34542,
+        "output_tokens": 230,
+        "total_tokens": 34772,
+        "complete": true
+      },
+      "estimated_cost_usd": 0.035692,
+      "model_text": "Generated the Reconciliation exceptions report with a 0.01 tolerance and exported 4 rows to `reconciliation-exceptions.csv`.",
+      "recording_available": true,
+      "elapsed_seconds": 22.882,
+      "finished_at": "2026-11-08T12:08:04.518527+00:00"
+    },
+    {
+      "id": "20261108T120804-0ee493",
+      "task_id": "monthly-revenue",
+      "instruction": "In LedgerDesk, generate Monthly revenue for September 2026, grouped by customer and sorted by revenue descending (customer name ascending for ties). Use invoice-date net amounts, excluding voided invoices. Export the result as CSV.",
+      "started_at": "2026-11-08T12:08:04.523513+00:00",
+      "as_of": "2026-10-15",
+      "model": "gpt-6.1-terra",
+      "status": "passed",
+      "error": null,
+      "action_count": 7,
+      "request_count": 6,
+      "limits": {
+        "actions": 40,
+        "requests": 20,
+        "seconds": 300,
+        "budget_usd": 1.0
+      },
+      "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+      "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+      "image_id": "726f4bd46ae3df3565cabeb0b65e8e92a3c924300ba3eb927bbb634ae2d17b8b",
+      "usage": {
+        "input_tokens": 34462,
+        "output_tokens": 223,
+        "total_tokens": 34685,
+        "complete": true
+      },
+      "estimated_cost_usd": 0.035577,
+      "model_text": "Generated the September 2026 Monthly revenue report and exported all 6 customer rows to `monthly-revenue.csv`.",
+      "recording_available": true,
+      "elapsed_seconds": 27.229,
+      "finished_at": "2026-11-08T12:08:31.752241+00:00"
+    },
+    {
+      "id": "20261108T120831-e14dad",
+      "task_id": "overdue-invoices",
+      "instruction": "In LedgerDesk, generate Overdue invoices as of 2026-10-15. Include issued invoices with an outstanding balance and a due date strictly before that date, including partially paid invoices. Include customer, invoice number, balance, due date and days overdue. Sort by due date, then invoice number, ascending. Export as CSV.",
+      "started_at": "2026-11-08T12:08:31.756004+00:00",
+      "as_of": "2026-10-15",
+      "model": "gpt-6.1-terra",
+      "status": "passed",
+      "error": null,
+      "action_count": 7,
+      "request_count": 6,
+      "limits": {
+        "actions": 40,
+        "requests": 20,
+        "seconds": 300,
+        "budget_usd": 1.0
+      },
+      "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+      "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+      "image_id": "726f4bd46ae3df3565cabeb0b65e8e92a3c924300ba3eb927bbb634ae2d17b8b",
+      "usage": {
+        "input_tokens": 34614,
+        "output_tokens": 235,
+        "total_tokens": 34849,
+        "complete": true
+      },
+      "estimated_cost_usd": 0.035789,
+      "model_text": "Generated the Overdue invoices report as of 2026-10-15 and exported 7 rows to **overdue-invoices.csv**.",
+      "recording_available": true,
+      "elapsed_seconds": 26.358,
+      "finished_at": "2026-11-08T12:08:58.113404+00:00"
+    },
+    {
+      "id": "20261108T120858-daea4b",
+      "task_id": "reconciliation-exceptions",
+      "instruction": "In LedgerDesk, generate Reconciliation exceptions with a tolerance of 0.01. Include transactions whose absolute difference is strictly greater than the tolerance. Show transaction ID, recorded amount, expected amount and signed difference (recorded minus expected), sorted by transaction ID ascending. Export as CSV.",
+      "started_at": "2026-11-08T12:08:58.117660+00:00",
+      "as_of": "2026-10-15",
+      "model": "gpt-6.1-terra",
+      "status": "passed",
+      "error": null,
+      "action_count": 7,
+      "request_count": 6,
+      "limits": {
+        "actions": 40,
+        "requests": 20,
+        "seconds": 300,
+        "budget_usd": 1.0
+      },
+      "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+      "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+      "image_id": "726f4bd46ae3df3565cabeb0b65e8e92a3c924300ba3eb927bbb634ae2d17b8b",
+      "usage": {
+        "input_tokens": 34536,
+        "output_tokens": 226,
+        "total_tokens": 34762,
+        "complete": true
+      },
+      "estimated_cost_usd": 0.035666,
+      "model_text": "Generated the reconciliation exceptions report with a 0.01 tolerance and exported 4 rows to `reconciliation-exceptions.csv`.",
+      "recording_available": true,
+      "elapsed_seconds": 25.604,
+      "finished_at": "2026-11-08T12:09:23.721550+00:00"
+    },
+    {
+      "id": "20261108T120923-3285e4",
+      "task_id": "monthly-revenue",
+      "instruction": "In LedgerDesk, generate Monthly revenue for September 2026, grouped by customer and sorted by revenue descending (customer name ascending for ties). Use invoice-date net amounts, excluding voided invoices. Export the result as CSV.",
+      "started_at": "2026-11-08T12:09:23.725888+00:00",
+      "as_of": "2026-10-15",
+      "model": "gpt-6.1-terra",
+      "status": "passed",
+      "error": null,
+      "action_count": 7,
+      "request_count": 6,
+      "limits": {
+        "actions": 40,
+        "requests": 20,
+        "seconds": 300,
+        "budget_usd": 1.0
+      },
+      "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+      "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+      "image_id": "726f4bd46ae3df3565cabeb0b65e8e92a3c924300ba3eb927bbb634ae2d17b8b",
+      "usage": {
+        "input_tokens": 34464,
+        "output_tokens": 224,
+        "total_tokens": 34688,
+        "complete": true
+      },
+      "estimated_cost_usd": 0.035584,
+      "model_text": "Generated the September 2026 Monthly revenue report and exported its six customer rows as **monthly-revenue.csv**.",
+      "recording_available": true,
+      "elapsed_seconds": 26.205,
+      "finished_at": "2026-11-08T12:09:49.930158+00:00"
+    },
+    {
+      "id": "20261108T120949-196bc4",
+      "task_id": "overdue-invoices",
+      "instruction": "In LedgerDesk, generate Overdue invoices as of 2026-10-15. Include issued invoices with an outstanding balance and a due date strictly before that date, including partially paid invoices. Include customer, invoice number, balance, due date and days overdue. Sort by due date, then invoice number, ascending. Export as CSV.",
+      "started_at": "2026-11-08T12:09:49.934508+00:00",
+      "as_of": "2026-10-15",
+      "model": "gpt-6.1-terra",
+      "status": "passed",
+      "error": null,
+      "action_count": 7,
+      "request_count": 6,
+      "limits": {
+        "actions": 40,
+        "requests": 20,
+        "seconds": 300,
+        "budget_usd": 1.0
+      },
+      "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+      "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+      "image_id": "726f4bd46ae3df3565cabeb0b65e8e92a3c924300ba3eb927bbb634ae2d17b8b",
+      "usage": {
+        "input_tokens": 34616,
+        "output_tokens": 261,
+        "total_tokens": 34877,
+        "complete": true
+      },
+      "estimated_cost_usd": 0.035921,
+      "model_text": "Generated the Overdue invoices report as of 2026-10-15 and exported 7 rows to `overdue-invoices.csv`.",
+      "recording_available": true,
+      "elapsed_seconds": 26.472,
+      "finished_at": "2026-11-08T12:10:16.405809+00:00"
+    },
+    {
+      "id": "20261108T121016-d9bde1",
+      "task_id": "reconciliation-exceptions",
+      "instruction": "In LedgerDesk, generate Reconciliation exceptions with a tolerance of 0.01. Include transactions whose absolute difference is strictly greater than the tolerance. Show transaction ID, recorded amount, expected amount and signed difference (recorded minus expected), sorted by transaction ID ascending. Export as CSV.",
+      "started_at": "2026-11-08T12:10:16.410676+00:00",
+      "as_of": "2026-10-15",
+      "model": "gpt-6.1-terra",
+      "status": "passed",
+      "error": null,
+      "action_count": 7,
+      "request_count": 6,
+      "limits": {
+        "actions": 40,
+        "requests": 20,
+        "seconds": 300,
+        "budget_usd": 1.0
+      },
+      "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+      "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+      "image_id": "726f4bd46ae3df3565cabeb0b65e8e92a3c924300ba3eb927bbb634ae2d17b8b",
+      "usage": {
+        "input_tokens": 34536,
+        "output_tokens": 227,
+        "total_tokens": 34763,
+        "complete": true
+      },
+      "estimated_cost_usd": 0.035671,
+      "model_text": "Generated the Reconciliation exceptions report with a 0.01 tolerance and exported 4 rows to `reconciliation-exceptions.csv`.",
+      "recording_available": true,
+      "elapsed_seconds": 22.703,
+      "finished_at": "2026-11-08T12:10:39.113698+00:00"
+    },
+    {
+      "id": "20261108T121039-181355",
+      "task_id": "monthly-revenue",
+      "instruction": "In LedgerDesk, generate Monthly revenue for September 2026, grouped by customer and sorted by revenue descending (customer name ascending for ties). Use invoice-date net amounts, excluding voided invoices. Export the result as CSV.",
+      "started_at": "2026-11-08T12:10:39.116986+00:00",
+      "as_of": "2026-10-15",
+      "model": "gpt-6.1-terra",
+      "status": "passed",
+      "error": null,
+      "action_count": 7,
+      "request_count": 6,
+      "limits": {
+        "actions": 40,
+        "requests": 20,
+        "seconds": 300,
+        "budget_usd": 1.0
+      },
+      "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+      "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+      "image_id": "726f4bd46ae3df3565cabeb0b65e8e92a3c924300ba3eb927bbb634ae2d17b8b",
+      "usage": {
+        "input_tokens": 34470,
+        "output_tokens": 228,
+        "total_tokens": 34698,
+        "complete": true
+      },
+      "estimated_cost_usd": 0.03561,
+      "model_text": "Generated the September 2026 Monthly revenue report and exported its six customer rows to **monthly-revenue.csv**.",
+      "recording_available": true,
+      "elapsed_seconds": 19.603,
+      "finished_at": "2026-11-08T12:10:58.719792+00:00"
+    },
+    {
+      "id": "20261108T121058-661c18",
+      "task_id": "overdue-invoices",
+      "instruction": "In LedgerDesk, generate Overdue invoices as of 2026-10-15. Include issued invoices with an outstanding balance and a due date strictly before that date, including partially paid invoices. Include customer, invoice number, balance, due date and days overdue. Sort by due date, then invoice number, ascending. Export as CSV.",
+      "started_at": "2026-11-08T12:10:58.723571+00:00",
+      "as_of": "2026-10-15",
+      "model": "gpt-6.1-terra",
+      "status": "passed",
+      "error": null,
+      "action_count": 7,
+      "request_count": 6,
+      "limits": {
+        "actions": 40,
+        "requests": 20,
+        "seconds": 300,
+        "budget_usd": 1.0
+      },
+      "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+      "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+      "image_id": "726f4bd46ae3df3565cabeb0b65e8e92a3c924300ba3eb927bbb634ae2d17b8b",
+      "usage": {
+        "input_tokens": 34612,
+        "output_tokens": 233,
+        "total_tokens": 34845,
+        "complete": true
+      },
+      "estimated_cost_usd": 0.035777,
+      "model_text": "Generated the Overdue invoices report as of 2026-10-15 and exported 7 rows to `overdue-invoices.csv`.",
+      "recording_available": true,
+      "elapsed_seconds": 26.907,
+      "finished_at": "2026-11-08T12:11:25.630337+00:00"
+    },
+    {
+      "id": "20261108T121125-47e9df",
+      "task_id": "reconciliation-exceptions",
+      "instruction": "In LedgerDesk, generate Reconciliation exceptions with a tolerance of 0.01. Include transactions whose absolute difference is strictly greater than the tolerance. Show transaction ID, recorded amount, expected amount and signed difference (recorded minus expected), sorted by transaction ID ascending. Export as CSV.",
+      "started_at": "2026-11-08T12:11:25.634901+00:00",
+      "as_of": "2026-10-15",
+      "model": "gpt-6.1-terra",
+      "status": "passed",
+      "error": null,
+      "action_count": 7,
+      "request_count": 6,
+      "limits": {
+        "actions": 40,
+        "requests": 20,
+        "seconds": 300,
+        "budget_usd": 1.0
+      },
+      "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+      "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+      "image_id": "726f4bd46ae3df3565cabeb0b65e8e92a3c924300ba3eb927bbb634ae2d17b8b",
+      "usage": {
+        "input_tokens": 34534,
+        "output_tokens": 226,
+        "total_tokens": 34760,
+        "complete": true
+      },
+      "estimated_cost_usd": 0.035664,
+      "model_text": "Generated the Reconciliation exceptions report with a 0.01 tolerance and exported 4 rows to `reconciliation-exceptions.csv`.",
+      "recording_available": true,
+      "elapsed_seconds": 23.718,
+      "finished_at": "2026-11-08T12:11:49.353078+00:00"
+    },
+    {
+      "id": "20261108T121149-dc3196",
+      "task_id": "monthly-revenue",
+      "instruction": "In LedgerDesk, generate Monthly revenue for September 2026, grouped by customer and sorted by revenue descending (customer name ascending for ties). Use invoice-date net amounts, excluding voided invoices. Export the result as CSV.",
+      "started_at": "2026-11-08T12:11:49.357589+00:00",
+      "as_of": "2026-10-15",
+      "model": "gpt-6.1-terra",
+      "status": "passed",
+      "error": null,
+      "action_count": 7,
+      "request_count": 6,
+      "limits": {
+        "actions": 40,
+        "requests": 20,
+        "seconds": 300,
+        "budget_usd": 1.0
+      },
+      "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+      "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+      "image_id": "726f4bd46ae3df3565cabeb0b65e8e92a3c924300ba3eb927bbb634ae2d17b8b",
+      "usage": {
+        "input_tokens": 34466,
+        "output_tokens": 224,
+        "total_tokens": 34690,
+        "complete": true
+      },
+      "estimated_cost_usd": 0.035586,
+      "model_text": "Generated the September 2026 Monthly revenue report and exported its six customer rows to `monthly-revenue.csv`.",
+      "recording_available": true,
+      "elapsed_seconds": 25.45,
+      "finished_at": "2026-11-08T12:12:14.807619+00:00"
+    },
+    {
+      "id": "20261108T121214-b00eed",
+      "task_id": "overdue-invoices",
+      "instruction": "In LedgerDesk, generate Overdue invoices as of 2026-10-15. Include issued invoices with an outstanding balance and a due date strictly before that date, including partially paid invoices. Include customer, invoice number, balance, due date and days overdue. Sort by due date, then invoice number, ascending. Export as CSV.",
+      "started_at": "2026-11-08T12:12:14.811837+00:00",
+      "as_of": "2026-10-15",
+      "model": "gpt-6.1-terra",
+      "status": "passed",
+      "error": null,
+      "action_count": 7,
+      "request_count": 6,
+      "limits": {
+        "actions": 40,
+        "requests": 20,
+        "seconds": 300,
+        "budget_usd": 1.0
+      },
+      "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+      "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+      "image_id": "726f4bd46ae3df3565cabeb0b65e8e92a3c924300ba3eb927bbb634ae2d17b8b",
+      "usage": {
+        "input_tokens": 34614,
+        "output_tokens": 234,
+        "total_tokens": 34848,
+        "complete": true
+      },
+      "estimated_cost_usd": 0.035784,
+      "model_text": "Generated the Overdue invoices report as of 2026-10-15 and exported 7 rows to `overdue-invoices.csv`.",
+      "recording_available": true,
+      "elapsed_seconds": 26.26,
+      "finished_at": "2026-11-08T12:12:41.071621+00:00"
+    },
+    {
+      "id": "20261108T121241-502d0c",
+      "task_id": "reconciliation-exceptions",
+      "instruction": "In LedgerDesk, generate Reconciliation exceptions with a tolerance of 0.01. Include transactions whose absolute difference is strictly greater than the tolerance. Show transaction ID, recorded amount, expected amount and signed difference (recorded minus expected), sorted by transaction ID ascending. Export as CSV.",
+      "started_at": "2026-11-08T12:12:41.076432+00:00",
+      "as_of": "2026-10-15",
+      "model": "gpt-6.1-terra",
+      "status": "passed",
+      "error": null,
+      "action_count": 7,
+      "request_count": 6,
+      "limits": {
+        "actions": 40,
+        "requests": 20,
+        "seconds": 300,
+        "budget_usd": 1.0
+      },
+      "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+      "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+      "image_id": "726f4bd46ae3df3565cabeb0b65e8e92a3c924300ba3eb927bbb634ae2d17b8b",
+      "usage": {
+        "input_tokens": 34532,
+        "output_tokens": 225,
+        "total_tokens": 34757,
+        "complete": true
+      },
+      "estimated_cost_usd": 0.035657,
+      "model_text": "Generated the Reconciliation exceptions report with a 0.01 tolerance and exported 4 rows to `reconciliation-exceptions.csv`.",
+      "recording_available": true,
+      "elapsed_seconds": 25.348,
+      "finished_at": "2026-11-08T12:13:06.424259+00:00"
+    }
+  ],
+  "pilot": {
+    "id": "20261108T084740-fd252d",
+    "task_id": "monthly-revenue",
+    "instruction": "In LedgerDesk, generate Monthly revenue for September 2026, grouped by customer and sorted by revenue descending (customer name ascending for ties). Use invoice-date net amounts, excluding voided invoices. Export the result as CSV.",
+    "started_at": "2026-11-08T08:47:40.874326+00:00",
+    "as_of": "2026-10-15",
+    "model": "gpt-6.1-terra",
+    "status": "passed",
+    "error": null,
+    "action_count": 7,
+    "request_count": 6,
+    "limits": {
+      "actions": 40,
+      "requests": 20,
+      "seconds": 300,
+      "budget_usd": 2.0
+    },
+    "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+    "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+    "image_id": "726f4bd46ae3df3565cabeb0b65e8e92a3c924300ba3eb927bbb634ae2d17b8b",
+    "usage": {
+      "input_tokens": 34462,
+      "output_tokens": 227,
+      "total_tokens": 34689,
+      "complete": true
+    },
+    "estimated_cost_usd": 0.035597,
+    "model_text": "Generated the September 2026 Monthly revenue report and exported its six customer rows as `monthly-revenue.csv`.",
+    "recording_available": true,
+    "elapsed_seconds": 30.539,
+    "finished_at": "2026-11-08T08:48:11.413784+00:00"
+  },
+  "demo_run_id": "20261108T084829-36a77a"
+}

@@ -1,0 +1,82 @@
+{
+  "overall": {
+    "attempts": 24,
+    "verified": 24,
+    "estimated_total_usd": 0.878374,
+    "estimated_mean_usd": 0.03659891666666667,
+    "median_seconds": 25.7395,
+    "mean_seconds": 26.35075,
+    "action_range": [
+      7,
+      8
+    ],
+    "request_range": [
+      6,
+      7
+    ]
+  },
+  "tasks": {
+    "monthly-revenue": {
+      "attempts": 8,
+      "verified": 8,
+      "estimated_total_usd": 0.284688,
+      "estimated_mean_usd": 0.035586,
+      "median_seconds": 26.717,
+      "mean_seconds": 26.91825,
+      "action_range": [
+        7,
+        7
+      ],
+      "request_range": [
+        6,
+        6
+      ]
+    },
+    "overdue-invoices": {
+      "attempts": 8,
+      "verified": 8,
+      "estimated_total_usd": 0.308254,
+      "estimated_mean_usd": 0.038531750000000003,
+      "median_seconds": 26.415,
+      "mean_seconds": 27.684375,
+      "action_range": [
+        7,
+        8
+      ],
+      "request_range": [
+        6,
+        7
+      ]
+    },
+    "reconciliation-exceptions": {
+      "attempts": 8,
+      "verified": 8,
+      "estimated_total_usd": 0.285432,
+      "estimated_mean_usd": 0.035679,
+      "median_seconds": 24.9305,
+      "mean_seconds": 24.449625,
+      "action_range": [
+        7,
+        7
+      ],
+      "request_range": [
+        6,
+        6
+      ]
+    }
+  },
+  "monthly_assumptions": {
+    "runs_per_workday": 1,
+    "workdays": 20,
+    "projected_model_api_usd": 0.7319783333333334,
+    "calendar_days_30_usd": 1.0979675,
+    "excludes": [
+      "desktop hosting",
+      "setup",
+      "narration and video production",
+      "provider billing adjustments"
+    ]
+  },
+  "pricing_source": "https://developers.openai.com/api/docs/pricing",
+  "pricing_checked_on": "2026-11-08"
+}

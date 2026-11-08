@@ -2,40 +2,61 @@
 
 ## Project card
 
-**Title:** LedgerDesk: AI computer use beyond the browser
+**Title:** Automating a legacy desktop app with Computer Use
 
-**Summary:** A screenshot-driven OpenAI agent operates a native finance application to generate and export reports, with every CSV checked by an independent verifier. Nine of nine attempts passed in a fixed synthetic test environment, with a median elapsed time of 25.5 seconds.
+**Summary:** A screenshot-driven OpenAI agent operates a native finance application and exports reports. Separate code verifies each CSV. All 24 evaluated attempts passed in a fixed synthetic environment, with a median elapsed time of 25.74 seconds.
 
-**Links:** [Read the case study](article.md) · [View the evidence](../examples/evaluation/index.html) · [Watch the demo](../examples/evaluation/demo.mp4) · [Source on GitHub](https://github.com/HHuysamen/legacy-desktop-computer-use)
+**Links:** [Read the case study](/writing/ledgerdesk-computer-use/) · [View the 24-run evidence](/demos/ledgerdesk/evaluation-24/index.html) · [Watch the narrated demo](/demos/ledgerdesk/demo-narrated-v2.mp4) · [Source](https://github.com/HHuysamen/legacy-desktop-computer-use)
 
-**Technologies:** Python · Tkinter · SQLite · OpenAI Responses API · Computer use · Docker · Independent verification
+These routes belong to the approved public article release.
 
-## Case-study facts
+## Evidence and cost
 
-- Three business reports, with three attempts each: 9 verified exports out of 9 evaluated attempts.
-- Median elapsed time: 25.481 seconds; 7–8 desktop actions and 6–7 model requests per attempt.
-- Nine-run API estimate: USD 0.332093. A separate successful pilot adds USD 0.035597, giving USD 0.367690 across ten funded runs.
-- Model: `gpt-6.1-terra`; OpenAI Python SDK 3.31.0.
-- Native Linux arm64/X11 desktop at 1200×900, hosted by Docker on macOS/Apple silicon.
-- Synthetic data and a fixed layout. These results show repeatability for this fixture, not general desktop reliability.
-- Costs use standard-rate estimates; cache read/write effects and provider billing may differ.
+Results derived from `output/evaluation-24.json`: eight attempts per report, 24 independently verified exports from 24 evaluated attempts. The separate pilot and setup checks are excluded.
 
-Use [article.md](article.md) as the case-study body. Keep the result qualifications with the table, and preserve the separation between the nine evaluated attempts, the successful pilot and earlier setup blocks.
+| Report | Verified exports | Median elapsed time |
+| --- | ---: | ---: |
+| Monthly revenue | 8 of 8 | 26.72 seconds |
+| Overdue invoices | 8 of 8 | 26.42 seconds |
+| Reconciliation exceptions | 8 of 8 | 24.93 seconds |
 
-## Asset routes
+The 24 runs used 7–8 desktop actions and 6–7 model requests each. Complete API usage was recorded for every run. Their total standard-rate estimate is **about US$0.88**, averaging **US$0.0366 per run**.
 
-The website has not been modified. A suggested route is `/projects/ledgerdesk/`, with the complete `examples/evaluation/` directory copied beneath `/projects/ledgerdesk/evidence/`. Preserve its `runs/` and `pilot/` subdirectories so the gallery's relative links continue to work.
+For **one similar simple report task per workday over 20 workdays**, the measured mean projects to **about US$0.73 per month**. This is an illustrative workload estimate, not a monthly subscription or a measured month of production use.
 
-| Source file | Suggested website route | Purpose |
-| --- | --- | --- |
-| `docs/article.md` | `/projects/ledgerdesk/` | Case-study body, converted through the site's usual renderer |
-| `examples/evaluation/index.html` | `/projects/ledgerdesk/evidence/index.html` | Gallery and full evaluation |
-| `examples/evaluation/demo.mp4` | `/projects/ledgerdesk/evidence/demo.mp4` | Model-operated recording |
-| `examples/evaluation/poster.png` | `/projects/ledgerdesk/evidence/poster.png` | Video poster |
-| `examples/evaluation/sample-report.html` | `/projects/ledgerdesk/evidence/sample-report.html` | Self-contained detailed report |
-| `examples/evaluation/summary.json` | `/projects/ledgerdesk/evidence/summary.json` | Machine-readable results |
-| `examples/evaluation/manifest.json` | `/projects/ledgerdesk/evidence/manifest.json` | Artifact hashes |
+Keep the workload assumption beside any monthly estimate. Standard-rate API estimates exclude cache discounts and may differ from provider billing. These figures cover model use, not hosting, engineering or narration production.
 
-When adapting the article, rewrite its repository-relative evidence links to these site routes. Serve the video as `video/mp4`; offer the report as a regular page or download. Retain the complete evidence directory unchanged so the manifest continues to describe its files.
+The model is `gpt-6.1-terra` with OpenAI Python SDK 3.31.0. The recorded setup is a native Linux arm64/X11 desktop at 1200×900, running through Docker on macOS/Apple silicon. Synthetic data, a fixed layout and three tasks limit what these results establish; they do not measure general desktop reliability.
 
-Use the [source repository](https://github.com/HHuysamen/legacy-desktop-computer-use) for the code link. Publishing the personal website is a separate step from releasing the repository and evidence.
+## Website integration
+
+The article is published at [henryhuysamen.com](https://www.henryhuysamen.com/writing/ledgerdesk-computer-use/). Its source is `src/content/writing/ledgerdesk-computer-use.md` in the website repository, with `status: 'published'` and `publishedDate: 2026-11-08`.
+
+Approved assets are in `public/demos/ledgerdesk/`, so normal production builds include them. Draft articles remain excluded from normal builds; an explicit `CONTENT_PREVIEW=1` build can include them but is noindex and must not be deployed to production.
+
+| Asset | Public route |
+| --- | --- |
+| Article | `/writing/ledgerdesk-computer-use/` |
+| Original silent video | `/demos/ledgerdesk/demo.mp4` |
+| Narrated video | `/demos/ledgerdesk/demo-narrated-v2.mp4` |
+| English captions | `/demos/ledgerdesk/demo-narrated-v2.vtt` |
+| Poster | `/demos/ledgerdesk/poster-v2.png` |
+| Narration provenance | `/demos/ledgerdesk/narration-manifest-v2.json` |
+| Complete 24-run package | `/demos/ledgerdesk/evaluation-24/` |
+| Original nine-run package | `/demos/ledgerdesk/` |
+
+The narrated video is 24 seconds at 1200×1008. Speech and the footer were added afterward; the footer sits below the original 1200×900 application image. Retain the original recording and narration manifest. Both evidence archives must be copied intact so their relative links and artifact hashes remain valid.
+
+The model controls the native app through screenshots and mouse/keyboard actions. The browser only displays the isolated desktop and supplies no DOM access to the model.
+
+## Search and AI-search readiness
+
+The website presents the six-step workflow as visible semantic HTML cards, with a single-column mobile layout. It also has a visible author byline, matching `BlogPosting` JSON-LD, and an article-specific social sharing image. Published structured data uses the actual publication date and video metadata; draft metadata does not invent publication. Existing canonical links, descriptive headings, captions and measured evidence remain.
+
+For each release, verify the production canonical, sitemap, internal links and public asset URLs. Keep explicit draft previews noindex. Check the released URL in Google Search Console and Bing Webmaster Tools; verify intended crawler access through both robots.txt and the hosting layer.
+
+The article includes `VideoObject` data with its publication date and permanent media URLs. The current video supports an article; this is not a dedicated watch page. Search-result inclusion is not guaranteed.
+
+Google's AI features use the same SEO fundamentals: readable text, useful original information, crawlability and matching structured data. No special AI schema, `llms.txt` file or keyword-heavy FAQ is required. Keep the source code, verification method and 24-run evidence easy to inspect. For ChatGPT search, OAI-SearchBot access is separate from GPTBot training preferences; do not change either policy without an explicit publishing decision.
+
+Sources: [Google AI features](https://developers.google.com/search/docs/appearance/ai-features), [Article structured data](https://developers.google.com/search/docs/appearance/structured-data/article), [video guidance](https://developers.google.com/search/docs/appearance/video), [OpenAI crawler documentation](https://developers.openai.com/api/docs/bots).

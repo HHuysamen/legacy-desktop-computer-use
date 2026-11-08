@@ -1,81 +1,136 @@
-# When browser agents aren't enough: automating a native desktop application
+# Automating a legacy desktop app with Computer Use
 
-Many business workflows still end with someone at a desktop application: select a report, enter a date, inspect the preview and save a file. When the application exposes only a graphical interface, those ordinary steps become an automation problem.
+[Read this article on henryhuysamen.com](https://www.henryhuysamen.com/writing/ledgerdesk-computer-use/)
 
-I built LedgerDesk to investigate a narrow question: **can an AI agent generate and export the right business report using only what a person sees on screen?**
+If you work in finance, you probably know this kind of application. To get a report, you choose it from a list, enter a date, click through a few screens and save a file. There is no useful API, MCP server or browser interface. The screen is the interface.
 
-LedgerDesk is a fictional finance application built with Python and Tkinter. It has a report selector, parameter fields, a results table and a CSV export confirmation. Its familiar interface and synthetic data make the workflow easy to follow without customer information or production credentials.
+OpenAI's [Computer Use tool](https://developers.openai.com/api/docs/guides/tools-computer-use) lets a model interpret screenshots and request mouse and keyboard actions. Your program executes those actions, captures the updated screen and sends it back.
 
-The project separates model decisions, executed actions and independent verification.
+An AI Engineer can build an AI application around this loop. The application supplies the task, starts the desktop session, handles failures and checks the output. No interactive chat session is needed.
 
-## A native window, viewed through a browser
+Using the demo desktop app, LedgerDesk, I tested this approach on three finance reports. The runner operates the app, collects the exported CSV and checks it against known answers.
 
-The application runs in an isolated Linux desktop inside Docker. A local noVNC viewer lets a person watch or operate that desktop from a browser. Tkinter still draws the actual application window.
+[Watch the demo](../examples/presentation/demo-narrated-v2.mp4)
 
-The agent has no DOM, browser selectors or application API. It receives screenshots and chooses clicks, typing, keypresses and scrolling through the OpenAI Responses computer tool. The SDK's `ComputerToolset` connects to a small desktop driver, following the official [integration](https://developers.openai.com/api/docs/guides/tools-computer-use-integration) and [driver guidance](https://developers.openai.com/api/docs/guides/tools-computer-use-sdk-drivers).
+This video illustrates automating interaction with a desktop application using systematic computer use.
 
-The controller translates those requested actions into input on the guest desktop. Fixed infrastructure code starts the environment and retrieves an exported file, but the model cannot select shell commands or use those infrastructure operations as tools. To complete the task, it must navigate the visible application.
+## Let your program run the workflow
 
-## Three ordinary tasks with useful edge cases
+Your program decides when a task starts and what counts as success. The model decides which screen actions to take.
 
-The fixture contains 6 fictional customers, 25 invoices and 9 reconciliation transactions. That is enough to make an incorrect report plausible and detectable.
+The workflow has six steps:
 
-The first task is monthly revenue by customer for September 2026. It uses net invoice amounts and excludes voided invoices. Invoices immediately outside the month test date boundaries, while equal customer totals require a deterministic tie-break.
+1. Receive a report request.
+2. Start a controlled desktop session.
+3. Send the task and a screenshot to the model.
+4. Execute the permitted actions and repeat the screenshot loop.
+5. When the model reports completion, collect and verify the CSV.
+6. Return the verified file, or a failure result with the available evidence.
 
-The second is an overdue-invoice report as of October 15, 2026. It must include partially paid invoices at their outstanding balance, exclude invoices due on the as-of date and calculate calendar days overdue.
+The loop stops on completion, a limit, a safety check or an error. The legacy application needs no changes: the controller calls the model provider's API, while the app receives ordinary mouse clicks and keystrokes.
 
-The third identifies reconciliation differences strictly greater than USD 0.01. Positive and negative one-cent differences are excluded; two-cent differences are included. The export preserves the sign of recorded amount minus expected amount.
+For this demo, the app runs as a native Tkinter window on a Linux desktop in Docker. A browser viewer lets me watch. It supplies no DOM or control interface to the model.
 
-Money is stored as integer cents. The [report definitions](report-semantics.md) make the assumptions explicit, including a deliberate limitation: payments are a fixture snapshot, not a history from which arbitrary past balances can be reconstructed.
+## Start with one clear task
 
-## Making success independently checkable
+Choose a workflow with defined inputs and an output you can check. One request in the demo is:
 
-A model saying “the report has been exported” is a claim to examine. It is not the acceptance criterion.
+> Generate monthly revenue for September 2026, excluding voided invoices, and export the result as a CSV.
 
-After a completed attempt, trusted code retrieves the expected CSV from the fresh guest. A separate verifier constructs the expected result from a newly seeded database. It uses independent queries and formatting rather than calling the application's report-generation function.
+The app calculates the report. The agent finds the controls, enters the month and saves the file. The accounting stays inside the application.
 
-Verification checks exact column names and order, row count, row ordering, identifiers and values. Missing records, duplicate identifiers, changed amounts and extra columns fail. The model cannot access the verifier, reference data or expected answers.
+The data is synthetic, with partially paid invoices, date boundaries and one-cent differences included to make mistakes detectable.
 
-This still leaves an important boundary. Correct CSV content alone does not establish that the agent used the GUI. That claim depends on the controller's restricted tool surface, the fresh environment and the captured screenshots and actions. The project records both kinds of evidence.
+## Give the model a desktop driver
 
-## Constraining the demonstration
+The driver connects the model to the computer. It captures screenshots and implements click, type, keypress and scroll.
 
-The computer belongs to the demo. The guest receives no host directory mounts or API key, uses a non-root account and has a read-only base filesystem with temporary writable data. Its desktop network is internal; API requests are made by the host process.
+Here, [DesktopDriver](https://github.com/HHuysamen/legacy-desktop-computer-use/blob/main/ledgerdesk/desktop_driver.py) sends these operations to the isolated guest, where PyAutoGUI applies them. The model picks coordinates from screenshots. It cannot inspect widgets, run SQL or call a hidden export command.
 
-Before and after an input, the driver checks the expected window and its focus. It rejects coordinates outside the application, unsupported actions, long text inputs and unapproved key combinations. The model's instructions also treat screen text as untrusted task data.
+The driver checks the target window and focus, rejects coordinates outside it, and restricts accepted keys and text. Use a dedicated desktop session and allow only the inputs the workflow needs.
 
-Each attempt has action, request, time and estimated-cost limits. A pending safety approval stops the run. So do lost focus, missing observations and execution errors. Cost estimates are recorded when usage is available, and missing usage prevents continued spending based on a guessed balance. Provider billing remains authoritative.
+## Call Computer Use from Python
 
-These controls bound the exercise to its fixture. The local viewer is for a trusted single user, not a public remote desktop service.
+The [agent is a function](https://github.com/HHuysamen/legacy-desktop-computer-use/blob/main/ledgerdesk/computer_agent.py). After starting a fresh desktop and preparing a directory for the run, the controller calls it:
 
-## Evidence a reader can inspect
+```python
+from ledgerdesk.computer_agent import run_agent
+from ledgerdesk.desktop_driver import DesktopDriver
+from ledgerdesk.tasks import task_instruction
 
-Each attempt produces a standalone HTML report with its task, outcome, CSV preview, screenshots, event trace, timing and available usage information. Model completion text is displayed separately from independent verification. The runner also attempts to record the guest desktop as a video.
+result = run_agent(
+    driver=DesktopDriver(run_dir),
+    instruction=task_instruction("monthly-revenue"),
+    run_dir=run_dir,
+    model="gpt-6.1-terra",
+    max_requests=20,
+    max_actions=40,
+    timeout_seconds=300,
+    budget_usd=2.0,
+)
+```
 
-The [evaluation gallery](../examples/evaluation/index.html) contains the recorded attempts. Watch a [model-operated desktop run](../examples/evaluation/demo.mp4), open its [standalone evidence report](../examples/evaluation/sample-report.html), or inspect the [machine-readable results](../examples/evaluation/summary.json) and [artifact hashes](../examples/evaluation/manifest.json). The [source repository](https://github.com/HHuysamen/legacy-desktop-computer-use) contains the fixture, controller and verifier.
+`run_dir` is the prepared directory. This function handles the agent; the full runner also starts the desktop, collects the export and verifies it.
 
-## Nine evaluated runs, nine verified exports
+Inside the function, the OpenAI Responses API receives the task and screenshot history with the computer tool enabled. The central calls are:
 
-On 8 November 2026, I ran each task three times using `gpt-6.1-terra` and OpenAI Python SDK 3.31.0. Every attempt began in a fresh, seeded guest with blank parameter fields. All nine exports passed verification and a subsequent independent recheck.
+```python
+computer = ComputerToolset(driver)
 
-| Task | Verified | Median elapsed | Estimated cost, three runs |
-| --- | ---: | ---: | ---: |
-| Monthly revenue | 3/3 | 27.853 s | USD 0.106752 |
-| Overdue invoices | 3/3 | 25.875 s | USD 0.118259 |
-| Reconciliation exceptions | 3/3 | 25.214 s | USD 0.107082 |
+response = client.responses.create(
+    model=model,
+    input=history,
+    tools=[{"type": "computer"}],
+    store=False,
+)
 
-The nine-run median was **25.481 seconds**, with 7–8 desktop actions and 6–7 model requests per attempt. There were no failed or blocked attempts in this evaluation. The combined standard-rate API estimate was **USD 0.332093**. Cache read/write effects and provider billing may change the actual charge.
+# For each computer call returned by the model:
+tool_output = computer.execute(
+    computer_call,
+    before_action=before_action,
+)
+```
 
-One overdue-invoice run scrolled the results table before exporting, accounting for its eighth action. The live input decisions came from model computer-tool calls, not a fixed macro.
+The loop saves the response and sends the resulting screenshot back with the conversation history. A screenshot can follow a batch of actions, rather than every click.
 
-A successful pilot, excluded from the table, added USD 0.035597: **USD 0.367690** estimated across ten funded runs. Earlier missing-key and quota blocks are retained separately; they were setup failures before agent interaction, not part of the nine-run evaluation. Their missing usage is not treated as zero cost.
+These excerpts are not standalone scripts. The repository contains the full loop, including history handling, usage records, limits and cleanup. The [OpenAI driver documentation](https://developers.openai.com/api/docs/guides/tools-computer-use-sdk-drivers#computer-driver-contract) describes the SDK interface.
 
-The live environment was a Linux arm64/X11 guest at 1200×900, running Python 3.12 under Docker Engine 29.9.1 on macOS 26.6.2/Apple silicon, with Python 3.13 on the host. Separately, 96 automated tests passed locally, and the initial CI run passed on Python 3.11 and 3.13.
+## Check the result
 
-This is evidence of repeatability for one fixed dataset, layout and environment. It does not test unfamiliar applications, changing screen layouts or long workflows. Those are separate experiments.
+The model saying it is finished does not make the file correct.
 
-## The business question behind the demo
+A separate verifier compares the exported CSV with results computed independently from the demo data. It checks columns, amounts, row order, missing rows and duplicates. The model cannot call it or see its answers.
 
-The useful question is whether a constrained workflow can produce a result that another system can verify at an acceptable cost. For this experiment, CSV output gives us that verification boundary, and the small fixture lets readers understand every expected result.
+Each attempt starts with fresh data and an empty export folder. Old files cannot produce a false pass. Successful attempts keep the CSV; every attempt keeps the evidence available from the run, including a structured `run.json`, an HTML report, screenshots and an action trace.
 
-Before extending the approach to a real application, I would examine its supported integrations, data exposure, operating permissions, failure recovery and the cost of human review. LedgerDesk provides a reproducible place to test the mechanics first—and a way to show exactly which parts succeeded when a live attempt is complete.
+Run the complete workflow from the command line:
+
+```bash
+python -m ledgerdesk run \
+  --task overdue-invoices \
+  --as-of 2026-10-15
+```
+
+The command returns zero only after verification passes. Failures return nonzero. An existing job runner could invoke it, process verified files and send failures for review. Scheduling is not part of this demo.
+
+## Cost
+
+I ran each of the three reports eight times with `gpt-6.1-terra`. All **24 exports** passed verification and an independent recheck.
+
+| Report | Verified runs | Average model API cost |
+| --- | ---: | ---: |
+| Monthly revenue | 8 of 8 | US$0.036 |
+| Overdue invoices | 8 of 8 | US$0.039 |
+| Reconciliation exceptions | 8 of 8 | US$0.036 |
+
+The total estimate was **US$0.88**, or about **US$0.037 per run**. At that average, running one similar task each workday would cost roughly **US$0.73 for a 20-workday month**. More complex workflows that need additional screenshots and model requests will cost more.
+
+These figures estimate model API usage at [OpenAI's published standard rates](https://developers.openai.com/api/docs/pricing). They exclude desktop hosting and other operating costs; actual billing may differ. The [full 24-run results](../examples/evaluation-24/index.html) and [cost calculation](../examples/evaluation-24/cost-analysis.json) retain the measurements and evidence.
+
+## Applying this to your own application
+
+Start with a contained workflow that produces something you can verify. Define its inputs, restrict the permitted actions and decide how to handle failure before you run it. If the app has a supported integration, use that first.
+
+The [repository](https://github.com/HHuysamen/legacy-desktop-computer-use) contains the app, driver, agent loop and verifier, with setup instructions. Running the agent requires an OpenAI project with access to the model and computer tool.
+
+Desktop applications with no APIs, MCP servers or browser interfaces can be navigated using programmatic computer use.

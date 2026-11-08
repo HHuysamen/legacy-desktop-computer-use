@@ -1,0 +1,90 @@
+{
+  "created_at": "2026-11-08T11:50:09.673160+00:00",
+  "kind": "Post-recording explanatory narration and footer",
+  "provider": "ElevenLabs",
+  "model_id": "eleven_v4",
+  "voice": {
+    "name": "George",
+    "id": "JBFqnCBsd6RMkjVDRZzb",
+    "category": "premade"
+  },
+  "source_video": "demo.mp4",
+  "source_sha256": "4918ed726968d18b99f0a8c596d2ba050c0dfec962428496e60b8a06b156a635",
+  "narrated_video": "demo-narrated-v2.mp4",
+  "narrated_sha256": "ad68b1eba6a37861192fafa8504c48efb999adaaf6580dd0e971356b4de7d413",
+  "captions": "demo-narrated-v2.vtt",
+  "captions_sha256": "15ef13eedf4c1f5fac94c43ac7b4291847c62f72dde4f5dba86c1b812f610c83",
+  "poster": "poster-v2.png",
+  "poster_sha256": "cbfdc956803ba0c7faaf629394e670c85c125c5537557eb63ca690a65f806532",
+  "prior_narrated_sha256": "11381eb6582a7bef589ad845f092b8d1db95f7fb5cde690d6b1548358f517992",
+  "duration_seconds": 24.0,
+  "frame_count": 192,
+  "frame_size": [
+    1200,
+    1008
+  ],
+  "video_stream_unchanged": false,
+  "video_change": "Footer appended below the original 1200x900 frame; no crop, speed change or overlay over application content. Re-encoded for composition.",
+  "original_region_ssim": 0.999563,
+  "footer_text": [
+    "Programmatic Computer Use",
+    "Native desktop app \u00b7 Browser viewer only",
+    "henryhuysamen.com",
+    "LedgerDesk demo \u00b7 Synthetic data"
+  ],
+  "audio_change": "Replaced only cue 2, retained the full generated tail, matched its level and added 8ms edge fades. Other cue WAVs are unchanged.",
+  "replacement_request_sha256": "4c451a79232c726aa61640b0574fd8aaac037a3d56fd474ae0d00f9f8ec55b1c",
+  "audio_checks": {
+    "decode": "passed",
+    "maximum_dbfs": -3.3,
+    "independent_model": "gpt-audio-1.5",
+    "review_file": "audio-review-v2.json"
+  },
+  "cues": [
+    {
+      "start": 0.25,
+      "end": 6.0,
+      "text": "Here's LedgerDesk, a desktop app. The agent works from screenshots.",
+      "source_start": 0,
+      "source_end": 4.77,
+      "audio_duration": 4.77,
+      "caption_end": 5.02
+    },
+    {
+      "start": 6.0,
+      "end": 11.5,
+      "text": "It selects monthly revenue for September twenty twenty-six.",
+      "source_start": 0.0,
+      "source_end": 4.0,
+      "audio_duration": 4.0,
+      "caption_end": 10.0
+    },
+    {
+      "start": 11.5,
+      "end": 15.8,
+      "text": "Six customer totals appear in the preview.",
+      "source_start": 9.49,
+      "source_end": 12.21,
+      "audio_duration": 2.72,
+      "caption_end": 14.22
+    },
+    {
+      "start": 15.8,
+      "end": 19.8,
+      "text": "Then it saves the results as a CSV.",
+      "source_start": 12.370000000000001,
+      "source_end": 14.930000000000001,
+      "audio_duration": 2.56,
+      "caption_end": 18.36
+    },
+    {
+      "start": 19.8,
+      "end": 23.8,
+      "text": "Separate code checks that the exported data is correct.",
+      "source_start": 15.41,
+      "source_end": 18.88,
+      "audio_duration": 3.47,
+      "caption_end": 23.27
+    }
+  ]
+}

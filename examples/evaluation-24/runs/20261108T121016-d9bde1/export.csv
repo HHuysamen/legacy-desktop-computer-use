@@ -1,0 +1,5 @@
+transaction_id,recorded_amount,expected_amount,difference
+TXN-004,1750.02,1750.00,0.02
+TXN-005,799.98,800.00,-0.02
+TXN-006,1255.00,1250.00,5.00
+TXN-007,690.00,700.00,-10.00

@@ -7,12 +7,12 @@ import pytest
 from scripts.package_evidence import package_evidence, TASKS
 
 
-def evaluation_fixture(tmp_path):
+def evaluation_fixture(tmp_path, count=9, filename="evaluation.json"):
     output = tmp_path / "output"
     entries = []
-    for index in range(9):
+    for index in range(count):
         run_dir = output / "runs" / f"run-{index}"
-        (run_dir / "screenshots").mkdir(parents=True)
+        (run_dir / "screenshots").mkdir(parents=True, exist_ok=True)
         passed = index != 8
         metadata = {"id": f"run-{index}", "task_id": TASKS[index % 3], "status": "passed" if passed else "failed", "finished_at": "2026-11-08T00:00:00Z", "elapsed_seconds": index + 10, "action_count": index + 1, "request_count": index + 2, "estimated_cost_usd": 0.01 if passed else None, "usage": {"complete": passed}}
         (run_dir / "run.json").write_text(json.dumps(metadata))
@@ -26,8 +26,8 @@ def evaluation_fixture(tmp_path):
         if passed:
             (run_dir / "export.csv").write_text("customer,revenue\nSynthetic,1.00\n")
         entries.append({"run_dir": str(run_dir.relative_to(tmp_path)), **metadata})
-    path = output / "evaluation.json"
-    path.write_text(json.dumps({"planned_attempts": 9, "completed_attempts": 9, "runs": entries}))
+    path = output / filename
+    path.write_text(json.dumps({"planned_attempts": count, "completed_attempts": count, "runs": entries}))
     return path
 
 
@@ -98,3 +98,48 @@ def test_file_symlink_cannot_read_outside_run_directory(tmp_path):
     with pytest.raises(ValueError, match="outside its run directory"):
         package_evidence(source, tmp_path / "examples")
     assert not (tmp_path / "examples").exists()
+
+
+def test_packages_balanced_extension_without_altering_original_evidence(tmp_path):
+    original = evaluation_fixture(tmp_path)
+    original_bytes = original.read_bytes()
+    original_package = package_evidence(original, tmp_path / "examples" / "evaluation")
+    original_files = {path.relative_to(original_package): path.read_bytes() for path in original_package.rglob("*") if path.is_file()}
+    extension = evaluation_fixture(tmp_path, count=24, filename="evaluation-24.json")
+    destination = package_evidence(extension, tmp_path / "examples" / "evaluation-24")
+    summary = json.loads((destination / "summary.json").read_text())
+    assert summary["planned_attempts"] == summary["completed_attempts"] == 24
+    assert summary["overall"]["verified"] == 23
+    assert summary["overall"]["failed"] == 1
+    assert summary["overall"]["estimated_cost_usd_known"] == 0.23
+    assert all(stats["attempts"] == 8 for stats in summary["tasks"].values())
+    html = (destination / "index.html").read_text()
+    assert "23 of 24 attempts" in html
+    assert "8 attempts each" in html
+    assert "All 24 attempts" in html
+    assert "nine" not in html.lower()
+    assert original.read_bytes() == original_bytes
+    assert {path.relative_to(original_package): path.read_bytes() for path in original_package.rglob("*") if path.is_file()} == original_files
+
+
+@pytest.mark.parametrize("count", [0, 20])
+def test_requires_a_positive_multiple_of_three(tmp_path, count):
+    source = evaluation_fixture(tmp_path)
+    data = json.loads(source.read_text())
+    data["planned_attempts"] = count
+    source.write_text(json.dumps(data))
+    with pytest.raises(ValueError, match="positive multiple of three"):
+        package_evidence(source, tmp_path / "examples")
+
+
+def test_rejects_unbalanced_extension(tmp_path):
+    source = evaluation_fixture(tmp_path, count=24)
+    data = json.loads(source.read_text())
+    data["runs"][0]["task_id"] = TASKS[1]
+    source.write_text(json.dumps(data))
+    run_file = tmp_path / data["runs"][0]["run_dir"] / "run.json"
+    metadata = json.loads(run_file.read_text())
+    metadata["task_id"] = TASKS[1]
+    run_file.write_text(json.dumps(metadata))
+    with pytest.raises(ValueError, match="exactly 8 attempts"):
+        package_evidence(source, tmp_path / "examples")

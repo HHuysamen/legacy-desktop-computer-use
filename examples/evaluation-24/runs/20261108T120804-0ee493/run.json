@@ -1,0 +1,32 @@
+{
+  "id": "20261108T120804-0ee493",
+  "task_id": "monthly-revenue",
+  "instruction": "In LedgerDesk, generate Monthly revenue for September 2026, grouped by customer and sorted by revenue descending (customer name ascending for ties). Use invoice-date net amounts, excluding voided invoices. Export the result as CSV.",
+  "started_at": "2026-11-08T12:08:04.523513+00:00",
+  "as_of": "2026-10-15",
+  "model": "gpt-6.1-terra",
+  "status": "passed",
+  "error": null,
+  "action_count": 7,
+  "request_count": 6,
+  "limits": {
+    "actions": 40,
+    "requests": 20,
+    "seconds": 300,
+    "budget_usd": 1.0
+  },
+  "fixture_sha256": "a39aeceaa7600d9e0822efef58c4101724f60ff47462c7f7067184536571f085",
+  "environment": "Linux X11 in Docker; 1200x900; no host mounts; desktop network internal",
+  "image_id": "726f4bd46ae3df3565cabeb0b65e8e92a3c924300ba3eb927bbb634ae2d17b8b",
+  "usage": {
+    "input_tokens": 34462,
+    "output_tokens": 223,
+    "total_tokens": 34685,
+    "complete": true
+  },
+  "estimated_cost_usd": 0.035577,
+  "model_text": "Generated the September 2026 Monthly revenue report and exported all 6 customer rows to `monthly-revenue.csv`.",
+  "recording_available": true,
+  "elapsed_seconds": 27.229,
+  "finished_at": "2026-11-08T12:08:31.752241+00:00"
+}

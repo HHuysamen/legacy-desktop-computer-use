@@ -8,19 +8,21 @@ LedgerDesk is a real Tkinter desktop window inside an isolated Linux desktop. Th
 
 ## Validation status
 
-On 8 November 2026, **all 9 evaluated model runs produced independently verified CSVs**: three attempts per task, with no failed or blocked attempts in that evaluation. The fixed-fixture results were:
+On 8 November 2026, **all 24 evaluated model runs produced independently verified CSVs**: eight attempts per task. This combines the original nine-run evaluation with 15 further attempts using the same model, fixture and desktop configuration.
 
-| Task | Verified | Median elapsed | Estimated API cost, all 3 runs |
+| Task | Verified | Median elapsed | Estimated API cost, all 8 runs |
 | --- | ---: | ---: | ---: |
-| Monthly revenue | 3/3 | 27.853 s | USD 0.106752 |
-| Overdue invoices | 3/3 | 25.875 s | USD 0.118259 |
-| Reconciliation exceptions | 3/3 | 25.214 s | USD 0.107082 |
+| Monthly revenue | 8/8 | 26.717 s | USD 0.284688 |
+| Overdue invoices | 8/8 | 26.415 s | USD 0.308254 |
+| Reconciliation exceptions | 8/8 | 24.931 s | USD 0.285432 |
 
-Across the nine runs, median elapsed time was **25.481 seconds**, with **7–8 desktop actions** and **6–7 model requests** per run. Their combined standard-rate API estimate was **USD 0.332093**. A separate successful pilot is excluded from these statistics; its estimate was USD 0.035597, bringing the ten funded runs to USD 0.367690. Earlier missing-key and quota blocks are recorded separately, with no zero-cost assumption where usage was unavailable.
+Across the 24 runs, median elapsed time was **25.740 seconds**, with **7–8 desktop actions** and **6–7 model requests** per run. Their combined standard-rate model API estimate was **USD 0.878374**, averaging **USD 0.036599 per run**. One similar task per workday would therefore be approximately **USD 0.73 for 20 workdays**, excluding desktop hosting. More complex workflows can use more model requests and cost more.
 
-**[Open the evaluation](examples/evaluation/index.html)** · [Watch the model run](examples/evaluation/demo.mp4) · [Inspect a standalone report](examples/evaluation/sample-report.html) · [Read the article](docs/article.md)
+**[Read the article on henryhuysamen.com](https://www.henryhuysamen.com/writing/ledgerdesk-computer-use/)** · **[Open the 24-run evaluation](examples/evaluation-24/index.html)** · [Watch the narrated demo](examples/presentation/demo-narrated-v2.mp4) · [Inspect a standalone report](examples/evaluation-24/sample-report.html) · [Read the article](docs/article.md)
 
-The nine CSVs also passed a subsequent independent recheck. **96 automated tests passed locally**; the initial GitHub Actions run passed on Python 3.11 and 3.13. Live configuration: `gpt-6.1-terra`, OpenAI Python SDK 3.31.0, macOS 26.6.2 on Apple silicon, Docker Engine 29.9.1, a Linux arm64/X11 guest at 1200×900, Python 3.13 host and Python 3.12 guest. These results demonstrate repeatability for this fixture and layout, not general desktop reliability. See [validation details](docs/validation.md), [machine-readable results](examples/evaluation/summary.json) and the [artifact hashes](examples/evaluation/manifest.json).
+All 24 saved CSVs passed a separate recheck. **100 automated tests passed locally**. Configuration: `gpt-6.1-terra`, OpenAI Python SDK 3.31.0, macOS on Apple silicon, and a Linux arm64/X11 guest at 1200×900. See [validation details](docs/validation.md), [machine-readable results](examples/evaluation-24/summary.json), [cost calculations](examples/evaluation-24/cost-analysis.json) and [artifact hashes](examples/evaluation-24/manifest.json).
+
+The [original nine-run package](examples/evaluation/index.html) remains unchanged. A separate successful pilot is retained but excluded from all 24-run statistics and monthly projections. Earlier setup blocks remain separate; costs are not inferred as zero when usage was unavailable.
 
 ![The native LedgerDesk fixture, before a task starts](examples/ledgerdesk.png)
 

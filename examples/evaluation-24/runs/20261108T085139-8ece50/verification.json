@@ -1,0 +1,63 @@
+{
+  "passed": true,
+  "errors": [],
+  "row_count": 7,
+  "headers": [
+    "customer",
+    "invoice_number",
+    "balance",
+    "due_date",
+    "days_overdue"
+  ],
+  "rows": [
+    {
+      "customer": "Delta Quay Services",
+      "invoice_number": "INV-260801",
+      "balance": "500.00",
+      "due_date": "2026-08-31",
+      "days_overdue": "45"
+    },
+    {
+      "customer": "Alder Robotics",
+      "invoice_number": "INV-260831",
+      "balance": "9999.99",
+      "due_date": "2026-09-15",
+      "days_overdue": "30"
+    },
+    {
+      "customer": "Fernlight Design",
+      "invoice_number": "INV-260820",
+      "balance": "150.00",
+      "due_date": "2026-09-19",
+      "days_overdue": "26"
+    },
+    {
+      "customer": "Cedar Trail Foods",
+      "invoice_number": "INV-260903",
+      "balance": "1750.00",
+      "due_date": "2026-09-25",
+      "days_overdue": "20"
+    },
+    {
+      "customer": "Beacon Paperworks",
+      "invoice_number": "INV-260916",
+      "balance": "400.00",
+      "due_date": "2026-10-10",
+      "days_overdue": "5"
+    },
+    {
+      "customer": "Delta Quay Services",
+      "invoice_number": "INV-260918",
+      "balance": "800.00",
+      "due_date": "2026-10-14",
+      "days_overdue": "1"
+    },
+    {
+      "customer": "Alder Robotics",
+      "invoice_number": "INV-261014",
+      "balance": "400.00",
+      "due_date": "2026-10-14",
+      "days_overdue": "1"
+    }
+  ]
+}

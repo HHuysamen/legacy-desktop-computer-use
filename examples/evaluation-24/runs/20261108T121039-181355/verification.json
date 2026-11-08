@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "errors": [],
+  "row_count": 6,
+  "headers": [
+    "customer",
+    "revenue"
+  ],
+  "rows": [
+    {
+      "customer": "Alder Robotics",
+      "revenue": "2400.00"
+    },
+    {
+      "customer": "Beacon Paperworks",
+      "revenue": "2400.00"
+    },
+    {
+      "customer": "Cedar Trail Foods",
+      "revenue": "2000.00"
+    },
+    {
+      "customer": "Delta Quay Services",
+      "revenue": "1800.00"
+    },
+    {
+      "customer": "Ember Loom Textiles",
+      "revenue": "1500.00"
+    },
+    {
+      "customer": "Fernlight Design",
+      "revenue": "1500.00"
+    }
+  ]
+}

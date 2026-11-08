@@ -1,4 +1,4 @@
-"""Package the finished nine-attempt evaluation without altering its evidence."""
+"""Package a finished, balanced evaluation without altering its evidence."""
 from __future__ import annotations
 
 import argparse
@@ -106,6 +106,8 @@ def _scorecard(summary: dict) -> str:
     def text(value):
         return escape(str(value), quote=True)
 
+    attempts = summary["completed_attempts"]
+    per_task = attempts // len(TASKS)
     cards = []
     for task, stats in summary["tasks"].items():
         action_range = stats["action_range"]
@@ -118,11 +120,11 @@ def _scorecard(summary: dict) -> str:
         rows.append(f'''<tr><td><a href="runs/{identifier}/report.html">{text(run['task_id'])}</a><small>{text(identifier)}</small></td><td class="{run['status']}">{text(run['status'])}</td><td>{_display(run.get('elapsed_seconds'), 's')}</td><td>{text(run.get('action_count', 'Unavailable'))}</td><td>{text(run.get('request_count', 'Unavailable'))}</td><td>{_display(run.get('estimated_cost_usd'), ' USD')}</td><td>{'Complete' if run.get('usage', {}).get('complete') is True else 'Incomplete / unavailable'}</td></tr>''')
     pilot = summary.get("pilot")
     pilot_html = f'<p>Separate pilot: <a href="pilot/{pilot["id"]}/report.html">{text(pilot["id"])}</a>. The pilot is excluded from every count and statistic above.</p>' if pilot else ""
-    complete = summary["overall"]["usage_complete"] and summary["overall"]["cost_values_available"] == 9
-    usage_note = "Usage and cost estimates are available for all nine attempts." if complete else "Usage or cost is incomplete for at least one attempt. Known costs are partial totals, not a full bill."
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; media-src 'self'; img-src 'self'; base-uri 'none'"><title>LedgerDesk — Nine-attempt scorecard</title><style>
+    complete = summary["overall"]["usage_complete"] and summary["overall"]["cost_values_available"] == attempts
+    usage_note = f"Usage and cost estimates are available for all {attempts} attempts." if complete else "Usage or cost is incomplete for at least one attempt. Known costs are partial totals, not a full bill."
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; media-src 'self'; img-src 'self'; base-uri 'none'"><title>LedgerDesk — {attempts}-attempt scorecard</title><style>
 *{{box-sizing:border-box}}body{{margin:0;background:#edf2f5;color:#1b3041;font:15px/1.55 system-ui,sans-serif}}header{{background:#153245;color:white;padding:45px max(24px,calc((100vw - 1150px)/2));border-bottom:5px solid #49b8b7}}header p{{color:#c4dce6;max-width:780px}}.eyebrow{{text-transform:uppercase;letter-spacing:.12em;font-size:12px}}h1{{font-size:34px;line-height:1.2;margin:10px 0}}main{{max-width:1198px;margin:auto;padding:28px 24px 50px}}.cards{{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}}article,section{{background:white;border:1px solid #d5e0e7;border-radius:8px;padding:23px;margin-bottom:23px}}article h2{{font-size:17px;margin-top:0}}article strong{{font-size:37px;color:#126d65}}article p{{margin-top:0;color:#516d7c}}dl{{display:grid;grid-template-columns:1fr 1fr;font-size:12px;gap:7px}}dt{{color:#647884}}dd{{margin:0;text-align:right;font-weight:650}}h2{{font-size:20px}}.scroll{{overflow:auto}}table{{border-collapse:collapse;width:100%;font-size:12px}}td,th{{text-align:left;padding:12px;border-bottom:1px solid #e1e7eb;white-space:nowrap}}th{{background:#edf4f6}}small{{display:block;color:#667e8d;font-size:10px}}a{{color:#076778}}.passed{{color:#137653;font-weight:700}}.failed,.blocked{{color:#963e35;font-weight:700}}video{{max-width:100%;width:900px;background:#122c3c}}.note{{font-size:13px;color:#526c7c}}@media(max-width:800px){{.cards{{grid-template-columns:1fr}}h1{{font-size:27px}}}}footer{{font-size:12px;color:#6a7d89}}
-</style></head><body><header><p class="eyebrow">LedgerDesk / Recorded evaluation</p><h1>{summary['overall']['verified']} of 9 attempts independently verified</h1><p>Three reporting tasks. Three attempts each. Every evaluated outcome is retained, including failures and blocked attempts.</p></header><main><div class="cards">{''.join(cards)}</div><section><h2>All nine attempts</h2><div class="scroll"><table><thead><tr><th>Task / evidence</th><th>Outcome</th><th>Elapsed</th><th>Actions</th><th>Requests</th><th>Estimated cost</th><th>API usage</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div><p class="note">{usage_note} Costs use published standard token rates and exclude cache discounts; provider billing remains authoritative.</p></section><section><h2>Watch a verified attempt</h2><video controls preload="metadata" src="demo.mp4" poster="poster.png">Download demo.mp4 to watch this recorded native desktop session.</video><p><a href="sample-report.html">Open its self-contained evidence report</a> · <a href="summary.json">Machine-readable summary</a> · <a href="manifest.json">SHA-256 manifest</a></p>{pilot_html}</section><section><h2>What these results establish</h2><p>The model operated the fictional native application through screenshots and mouse or keyboard actions. A separate verifier checked each exported CSV against the fixture. The model's completion text alone cannot pass a run.</p><p class="note">This is a small, fixed-fixture demonstration on one recorded desktop configuration. It does not establish general reliability across applications, layouts or operating systems.</p></section><footer>Packaged {text(summary['packaged_at'])}. Files retain their original run identifiers.</footer></main></body></html>'''
+</style></head><body><header><p class="eyebrow">LedgerDesk / Recorded evaluation</p><h1>{summary['overall']['verified']} of {attempts} attempts independently verified</h1><p>Three reporting tasks. {per_task} attempts each. Every evaluated outcome is retained, including failures and blocked attempts.</p></header><main><div class="cards">{''.join(cards)}</div><section><h2>All {attempts} attempts</h2><div class="scroll"><table><thead><tr><th>Task / evidence</th><th>Outcome</th><th>Elapsed</th><th>Actions</th><th>Requests</th><th>Estimated cost</th><th>API usage</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div><p class="note">{usage_note} Costs use published standard token rates and exclude cache discounts; provider billing remains authoritative.</p></section><section><h2>Watch a verified attempt</h2><video controls preload="metadata" src="demo.mp4" poster="poster.png">Download demo.mp4 to watch this recorded native desktop session.</video><p><a href="sample-report.html">Open its self-contained evidence report</a> · <a href="summary.json">Machine-readable summary</a> · <a href="manifest.json">SHA-256 manifest</a></p>{pilot_html}</section><section><h2>What these results establish</h2><p>The model operated the fictional native application through screenshots and mouse or keyboard actions. A separate verifier checked each exported CSV against the fixture. The model's completion text alone cannot pass a run.</p><p class="note">This is a small, fixed-fixture demonstration on one recorded desktop configuration. It does not establish general reliability across applications, layouts or operating systems.</p></section><footer>Packaged {text(summary['packaged_at'])}. Files retain their original run identifiers.</footer></main></body></html>'''
 
 
 def package_evidence(evaluation_path: Path, destination: Path, *, pilot: Path | None = None) -> Path:
@@ -131,15 +133,20 @@ def package_evidence(evaluation_path: Path, destination: Path, *, pilot: Path | 
     runs_root = (workspace / "output" / "runs").resolve()
     evaluation = _json(evaluation_path)
     entries = evaluation.get("runs", [])
-    if evaluation.get("planned_attempts") != 9 or evaluation.get("completed_attempts") != 9 or len(entries) != 9:
-        raise ValueError("Packaging requires the completed nine-attempt evaluation.")
+    attempts = evaluation.get("planned_attempts")
+    if type(attempts) is not int or attempts <= 0 or attempts % len(TASKS):
+        raise ValueError("Planned attempts must be a positive multiple of three.")
+    if evaluation.get("completed_attempts") != attempts or len(entries) != attempts:
+        label = "nine-attempt" if attempts == 9 else f"{attempts}-attempt"
+        raise ValueError(f"Packaging requires the completed {label} evaluation.")
     sources = [_source(workspace / entry["run_dir"], runs_root) for entry in entries]
-    if len(set(sources)) != 9:
+    if len(set(sources)) != attempts:
         raise ValueError("Evaluation contains duplicate run directories.")
     runs = [_read_run(source) for source in sources]
-    if Counter(run.get("task_id") for run in runs) != Counter({task: 3 for task in TASKS}):
-        raise ValueError("Evaluation must contain exactly three attempts for each reporting task.")
-    if len({run["id"] for run in runs}) != 9:
+    per_task = attempts // len(TASKS)
+    if Counter(run.get("task_id") for run in runs) != Counter({task: per_task for task in TASKS}):
+        raise ValueError(f"Evaluation must contain exactly {per_task} attempts for each reporting task.")
+    if len({run["id"] for run in runs}) != attempts:
         raise ValueError("Evaluation contains duplicate run IDs.")
     for entry, run in zip(entries, runs):
         if any(key in entry and entry[key] != run[key] for key in ("id", "task_id", "status")):
@@ -150,14 +157,14 @@ def package_evidence(evaluation_path: Path, destination: Path, *, pilot: Path | 
     pilot_source = _source(Path(pilot) if Path(pilot).is_absolute() else workspace / pilot, runs_root) if pilot is not None else None
     pilot_run = _read_run(pilot_source) if pilot_source is not None else None
     if pilot_source in sources:
-        raise ValueError("The optional pilot must be separate from the nine evaluated runs.")
+        raise ValueError("The optional pilot must be separate from the evaluated runs.")
     destination = Path(destination).resolve()
     if destination.is_relative_to(runs_root) or (destination.exists() and any(destination.iterdir())):
         raise ValueError("Choose an empty destination outside output/runs.")
     destination.parent.mkdir(parents=True, exist_ok=True)
     summary = {
         "schema_version": 1, "packaged_at": datetime.now(timezone.utc).isoformat(),
-        "planned_attempts": 9, "completed_attempts": 9, "pilot_excluded_from_statistics": True,
+        "planned_attempts": attempts, "completed_attempts": attempts, "pilot_excluded_from_statistics": True,
         "overall": _stats(runs), "tasks": {task: _stats([run for run in runs if run["task_id"] == task]) for task in TASKS},
         "runs": runs, "pilot": pilot_run, "demo_run_id": selected[1]["id"],
     }
