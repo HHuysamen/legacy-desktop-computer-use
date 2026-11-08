@@ -4,7 +4,7 @@ updated: 2026-11-08
 updated_by: codex
 next_actions:
   - Recheck Google indexing after processing; both URLs were accepted into the priority crawl queue on 2026-11-08.
-  - Optionally mirror the separate follow-up link to Medium; its canonical already points to the main site.
+  - Mirror future article text changes to Medium by hand; the follow-up link is now recorded as synchronized.
 blockers: []
 ---
 # Handoff
@@ -40,7 +40,7 @@ blockers: []
 
 ## Open questions
 - Actual search/AI-search indexing and generalization to unfamiliar applications, locales, Windows and production data remain unverified.
-- Medium live settings verified: originally published elsewhere enabled; canonical is https://www.henryhuysamen.com/writing/ledgerdesk-computer-use/. Visible links point back to the main site; no separate follow-up link observed.
+- Medium live settings verified: originally published elsewhere enabled; canonical is https://www.henryhuysamen.com/writing/ledgerdesk-computer-use/. Visible links point back to the main site; a subsequent Medium sync recorded by Claude added the separate follow-up link.
 
 ## Recent sessions
 - 2026-11-08 (codex): Closed session work; Worker Git builds disconnected, obsolete PR#1 closed, Medium canonical verified, sitemap accepted and both indexing requests queued. Only Google processing remains pending.
